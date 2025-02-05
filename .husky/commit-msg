@@ -1,0 +1,55 @@
+#!/bin/bash
+
+#
+# Inspects branch name and checks if it contains a Jira ticket number (i.e. ABC-123).
+# If yes, commit message will be automatically prepended with [ABC-123].
+#
+# Useful for looking through git history and relating a commit or group of commits
+# back to a user story.
+#
+
+RED="\033[1;31m"
+GREEN="\033[1;32m"
+NOCOLOR="\033[0m"
+
+COMMIT_MSG_FILE=$1
+BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+JIRA_ISSUE_ID=$(echo $BRANCH_NAME | cut -d"/" -f2)
+
+FIRST_LINE=$(head -n1 $COMMIT_MSG_FILE)
+
+if [ -z "$FIRST_LINE" ];
+then
+    echo -e "${RED}Error: Empty Message!!${NOCOLOR}"
+    exit 1;
+fi
+
+TYPE=$(echo $FIRST_LINE | cut -sd"]" -f1 | cut -c 2-)
+TITLE=$(echo $FIRST_LINE | cut -sd"]" -f2)
+
+if [[ -z $TYPE ]];
+then
+    echo -e "${RED}Error: COMMIT TYPE does not exist!!${NOCOLOR}"
+    exit 1;
+fi
+
+# 추후 설정 필요
+# if [[ $TYPE != $JIRA_ISSUE_ID ]];
+# then
+#     echo -e "${RED}Error: COMMIT TYPE is not vaild with current branch!!${NOCOLOR}"
+#     exit 1;
+# fi
+
+if [[ $TITLE =~ "subject (Max 50 char)" ]];
+then
+    echo -e "${RED}Error: You should not use git commit template's title!!${NOCOLOR}"
+    exit 1;
+fi
+
+if [[ -z $TITLE ]];
+then
+    echo -e "${RED}Error: Empty Title!!${NOCOLOR}"
+    exit 1;
+fi
+
+echo -e "${GREEN}Commit Succeded!!${NOCOLOR}"

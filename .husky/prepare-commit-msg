@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#
+# Inspects branch name and checks if it contains a Jira ticket number (i.e. ABC-123).
+# If yes, commit message will be automatically prepended with [ABC-123].
+#
+# Useful for looking through git history and relating a commit or group of commits
+# back to a user story.
+#
+
+COMMIT_MSG_FILE=$1
+BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+JIRA_ISSUE_ID=$(echo $BRANCH_NAME | cut -sd"/" -f2)
+
+echo $JIRA_ISSUE_ID
+
+OS=$(uname -s)
+MAC='Darwin'
+if [[ "$OS" == *"$MAC"* ]]; then
+    sed -i ".bak" "1s/\[type\]/\[$JIRA_ISSUE_ID\]/" $COMMIT_MSG_FILE
+else
+    sed -i "1s/\[type\]/\[$JIRA_ISSUE_ID\]/" $COMMIT_MSG_FILE
+fi
