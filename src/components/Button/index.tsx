@@ -1,9 +1,10 @@
 import { Button, styled } from '@mui/material';
 
-export const ExampleButton = styled(Button)(() => ({
+export const PageButton = styled(Button)(() => ({
   fontSize: '24px',
   color: '#f2f2f2',
   fontWeight: 'normal',
-  marginRight: 30,
-  display: 'flex',
+  right: '30px',
+  top: '25px',
+  position: 'fixed',
 }));

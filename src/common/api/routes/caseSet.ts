@@ -1,33 +1,33 @@
 import _ from 'lodash';
 
-import { GetExamplesResBody } from '@/common/api/interface/examples';
+import { GetCaseSetSth } from '@/common/api/interface/caseSet';
 import { ApiHeaders } from '@common/api/interface/api';
 import axiosDecorator from '@common/axios/axiosDecorator';
 
-interface AxiosExamplesOptions {
+interface AxiosCaseSetOptions {
   apiUrl: string | undefined;
   headers: ApiHeaders;
 }
 
-export interface AxiosExamplesReturn {
-  getExamples: () => Promise<GetExamplesResBody>;
+export interface AxiosCaseSetReturn {
+  importCaseSet: () => Promise<GetCaseSetSth>;
 }
 
-const axiosExamples = (opts: AxiosExamplesOptions): AxiosExamplesReturn => {
+const CaseSetApi = (opts: AxiosCaseSetOptions): AxiosCaseSetReturn => {
   const { apiUrl, headers } = opts;
 
   let baseURL: string | undefined = undefined;
   if (!_.isUndefined(apiUrl)) {
     baseURL = apiUrl;
   }
-  const url = '/overview';
+  const url = '/casesets';
   const instance = axiosDecorator.create({ baseURL, headers, url });
 
   return {
-    getExamples: async () => {
-      return instance.get('/');
+    importCaseSet: async () => {
+      return instance.post(':import');
     },
   };
 };
 
-export default axiosExamples;
+export default CaseSetApi;

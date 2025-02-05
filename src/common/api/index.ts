@@ -1,7 +1,8 @@
-import AxiosExamples, { AxiosExamplesReturn } from '@/common/api/routes/examples';
-
+import CaseSetApi, { AxiosCaseSetReturn } from '@/common/api/routes/caseSet';
+import ExecutionApi, { AxiosExecutionReturn } from '@/common/api/routes/execution';
 type ApiObject = {
-  examples: AxiosExamplesReturn;
+  caseSet: AxiosCaseSetReturn;
+  execution: AxiosExecutionReturn;
 };
 
 type ApiCustomConfig =
@@ -19,7 +20,8 @@ const api = (accessToken: string, config?: ApiCustomConfig): ApiObject => {
   };
 
   return {
-    examples: AxiosExamples({ apiUrl, headers }),
+    caseSet: CaseSetApi({ apiUrl, headers }),
+    execution: ExecutionApi({ apiUrl, headers }),
   };
 };
 

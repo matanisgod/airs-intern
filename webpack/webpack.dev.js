@@ -45,7 +45,7 @@ module.exports = smp.wrap(
     plugins: [
       new HtmlWebpackPlugin({
         filename: '[name].html',
-        title: `Example App`,
+        title: `Automated Testing Client`,
         favicon: './src/assets/images/png/app.png',
       }),
     ],

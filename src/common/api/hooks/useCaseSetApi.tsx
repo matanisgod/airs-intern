@@ -1,24 +1,22 @@
 import { useMemo } from 'react';
 
 import { useRecoilValue } from 'recoil';
-
 import { logAxiosError } from '@/utils/logAxiosError';
 import api from '@common/api';
-import { Examples, examplesAtom } from '@recoil/status';
+import { caseSetAtom, CaseSets } from '@recoil/status';
 
-type UseExamplesApi = {
-  getExamples: (accessToken: string) => Promise<Examples | undefined>;
+type UseCaseSetApi = {
+  importCaseSet: (accessToken: string) => Promise<CaseSets | undefined>;
 } | null;
 
-export const useExamplesApi = (): UseExamplesApi => {
-
+export const useCaseSetApi = (): UseCaseSetApi => {
   const instance = useMemo(() => {
     if (api) {
       return {
-        getExamples: async (accessToken) => {
+        importCaseSet: async (accessToken) => {
           try {
-            const examples = await api(accessToken).examples.getExamples();
-            return examples;
+            const caseSet = await api(accessToken).caseSet.importCaseSet();
+            return caseSet;
           } catch (e) {
             logAxiosError(e);
           }
