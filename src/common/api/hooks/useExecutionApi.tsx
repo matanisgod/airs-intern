@@ -4,37 +4,37 @@ import { useRecoilValue } from 'recoil';
 
 import { logAxiosError } from '@/utils/logAxiosError';
 import api from '@common/api';
-import { executionAtom, Executions } from '@recoil/status';
+import { executionAtom, ExecutionLog } from '@recoil/status';
 
 type UseExecutionApi = {
-  postExecution: (accessToken: string) => Promise<Executions | undefined>;
-  cancelExecution: (accessToken: string) => Promise<Executions | undefined>;
-  cancelExecutionById: (accessToken: string) => Promise<Executions | undefined>;
+  postExecution: () => Promise<ExecutionLog | undefined>;
+  cancelExecution: () => Promise<ExecutionLog | undefined>;
+  cancelExecutionById: () => Promise<ExecutionLog | undefined>;
 } | null;
 
 export const useExecutionApi = (): UseExecutionApi => {
   const instance = useMemo(() => {
     if (api) {
       return {
-        postExecution: async (accessToken) => {
+        postExecution: async () => {
           try {
-            const execution = await api(accessToken).execution.postExecution();
+            const execution = await api().execution.postExecution();
             return execution;
           } catch (e) {
             logAxiosError(e);
           }
         },
-        cancelExecution: async (accessToken) => {
+        cancelExecution: async () => {
           try {
-            const execution = await api(accessToken).execution.cancelExecution();
+            const execution = await api().execution.cancelExecution();
             return execution;
           } catch (e) {
             logAxiosError(e);
           }
         },
-        cancelExecutionById: async (accessToken) => {
+        cancelExecutionById: async () => {
           try {
-            const execution = await api(accessToken).execution.cancelExecutionById();
+            const execution = await api().execution.cancelExecutionById();
             return execution;
           } catch (e) {
             logAxiosError(e);

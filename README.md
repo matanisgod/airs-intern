@@ -18,8 +18,9 @@
    5. create execution dialog
 
 - 02/10까지 목표
-  - repo 환경 구성
-  - header 작업
+  - repo 환경 구성 (完)
+  - header 작업 (完)
+  - api
   - 시간 남으면 case set list
 
 api
@@ -28,3 +29,5 @@ api
 2. POST executions/{execution_id}:cancel
 3. POST executions:cancel
 4. POST casesets:import
+
+- GET sth

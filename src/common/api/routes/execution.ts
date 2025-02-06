@@ -1,29 +1,32 @@
 import _ from 'lodash';
 
-import { GetExecutionSth } from '@/common/api/interface/execution';
-import { ApiHeaders } from '@common/api/interface/api';
+import {
+  Postexecution,
+  CancelExecution,
+  cancelExecutionById,
+} from '@/common/api/interface/execution';
+
 import axiosDecorator from '@common/axios/axiosDecorator';
 
 interface AxiosExecutionOptions {
   apiUrl: string | undefined;
-  headers: ApiHeaders;
 }
 
 export interface AxiosExecutionReturn {
-  postExecution: () => Promise<GetExecutionSth>;
-  cancelExecution: () => Promise<GetExecutionSth>;
-  cancelExecutionById: () => Promise<GetExecutionSth>;
+  postExecution: () => Promise<Postexecution>;
+  cancelExecution: () => Promise<CancelExecution>;
+  cancelExecutionById: () => Promise<cancelExecutionById>;
 }
 
 const ExecutionApi = (opts: AxiosExecutionOptions): AxiosExecutionReturn => {
-  const { apiUrl, headers } = opts;
+  const { apiUrl } = opts;
 
   let baseURL: string | undefined = undefined;
   if (!_.isUndefined(apiUrl)) {
     baseURL = apiUrl;
   }
   const url = '/executions';
-  const instance = axiosDecorator.create({ baseURL, headers, url });
+  const instance = axiosDecorator.create({ baseURL, url });
 
   return {
     postExecution: async () => {

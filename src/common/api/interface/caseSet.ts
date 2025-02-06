@@ -1,4 +1,4 @@
-import { CaseSets } from '@/recoil/status';
+import { CaseSet } from '@/recoil/status';
 
-//get
-export type GetCaseSetSth = CaseSets;
+export type ImportCaseSet = CaseSet;
+export type GetCaseSet = CaseSet;

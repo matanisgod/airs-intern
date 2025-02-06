@@ -30,16 +30,17 @@ const AppRoutes: React.FC = () => {
   const renderRoutes = useMemo(() => {
     return (
       <Routes>
-        <Route index element={<Navigate to="/execution" replace />} />
-        <Route path="caseset" element={<CaseSetPage />} />
-        <Route path="execution" element={<ExecutionPage />} />
+        <Route>
+          <Route index element={<Navigate to="/execution" replace />} />
+          <Route path="caseset" element={<CaseSetPage />} />
+          <Route path="execution" element={<ExecutionPage />} />
+        </Route>
       </Routes>
     );
   }, []);
   const Header: React.FC = () => {
     return <HeaderBox>PQ Automation Test</HeaderBox>;
   };
-  //TODO: 헤더 만들기 render 위에에
   return (
     <RecoilHooks>
       <StyledEngineProvider injectFirst>

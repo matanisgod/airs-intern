@@ -1,4 +1,7 @@
-import { Executions } from '@/recoil/status';
+import { ExecutionLog } from '@/recoil/status';
 
-//get
-export type GetExecutionSth = Executions;
+export type Postexecution = ExecutionLog;
+
+export type CancelExecution = ExecutionLog;
+
+export type cancelExecutionById = ExecutionLog;

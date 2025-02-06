@@ -1,1 +1,1 @@
-export * from './index.atom';
+export * from './atom';

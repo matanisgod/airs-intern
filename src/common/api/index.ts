@@ -12,16 +12,13 @@ type ApiCustomConfig =
     }
   | undefined;
 
-const api = (accessToken: string, config?: ApiCustomConfig): ApiObject => {
+const api = (config?: ApiCustomConfig): ApiObject => {
   const apiUrl = config?.apiUrl;
   // const timeout = config?.timeout;
-  const headers = {
-    Authorization: `Bearer ${accessToken || ' '}`,
-  };
 
   return {
-    caseSet: CaseSetApi({ apiUrl, headers }),
-    execution: ExecutionApi({ apiUrl, headers }),
+    caseSet: CaseSetApi({ apiUrl }),
+    execution: ExecutionApi({ apiUrl }),
   };
 };
 
