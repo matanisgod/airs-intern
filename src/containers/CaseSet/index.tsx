@@ -4,7 +4,6 @@ import { PageButton, CaseSetText } from '@components';
 import { CaseSetBox } from './style';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { useCaseSetApi } from '@/common/api/hooks/useCaseSetApi';
-import { access } from 'fs';
 import { caseSetAtom } from '@/recoil/status';
 import { Box } from '@mui/material';
 
@@ -26,7 +25,7 @@ const CaseSet: React.FC = () => {
       const response = await caseSetApi.getCaseSet();
       if (response) setCaseSet(response);
     };
-    getCaseSet();
+    //getCaseSet();
   }, [caseSetApi, setCaseSet]);
 
   return (
