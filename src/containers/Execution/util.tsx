@@ -1,11 +1,27 @@
 export type ExecutionForm = {
   testPerformer: string;
-  test_sets: [string];
-  gate_pc_ip: string;
-  dcs_api_port: number;
-  dcs_dicom_port: number;
-  hospital_realm: string;
-  keycloak_url: string;
-  keycloak_login_id: string;
-  keycloak_login_pw: string;
+  testSets: [string];
+  gatePcIp: string;
+  dcsApiPort: number;
+  dcsDicomPort: number;
+  hospitalRealm: string;
+  keycloakUrl: string;
+  keycloakLoginId: string;
+  keycloakLoginPw: string;
 };
+
+export const TestSetsList = [
+  'smoke_case',
+  'combination_sequences',
+  'dispatch_priority',
+  'exception',
+  'holding_matching',
+  'multisource',
+  'pixeldata_imagetype',
+  'remote_aetitle',
+  'retry',
+  'series_name',
+  'slice_interpolation',
+  'store_ordering_customize',
+  'swift_matrix_size',
+];

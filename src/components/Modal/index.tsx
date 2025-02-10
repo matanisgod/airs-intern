@@ -5,4 +5,7 @@ export const CommonModal = styled(Modal)(() => ({
   alignItems: 'flex-start',
   justifyContent: 'flex-start',
   overflow: 'scroll',
+  left: '40px',
+  top: '200px',
+  position: 'fixed',
 }));

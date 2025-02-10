@@ -25,15 +25,24 @@ const CaseSet: React.FC = () => {
       const response = await caseSetApi.getCaseSet();
       if (response) setCaseSet(response);
     };
-    //getCaseSet();
+    getCaseSet();
   }, [caseSetApi, setCaseSet]);
 
   return (
     <CaseSetBox>
       <CaseSetText>Caseset</CaseSetText>
-      <pre style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
-        {JSON.stringify(caseSet, null, 2)}
-      </pre>
+      <Box
+        sx={{
+          maxHeight: '400px',
+          overflow: 'auto',
+          border: '1px solid #ccc',
+          padding: '8px',
+        }}
+      >
+        <pre style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
+          {JSON.stringify(caseSet, null, 2)}
+        </pre>
+      </Box>
       <PageButton onClick={() => navi('/execution')}>move to execution</PageButton>
     </CaseSetBox>
   );
