@@ -1,17 +1,9 @@
 import { atom } from 'recoil';
 
-export type StatusType = 'running' | 'canceled' | 'error' | 'done';
+import  type { ExecutionLogs } from './interface';
 
-//TODO: change types
-export interface Execution {
-  performer: string;
-  created_at: string;
-  updated_at: string;
-  status: StatusType;
-}
-export type ExecutionLog = Array<Execution>;
 
-export const executionAtom = atom<ExecutionLog>({
+export const executionAtom = atom<ExecutionLogs>({
   key: 'executionAtom',
   default: [],
 });

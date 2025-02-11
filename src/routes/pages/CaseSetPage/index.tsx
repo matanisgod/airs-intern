@@ -1,12 +1,11 @@
 import React from 'react';
 
-import _ from 'lodash';
 import { ErrorBoundary } from 'react-error-boundary';
 
 import { CaseSet } from '@/containers';
 import { ErrorFallback } from '@components';
 
-const CaseSetPage: React.FC = () => {
+const CaseSetPage = () => {
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
       <CaseSet />

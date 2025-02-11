@@ -1,16 +1,5 @@
-import _ from 'lodash';
-
-import {
-  Postexecution,
-  CancelExecution,
-  cancelExecutionById,
-} from '@/common/api/interface/execution';
-
+import type {Postexecution,CancelExecution,cancelExecutionById} from '@/common/api/interface/execution';
 import axiosDecorator from '@common/axios/axiosDecorator';
-
-interface AxiosExecutionOptions {
-  apiUrl: string | undefined;
-}
 
 export interface AxiosExecutionReturn {
   postExecution: () => Promise<Postexecution>;
@@ -18,15 +7,10 @@ export interface AxiosExecutionReturn {
   cancelExecutionById: () => Promise<cancelExecutionById>;
 }
 
-const ExecutionApi = (opts: AxiosExecutionOptions): AxiosExecutionReturn => {
-  const { apiUrl } = opts;
+const ExecutionApi = (): AxiosExecutionReturn => {
 
-  let baseURL: string | undefined = undefined;
-  if (!_.isUndefined(apiUrl)) {
-    baseURL = apiUrl;
-  }
-  const url = '/executions';
-  const instance = axiosDecorator.create({ baseURL, url });
+  const url: string = '/executions';
+  const instance = axiosDecorator.create({ url });
 
   return {
     postExecution: async () => {

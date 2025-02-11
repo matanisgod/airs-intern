@@ -1,6 +1,5 @@
 import React from 'react';
 
-import _ from 'lodash';
 import { ErrorBoundary } from 'react-error-boundary';
 
 import { Execution } from '@/containers';

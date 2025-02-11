@@ -1,6 +1,8 @@
+import React from 'react';
+
 import { Box, styled } from '@mui/material';
 
-export const HeaderBox = styled(Box)(() => ({
+const HeaderBox = styled(Box)(() => ({
   fontSize: '40px',
   color: 'white',
   fontWeight: 'bolder',
@@ -8,3 +10,7 @@ export const HeaderBox = styled(Box)(() => ({
   top: '25px',
   position: 'fixed',
 }));
+
+export const Header = () => {
+  return <HeaderBox>PQ Automation Test</HeaderBox>;
+};

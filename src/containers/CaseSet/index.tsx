@@ -1,13 +1,16 @@
 import React, { useEffect } from 'react';
+
 import { useNavigate } from 'react-router-dom';
-import { PageButton, CaseSetText } from '@components';
-import { CaseSetBox } from './style';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
+
+import { CaseSetBox, GetCaseSetBox, GetCaseSetText } from './style';
+import { CaseSetText } from './style';
+
 import { useCaseSetApi } from '@/common/api/hooks/useCaseSetApi';
 import { caseSetAtom } from '@/recoil/status';
-import { Box } from '@mui/material';
+import { PageButton } from '@components';
 
-const CaseSet: React.FC = () => {
+const CaseSet = () => {
   const navi = useNavigate();
   const caseSetApi = useCaseSetApi();
   const [caseSet, setCaseSet] = useRecoilState(caseSetAtom);
@@ -19,6 +22,7 @@ const CaseSet: React.FC = () => {
     };
   }, [caseSetApi]);
   */
+  // : getCaseSet을 버튼을 눌렀을 때 동작하는 식으로 수정해야 함
   useEffect(() => {
     if (!caseSetApi) return;
     const getCaseSet = async () => {
@@ -28,21 +32,13 @@ const CaseSet: React.FC = () => {
     getCaseSet();
   }, [caseSetApi, setCaseSet]);
 
+  // TODO: caseset table 만들기
   return (
     <CaseSetBox>
       <CaseSetText>Caseset</CaseSetText>
-      <Box
-        sx={{
-          maxHeight: '400px',
-          overflow: 'auto',
-          border: '1px solid #ccc',
-          padding: '8px',
-        }}
-      >
-        <pre style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
-          {JSON.stringify(caseSet, null, 2)}
-        </pre>
-      </Box>
+      <GetCaseSetBox>
+        <GetCaseSetText>{JSON.stringify(caseSet, null, 2)}</GetCaseSetText>
+      </GetCaseSetBox>
       <PageButton onClick={() => navi('/execution')}>move to execution</PageButton>
     </CaseSetBox>
   );

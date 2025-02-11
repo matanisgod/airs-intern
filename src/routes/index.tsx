@@ -1,25 +1,23 @@
 import React, { useMemo } from 'react';
 
 import {
-  Box,
   createTheme,
   CssBaseline,
   StyledEngineProvider,
   ThemeProvider,
 } from '@mui/material';
-import _ from 'lodash';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 
-import ExecutionPage from './pages/ExecutionPage';
 import CaseSetPage from './pages/CaseSetPage';
+import ExecutionPage from './pages/ExecutionPage';
 
+import { Header } from '@/components/Header';
 import { themeSelector } from '@/theme';
 import { RecoilHooks } from '@recoil/hooks';
 import { currentThemeAtom } from '@recoil/status';
-import { HeaderBox } from '@/components/Header';
 
-const AppRoutes: React.FC = () => {
+const AppRoutes = () => {
   const currentTheme = useRecoilValue(currentThemeAtom);
 
   const themeMode = useMemo(
@@ -38,9 +36,7 @@ const AppRoutes: React.FC = () => {
       </Routes>
     );
   }, []);
-  const Header: React.FC = () => {
-    return <HeaderBox>PQ Automation Test</HeaderBox>;
-  };
+
   return (
     <RecoilHooks>
       <StyledEngineProvider injectFirst>

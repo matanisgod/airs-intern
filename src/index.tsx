@@ -1,7 +1,9 @@
 import React from 'react';
+
 import dotenv from 'dotenv';
 import ReactDOM from 'react-dom/client';
 import { RecoilRoot } from 'recoil';
+
 import Routes from './routes';
 
 import reportWebVitals from '@/utils/reportWebVitals';

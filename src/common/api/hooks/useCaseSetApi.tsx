@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 
-import { useRecoilValue } from 'recoil';
+//import { useRecoilValue } from 'recoil';
 import { logAxiosError } from '@/utils/logAxiosError';
 import api from '@common/api';
-import { caseSetAtom, CaseSet } from '@recoil/status';
+import { /* caseSetAtom, */ type CaseSet } from '@recoil/status';
 
 type UseCaseSetApi = {
   importCaseSet: () => Promise<CaseSet | undefined>;
