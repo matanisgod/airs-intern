@@ -2,17 +2,37 @@ import React, { useState } from 'react';
 
 import {
   Dialog,
-  Button,
-  DialogTitle,
   DialogContent,
   DialogContentText,
   TextField,
   DialogActions,
   Box,
+  Checkbox,
+  FormControl,
+  OutlinedInput,
+  Select,
+  SelectChangeEvent,
 } from '@mui/material';
 import { Controller, useForm } from 'react-hook-form';
 
-import { CreateExecutionButton } from './style';
+import {
+  CreateExecutionButton,
+  CreateExecutionDialogTitle,
+  CancelSumbitButton,
+  TestSetsMenu,
+  TestSetsText,
+} from './style';
+
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+  },
+};
 
 export interface ExecutionForm {
   testPerformer: string;
@@ -25,7 +45,7 @@ export interface ExecutionForm {
   keycloakLoginId: string;
   keycloakLoginPw: string;
 }
-// TODO: getCaseSet -> testSetsList
+// TODO: getCaseSet하고 그 caseSet의 title을 testSetsList로 쓸 수 있도록
 export const testSetsList: Array<string> = [
   'smoke_case',
   'combination_sequences',
@@ -52,60 +72,78 @@ export const formField = [
   { label: 'keycloak login pw', name: 'keycloakLoginPw', type: 'text' },
 ];
 export function FormDialog() {
+  const [testSetTitle, setTestSetTitle] = useState<string[]>([]);
+  const handleChange = (event: SelectChangeEvent<typeof testSetTitle>) => {
+    const {
+      target: { value },
+    } = event;
+    setTestSetTitle(typeof value === 'string' ? value.split(',') : value);
+  };
+
   const [open, setOpen] = useState<boolean>(false);
-  const { control, register } = useForm<ExecutionForm>();
+  const { control, register, reset } = useForm<ExecutionForm>();
   const handleOpen = () => {
     setOpen(true);
   };
   const handleClose = () => {
     setOpen(false);
   };
+  // TODO: disableRestoreFocus
   return (
     <React.Fragment>
       <CreateExecutionButton onClick={handleOpen}>Create Execution</CreateExecutionButton>
       <Dialog
         open={open}
         onClose={handleClose}
+        disableRestoreFocus
         PaperProps={{
           component: 'form',
           onSubmit: (event: React.FormEvent<HTMLFormElement>) => {
+            event.preventDefault();
             const formData = new FormData(event.currentTarget);
             const formJson = Object.fromEntries(formData.entries());
+            console.log(testSetTitle);
             console.log(formJson);
+            reset();
             handleClose();
           },
         }}
       >
-        {/* 
-          TODO: Blocked aria-hidden on an element because its descendant retained focus. 
-          The focus must not be hidden from assistive technology users. 
-          Avoid using aria-hidden on a focused element or its ancestor. 
-          Consider using the inert attribute instead, which will also prevent focus. 
-          Submit 버튼 누르면 위의 오류가 아주 짧게 나타났다가 사라지는 원인 찾기
-      */}
-        <DialogTitle>Create Execution</DialogTitle>
+        <CreateExecutionDialogTitle>Create Execution</CreateExecutionDialogTitle>
         <DialogContent>
-          <DialogContentText>Enter sth</DialogContentText>
           <Box>
             <DialogContentText>test sets: </DialogContentText>
             <Controller
               name="testSets"
               control={control}
-              render={({ field }) => (
-                <select {...field}>
-                  {testSetsList.map((item) => (
-                    <option key={item} value={item}>
-                      {item}
-                    </option>
-                  ))}
-                </select>
+              render={() => (
+                <FormControl>
+                  <Select
+                    multiple
+                    value={testSetTitle}
+                    onChange={handleChange}
+                    input={<OutlinedInput />}
+                    renderValue={(selected) => selected.join(', ')}
+                    MenuProps={MenuProps}
+                    required
+                  >
+                    {testSetsList.map((name) => (
+                      <TestSetsMenu key={name} value={name}>
+                        <Checkbox checked={testSetTitle.includes(name)} />
+                        <TestSetsText primary={name} />
+                      </TestSetsMenu>
+                    ))}
+                  </Select>
+                </FormControl>
               )}
             />
           </Box>
+
           {formField.map((field) => (
             <Box key={field.name}>
               <DialogContentText>{field.label}: </DialogContentText>
               <TextField
+                autoComplete="off"
                 required
                 margin="dense"
                 type={field.type}
@@ -117,8 +155,16 @@ export function FormDialog() {
           ))}
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button type="submit">Submit</Button>
+          <CancelSumbitButton
+            onClick={() => {
+              reset();
+              setTestSetTitle([]);
+              handleClose();
+            }}
+          >
+            Cancel
+          </CancelSumbitButton>
+          <CancelSumbitButton type="submit">Submit</CancelSumbitButton>
         </DialogActions>
       </Dialog>
     </React.Fragment>

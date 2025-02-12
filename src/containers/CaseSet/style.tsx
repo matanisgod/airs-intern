@@ -1,8 +1,8 @@
 import { styled, Box, Typography } from '@mui/material';
 
 export const CaseSetBox = styled(Box)(() => ({
-  width: '100%',
-  height: '100%',
+  width: '50%',
+  height: '50%',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'flex-start',
@@ -27,7 +27,7 @@ export const GetCaseSetBox = styled(Box)(() => ({
 }));
 
 export const GetCaseSetText = styled(Typography)(() => ({
-  whiteSpace: 'pre-wrap', 
+  whiteSpace: 'pre-wrap',
   wordBreak: 'break-word',
   color: 'white',
 }));

@@ -156,7 +156,7 @@ export const themeSelector = (mode: PaletteMode): ThemeOptions => ({
     MuiTypography: {
       styleOverrides: {
         root: {
-          color: 'black',
+          color: 'white',
         },
       },
     },

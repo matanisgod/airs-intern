@@ -1,4 +1,4 @@
-import { styled, Box, Button } from '@mui/material';
+import { styled, Box, Button, DialogTitle, ListItemText, MenuItem } from '@mui/material';
 
 export const ExecutionBox = styled(Box)(() => ({
   width: '50%',
@@ -21,4 +21,17 @@ export const CreateExecutionButton = styled(Button)(() => ({
   color: 'white',
   backgroundColor: 'gray',
   position: 'fixed',
+  textTransform: 'none',
 }));
+
+export const CreateExecutionDialogTitle = styled(DialogTitle)(() => ({}));
+
+export const CancelSumbitButton = styled(Button)(() => ({
+  color: 'white',
+  backgroundColor: 'gray',
+  textTransform: 'none',
+}));
+
+export const TestSetsMenu = styled(MenuItem)(() => ({}));
+
+export const TestSetsText = styled(ListItemText)(() => ({}));

@@ -19,13 +19,6 @@
    4. detail table
    5. create execution dialog
 
-- 02/10까지 목표
-
-  - repo 환경 구성 (完)
-  - header 작업 (完)
-  - api 찍먹 (完)
-  - ~~시간 남으면 case set list~~
-
 api
 
 1. POST executions
@@ -35,6 +28,13 @@ api
 
    이 외 다수
    http://192.168.40.203:8000/docs
+
+- 02/10까지 목표
+
+  - repo 환경 구성 (完)
+  - header 작업 (完)
+  - api 찍먹 (完)
+  - ~~시간 남으면 case set list~~
 
 - 02/10까지 목표(new)
 

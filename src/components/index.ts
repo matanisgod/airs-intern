@@ -3,3 +3,4 @@ export * from './Button';
 export * from './ErrorBoundary';
 export * from './Header';
 export * from './Modal';
+export * from './DataGrid';
