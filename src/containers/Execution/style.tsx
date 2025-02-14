@@ -26,7 +26,7 @@ export const CreateExecutionButton = styled(Button)(() => ({
 
 export const CreateExecutionDialogTitle = styled(DialogTitle)(() => ({}));
 
-export const CancelSumbitButton = styled(Button)(() => ({
+export const CancelSubmitButton = styled(Button)(() => ({
   color: 'white',
   backgroundColor: 'gray',
   textTransform: 'none',

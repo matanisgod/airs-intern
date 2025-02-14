@@ -11,14 +11,13 @@ import {
   FormControl,
   OutlinedInput,
   Select,
-  SelectChangeEvent,
 } from '@mui/material';
 import { Controller, useForm } from 'react-hook-form';
 
 import {
   CreateExecutionButton,
   CreateExecutionDialogTitle,
-  CancelSumbitButton,
+  CancelSubmitButton,
   TestSetsMenu,
   TestSetsText,
 } from './style';
@@ -72,21 +71,23 @@ export const formField = [
   { label: 'keycloak login pw', name: 'keycloakLoginPw', type: 'text' },
 ];
 export function FormDialog() {
-  const [testSetTitle, setTestSetTitle] = useState<string[]>([]);
-  const handleChange = (event: SelectChangeEvent<typeof testSetTitle>) => {
-    const {
-      target: { value },
-    } = event;
-    setTestSetTitle(typeof value === 'string' ? value.split(',') : value);
-  };
-
   const [open, setOpen] = useState<boolean>(false);
-  const { control, register, reset } = useForm<ExecutionForm>();
+  const {
+    control,
+    register,
+    reset,
+    getValues,
+    formState: { errors },
+  } = useForm<ExecutionForm>({
+    mode: 'onSubmit',
+    reValidateMode: 'onChange',
+  });
   const handleOpen = () => {
     setOpen(true);
   };
   const handleClose = () => {
     setOpen(false);
+    reset();
   };
   // TODO: disableRestoreFocus
   return (
@@ -102,9 +103,8 @@ export function FormDialog() {
             event.preventDefault();
             const formData = new FormData(event.currentTarget);
             const formJson = Object.fromEntries(formData.entries());
-            console.log(testSetTitle);
+            formJson.testSets = JSON.stringify(getValues('testSets'));
             console.log(formJson);
-            reset();
             handleClose();
           },
         }}
@@ -116,20 +116,27 @@ export function FormDialog() {
             <Controller
               name="testSets"
               control={control}
-              render={() => (
+              rules={{ required: true }}
+              defaultValue={[]}
+              render={({ field }) => (
                 <FormControl>
                   <Select
                     multiple
-                    value={testSetTitle}
-                    onChange={handleChange}
+                    value={field.value || []}
+                    onChange={(event) => {
+                      const value =
+                        typeof event.target.value === 'string'
+                          ? event.target.value.split(',')
+                          : event.target.value;
+                      field.onChange(value);
+                    }}
                     input={<OutlinedInput />}
                     renderValue={(selected) => selected.join(', ')}
                     MenuProps={MenuProps}
-                    required
                   >
                     {testSetsList.map((name) => (
                       <TestSetsMenu key={name} value={name}>
-                        <Checkbox checked={testSetTitle.includes(name)} />
+                        <Checkbox checked={field.value?.includes(name)} />
                         <TestSetsText primary={name} />
                       </TestSetsMenu>
                     ))}
@@ -138,13 +145,12 @@ export function FormDialog() {
               )}
             />
           </Box>
-
           {formField.map((field) => (
             <Box key={field.name}>
               <DialogContentText>{field.label}: </DialogContentText>
               <TextField
-                autoComplete="off"
                 required
+                autoComplete="off"
                 margin="dense"
                 type={field.type}
                 fullWidth
@@ -155,16 +161,14 @@ export function FormDialog() {
           ))}
         </DialogContent>
         <DialogActions>
-          <CancelSumbitButton
+          <CancelSubmitButton
             onClick={() => {
-              reset();
-              setTestSetTitle([]);
               handleClose();
             }}
           >
             Cancel
-          </CancelSumbitButton>
-          <CancelSumbitButton type="submit">Submit</CancelSumbitButton>
+          </CancelSubmitButton>
+          <CancelSubmitButton type="submit">Submit</CancelSubmitButton>
         </DialogActions>
       </Dialog>
     </React.Fragment>

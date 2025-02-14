@@ -7,4 +7,5 @@ export interface Case {
   id: string;
   createdAt: string;
 }
+
 export type CaseSet = Array<Case>;
