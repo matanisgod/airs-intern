@@ -1,19 +1,20 @@
 import React, { useEffect } from 'react';
 
 import { useNavigate } from 'react-router-dom';
-import { useRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 
-import { CaseSetBox, GetCaseSetBox, GetCaseSetText } from './style';
-//import { CaseSetTable } from './util';
+import { CaseSetBox } from './style';
 
 import { useCaseSetApi } from '@/common/api/hooks/useCaseSetApi';
 import { PageButton } from '@/components';
+import DataTable from '@/components/DataGrid';
 import { caseSetAtom } from '@/recoil/status';
 
 const CaseSet = () => {
   const navi = useNavigate();
   const caseSetApi = useCaseSetApi();
-  const [caseSet, setCaseSet] = useRecoilState(caseSetAtom);
+  const setCaseSet = useSetRecoilState(caseSetAtom);
+
   /*
   useEffect(() => {
     if (!caseSetApi) return;
@@ -22,32 +23,30 @@ const CaseSet = () => {
     };
   }, [caseSetApi]);
   */
+
+  //TODO: 빨간 줄 없애기 근데 왜 생김???
   useEffect(() => {
     if (!caseSetApi) return;
     const getCaseSet = async () => {
       const response = await caseSetApi.getCaseSet();
-      if (response) setCaseSet(response);
+      if (response) {
+        const arrayData = response.data.map((item) => ({
+          type: item.type,
+          title: item.title,
+        }));
+        setCaseSet(arrayData);
+      }
     };
     getCaseSet();
   }, [caseSetApi, setCaseSet]);
 
-  // TODO: caseset table 만들기
-  /*
-
-  components/Datagrid/index.tsx 에서 DataTable 가져와서 그리기
-  결국 DataTable도 testSetsList도 GET api 정제해서 써야 함
-  근데 서버가 터짐 왜?
-
-  */
   return (
-    <CaseSetBox>
-      <GetCaseSetBox>
-        <GetCaseSetText>{JSON.stringify(caseSet, null, 2)}</GetCaseSetText>
-      </GetCaseSetBox>
-      {/*<DataTable />*/}
-
-      <PageButton onClick={() => navi('/execution')}>move to execution</PageButton>
-    </CaseSetBox>
+    <React.Fragment>
+      <DataTable />
+      <CaseSetBox>
+        <PageButton onClick={() => navi('/execution')}>move to execution</PageButton>
+      </CaseSetBox>
+    </React.Fragment>
   );
 };
 

@@ -13,6 +13,7 @@ import {
   Select,
 } from '@mui/material';
 import { Controller, useForm } from 'react-hook-form';
+import { useRecoilValue } from 'recoil';
 
 import {
   CreateExecutionButton,
@@ -21,6 +22,8 @@ import {
   TestSetsMenu,
   TestSetsText,
 } from './style';
+
+import { caseSetAtom } from '@/recoil/status';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -44,22 +47,7 @@ export interface ExecutionForm {
   keycloakLoginId: string;
   keycloakLoginPw: string;
 }
-// TODO: getCaseSet하고 그 caseSet의 title을 testSetsList로 쓸 수 있도록
-export const testSetsList: Array<string> = [
-  'smoke_case',
-  'combination_sequences',
-  'dispatch_priority',
-  'exception',
-  'holding_matching',
-  'multisource',
-  'pixeldata_imagetype',
-  'remote_aetitle',
-  'retry',
-  'series_name',
-  'slice_interpolation',
-  'store_ordering_customize',
-  'swift_matrix_size',
-];
+
 export const formField = [
   { label: 'test performer', name: 'testPerformer', type: 'text' },
   { label: 'gate pc ip', name: 'gatePcIp', type: 'text' },
@@ -72,13 +60,7 @@ export const formField = [
 ];
 export function FormDialog() {
   const [open, setOpen] = useState<boolean>(false);
-  const {
-    control,
-    register,
-    reset,
-    getValues,
-    formState: { errors },
-  } = useForm<ExecutionForm>({
+  const { control, register, reset, getValues } = useForm<ExecutionForm>({
     mode: 'onSubmit',
     reValidateMode: 'onChange',
   });
@@ -89,7 +71,11 @@ export function FormDialog() {
     setOpen(false);
     reset();
   };
-  // TODO: disableRestoreFocus
+  //TODO: Create Execution 바로 하면 testSets가 비어있는 오류
+  const caseSet = useRecoilValue(caseSetAtom);
+  const testSetsList: Array<string> = caseSet.map((item) => item.title);
+
+  //TODO: testSets 필수 입력으로 만들기
   return (
     <React.Fragment>
       <CreateExecutionButton onClick={handleOpen}>Create Execution</CreateExecutionButton>
@@ -101,10 +87,7 @@ export function FormDialog() {
           component: 'form',
           onSubmit: (event: React.FormEvent<HTMLFormElement>) => {
             event.preventDefault();
-            const formData = new FormData(event.currentTarget);
-            const formJson = Object.fromEntries(formData.entries());
-            formJson.testSets = JSON.stringify(getValues('testSets'));
-            console.log(formJson);
+            console.log(getValues());
             handleClose();
           },
         }}
@@ -116,7 +99,9 @@ export function FormDialog() {
             <Controller
               name="testSets"
               control={control}
-              rules={{ required: true }}
+              rules={{
+                required: true,
+              }}
               defaultValue={[]}
               render={({ field }) => (
                 <FormControl>

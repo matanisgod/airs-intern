@@ -1,11 +1,16 @@
 export type CaseType = 'study' | 'series' | 'pacs';
 
-export interface Case {
-  updatedAt: string;
-  type: string;
-  title: string;
-  id: string;
-  createdAt: string;
+interface Case {
+  updatedAt?: string;
+  type?: string;
+  title?: string;
+  id?: string;
+  createdAt?: string;
+  Cases?: Array<string>;
 }
 
-export type CaseSet = Array<Case>;
+export interface CaseData {
+  data: Case;
+}
+
+export type CaseSet = Array<CaseData>;
