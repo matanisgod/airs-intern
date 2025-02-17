@@ -19,7 +19,7 @@ export default function DataTable() {
       width: 150,
     },
   ];
-  //TODO: 빨간 줄 없애기 근데 왜 생김???
+
   const caseSet = useRecoilValue(caseSetAtom);
   const rows = caseSet.map((item, index) => ({
     id: index + 1,

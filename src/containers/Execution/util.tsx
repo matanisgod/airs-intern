@@ -73,7 +73,7 @@ export function FormDialog() {
   };
   //TODO: Create Execution 바로 하면 testSets가 비어있는 오류
   const caseSet = useRecoilValue(caseSetAtom);
-  const testSetsList: Array<string> = caseSet.map((item) => item.title);
+  const testSetsList = caseSet.map((item) => item.title);
 
   //TODO: testSets 필수 입력으로 만들기
   return (

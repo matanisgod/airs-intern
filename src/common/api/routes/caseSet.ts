@@ -1,13 +1,17 @@
-import type { ImportCaseSet, GetCaseSet } from '@/common/api/interface/caseSet';
+import type { ImportCaseSet } from '@/common/api/interface/caseSet';
+import { CaseSet } from '@/recoil/status/caseSet/interface';
 import axiosDecorator from '@common/axios/axiosDecorator';
+
+interface GetCaseSetResponse {
+  data: CaseSet;
+}
 
 export interface AxiosCaseSetReturn {
   importCaseSet: () => Promise<ImportCaseSet>;
-  getCaseSet: () => Promise<GetCaseSet>;
+  getCaseSet: () => Promise<GetCaseSetResponse>;
 }
 
 const CaseSetApi = (): AxiosCaseSetReturn => {
-  
   const url: string = '/casesets';
   const instance = axiosDecorator.create({ url });
 

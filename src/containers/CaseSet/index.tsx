@@ -24,17 +24,16 @@ const CaseSet = () => {
   }, [caseSetApi]);
   */
 
-  //TODO: 빨간 줄 없애기 근데 왜 생김???
   useEffect(() => {
     if (!caseSetApi) return;
     const getCaseSet = async () => {
       const response = await caseSetApi.getCaseSet();
       if (response) {
-        const arrayData = response.data.map((item) => ({
+        const getTT = response.map((item) => ({
           type: item.type,
           title: item.title,
         }));
-        setCaseSet(arrayData);
+        setCaseSet(getTT);
       }
     };
     getCaseSet();

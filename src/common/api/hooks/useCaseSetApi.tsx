@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 
-//import { useRecoilValue } from 'recoil';
 import { logAxiosError } from '@/utils/logAxiosError';
 import api from '@common/api';
 import { /* caseSetAtom, */ type CaseSet } from '@recoil/status';
@@ -25,7 +24,7 @@ export const useCaseSetApi = (): UseCaseSetApi => {
         getCaseSet: async () => {
           try {
             const caseSet = await api().caseSet.getCaseSet();
-            return caseSet;
+            return caseSet.data;
           } catch (e) {
             logAxiosError(e);
           }
