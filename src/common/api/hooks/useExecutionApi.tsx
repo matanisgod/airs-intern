@@ -1,10 +1,8 @@
 import { useMemo } from 'react';
 
-//import { useRecoilValue } from 'recoil';
-
 import { logAxiosError } from '@/utils/logAxiosError';
 import api from '@common/api';
-import { /* executionAtom, */ type ExecutionLog } from '@recoil/status';
+import { type ExecutionLog } from '@recoil/status';
 
 type UseExecutionApi = {
   postExecution: () => Promise<ExecutionLog | undefined>;

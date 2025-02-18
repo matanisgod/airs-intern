@@ -1,8 +1,16 @@
-import { styled, Box, Button, DialogTitle, ListItemText, MenuItem } from '@mui/material';
+import {
+  styled,
+  Box,
+  Button,
+  DialogTitle,
+  ListItemText,
+  MenuItem,
+  Dialog,
+} from '@mui/material';
 
 export const ExecutionBox = styled(Box)(() => ({
-  width: '50%',
-  height: '50%',
+  width: '100%',
+  height: '100%',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'flex-start',
@@ -16,8 +24,6 @@ export const CreateExecutionButton = styled(Button)(() => ({
   marginLeft: '30px',
   width: '200px',
   height: '50px',
-  marginTop: '10px',
-  marginBottom: '10px',
   color: 'white',
   backgroundColor: 'gray',
   position: 'fixed',
@@ -35,3 +41,10 @@ export const CancelSubmitButton = styled(Button)(() => ({
 export const TestSetsMenu = styled(MenuItem)(() => ({}));
 
 export const TestSetsText = styled(ListItemText)(() => ({}));
+
+export const CreateExecutionDialog = styled(Dialog)(() => ({
+  '& .MuiDialog-paper': {
+    width: '500px',
+    maxWidth: '500px',
+  },
+}));

@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { logAxiosError } from '@/utils/logAxiosError';
 import api from '@common/api';
-import { /* caseSetAtom, */ type CaseSet } from '@recoil/status';
+import { type CaseSet } from '@recoil/status';
 
 type UseCaseSetApi = {
   importCaseSet: () => Promise<CaseSet | undefined>;
@@ -23,8 +23,9 @@ export const useCaseSetApi = (): UseCaseSetApi => {
         },
         getCaseSet: async () => {
           try {
-            const caseSet = await api().caseSet.getCaseSet();
-            return caseSet.data;
+            const response = await api().caseSet.getCaseSet();
+            const caseSet = response.data;
+            return caseSet;
           } catch (e) {
             logAxiosError(e);
           }

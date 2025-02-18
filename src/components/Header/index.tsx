@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Box, styled } from '@mui/material';
+import { Outlet } from 'react-router-dom';
 
 const HeaderBox = styled(Box)(() => ({
   fontSize: '40px',
@@ -12,5 +13,10 @@ const HeaderBox = styled(Box)(() => ({
 }));
 
 export const Header = () => {
-  return <HeaderBox>PQ Automation Test</HeaderBox>;
+  return (
+    <React.Fragment>
+      <HeaderBox>PQ Automation Test</HeaderBox>
+      <Outlet />
+    </React.Fragment>
+  );
 };

@@ -1,8 +1,9 @@
 import type { ImportCaseSet } from '@/common/api/interface/caseSet';
-import { CaseSet } from '@/recoil/status/caseSet/interface';
+import type { CaseSet } from '@/recoil/status/caseSet/interface';
 import axiosDecorator from '@common/axios/axiosDecorator';
 
 interface GetCaseSetResponse {
+  message: string;
   data: CaseSet;
 }
 

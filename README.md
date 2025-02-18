@@ -1,7 +1,5 @@
 # automated-testing-client
 
-사용자 입장에서 어떨지 생각해보세요
-
 1. repo 환경 구성
    1. 폴더 구조
    2. router 작업
@@ -31,18 +29,14 @@ api
 
 - 02/10까지 목표
 
-  - repo 환경 구성 (完)
-  - header 작업 (完)
-  - api 찍먹 (完)
-  - ~~시간 남으면 case set list~~
-
-- 02/10까지 목표(new)
-
+  - repo 환경 구성
+  - header 작업
+  - api 찍먹
   - react-hook-form 사용해서 post execution (create execution)에 해당하는
     form 받는 dialog 구현
     - 서버로 실제로 post api 날리지 말고 handler까지
 
-- 02/14까지 목표
+- 02/17까지 목표
 
   - 코드리뷰 반영
   - 기능 개발 마무리
@@ -57,3 +51,11 @@ api
   - 디자인 concept 잡기
     - modal(알림 이런 것들), dialog(input 받는 form)(밖과 interaction 가능), table 등등 기본적인 design
     - 디자인 캡처본 전달받을 예정
+
+- 02/24까지 목표
+
+  - 코드리뷰 반영
+  - header router 구조 변경
+  - create execution 마무리
+  - caseSet Table style, 기능 추가
+  - 전체 layout 대략적으로 마무리
