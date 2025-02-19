@@ -1,39 +1,41 @@
-import { styled, Box, Typography } from '@mui/material';
+import { styled, Box } from '@mui/material';
 
 export const CaseSetBox = styled(Box)(() => ({
   width: '100%',
   height: '100%',
-}));
-export const CaseSetText = styled(Typography)(() => ({
-  fontSize: '10rem',
-  color: 'blue',
-  fontWeight: 'normal',
-  marginRight: 30,
   display: 'flex',
-}));
-
-export const GetCaseSetBox = styled(Box)(() => ({
-  maxHeight: '400px',
-  overflow: 'auto',
-  border: '1px solid #ccc',
-  padding: '8px',
-}));
-
-export const GetCaseSetText = styled(Typography)(() => ({
-  whiteSpace: 'pre-wrap',
-  wordBreak: 'break-word',
-  color: 'white',
-}));
-
-export const TableWrapperBox = styled(Box)(() => ({
-  width: '30%',
-}));
-
-export const TableViewBox = styled(Box)(() => ({
-  display: 'flex',
-  justifyContent: 'space-between',
+  flexDirection: 'column',
   alignItems: 'flex-start',
-  width: '100%',
-  marginTop: '150px',
-  marginLeft: '30px',
+  justifyContent: 'center',
+  '& svg': {
+    width: '350px',
+  },
+}));
+
+export const CaseSetTableBox = styled(Box)(() => ({
+  width: '30%',
+  height: '95%',
+  display: 'flex',
+  background: 'red',
+  alignSelf: 'center',
+  flexDirection: 'column',
+}));
+
+export const CaseTableBox = styled(Box)(() => ({
+  width: '95%',
+  height: '48%',
+  display: 'flex',
+  background: 'green',
+  alignSelf: 'flex-end',
+  flexDirection: 'column',
+}));
+
+export const ExpectedResultTableBox = styled(Box)(() => ({
+  width: '95%',
+  height: '48%',
+  display: 'flex',
+  background: 'blue',
+  alignSelf: 'flex-end',
+  marginTop: 'auto',
+  flexDirection: 'column',
 }));

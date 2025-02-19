@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import {
   DialogContent,
-  DialogContentText,
   DialogActions,
   Box,
   Checkbox,
@@ -15,19 +14,29 @@ import { useNavigate } from 'react-router-dom';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 
 import {
-  CreateExecutionButton,
   CreateExecutionDialogTitle,
   CancelSubmitButton,
   TestSetsMenu,
   TestSetsText,
   ExecutionBox,
   CreateExecutionDialog,
+  CreateExecutionDialogContentText,
+  ExecutionsTableBox,
+  CaseLogTableBox,
+  DetailsTableBox,
 } from './style';
 import { ExecutionForm, formField } from './util';
 
 import { useCaseSetApi } from '@/common/api/hooks/useCaseSetApi';
 import { caseSetAtom } from '@/recoil/status';
-import { PageButton } from '@components';
+import {
+  PageButton,
+  TablesBox,
+  SubTablesBox,
+  CreateButton,
+  TableHeaderBox,
+  TableDataBox,
+} from '@components';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -70,15 +79,21 @@ const Execution = () => {
   return (
     <React.Fragment>
       <ExecutionBox>
-        <PageButton onClick={() => navi('/caseset')}>move to caseset</PageButton>
-        <CreateExecutionButton onClick={handleOpen}>
-          Create Execution
-        </CreateExecutionButton>
-        <CreateExecutionDialog open={open} onClose={handleClose} disableRestoreFocus>
-          <CreateExecutionDialogTitle>Create Execution</CreateExecutionDialogTitle>
+        <PageButton onClick={() => navi('/caseset')}>Move to caseset</PageButton>
+        <CreateExecutionDialog
+          open={open}
+          onClose={(_, reason) => {
+            if (reason === 'backdropClick') return;
+            handleClose();
+          }}
+          disableRestoreFocus
+        >
+          <CreateExecutionDialogTitle>Create execution</CreateExecutionDialogTitle>
           <DialogContent>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <DialogContentText>test sets: </DialogContentText>
+              <CreateExecutionDialogContentText>
+                test sets:{' '}
+              </CreateExecutionDialogContentText>
               <Controller
                 name="testSets"
                 control={control}
@@ -113,14 +128,18 @@ const Execution = () => {
                       ))}
                     </Select>
                     {fieldState.error && (
-                      <DialogContentText>{fieldState.error.message}</DialogContentText>
+                      <CreateExecutionDialogContentText>
+                        {fieldState.error.message}
+                      </CreateExecutionDialogContentText>
                     )}
                   </FormControl>
                 )}
               />
               {formField.map(({ label, name, type }) => (
                 <Box key={name}>
-                  <DialogContentText>{label}: </DialogContentText>
+                  <CreateExecutionDialogContentText>
+                    {label}:{' '}
+                  </CreateExecutionDialogContentText>
                   <Controller
                     name={name as keyof ExecutionForm}
                     control={control}
@@ -130,9 +149,9 @@ const Execution = () => {
                       <FormControl fullWidth>
                         <OutlinedInput {...field} type={type} autoComplete="off" />
                         {fieldState.error && (
-                          <DialogContentText>
+                          <CreateExecutionDialogContentText>
                             {fieldState.error.message}
-                          </DialogContentText>
+                          </CreateExecutionDialogContentText>
                         )}
                       </FormControl>
                     )}
@@ -152,6 +171,25 @@ const Execution = () => {
             </form>
           </DialogContent>
         </CreateExecutionDialog>
+        <TablesBox>
+          <ExecutionsTableBox>
+            <TableHeaderBox>
+              Executions
+              <CreateButton onClick={handleOpen}>Create Execution</CreateButton>
+            </TableHeaderBox>
+            <TableDataBox>QWER</TableDataBox>
+          </ExecutionsTableBox>
+          <SubTablesBox>
+            <CaseLogTableBox>
+              <TableHeaderBox>Case log</TableHeaderBox>
+              <TableDataBox>asdf</TableDataBox>
+            </CaseLogTableBox>
+            <DetailsTableBox>
+              <TableHeaderBox>Details</TableHeaderBox>
+              <TableDataBox>zxcv</TableDataBox>
+            </DetailsTableBox>
+          </SubTablesBox>
+        </TablesBox>
       </ExecutionBox>
     </React.Fragment>
   );

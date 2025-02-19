@@ -9,4 +9,20 @@ export const PageButton = styled(Button)(() => ({
   position: 'fixed',
   background: 'white',
   textTransform: 'none',
+  '&:hover': {
+    background: 'gray',
+  },
+}));
+
+export const CreateButton = styled(Button)(() => ({
+  width: '200px',
+  height: '50px',
+  color: 'black',
+  backgroundColor: 'white',
+  textTransform: 'none',
+  fontSize: '20px',
+  '&:hover': {
+    background: 'gray',
+  },
+  marginLeft: 'auto',
 }));

@@ -6,6 +6,7 @@ import {
   ListItemText,
   MenuItem,
   Dialog,
+  DialogContentText,
 } from '@mui/material';
 
 export const ExecutionBox = styled(Box)(() => ({
@@ -20,22 +21,15 @@ export const ExecutionBox = styled(Box)(() => ({
   },
 }));
 
-export const CreateExecutionButton = styled(Button)(() => ({
-  marginLeft: '30px',
-  width: '200px',
-  height: '50px',
-  color: 'white',
-  backgroundColor: 'gray',
-  position: 'fixed',
-  textTransform: 'none',
-}));
-
 export const CreateExecutionDialogTitle = styled(DialogTitle)(() => ({}));
 
 export const CancelSubmitButton = styled(Button)(() => ({
-  color: 'white',
-  backgroundColor: 'gray',
+  color: 'black',
+  backgroundColor: 'white',
   textTransform: 'none',
+  '&:hover': {
+    background: 'gray',
+  },
 }));
 
 export const TestSetsMenu = styled(MenuItem)(() => ({}));
@@ -47,4 +41,36 @@ export const CreateExecutionDialog = styled(Dialog)(() => ({
     width: '500px',
     maxWidth: '500px',
   },
+}));
+
+export const CreateExecutionDialogContentText = styled(DialogContentText)(() => ({
+  color: 'white',
+}));
+
+export const ExecutionsTableBox = styled(Box)(() => ({
+  width: '30%',
+  height: '95%',
+  display: 'flex',
+  background: 'red',
+  alignSelf: 'center',
+  flexDirection: 'column',
+}));
+
+export const CaseLogTableBox = styled(Box)(() => ({
+  width: '95%',
+  height: '48%',
+  display: 'flex',
+  background: 'green',
+  alignSelf: 'flex-end',
+  flexDirection: 'column',
+}));
+
+export const DetailsTableBox = styled(Box)(() => ({
+  width: '95%',
+  height: '48%',
+  display: 'flex',
+  background: 'blue',
+  alignSelf: 'flex-end',
+  marginTop: 'auto',
+  flexDirection: 'column',
 }));

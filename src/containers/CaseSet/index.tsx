@@ -3,12 +3,24 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSetRecoilState, useRecoilValue } from 'recoil';
 
-import { CaseSetBox, TableWrapperBox, TableViewBox } from './style';
+import {
+  CaseSetBox,
+  CaseSetTableBox,
+  CaseTableBox,
+  ExpectedResultTableBox,
+} from './style';
 import { columns } from './util';
 
 import { useCaseSetApi } from '@/common/api/hooks/useCaseSetApi';
-import { PageButton } from '@/components';
-import { DataTable } from '@/components/DataGrid';
+import {
+  PageButton,
+  DataTable,
+  TablesBox,
+  SubTablesBox,
+  CreateButton,
+  TableHeaderBox,
+  TableDataBox,
+} from '@/components';
 import { caseSetAtom } from '@/recoil/status';
 
 const CaseSet = () => {
@@ -45,18 +57,36 @@ const CaseSet = () => {
   return (
     <React.Fragment>
       <CaseSetBox>
-        <PageButton onClick={() => navi('/execution')}>move to execution</PageButton>
-        <TableViewBox>
-          <TableWrapperBox>
-            <DataTable
-              rows={rows}
-              columns={columns}
-              checkboxSelection
-              disableRowSelectionOnClick
-              hideFooter={true}
-            />
-          </TableWrapperBox>
-        </TableViewBox>
+        <PageButton onClick={() => navi('/execution')}>Move to execution</PageButton>
+        <TablesBox>
+          <CaseSetTableBox>
+            <TableHeaderBox>
+              Case set
+              <CreateButton>Create case set</CreateButton>
+            </TableHeaderBox>
+            <TableDataBox>
+              <DataTable
+                rows={rows}
+                columns={columns}
+                checkboxSelection
+                disableRowSelectionOnClick
+                hideFooter={true}
+                disableColumnMenu
+                autoHeight
+              />
+            </TableDataBox>
+          </CaseSetTableBox>
+          <SubTablesBox>
+            <CaseTableBox>
+              <TableHeaderBox>Case</TableHeaderBox>
+              <TableDataBox>asdf</TableDataBox>
+            </CaseTableBox>
+            <ExpectedResultTableBox>
+              <TableHeaderBox>Expected result</TableHeaderBox>
+              <TableDataBox>zxcv</TableDataBox>
+            </ExpectedResultTableBox>
+          </SubTablesBox>
+        </TablesBox>
       </CaseSetBox>
     </React.Fragment>
   );
