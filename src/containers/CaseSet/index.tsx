@@ -66,13 +66,16 @@ const CaseSet = () => {
             </TableHeaderBox>
             <TableDataBox>
               <DataTable
+                checkboxSelection
                 rows={rows}
                 columns={columns}
-                checkboxSelection
                 disableRowSelectionOnClick
-                hideFooter={true}
+                hideFooter
                 disableColumnMenu
                 autoHeight
+                showColumnVerticalBorder
+                columnHeaderHeight={48}
+                rowHeight={48}
               />
             </TableDataBox>
           </CaseSetTableBox>

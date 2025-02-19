@@ -6,13 +6,11 @@ export const columns: GridColDef[] = [
     headerName: 'Title',
     flex: 1,
     sortable: false,
-    headerAlign: 'center',
   },
   {
     field: 'type',
     headerName: 'Type',
     flex: 1,
     sortable: false,
-    headerAlign: 'center',
   },
 ];

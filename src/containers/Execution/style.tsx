@@ -60,7 +60,6 @@ export const CaseLogTableBox = styled(Box)(() => ({
   width: '95%',
   height: '48%',
   display: 'flex',
-  background: 'green',
   alignSelf: 'flex-end',
   flexDirection: 'column',
 }));
@@ -69,7 +68,6 @@ export const DetailsTableBox = styled(Box)(() => ({
   width: '95%',
   height: '48%',
   display: 'flex',
-  background: 'blue',
   alignSelf: 'flex-end',
   marginTop: 'auto',
   flexDirection: 'column',
