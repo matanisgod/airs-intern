@@ -20,6 +20,7 @@ import {
   CreateButton,
   TableHeaderBox,
   TableDataBox,
+  ReadOnlyDataTable,
 } from '@/components';
 import { caseSetAtom } from '@/recoil/status';
 
@@ -40,7 +41,6 @@ const CaseSet = () => {
     Cases: item.id,
     id: index + 1,
   }));
-  const [caseTitle, setCaseTitle] = useState<string>();
   /*
   useEffect(() => {
     if (!caseSetApi) return;
@@ -81,16 +81,15 @@ const CaseSet = () => {
                 rowHeight={48}
                 onRowClick={(params) => {
                   setCases(params.row.Cases);
-                  setCaseTitle(params.row.title);
                 }}
               />
             </TableDataBox>
           </CaseSetTableBox>
           <SubTablesBox>
             <CaseTableBox>
-              <TableHeaderBox>Case {caseTitle}</TableHeaderBox>
+              <TableHeaderBox>Case</TableHeaderBox>
               <TableDataBox>
-                <DataTable
+                <ReadOnlyDataTable
                   rows={caseRows}
                   columns={casecolumns}
                   hideFooter
