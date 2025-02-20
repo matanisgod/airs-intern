@@ -9,18 +9,24 @@ export const DataTable = styled(DataGrid)(() => ({
   marginBottom: 'auto',
   border: '1px solid white',
   fontSize: '14px !important',
+  maxHeight: '100%',
   '& .MuiDataGrid-cell': {
     border: '1px solid gray',
+    padding: '0px',
   },
   '& .MuiDataGrid-columnHeader': {
     backgroundColor: 'black',
-    fontWeight: 700,
     border: '1px solid gray',
+    fontSize: '20px',
+    padding: '0px',
   },
-  '& .MuiDataGrid-checkboxInput': {
-    color: 'white',
-    '&.Mui-checked': {
-      color: 'white',
-    },
+  '& .MuiDataGrid-columnSeparator': {
+    display: 'none !important',
+  },
+  '& .MuiDataGrid-columnHeaderTitleContainerContent': {
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    justifyContent: 'center',
   },
 }));

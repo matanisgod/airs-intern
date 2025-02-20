@@ -10,7 +10,7 @@ export const TablesBox = styled(Box)(() => ({
 }));
 
 export const SubTablesBox = styled(Box)(() => ({
-  width: '65%',
+  width: '60%',
   height: '95%',
   display: 'flex',
   flexDirection: 'column',
@@ -27,4 +27,5 @@ export const TableDataBox = styled(Box)(() => ({
   width: '100%',
   height: '90%',
   display: 'flex',
+  whiteSpace: 'pre-wrap',
 }));

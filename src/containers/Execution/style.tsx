@@ -1,13 +1,4 @@
-import {
-  styled,
-  Box,
-  Button,
-  DialogTitle,
-  ListItemText,
-  MenuItem,
-  Dialog,
-  DialogContentText,
-} from '@mui/material';
+import { styled, Box, Button, ListItemText, MenuItem } from '@mui/material';
 
 export const ExecutionBox = styled(Box)(() => ({
   width: '100%',
@@ -20,8 +11,6 @@ export const ExecutionBox = styled(Box)(() => ({
     width: '350px',
   },
 }));
-
-export const CreateExecutionDialogTitle = styled(DialogTitle)(() => ({}));
 
 export const CancelSubmitButton = styled(Button)(() => ({
   color: 'black',
@@ -36,24 +25,14 @@ export const TestSetsMenu = styled(MenuItem)(() => ({}));
 
 export const TestSetsText = styled(ListItemText)(() => ({}));
 
-export const CreateExecutionDialog = styled(Dialog)(() => ({
-  '& .MuiDialog-paper': {
-    width: '500px',
-    maxWidth: '500px',
-  },
-}));
-
-export const CreateExecutionDialogContentText = styled(DialogContentText)(() => ({
-  color: 'white',
-}));
-
 export const ExecutionsTableBox = styled(Box)(() => ({
-  width: '30%',
+  width: '35%',
   height: '95%',
   display: 'flex',
-  background: 'red',
   alignSelf: 'center',
   flexDirection: 'column',
+  border: '1px solid gray',
+  padding: '10px',
 }));
 
 export const CaseLogTableBox = styled(Box)(() => ({
@@ -62,6 +41,8 @@ export const CaseLogTableBox = styled(Box)(() => ({
   display: 'flex',
   alignSelf: 'flex-end',
   flexDirection: 'column',
+  border: '1px solid gray',
+  padding: '10px',
 }));
 
 export const DetailsTableBox = styled(Box)(() => ({
@@ -71,4 +52,6 @@ export const DetailsTableBox = styled(Box)(() => ({
   alignSelf: 'flex-end',
   marginTop: 'auto',
   flexDirection: 'column',
+  border: '1px solid gray',
+  padding: '10px',
 }));

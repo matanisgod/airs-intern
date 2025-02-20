@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 import { useSetRecoilState, useRecoilValue } from 'recoil';
@@ -9,7 +9,7 @@ import {
   CaseTableBox,
   ExpectedResultTableBox,
 } from './style';
-import { columns } from './util';
+import { caseSetColumns, casecolumns } from './util';
 
 import { useCaseSetApi } from '@/common/api/hooks/useCaseSetApi';
 import {
@@ -28,11 +28,19 @@ const CaseSet = () => {
   const caseSetApi = useCaseSetApi();
   const setCaseSet = useSetRecoilState(caseSetAtom);
   const caseSet = useRecoilValue(caseSetAtom);
-  const rows = caseSet.map((item, index) => ({
+  const caseSetRows = caseSet.map((item, index) => ({
     type: item.type,
     title: item.title,
     id: index + 1,
+    Cases: item.Cases,
   }));
+  const [cases, setCases] = useState<{ name: string; id: string }[]>([]);
+  const caseRows = cases.map((item, index) => ({
+    name: item.name,
+    Cases: item.id,
+    id: index + 1,
+  }));
+  const [caseTitle, setCaseTitle] = useState<string>();
   /*
   useEffect(() => {
     if (!caseSetApi) return;
@@ -51,9 +59,8 @@ const CaseSet = () => {
       }
     };
     getCaseSet();
-  }, [caseSetApi, setCaseSet]);
+  }, [caseSetApi]);
 
-  //TODO: datagrid 무슨 기능 있는지 알아보면 좋음
   return (
     <React.Fragment>
       <CaseSetBox>
@@ -66,23 +73,33 @@ const CaseSet = () => {
             </TableHeaderBox>
             <TableDataBox>
               <DataTable
-                checkboxSelection
-                rows={rows}
-                columns={columns}
-                disableRowSelectionOnClick
+                rows={caseSetRows}
+                columns={caseSetColumns}
                 hideFooter
                 disableColumnMenu
-                autoHeight
-                showColumnVerticalBorder
                 columnHeaderHeight={48}
                 rowHeight={48}
+                onRowClick={(params) => {
+                  setCases(params.row.Cases);
+                  setCaseTitle(params.row.title);
+                }}
               />
             </TableDataBox>
           </CaseSetTableBox>
           <SubTablesBox>
             <CaseTableBox>
-              <TableHeaderBox>Case</TableHeaderBox>
-              <TableDataBox>asdf</TableDataBox>
+              <TableHeaderBox>Case {caseTitle}</TableHeaderBox>
+              <TableDataBox>
+                <DataTable
+                  rows={caseRows}
+                  columns={casecolumns}
+                  hideFooter
+                  disableColumnMenu
+                  columnHeaderHeight={48}
+                  rowHeight={48}
+                  disableRowSelectionOnClick
+                />
+              </TableDataBox>
             </CaseTableBox>
             <ExpectedResultTableBox>
               <TableHeaderBox>Expected result</TableHeaderBox>

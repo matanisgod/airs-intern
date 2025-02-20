@@ -14,13 +14,10 @@ import { useNavigate } from 'react-router-dom';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 
 import {
-  CreateExecutionDialogTitle,
   CancelSubmitButton,
   TestSetsMenu,
   TestSetsText,
   ExecutionBox,
-  CreateExecutionDialog,
-  CreateExecutionDialogContentText,
   ExecutionsTableBox,
   CaseLogTableBox,
   DetailsTableBox,
@@ -36,6 +33,9 @@ import {
   CreateButton,
   TableHeaderBox,
   TableDataBox,
+  CreateDialog,
+  CreateDialogContentText,
+  CreateDialogTitle,
 } from '@components';
 
 const ITEM_HEIGHT = 48;
@@ -80,7 +80,7 @@ const Execution = () => {
     <React.Fragment>
       <ExecutionBox>
         <PageButton onClick={() => navi('/caseset')}>Move to caseset</PageButton>
-        <CreateExecutionDialog
+        <CreateDialog
           open={open}
           onClose={(_, reason) => {
             if (reason === 'backdropClick') return;
@@ -88,12 +88,10 @@ const Execution = () => {
           }}
           disableRestoreFocus
         >
-          <CreateExecutionDialogTitle>Create execution</CreateExecutionDialogTitle>
+          <CreateDialogTitle>Create execution</CreateDialogTitle>
           <DialogContent>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <CreateExecutionDialogContentText>
-                test sets:{' '}
-              </CreateExecutionDialogContentText>
+              <CreateDialogContentText>test sets: </CreateDialogContentText>
               <Controller
                 name="testSets"
                 control={control}
@@ -128,18 +126,16 @@ const Execution = () => {
                       ))}
                     </Select>
                     {fieldState.error && (
-                      <CreateExecutionDialogContentText>
+                      <CreateDialogContentText>
                         {fieldState.error.message}
-                      </CreateExecutionDialogContentText>
+                      </CreateDialogContentText>
                     )}
                   </FormControl>
                 )}
               />
               {formField.map(({ label, name, type }) => (
                 <Box key={name}>
-                  <CreateExecutionDialogContentText>
-                    {label}:{' '}
-                  </CreateExecutionDialogContentText>
+                  <CreateDialogContentText>{label}: </CreateDialogContentText>
                   <Controller
                     name={name as keyof ExecutionForm}
                     control={control}
@@ -149,9 +145,9 @@ const Execution = () => {
                       <FormControl fullWidth>
                         <OutlinedInput {...field} type={type} autoComplete="off" />
                         {fieldState.error && (
-                          <CreateExecutionDialogContentText>
+                          <CreateDialogContentText>
                             {fieldState.error.message}
-                          </CreateExecutionDialogContentText>
+                          </CreateDialogContentText>
                         )}
                       </FormControl>
                     )}
@@ -170,14 +166,21 @@ const Execution = () => {
               </DialogActions>
             </form>
           </DialogContent>
-        </CreateExecutionDialog>
+        </CreateDialog>
         <TablesBox>
           <ExecutionsTableBox>
             <TableHeaderBox>
               Executions
               <CreateButton onClick={handleOpen}>Create Execution</CreateButton>
             </TableHeaderBox>
-            <TableDataBox>QWER</TableDataBox>
+            <TableDataBox>
+              1. POST executions{'\n'}
+              2. POST executions/{'{execution_id}'}:cancel{'\n'}
+              3. POST executions:cancel{'\n\n'}
+              create 버튼으로 post{'\n'}
+              stop 버튼 눌러서 post:cancel by id{'\n'}
+              전체 stop 버튼 눌러서 post:cancel{'\n'}
+            </TableDataBox>
           </ExecutionsTableBox>
           <SubTablesBox>
             <CaseLogTableBox>
