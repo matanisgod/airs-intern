@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
-import { useSetRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
 
 import {
   CaseSetBox,
@@ -11,7 +11,7 @@ import {
 } from './style';
 import { caseSetColumns, casecolumns } from './util';
 
-import { useCaseSetApi } from '@/common/api/hooks/useCaseSetApi';
+import { useCaseSetApi, useExpectedResultApi } from '@/common/api/hooks/useCaseSetApi';
 import {
   PageButton,
   DataTable,
@@ -22,34 +22,41 @@ import {
   TableDataBox,
   ReadOnlyDataTable,
 } from '@/components';
-import { caseSetAtom } from '@/recoil/status';
+import { caseSetAtom, expectedResultAtom } from '@/recoil/status';
 
 const CaseSet = () => {
   const navi = useNavigate();
   const caseSetApi = useCaseSetApi();
-  const setCaseSet = useSetRecoilState(caseSetAtom);
-  const caseSet = useRecoilValue(caseSetAtom);
-  const caseSetRows = caseSet.map((item, index) => ({
+  const expectedResultApi = useExpectedResultApi();
+  const [caseSet, setCaseSet] = useRecoilState(caseSetAtom);
+  const [expectedResult, setExpectedResult] = useRecoilState(expectedResultAtom);
+  const [cases, setCases] = useState<{ name: string; id: string }[]>([]);
+  const caseSetRows = caseSet.data.map((item, index) => ({
     type: item.type,
     title: item.title,
     id: index + 1,
     Cases: item.Cases,
+    ID: item.id,
   }));
-  const [cases, setCases] = useState<{ name: string; id: string }[]>([]);
+
   const caseRows = cases.map((item, index) => ({
     name: item.name,
     Cases: item.id,
     id: index + 1,
   }));
-  /*
-  useEffect(() => {
-    if (!caseSetApi) return;
-    const importCaseSet = async () => {
-      return await caseSetApi.importCaseSet();
-    };
-  }, [caseSetApi]);
-  */
+  // const expectedResultRows = expectedResult.map((item, index) => ({
+  //   name: item.name,
+  //   Cases: item.id,
+  //   id: index + 1,
+  // }));
 
+  const getExpectedResultByID = async (params: string) => {
+    if (!expectedResultApi) return;
+    const response = await expectedResultApi.getExpectedResultByID(params);
+    if (response) {
+      setExpectedResult(response);
+    }
+  };
   useEffect(() => {
     if (!caseSetApi) return;
     const getCaseSet = async () => {
@@ -60,7 +67,9 @@ const CaseSet = () => {
     };
     getCaseSet();
   }, [caseSetApi]);
-
+  const whycant = () => {
+    return console.log(expectedResult);
+  };
   return (
     <React.Fragment>
       <CaseSetBox>
@@ -81,6 +90,8 @@ const CaseSet = () => {
                 rowHeight={48}
                 onRowClick={(params) => {
                   setCases(params.row.Cases);
+                  getExpectedResultByID(params.row.ID);
+                  whycant();
                 }}
               />
             </TableDataBox>
@@ -102,7 +113,17 @@ const CaseSet = () => {
             </CaseTableBox>
             <ExpectedResultTableBox>
               <TableHeaderBox>Expected result</TableHeaderBox>
-              <TableDataBox>zxcv</TableDataBox>
+              <TableDataBox>
+                {/* <ReadOnlyDataTable
+                  rows={expectedResultRows}
+                  columns={casecolumns}
+                  hideFooter
+                  disableColumnMenu
+                  columnHeaderHeight={48}
+                  rowHeight={48}
+                  disableRowSelectionOnClick
+                /> */}
+              </TableDataBox>
             </ExpectedResultTableBox>
           </SubTablesBox>
         </TablesBox>

@@ -31,7 +31,7 @@
     "paths": {
       "@*": ["./src*"],
       "@containers": ["./src/containers/index.ts"],
-      "@components": ["./src/components/index.ts"],
+      "@components": ["src/components/index.tsx"],
       "@common*": ["./src/common*"],
       "@recoil*": ["./src/recoil*"],
       "@interface*": ["./src/interfaces*"],

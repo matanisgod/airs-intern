@@ -2,11 +2,15 @@ import { useMemo } from 'react';
 
 import { logAxiosError } from '@/utils/logAxiosError';
 import api from '@common/api';
-import { type CaseSet } from '@recoil/status';
+import type { CaseSet, ExpectedResult } from '@recoil/status';
 
 type UseCaseSetApi = {
   importCaseSet: () => Promise<CaseSet | undefined>;
   getCaseSet: () => Promise<CaseSet | undefined>;
+} | null;
+
+type UseExpectedResultApi = {
+  getExpectedResultByID: (params: string) => Promise<ExpectedResult | undefined>;
 } | null;
 
 export const useCaseSetApi = (): UseCaseSetApi => {
@@ -23,9 +27,30 @@ export const useCaseSetApi = (): UseCaseSetApi => {
         },
         getCaseSet: async () => {
           try {
-            const response = await api().caseSet.getCaseSet();
-            const caseSet = response.data;
+            const caseSet = await api().caseSet.getCaseSet();
             return caseSet;
+          } catch (e) {
+            logAxiosError(e);
+          }
+        },
+      };
+    } else {
+      return null;
+    }
+  }, [api]);
+
+  return instance;
+};
+
+export const useExpectedResultApi = (): UseExpectedResultApi => {
+  const instance = useMemo(() => {
+    if (api) {
+      return {
+        getExpectedResultByID: async (params: string) => {
+          try {
+            const expectedResult =
+              await api().expectedResult.getExpectedResultByID(params);
+            return expectedResult;
           } catch (e) {
             logAxiosError(e);
           }

@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 import { Controller, useForm, SubmitHandler } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { useRecoilState } from 'recoil';
 
 import {
   CancelSubmitButton,
@@ -51,7 +51,7 @@ const MenuProps = {
 const Execution = () => {
   const navi = useNavigate();
   const caseSetApi = useCaseSetApi();
-  const setCaseSet = useSetRecoilState(caseSetAtom);
+  const [caseSet, setCaseSet] = useRecoilState(caseSetAtom);
   const [open, setOpen] = useState<boolean>(false);
   const { control, reset, handleSubmit } = useForm<ExecutionForm>();
   const handleOpen = () => {
@@ -73,8 +73,7 @@ const Execution = () => {
     console.log(data);
     handleClose();
   };
-  const caseSet = useRecoilValue(caseSetAtom);
-  const testSetsList = caseSet.map((item) => item.title);
+  const testSetsList = caseSet.data.map((item) => item.title);
 
   return (
     <React.Fragment>
@@ -118,7 +117,7 @@ const Execution = () => {
                       }}
                       MenuProps={MenuProps}
                     >
-                      {testSetsList.map((name) => (
+                      {testSetsList?.map((name) => (
                         <TestSetsMenu key={name} value={name}>
                           <Checkbox checked={field.value?.includes(name)} />
                           <TestSetsText primary={name} />

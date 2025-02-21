@@ -1,18 +1,16 @@
-import type { ImportCaseSet } from '@/common/api/interface/caseSet';
-import type { CaseSet } from '@/recoil/status/caseSet/interface';
+import type { CaseSet, ExpectedResult } from '@/recoil/status/caseSet/interface';
 import axiosDecorator from '@common/axios/axiosDecorator';
 
-interface GetCaseSetResponse {
-  message: string;
-  data: CaseSet;
-}
-
 export interface AxiosCaseSetReturn {
-  importCaseSet: () => Promise<ImportCaseSet>;
-  getCaseSet: () => Promise<GetCaseSetResponse>;
+  importCaseSet: () => Promise<CaseSet>;
+  getCaseSet: () => Promise<CaseSet>;
 }
 
-const CaseSetApi = (): AxiosCaseSetReturn => {
+export interface AxiosExpectedResultReturn {
+  getExpectedResultByID: (params: string) => Promise<ExpectedResult>;
+}
+
+export const CaseSetApi = (): AxiosCaseSetReturn => {
   const url: string = '/casesets';
   const instance = axiosDecorator.create({ url });
 
@@ -26,4 +24,13 @@ const CaseSetApi = (): AxiosCaseSetReturn => {
   };
 };
 
-export default CaseSetApi;
+export const ExpectedResultApi = (): AxiosExpectedResultReturn => {
+  const url: string = '/expected_result';
+  const instance = axiosDecorator.create({ url });
+
+  return {
+    getExpectedResultByID: async (params: string) => {
+      return instance.get(`/${params}`);
+    },
+  };
+};
