@@ -26,9 +26,11 @@ const AppRoutes = () => {
   const renderRoutes = useMemo(() => {
     return (
       <Routes>
-        <Route index element={<Navigate to="/execution" replace />} />
-        <Route path="caseset" element={<CaseSetPage />} />
-        <Route path="execution" element={<ExecutionPage />} />
+        <Route element={<Header />}>
+          <Route index element={<Navigate to="/execution" replace />} />
+          <Route path="caseset" element={<CaseSetPage />} />
+          <Route path="execution" element={<ExecutionPage />} />
+        </Route>
       </Routes>
     );
   }, []);
@@ -37,10 +39,7 @@ const AppRoutes = () => {
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={themeMode}>
           <CssBaseline />
-          <BrowserRouter>
-            <Header />
-            {renderRoutes}
-          </BrowserRouter>
+          <BrowserRouter>{renderRoutes}</BrowserRouter>
         </ThemeProvider>
       </StyledEngineProvider>
     </RecoilHooks>

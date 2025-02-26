@@ -10,7 +10,15 @@ export const TablesBox = styled(Box)(() => ({
 }));
 
 export const SubTablesBox = styled(Box)(() => ({
-  width: '60%',
+  width: '30%',
+  height: '95%',
+  display: 'flex',
+  flexDirection: 'column',
+  alignSelf: 'center',
+}));
+
+export const JSONDataBox = styled(Box)(() => ({
+  width: '30%',
   height: '95%',
   display: 'flex',
   flexDirection: 'column',

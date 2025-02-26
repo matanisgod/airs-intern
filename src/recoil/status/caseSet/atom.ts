@@ -8,5 +8,5 @@ export const caseSetAtom = atom<CaseSet>({
 });
 export const expectedResultAtom = atom<ExpectedResult>({
   key: 'expectedResultAtom',
-  default: [],
+  default: { message: '', data: [] },
 });

@@ -30,7 +30,7 @@ export const ExpectedResultApi = (): AxiosExpectedResultReturn => {
 
   return {
     getExpectedResultByID: async (params: string) => {
-      return instance.get(`/${params}`);
+      return instance.get(`/case/${params}`);
     },
   };
 };

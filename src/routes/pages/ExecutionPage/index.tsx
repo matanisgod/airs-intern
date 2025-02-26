@@ -2,8 +2,8 @@ import React from 'react';
 
 import { ErrorBoundary } from 'react-error-boundary';
 
-import { Execution } from '@/containers';
 import { ErrorFallback } from '@components';
+import { Execution } from '@containers';
 
 const ExecutionPage: React.FC = () => {
   return (

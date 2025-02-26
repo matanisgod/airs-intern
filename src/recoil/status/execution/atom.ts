@@ -6,3 +6,8 @@ export const executionAtom = atom<ExecutionLogs>({
   key: 'executionAtom',
   default: [],
 });
+
+export const executionDialogAtom = atom<boolean>({
+  key: 'executionDialogAtom',
+  default: false,
+});

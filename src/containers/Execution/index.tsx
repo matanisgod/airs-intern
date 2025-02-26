@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import {
   DialogContent,
@@ -10,33 +10,13 @@ import {
   Select,
 } from '@mui/material';
 import { Controller, useForm, SubmitHandler } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 
-import {
-  CancelSubmitButton,
-  TestSetsMenu,
-  TestSetsText,
-  ExecutionBox,
-  ExecutionsTableBox,
-  CaseLogTableBox,
-  DetailsTableBox,
-} from './style';
-import { ExecutionForm, formField } from './util';
+import { CancelSubmitButton, TestSetsMenu, TestSetsText, ExecutionBox } from './style';
+import { ExecutionForm, formField, ExecutionPageLayout } from './util';
 
-import { useCaseSetApi } from '@/common/api/hooks/useCaseSetApi';
-import { caseSetAtom } from '@/recoil/status';
-import {
-  PageButton,
-  TablesBox,
-  SubTablesBox,
-  CreateButton,
-  TableHeaderBox,
-  TableDataBox,
-  CreateDialog,
-  CreateDialogContentText,
-  CreateDialogTitle,
-} from '@components';
+import { caseSetAtom, executionDialogAtom } from '@/recoil/status';
+import { CreateDialog, CreateDialogContentText, CreateDialogTitle } from '@components';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -49,36 +29,26 @@ const MenuProps = {
   },
 };
 const Execution = () => {
-  const navi = useNavigate();
-  const caseSetApi = useCaseSetApi();
-  const [caseSet, setCaseSet] = useRecoilState(caseSetAtom);
-  const [open, setOpen] = useState<boolean>(false);
-  const { control, reset, handleSubmit } = useForm<ExecutionForm>();
-  const handleOpen = () => {
-    if (!caseSetApi) return;
-    const getCaseSet = async () => {
-      const response = await caseSetApi.getCaseSet();
-      if (response) {
-        setCaseSet(response);
-      }
-    };
-    getCaseSet();
-    setOpen(true);
-  };
+  const caseSet = useRecoilValue(caseSetAtom);
+  const [open, setOpen] = useRecoilState(executionDialogAtom);
+  const { control, handleSubmit } = useForm<ExecutionForm>();
+
+  //TODO: reset 왜 안 되는지?
   const handleClose = () => {
     setOpen(false);
-    reset();
   };
+  //TODO: post ㄱㄱㄱ
   const onSubmit: SubmitHandler<ExecutionForm> = (data) => {
     console.log(data);
     handleClose();
   };
+
   const testSetsList = caseSet.data.map((item) => item.title);
 
+  //TODO: open을 dialog 밖으로 뺀다는 게 무슨 뜻인지?
   return (
     <React.Fragment>
       <ExecutionBox>
-        <PageButton onClick={() => navi('/caseset')}>Move to caseset</PageButton>
         <CreateDialog
           open={open}
           onClose={(_, reason) => {
@@ -136,6 +106,7 @@ const Execution = () => {
                 <Box key={name}>
                   <CreateDialogContentText>{label}: </CreateDialogContentText>
                   <Controller
+                    //TODO: why error???
                     name={name as keyof ExecutionForm}
                     control={control}
                     defaultValue={''}
@@ -166,32 +137,7 @@ const Execution = () => {
             </form>
           </DialogContent>
         </CreateDialog>
-        <TablesBox>
-          <ExecutionsTableBox>
-            <TableHeaderBox>
-              Executions
-              <CreateButton onClick={handleOpen}>Create Execution</CreateButton>
-            </TableHeaderBox>
-            <TableDataBox>
-              1. POST executions{'\n'}
-              2. POST executions/{'{execution_id}'}:cancel{'\n'}
-              3. POST executions:cancel{'\n\n'}
-              create 버튼으로 post{'\n'}
-              stop 버튼 눌러서 post:cancel by id{'\n'}
-              전체 stop 버튼 눌러서 post:cancel{'\n'}
-            </TableDataBox>
-          </ExecutionsTableBox>
-          <SubTablesBox>
-            <CaseLogTableBox>
-              <TableHeaderBox>Case log</TableHeaderBox>
-              <TableDataBox>asdf</TableDataBox>
-            </CaseLogTableBox>
-            <DetailsTableBox>
-              <TableHeaderBox>Details</TableHeaderBox>
-              <TableDataBox>zxcv</TableDataBox>
-            </DetailsTableBox>
-          </SubTablesBox>
-        </TablesBox>
+        <ExecutionPageLayout />
       </ExecutionBox>
     </React.Fragment>
   );

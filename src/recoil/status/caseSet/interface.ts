@@ -1,23 +1,27 @@
 export type CaseType = 'study' | 'series' | 'pacs';
 
-export interface Case {
-  updatedAt: string;
+interface Case {
   type: string;
   title: string;
   id: string;
-  createdAt: string;
-  Cases: Array<{ id: string; name: string }>;
+  cases: Array<{
+    id: string;
+    name: string;
+    data: object;
+  }>;
 }
 
 export interface CaseSet {
   message: string;
   data: Array<Case>;
 }
-
-//TODO:
-// response data: { message: 'ExpectedResults retrieved successfully',
-//   data: [ null ] }
+interface ER {
+  id: string;
+  name: string;
+  version: string;
+  data: object;
+}
 export interface ExpectedResult {
   message: string;
-  data: Array<Case>;
+  data: Array<ER>;
 }
