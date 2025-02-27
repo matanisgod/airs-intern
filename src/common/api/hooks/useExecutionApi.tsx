@@ -1,14 +1,9 @@
 import { useMemo } from 'react';
 
+import { UseExecutionApi } from '../interface/execution';
+
 import { logAxiosError } from '@/utils/logAxiosError';
 import api from '@common/api';
-import { type ExecutionLog } from '@recoil/status';
-
-type UseExecutionApi = {
-  postExecution: () => Promise<ExecutionLog | undefined>;
-  cancelExecution: () => Promise<ExecutionLog | undefined>;
-  cancelExecutionById: () => Promise<ExecutionLog | undefined>;
-} | null;
 
 export const useExecutionApi = (): UseExecutionApi => {
   const instance = useMemo(() => {
@@ -30,9 +25,9 @@ export const useExecutionApi = (): UseExecutionApi => {
             logAxiosError(e);
           }
         },
-        cancelExecutionById: async () => {
+        cancelExecutionById: async (params) => {
           try {
-            const execution = await api().execution.cancelExecutionById();
+            const execution = await api().execution.cancelExecutionById(params);
             return execution;
           } catch (e) {
             logAxiosError(e);

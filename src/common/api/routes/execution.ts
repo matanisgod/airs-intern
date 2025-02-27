@@ -1,14 +1,8 @@
-import type {Postexecution,CancelExecution,cancelExecutionById} from '@/common/api/interface/execution';
+import { AxiosExecutionReturn } from '../interface/execution';
+
 import axiosDecorator from '@common/axios/axiosDecorator';
 
-export interface AxiosExecutionReturn {
-  postExecution: () => Promise<Postexecution>;
-  cancelExecution: () => Promise<CancelExecution>;
-  cancelExecutionById: () => Promise<cancelExecutionById>;
-}
-
-const ExecutionApi = (): AxiosExecutionReturn => {
-
+export const ExecutionApi = (): AxiosExecutionReturn => {
   const url: string = '/executions';
   const instance = axiosDecorator.create({ url });
 
@@ -19,10 +13,8 @@ const ExecutionApi = (): AxiosExecutionReturn => {
     cancelExecution: async () => {
       return instance.post(':cancel');
     },
-    cancelExecutionById: async () => {
-      return instance.post('/{executionId}:cancel');
+    cancelExecutionById: async (params) => {
+      return instance.post(`/${params}:cancel`);
     },
   };
 };
-
-export default ExecutionApi;

@@ -28,8 +28,8 @@ const AppRoutes = () => {
       <Routes>
         <Route element={<Header />}>
           <Route index element={<Navigate to="/execution" replace />} />
-          <Route path="caseset" element={<CaseSetPage />} />
           <Route path="execution" element={<ExecutionPage />} />
+          <Route path="caseset" element={<CaseSetPage />} />
         </Route>
       </Routes>
     );

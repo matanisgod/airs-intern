@@ -5,14 +5,13 @@ import { useSetRecoilState } from 'recoil';
 import { ExecutionsTableBox, CaseLogTableBox, DetailsTableBox } from './style';
 
 import { useCaseSetApi } from '@/common/api/hooks/useCaseSetApi';
-import { caseSetAtom, executionDialogAtom } from '@/recoil/status';
+import { caseSetsAtom, executionDialogIsOpenAtom } from '@/recoil/status';
 import {
   TablesBox,
-  SubTablesBox,
+  ExecutionSubTablesBox,
   CreateButton,
   TableHeaderBox,
   TableDataBox,
-  JSONDataBox,
 } from '@components';
 
 export interface ExecutionForm {
@@ -40,14 +39,14 @@ export const formField: formFieldInterface[] = [
 
 interface formFieldInterface {
   label: string;
-  name: string;
+  name: keyof ExecutionForm;
   type: 'text' | 'number';
 }
 
 export const ExecutionPageLayout = () => {
   const caseSetApi = useCaseSetApi();
-  const setCaseSet = useSetRecoilState(caseSetAtom);
-  const setOpen = useSetRecoilState(executionDialogAtom);
+  const setCaseSet = useSetRecoilState(caseSetsAtom);
+  const setOpen = useSetRecoilState(executionDialogIsOpenAtom);
 
   const handleOpen = () => {
     if (!caseSetApi) return;
@@ -76,7 +75,7 @@ export const ExecutionPageLayout = () => {
           전체 stop 버튼 눌러서 post:cancel{'\n'}
         </TableDataBox>
       </ExecutionsTableBox>
-      <SubTablesBox>
+      <ExecutionSubTablesBox>
         <CaseLogTableBox>
           <TableHeaderBox>Case log</TableHeaderBox>
           <TableDataBox>asdf</TableDataBox>
@@ -85,8 +84,7 @@ export const ExecutionPageLayout = () => {
           <TableHeaderBox>Details</TableHeaderBox>
           <TableDataBox>zxcv</TableDataBox>
         </DetailsTableBox>
-      </SubTablesBox>
-      <JSONDataBox />
+      </ExecutionSubTablesBox>
     </TablesBox>
   );
 };

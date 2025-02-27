@@ -1,27 +1,22 @@
-export type CaseType = 'study' | 'series' | 'pacs';
-
-interface Case {
-  type: string;
-  title: string;
-  id: string;
-  cases: Array<{
-    id: string;
-    name: string;
-    data: object;
-  }>;
-}
-
-export interface CaseSet {
+export interface Cases {
   message: string;
   data: Array<Case>;
 }
-interface ER {
+
+export interface Case {
   id: string;
   name: string;
-  version: string;
   data: object;
 }
-export interface ExpectedResult {
+
+export interface CaseSet {
+  type: string;
+  title: string;
+  id: string;
+  cases: Array<Case>;
+}
+
+export interface CaseSets {
   message: string;
-  data: Array<ER>;
+  data: Array<CaseSet>;
 }

@@ -6,16 +6,16 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { HeaderBox, PageButton } from './style';
 
 export const Header = () => {
-  const navi = useNavigate();
-  const loca = useLocation();
+  const nextPage = useNavigate();
+  const nowPage = useLocation();
   return (
     <React.Fragment>
       <HeaderBox>PQ Automation Test</HeaderBox>
-      {loca.pathname === '/execution' && (
-        <PageButton onClick={() => navi('/caseset')}>Move to caseset</PageButton>
+      {nowPage.pathname === '/execution' && (
+        <PageButton onClick={() => nextPage('/caseset')}>Move to caseset</PageButton>
       )}
-      {loca.pathname === '/caseset' && (
-        <PageButton onClick={() => navi('/execution')}>Move to execution</PageButton>
+      {nowPage.pathname === '/caseset' && (
+        <PageButton onClick={() => nextPage('/execution')}>Move to execution</PageButton>
       )}
       <Outlet />
     </React.Fragment>

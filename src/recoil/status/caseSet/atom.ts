@@ -1,12 +1,13 @@
 import { atom } from 'recoil';
 
-import type { CaseSet, ExpectedResult } from './interface';
+import type { CaseSets, Cases } from './interface';
 
-export const caseSetAtom = atom<CaseSet>({
-  key: 'caseSetAtom',
+export const caseSetsAtom = atom<CaseSets>({
+  key: 'caseSetsAtom',
   default: { message: '', data: [] },
 });
-export const expectedResultAtom = atom<ExpectedResult>({
-  key: 'expectedResultAtom',
+
+export const casesAtom = atom<Cases>({
+  key: 'caseSetAtom',
   default: { message: '', data: [] },
 });

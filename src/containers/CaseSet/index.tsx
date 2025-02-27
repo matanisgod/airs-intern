@@ -3,14 +3,19 @@ import React, { useEffect } from 'react';
 import { useSetRecoilState } from 'recoil';
 
 import { CaseSetBox } from './style';
-import { CaseSetPageLayout } from './util';
+import { CaseJson } from './Table/CaseJson';
+import { CaseSetTable } from './Table/CaseSetTable';
+import { CaseTable } from './Table/CaseTable';
+import { ExpectedResultJson } from './Table/ExpectedResultJson';
+import { ExpectedResultTable } from './Table/ExpectedResultTable';
 
 import { useCaseSetApi } from '@/common/api/hooks/useCaseSetApi';
-import { caseSetAtom } from '@/recoil/status';
+import { TablesBox, CaseSetSubTablesBox, JSONDataBox } from '@/components';
+import { caseSetsAtom } from '@/recoil/status';
 
 const CaseSet = () => {
   const caseSetApi = useCaseSetApi();
-  const setCaseSet = useSetRecoilState(caseSetAtom);
+  const setCaseSet = useSetRecoilState(caseSetsAtom);
 
   useEffect(() => {
     if (!caseSetApi) return;
@@ -22,13 +27,21 @@ const CaseSet = () => {
     };
     getCaseSet();
   }, [caseSetApi]);
-  // const whycant = () => {
-  //   return console.log(expectedResult);
-  // };
+
   return (
     <React.Fragment>
       <CaseSetBox>
-        <CaseSetPageLayout />
+        <TablesBox>
+          <CaseSetTable />
+          <CaseSetSubTablesBox>
+            <CaseTable />
+            <ExpectedResultTable />
+          </CaseSetSubTablesBox>
+          <JSONDataBox>
+            <CaseJson />
+            <ExpectedResultJson />
+          </JSONDataBox>
+        </TablesBox>
       </CaseSetBox>
     </React.Fragment>
   );
