@@ -3,7 +3,10 @@ export type StatusType = 'running' | 'canceled' | 'error' | 'done';
 export interface ExecutionLog {
   performer: string;
   createdAt: string;
-  updatedAt: string;
   status: StatusType;
+  id: string;
 }
-export type ExecutionLogs = Array<ExecutionLog>;
+export interface ExecutionLogs {
+  message: string;
+  data: Array<ExecutionLog>;
+}

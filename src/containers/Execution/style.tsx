@@ -25,14 +25,13 @@ export const TestSetsMenu = styled(MenuItem)(() => ({}));
 
 export const TestSetsText = styled(ListItemText)(() => ({}));
 
-export const ExecutionsTableBox = styled(Box)(() => ({
+export const ExecutionLogTableBox = styled(Box)(() => ({
   width: '35%',
   height: '95%',
   display: 'flex',
   alignSelf: 'center',
   flexDirection: 'column',
-  border: '1px solid gray',
-  padding: '10px',
+  border: '1px solid white',
 }));
 
 export const CaseLogTableBox = styled(Box)(() => ({
@@ -41,8 +40,7 @@ export const CaseLogTableBox = styled(Box)(() => ({
   display: 'flex',
   alignSelf: 'flex-end',
   flexDirection: 'column',
-  border: '1px solid gray',
-  padding: '10px',
+  border: '1px solid white',
 }));
 
 export const DetailsTableBox = styled(Box)(() => ({
@@ -52,17 +50,5 @@ export const DetailsTableBox = styled(Box)(() => ({
   alignSelf: 'flex-end',
   marginTop: 'auto',
   flexDirection: 'column',
-  border: '1px solid gray',
-  padding: '10px',
+  border: '1px solid white',
 }));
-
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-export const MenuProps = {
-  PaperProps: {
-    style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
-    },
-  },
-};

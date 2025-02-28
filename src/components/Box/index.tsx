@@ -8,21 +8,13 @@ export const TablesBox = styled(Box)(() => ({
   justifyContent: 'center',
   marginTop: 'auto',
 }));
-export const ExecutionSubTablesBox = styled(Box)(() => ({
-  width: '60%',
-  height: '95%',
-  display: 'flex',
-  flexDirection: 'column',
-  alignSelf: 'center',
-}));
-export const CaseSetSubTablesBox = styled(Box)(() => ({
+export const SubTablesBox = styled(Box)(() => ({
   width: '30%',
   height: '95%',
   display: 'flex',
   flexDirection: 'column',
   alignSelf: 'center',
 }));
-
 export const JSONDataBox = styled(Box)(() => ({
   width: '30%',
   height: '95%',
@@ -37,10 +29,7 @@ export const JSONDataBoxTop = styled(Box)(() => ({
   display: 'flex',
   alignSelf: 'flex-end',
   flexDirection: 'column',
-  border: '1px solid gray',
-  padding: '10px',
-  overflow: 'auto',
-  fontSize: '14px',
+  border: '1px solid white',
 }));
 
 export const JSONDataBoxBot = styled(Box)(() => ({
@@ -50,15 +39,13 @@ export const JSONDataBoxBot = styled(Box)(() => ({
   alignSelf: 'flex-end',
   marginTop: 'auto',
   flexDirection: 'column',
-  border: '1px solid gray',
-  padding: '10px',
-  overflow: 'auto',
-  fontSize: '14px',
+  border: '1px solid white',
 }));
 export const TableHeaderBox = styled(Box)(() => ({
   width: '100%',
   height: '10%',
   display: 'flex',
+  border: '1px solid white',
 }));
 
 export const TableDataBox = styled(Box)(() => ({
@@ -66,4 +53,6 @@ export const TableDataBox = styled(Box)(() => ({
   height: '90%',
   display: 'flex',
   whiteSpace: 'pre-wrap',
+  fontSize: '14px !important',
+  overflow: 'auto',
 }));

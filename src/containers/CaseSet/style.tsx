@@ -18,8 +18,7 @@ export const CaseSetTableBox = styled(Box)(() => ({
   display: 'flex',
   alignSelf: 'center',
   flexDirection: 'column',
-  border: '1px solid gray',
-  padding: '10px',
+  border: '1px solid white',
 }));
 
 export const CaseTableBox = styled(Box)(() => ({
@@ -28,8 +27,7 @@ export const CaseTableBox = styled(Box)(() => ({
   display: 'flex',
   alignSelf: 'flex-end',
   flexDirection: 'column',
-  border: '1px solid gray',
-  padding: '10px',
+  border: '1px solid white',
 }));
 
 export const ExpectedResultTableBox = styled(Box)(() => ({
@@ -39,6 +37,5 @@ export const ExpectedResultTableBox = styled(Box)(() => ({
   alignSelf: 'flex-end',
   marginTop: 'auto',
   flexDirection: 'column',
-  border: '1px solid gray',
-  padding: '10px',
+  border: '1px solid white',
 }));

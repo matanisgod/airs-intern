@@ -7,7 +7,6 @@ export const DataTable = styled(DataGrid)(() => ({
   backgroundColor: 'black',
   display: 'flex',
   marginBottom: 'auto',
-  border: '1px solid white',
   fontSize: '14px !important',
   maxHeight: '100%',
   '& .MuiDataGrid-cell': {
@@ -16,7 +15,7 @@ export const DataTable = styled(DataGrid)(() => ({
   },
   '& .MuiDataGrid-columnHeader': {
     backgroundColor: 'black',
-    border: '1px solid gray',
+    border: '1px solid white',
     fontSize: '20px',
     padding: '0px',
   },

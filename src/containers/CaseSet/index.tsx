@@ -10,7 +10,7 @@ import { ExpectedResultJson } from './Table/ExpectedResultJson';
 import { ExpectedResultTable } from './Table/ExpectedResultTable';
 
 import { useCaseSetApi } from '@/common/api/hooks/useCaseSetApi';
-import { TablesBox, CaseSetSubTablesBox, JSONDataBox } from '@/components';
+import { TablesBox, SubTablesBox, JSONDataBox } from '@/components';
 import { caseSetsAtom } from '@/recoil/status';
 
 const CaseSet = () => {
@@ -33,10 +33,10 @@ const CaseSet = () => {
       <CaseSetBox>
         <TablesBox>
           <CaseSetTable />
-          <CaseSetSubTablesBox>
+          <SubTablesBox>
             <CaseTable />
             <ExpectedResultTable />
-          </CaseSetSubTablesBox>
+          </SubTablesBox>
           <JSONDataBox>
             <CaseJson />
             <ExpectedResultJson />

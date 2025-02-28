@@ -1,32 +1,14 @@
 import React from 'react';
 
-import { GridColDef } from '@mui/x-data-grid';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 
 import { CaseTableBox } from '../style';
+import { caseColumns } from '../util';
 
 import { useExpectedResultApi } from '@/common/api/hooks/useExpectedResultApi';
 import { TableHeaderBox, TableDataBox, DataTable } from '@/components';
 import { casesAtom, jsonTopAtom, jsonBotAtom, expectedResultAtom } from '@/recoil/status';
 
-const caseColumns: GridColDef[] = [
-  {
-    field: 'name',
-    headerName: 'Name',
-    flex: 1,
-    sortable: false,
-    headerAlign: 'center',
-    align: 'center',
-  },
-  {
-    field: 'id',
-    headerName: 'ID',
-    flex: 1,
-    sortable: false,
-    headerAlign: 'center',
-    align: 'center',
-  },
-];
 export const CaseTable = () => {
   const setJsonTopData = useSetRecoilState(jsonTopAtom);
   const selectedCases = useRecoilValue(casesAtom);

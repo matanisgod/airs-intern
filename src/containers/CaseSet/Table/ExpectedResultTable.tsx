@@ -1,31 +1,12 @@
 import React from 'react';
 
-import { GridColDef } from '@mui/x-data-grid';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 
 import { ExpectedResultTableBox } from '../style';
+import { expectedResultColumns } from '../util';
 
 import { TableHeaderBox, TableDataBox, DataTable } from '@/components';
 import { expectedResultAtom, jsonBotAtom } from '@/recoil/status';
-
-const expectedResultColumns: GridColDef[] = [
-  {
-    field: 'version',
-    headerName: 'Version',
-    flex: 1,
-    sortable: false,
-    headerAlign: 'center',
-    align: 'center',
-  },
-  {
-    field: 'id',
-    headerName: 'ID',
-    flex: 1,
-    sortable: false,
-    headerAlign: 'center',
-    align: 'center',
-  },
-];
 
 export const ExpectedResultTable = () => {
   const expectedResult = useRecoilValue(expectedResultAtom);

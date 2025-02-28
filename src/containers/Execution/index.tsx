@@ -1,43 +1,66 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-import { useRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 
-import { CreateExecutionDialog } from './dialog';
 import { ExecutionBox } from './style';
-import { ExecutionPageLayout } from './util';
+import { ActualResultJson } from './Table/ActualResultJson';
+import { CaseLogTable } from './Table/CaseLogTable';
+import { DetailsTable } from './Table/DetailsTable';
+import { ExecutionLogTable } from './Table/ExecutionLogTable';
+import { ExpectedResultJson } from './Table/ExpectedResultJson';
 
-import { executionDialogIsOpenAtom } from '@/recoil/status';
-import { CreateDialog, CreateDialogTitle } from '@components';
+import { useExecutionApi } from '@/common/api/hooks/useExecutionApi';
+import { executionLogsAtom } from '@/recoil/status';
+import { TablesBox, SubTablesBox, JSONDataBox } from '@components';
 
 const Execution = () => {
-  const [open, setOpen] = useRecoilState(executionDialogIsOpenAtom);
+  const executionApi = useExecutionApi();
+  const setExecutionLog = useSetRecoilState(executionLogsAtom);
 
-  //TODO: reset 왜 안 되는지?
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  //TODO: open을 다른 파일로
-  //54번째 줄부터 다른 파일로 옮겨서
-
+  useEffect(() => {
+    if (!executionApi) return;
+    const getExecutionLog = async () => {
+      const response = await executionApi.getExecutionLog();
+      if (response) {
+        setExecutionLog(response);
+      }
+    };
+    getExecutionLog();
+  }, [executionApi]);
   return (
     <React.Fragment>
       <ExecutionBox>
-        <CreateDialog
-          open={open}
-          onClose={(_, reason) => {
-            if (reason === 'backdropClick') return;
-            handleClose();
-          }}
-          disableRestoreFocus
-        >
-          <CreateDialogTitle>Create execution</CreateDialogTitle>
-          <CreateExecutionDialog />
-        </CreateDialog>
-        <ExecutionPageLayout />
+        <TablesBox>
+          <ExecutionLogTable />
+          <SubTablesBox>
+            <CaseLogTable />
+            <DetailsTable />
+          </SubTablesBox>
+          <JSONDataBox>
+            <ActualResultJson />
+            <ExpectedResultJson />
+          </JSONDataBox>
+        </TablesBox>
       </ExecutionBox>
     </React.Fragment>
   );
 };
 
 export default Execution;
+{
+  /* <React.Fragment>
+  <CaseSetBox>
+    <TablesBox>
+      <CaseSetTable />
+      <CaseSetSubTablesBox>
+        <CaseTable />
+        <ExpectedResultTable />
+      </CaseSetSubTablesBox>
+      <JSONDataBox>
+        <CaseJson />
+        <ExpectedResultJson />
+      </JSONDataBox>
+    </TablesBox>
+  </CaseSetBox>
+</React.Fragment>; */
+}

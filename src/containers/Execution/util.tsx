@@ -1,18 +1,8 @@
 import React from 'react';
 
-import { useSetRecoilState } from 'recoil';
+import { GridColDef } from '@mui/x-data-grid';
 
-import { ExecutionsTableBox, CaseLogTableBox, DetailsTableBox } from './style';
-
-import { useCaseSetApi } from '@/common/api/hooks/useCaseSetApi';
-import { caseSetsAtom, executionDialogIsOpenAtom } from '@/recoil/status';
-import {
-  TablesBox,
-  ExecutionSubTablesBox,
-  CreateButton,
-  TableHeaderBox,
-  TableDataBox,
-} from '@components';
+import { StopAllButton, StopButton } from '@/components';
 
 export interface ExecutionForm {
   testPerformer: string;
@@ -43,48 +33,93 @@ interface formFieldInterface {
   type: 'text' | 'number';
 }
 
-export const ExecutionPageLayout = () => {
-  const caseSetApi = useCaseSetApi();
-  const setCaseSet = useSetRecoilState(caseSetsAtom);
-  const setOpen = useSetRecoilState(executionDialogIsOpenAtom);
-
-  const handleOpen = () => {
-    if (!caseSetApi) return;
-    const getCaseSet = async () => {
-      const response = await caseSetApi.getCaseSet();
-      if (response) {
-        setCaseSet(response);
-      }
-    };
-    getCaseSet();
-    setOpen(true);
-  };
-  return (
-    <TablesBox>
-      <ExecutionsTableBox>
-        <TableHeaderBox>
-          Executions
-          <CreateButton onClick={handleOpen}>Create Execution</CreateButton>
-        </TableHeaderBox>
-        <TableDataBox>
-          1. POST executions{'\n'}
-          2. POST executions/{'{execution_id}'}:cancel{'\n'}
-          3. POST executions:cancel{'\n\n'}
-          create 버튼으로 post{'\n'}
-          stop 버튼 눌러서 post:cancel by id{'\n'}
-          전체 stop 버튼 눌러서 post:cancel{'\n'}
-        </TableDataBox>
-      </ExecutionsTableBox>
-      <ExecutionSubTablesBox>
-        <CaseLogTableBox>
-          <TableHeaderBox>Case log</TableHeaderBox>
-          <TableDataBox>asdf</TableDataBox>
-        </CaseLogTableBox>
-        <DetailsTableBox>
-          <TableHeaderBox>Details</TableHeaderBox>
-          <TableDataBox>zxcv</TableDataBox>
-        </DetailsTableBox>
-      </ExecutionSubTablesBox>
-    </TablesBox>
-  );
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+export const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+  },
 };
+
+export const executionLogColumns: GridColDef[] = [
+  {
+    field: 'performer',
+    headerName: 'Performer',
+    flex: 1,
+    sortable: false,
+    headerAlign: 'center',
+    align: 'center',
+  },
+  {
+    field: 'createdAt',
+    headerName: 'Created at',
+    flex: 1,
+    sortable: false,
+    headerAlign: 'center',
+    align: 'center',
+  },
+  {
+    field: 'actions',
+    flex: 0.4,
+    sortable: false,
+    headerAlign: 'center',
+    align: 'center',
+    renderHeader: () => <StopAllButton>Stop all</StopAllButton>,
+    renderCell: () => <StopButton>Stop</StopButton>,
+  },
+];
+export const caseLogColumns: GridColDef[] = [
+  {
+    field: 'name',
+    headerName: 'Name',
+    flex: 1,
+    sortable: false,
+    headerAlign: 'center',
+    align: 'center',
+  },
+  {
+    field: 'result',
+    headerName: 'Result',
+    flex: 1,
+    sortable: false,
+    headerAlign: 'center',
+    align: 'center',
+  },
+  {
+    field: 'checkType',
+    headerName: 'Check type',
+    flex: 1,
+    sortable: false,
+    headerAlign: 'center',
+    align: 'center',
+  },
+  {
+    field: 'createdAt',
+    headerName: 'Created at',
+    flex: 1,
+    sortable: false,
+    headerAlign: 'center',
+    align: 'center',
+  },
+];
+export const detailsColumns: GridColDef[] = [
+  {
+    field: 'result',
+    headerName: 'Result',
+    flex: 1,
+    sortable: false,
+    headerAlign: 'center',
+    align: 'center',
+  },
+  {
+    field: 'resultLog',
+    headerName: 'Result log',
+    flex: 1,
+    sortable: false,
+    headerAlign: 'center',
+    align: 'center',
+  },
+];
