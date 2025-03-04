@@ -1,22 +1,16 @@
-export interface Cases {
-  message: string;
-  data: Array<Case>;
-}
-
-export interface Case {
+interface Case {
   id: string;
   name: string;
   data: object;
 }
 
-export interface CaseSet {
+export type Cases = Array<Case>;
+
+interface CaseSet {
   type: string;
   title: string;
   id: string;
-  cases: Array<Case>;
+  cases: Cases;
 }
 
-export interface CaseSets {
-  message: string;
-  data: Array<CaseSet>;
-}
+export type CaseSets = Array<CaseSet>;

@@ -23,7 +23,7 @@ export const CreateExecutionDialog = () => {
   const setOpen = useSetRecoilState(executionDialogIsOpenAtom);
   const caseSet = useRecoilValue(caseSetsAtom);
 
-  const testSetsList = caseSet.data.map((item) => item.title);
+  const testSetsList = caseSet.map((item) => item.title);
 
   const handleClose = () => {
     setOpen(false);

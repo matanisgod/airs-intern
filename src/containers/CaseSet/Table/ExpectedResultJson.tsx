@@ -3,9 +3,7 @@ import React from 'react';
 import ReactJson from 'react-json-view';
 import { useRecoilValue } from 'recoil';
 
-import { customTheme } from '../util';
-
-import { JSONDataBoxBot, TableHeaderBox, TableDataBox } from '@/components';
+import { JSONDataBoxBot, TableHeaderBox, TableDataBox, customTheme } from '@/components';
 import { jsonBotAtom } from '@/recoil/status';
 
 export const ExpectedResultJson = () => {

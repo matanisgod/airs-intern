@@ -5,5 +5,9 @@ export type UseCaseApi = {
 } | null;
 
 export interface AxiosCaseReturn {
-  getCasesByCaseSetId: (params: string) => Promise<Cases>;
+  getCasesByCaseSetId: (params: string) => Promise<GetCasesByCaseSetIdResBody>;
+}
+export interface GetCasesByCaseSetIdResBody {
+  message: string;
+  data: Cases;
 }

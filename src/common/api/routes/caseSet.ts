@@ -10,7 +10,7 @@ export const CaseSetApi = (): AxiosCaseSetReturn => {
     importCaseSet: async () => {
       return instance.post(':import');
     },
-    getCaseSet: async () => {
+    getCaseSets: async () => {
       return instance.get('/');
     },
   };

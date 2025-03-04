@@ -3,12 +3,12 @@ import { AxiosCaseReturn } from '../interface/case';
 import axiosDecorator from '@common/axios/axiosDecorator';
 
 export const CaseApi = (): AxiosCaseReturn => {
-  const url: string = '/case/case_set';
+  const url: string = '/case';
   const instance = axiosDecorator.create({ url });
 
   return {
     getCasesByCaseSetId: async (params: string) => {
-      return instance.get(`${params}`);
+      return instance.get(`/case_set/${params}`);
     },
   };
 };

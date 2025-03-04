@@ -7,14 +7,14 @@ import { HeaderBox, PageButton } from './style';
 
 export const Header = () => {
   const nextPage = useNavigate();
-  const nowPage = useLocation();
+  const currentPage = useLocation();
   return (
     <React.Fragment>
       <HeaderBox>PQ Automation Test</HeaderBox>
-      {nowPage.pathname === '/execution' && (
+      {currentPage.pathname === '/execution' && (
         <PageButton onClick={() => nextPage('/caseset')}>Move to caseset</PageButton>
       )}
-      {nowPage.pathname === '/caseset' && (
+      {currentPage.pathname === '/caseset' && (
         <PageButton onClick={() => nextPage('/execution')}>Move to execution</PageButton>
       )}
       <Outlet />

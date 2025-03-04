@@ -3,9 +3,7 @@ import React from 'react';
 import ReactJson from 'react-json-view';
 import { useRecoilValue } from 'recoil';
 
-import { customTheme } from '../util';
-
-import { JSONDataBoxTop, TableDataBox, TableHeaderBox } from '@/components';
+import { JSONDataBoxTop, TableDataBox, TableHeaderBox, customTheme } from '@/components';
 import { jsonTopAtom } from '@/recoil/status';
 
 export const CaseJson = () => {

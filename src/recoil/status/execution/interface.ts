@@ -1,12 +1,19 @@
-export type StatusType = 'running' | 'canceled' | 'error' | 'done';
+type StatusType = 'running' | 'canceled' | 'error' | 'done';
 
-export interface ExecutionLog {
+interface ExecutionLog {
   performer: string;
   createdAt: string;
   status: StatusType;
   id: string;
 }
-export interface ExecutionLogs {
-  message: string;
-  data: Array<ExecutionLog>;
+export type ExecutionLogs = Array<ExecutionLog>;
+
+interface caseLog {
+  name: string;
+  caseId: string;
+  createdAt: string;
+  result: boolean;
+  resultLog: string;
 }
+
+export type CaseLogs = Array<caseLog>;

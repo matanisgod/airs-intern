@@ -12,7 +12,7 @@ export const useExecutionApi = (): UseExecutionApi => {
         getExecutionLog: async () => {
           try {
             const executionLogs = await api().execution.getExecutionLog();
-            return executionLogs;
+            return executionLogs.data;
           } catch (e) {
             logAxiosError(e);
           }

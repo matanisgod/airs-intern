@@ -15,7 +15,7 @@ export const DataTable = styled(DataGrid)(() => ({
   },
   '& .MuiDataGrid-columnHeader': {
     backgroundColor: 'black',
-    border: '1px solid white',
+    border: '1px solid gray',
     fontSize: '20px',
     padding: '0px',
   },
@@ -73,3 +73,22 @@ export const ReadOnlyDataTable = styled(DataGrid)(() => ({
     justifyContent: 'center',
   },
 }));
+
+export const customTheme = {
+  base00: '#1e1e1e !important',
+  base01: '#282c34',
+  base02: '#3c4049',
+  base03: '#60656f',
+  base04: '#abb2bf',
+  base05: '#98c379',
+  base06: '#e06c75',
+  base07: '#ffffff',
+  base08: '#56b6c2',
+  base09: '#d19a66',
+  base0A: '#c678dd',
+  base0B: '#61afef',
+  base0C: '#e5c07b',
+  base0D: '#56b6c2',
+  base0E: '#be5046',
+  base0F: '#c8ccd4',
+};

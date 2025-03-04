@@ -12,7 +12,6 @@
     "@types/jsonwebtoken": "^9.0.5",
     "axios": "^1.6.7",
     "axios-better-stacktrace": "^2.1.6",
-    "caniuse-lite": "^1.0.30001699",
     "clsx": "^2.1.0",
     "date-fns": "^3.3.1",
     "jsonwebtoken": "^9.0.2",

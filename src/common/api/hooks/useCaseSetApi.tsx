@@ -12,15 +12,15 @@ export const useCaseSetApi = (): UseCaseSetApi => {
         importCaseSet: async () => {
           try {
             const caseSet = await api().caseSet.importCaseSet();
-            return caseSet;
+            return caseSet.data;
           } catch (e) {
             logAxiosError(e);
           }
         },
-        getCaseSet: async () => {
+        getCaseSets: async () => {
           try {
-            const caseSet = await api().caseSet.getCaseSet();
-            return caseSet;
+            const caseSet = await api().caseSet.getCaseSets();
+            return caseSet.data;
           } catch (e) {
             logAxiosError(e);
           }

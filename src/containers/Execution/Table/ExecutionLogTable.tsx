@@ -7,6 +7,7 @@ import { ExecutionLogTableBox } from '../style';
 import { executionLogColumns } from '../util';
 
 import { useCaseSetApi } from '@/common/api/hooks/useCaseSetApi';
+// import { useExecutionApi } from '@/common/api/hooks/useExecutionApi';
 import {
   CreateButton,
   TableHeaderBox,
@@ -26,27 +27,35 @@ export const ExecutionLogTable = () => {
   const setCaseSet = useSetRecoilState(caseSetsAtom);
   const [open, setOpen] = useRecoilState(executionDialogIsOpenAtom);
   const executionLogs = useRecoilValue(executionLogsAtom);
-
+  // const setSelectedCaseLogs = useSetRecoilState(executionLogAtom);
+  // const executionApi = useExecutionApi();
   const handleOpen = () => {
     if (!caseSetApi) return;
-    const getCaseSet = async () => {
-      const response = await caseSetApi.getCaseSet();
+    const getCaseSets = async () => {
+      const response = await caseSetApi.getCaseSets();
       if (response) {
         setCaseSet(response);
       }
     };
-    getCaseSet();
+    getCaseSets();
     setOpen(true);
   };
   const handleClose = () => {
     setOpen(false);
   };
-  const executionLogRows = executionLogs.data.map((item) => ({
+  const executionLogRows = executionLogs.map((item) => ({
     performer: item.performer,
     createdAt: item.createdAt,
     status: item.status,
     id: item.id,
   }));
+  // const getExecutionLogById = async (params: string) => {
+  //   if (!executionApi) return;
+  //   const response = await executionApi.getExecutionLogById(params);
+  //   if (response) {
+  //     setSelectedCaseLogs(response);
+  //   }
+  // };
   return (
     <ExecutionLogTableBox>
       <TableHeaderBox>
@@ -72,6 +81,9 @@ export const ExecutionLogTable = () => {
           disableColumnMenu
           columnHeaderHeight={48}
           rowHeight={48}
+          // onRowClick={(params) => {
+          //   getExecutionLogById(params.row.id);
+          // }}
         />
       </TableDataBox>
     </ExecutionLogTableBox>

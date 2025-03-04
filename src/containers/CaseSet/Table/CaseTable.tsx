@@ -16,7 +16,7 @@ export const CaseTable = () => {
   const setExpectedResult = useSetRecoilState(expectedResultAtom);
   const setJsonBotData = useSetRecoilState(jsonBotAtom);
 
-  const caseRows = selectedCases.data.map((item) => ({
+  const caseRows = selectedCases.map((item) => ({
     name: item.name,
     id: item.id,
     data: item.data,

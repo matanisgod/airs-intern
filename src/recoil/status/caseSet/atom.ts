@@ -4,10 +4,10 @@ import type { CaseSets, Cases } from './interface';
 
 export const caseSetsAtom = atom<CaseSets>({
   key: 'caseSetsAtom',
-  default: { message: '', data: [] },
+  default: [],
 });
 
 export const casesAtom = atom<Cases>({
-  key: 'caseSetAtom',
-  default: { message: '', data: [] },
+  key: 'casesAtom',
+  default: [],
 });
