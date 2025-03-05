@@ -1,12 +1,15 @@
-import { AxiosCaseReturn } from './interface/case';
-import { AxiosCaseSetReturn } from './interface/caseSet';
-import { AxiosExecutionReturn } from './interface/execution';
-import { AxiosExpectedResultReturn } from './interface/expectedResult';
+import {
+  AxiosCaseReturn,
+  AxiosCaseSetReturn,
+  AxiosExecutionReturn,
+  AxiosExpectedResultReturn,
+} from './interface';
 
-import { CaseApi } from '@/common/api/routes/case';
-import { CaseSetApi } from '@/common/api/routes/caseSet';
-import { ExecutionApi } from '@/common/api/routes/execution';
-import { ExpectedResultApi } from '@/common/api/routes/expectedResult';
+import { CaseApi, CaseSetApi, ExecutionApi, ExpectedResultApi } from '@common/api';
+
+export * from './hooks';
+export * from './interface';
+export * from './routes';
 
 type ApiObject = {
   caseSet: AxiosCaseSetReturn;

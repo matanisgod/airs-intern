@@ -1,18 +1,13 @@
 import { atom } from 'recoil';
 
-import type { ExecutionLogs, CaseLogs } from './interface';
+import type { ExecutionLogs } from './interface';
 
 export const executionLogsAtom = atom<ExecutionLogs>({
-  key: 'executionAtom',
+  key: 'executionLogsAtom',
   default: [],
 });
 
-export const executionDialogIsOpenAtom = atom<boolean>({
-  key: 'executionDialogIsOpenAtom',
+export const isExecutionDialogOpenAtom = atom<boolean>({
+  key: 'isExecutionDialogOpenAtom',
   default: false,
-});
-
-export const caseLogAtom = atom<CaseLogs>({
-  key: 'caseLogAtom',
-  default: [],
 });

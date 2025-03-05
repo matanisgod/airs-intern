@@ -8,19 +8,21 @@ import {
   FormControl,
   OutlinedInput,
   Select,
+  ListItemText,
+  MenuItem,
+  styled,
 } from '@mui/material';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import { useSetRecoilState, useRecoilValue } from 'recoil';
 
-import { CancelSubmitButton, TestSetsMenu, TestSetsText } from './style';
-import { ExecutionForm, formField, MenuProps } from './util';
+import { ExecutionForm, formField } from './util';
 
-import { caseSetsAtom, executionDialogIsOpenAtom } from '@/recoil/status';
-import { CreateDialogContentText } from '@components';
+import { CreateDialogContentText, CancelSubmitButton, MenuProps } from '@components';
+import { caseSetsAtom, isExecutionDialogOpenAtom } from '@recoil/status';
 
 export const CreateExecutionDialog = () => {
   const { control, handleSubmit } = useForm<ExecutionForm>();
-  const setOpen = useSetRecoilState(executionDialogIsOpenAtom);
+  const setOpen = useSetRecoilState(isExecutionDialogOpenAtom);
   const caseSet = useRecoilValue(caseSetsAtom);
 
   const testSetsList = caseSet.map((item) => item.title);
@@ -28,12 +30,15 @@ export const CreateExecutionDialog = () => {
   const handleClose = () => {
     setOpen(false);
   };
-
   //TODO: post ㄱㄱㄱ
   const onSubmit: SubmitHandler<ExecutionForm> = (data) => {
     console.log(data);
     handleClose();
   };
+
+  const TestSetsMenu = styled(MenuItem)(() => ({}));
+
+  const TestSetsText = styled(ListItemText)(() => ({}));
   return (
     <DialogContent>
       <form onSubmit={handleSubmit(onSubmit)}>

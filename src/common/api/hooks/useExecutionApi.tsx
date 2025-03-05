@@ -9,10 +9,10 @@ export const useExecutionApi = (): UseExecutionApi => {
   const instance = useMemo(() => {
     if (api) {
       return {
-        getExecutionLog: async () => {
+        getExecutionLogs: async () => {
           try {
-            const executionLogs = await api().execution.getExecutionLog();
-            return executionLogs.data;
+            const response = await api().execution.getExecutionLogs();
+            return response.data;
           } catch (e) {
             logAxiosError(e);
           }

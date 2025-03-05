@@ -9,11 +9,10 @@ import {
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 
-import CaseSetPage from './pages/CaseSetPage';
-import ExecutionPage from './pages/ExecutionPage';
+import { CaseSetPage, ExecutionPage } from './pages';
 
-import { Header } from '@/components';
 import { themeSelector } from '@/theme';
+import { Header } from '@components';
 import { RecoilHooks } from '@recoil/hooks';
 import { currentThemeAtom } from '@recoil/status';
 

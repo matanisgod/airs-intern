@@ -4,3 +4,4 @@ export * from './Header';
 export * from './DataGrid';
 export * from './Box';
 export * from './Dialog';
+export * from './ReactJson';

@@ -2,12 +2,11 @@ import React from 'react';
 
 import { useSetRecoilState, useRecoilValue, useRecoilState } from 'recoil';
 
-import { CreateExecutionDialog } from '../dialog';
-import { ExecutionLogTableBox } from '../style';
-import { executionLogColumns } from '../util';
+import { ExecutionLogTableBox } from './style';
+import { executionLogColumns } from './util';
 
-import { useCaseSetApi } from '@/common/api/hooks/useCaseSetApi';
-// import { useExecutionApi } from '@/common/api/hooks/useExecutionApi';
+import { useCaseSetApi } from '@common/api';
+// import { useExecutionApi } from '@common/api';
 import {
   CreateButton,
   TableHeaderBox,
@@ -15,26 +14,29 @@ import {
   DataTable,
   CreateDialog,
   CreateDialogTitle,
-} from '@/components';
+} from '@components';
+import { CreateExecutionDialog } from '@containers';
 import {
   caseSetsAtom,
-  executionDialogIsOpenAtom,
+  isExecutionDialogOpenAtom,
   executionLogsAtom,
-} from '@/recoil/status';
+} from '@recoil/status';
 
 export const ExecutionLogTable = () => {
   const caseSetApi = useCaseSetApi();
-  const setCaseSet = useSetRecoilState(caseSetsAtom);
-  const [open, setOpen] = useRecoilState(executionDialogIsOpenAtom);
+
   const executionLogs = useRecoilValue(executionLogsAtom);
+  const [open, setOpen] = useRecoilState(isExecutionDialogOpenAtom);
+  const setCaseSets = useSetRecoilState(caseSetsAtom);
   // const setSelectedCaseLogs = useSetRecoilState(executionLogAtom);
   // const executionApi = useExecutionApi();
+
   const handleOpen = () => {
     if (!caseSetApi) return;
     const getCaseSets = async () => {
       const response = await caseSetApi.getCaseSets();
       if (response) {
-        setCaseSet(response);
+        setCaseSets(response);
       }
     };
     getCaseSets();
@@ -43,13 +45,8 @@ export const ExecutionLogTable = () => {
   const handleClose = () => {
     setOpen(false);
   };
-  const executionLogRows = executionLogs.map((item) => ({
-    performer: item.performer,
-    createdAt: item.createdAt,
-    status: item.status,
-    id: item.id,
-  }));
-  // const getExecutionLogById = async (params: string) => {
+
+  // const getExecutionLog = async (params: string) => {
   //   if (!executionApi) return;
   //   const response = await executionApi.getExecutionLogById(params);
   //   if (response) {
@@ -75,14 +72,14 @@ export const ExecutionLogTable = () => {
       </TableHeaderBox>
       <TableDataBox>
         <DataTable
-          rows={executionLogRows}
+          rows={executionLogs}
           columns={executionLogColumns}
           hideFooter
           disableColumnMenu
           columnHeaderHeight={48}
           rowHeight={48}
           // onRowClick={(params) => {
-          //   getExecutionLogById(params.row.id);
+          //   getExecutionLog(params.row.id);
           // }}
         />
       </TableDataBox>

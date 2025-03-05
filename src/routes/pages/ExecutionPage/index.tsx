@@ -3,25 +3,27 @@ import React, { useEffect } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { useSetRecoilState } from 'recoil';
 
-import { useExecutionApi } from '@/common/api/hooks/useExecutionApi';
-import { ExecutionBox } from '@/containers/Execution/style';
-import { ActualResultJson } from '@/containers/Execution/Table/ActualResultJson';
-import { CaseLogTable } from '@/containers/Execution/Table/CaseLogTable';
-import { DetailsTable } from '@/containers/Execution/Table/DetailsTable';
-import { ExecutionLogTable } from '@/containers/Execution/Table/ExecutionLogTable';
-import { ExpectedResultJson } from '@/containers/Execution/Table/ExpectedResultJson';
-import { executionLogsAtom } from '@/recoil/status';
-import { TablesBox, SubTablesBox, JSONDataBox } from '@components';
-import { ErrorFallback } from '@components';
+import { ExecutionBox } from './style';
 
-const ExecutionPage: React.FC = () => {
+import { useExecutionApi } from '@common/api';
+import { TablesBox, SubTablesBox, JSONDataBox, ErrorFallback } from '@components';
+import {
+  ExecutionLogTable,
+  CaseLogTable,
+  DetailsTable,
+  ActualResultJsonLoader,
+  DetailsExpectedResultJsonLoader,
+} from '@containers';
+import { executionLogsAtom } from '@recoil/status';
+
+export const ExecutionPage = () => {
   const executionApi = useExecutionApi();
   const setExecutionLog = useSetRecoilState(executionLogsAtom);
 
   useEffect(() => {
     if (!executionApi) return;
     const getExecutionLog = async () => {
-      const response = await executionApi.getExecutionLog();
+      const response = await executionApi.getExecutionLogs();
       if (response) {
         setExecutionLog(response);
       }
@@ -39,13 +41,11 @@ const ExecutionPage: React.FC = () => {
             <DetailsTable />
           </SubTablesBox>
           <JSONDataBox>
-            <ActualResultJson />
-            <ExpectedResultJson />
+            <ActualResultJsonLoader />
+            <DetailsExpectedResultJsonLoader />
           </JSONDataBox>
         </TablesBox>
       </ExecutionBox>
     </ErrorBoundary>
   );
 };
-
-export default ExecutionPage;

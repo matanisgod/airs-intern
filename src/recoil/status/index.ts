@@ -4,6 +4,7 @@ export * from './theme';
 export * from './caseSet';
 export * from './execution';
 export * from './expectedResult';
+export * from './caseLog';
 export const jsonTopAtom = atom<object>({
   key: 'jsonTopAtom',
   default: {},

@@ -7,7 +7,7 @@ export const ExecutionApi = (): AxiosExecutionReturn => {
   const instance = axiosDecorator.create({ url });
 
   return {
-    getExecutionLog: async () => {
+    getExecutionLogs: async () => {
       return instance.get('/');
     },
     postExecution: async () => {

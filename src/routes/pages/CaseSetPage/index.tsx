@@ -3,18 +3,20 @@ import React, { useEffect } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { useSetRecoilState } from 'recoil';
 
-import { useCaseSetApi } from '@/common/api/hooks/useCaseSetApi';
-import { TablesBox, SubTablesBox, JSONDataBox } from '@/components';
-import { CaseSetBox } from '@/containers/CaseSet/style';
-import { CaseJson } from '@/containers/CaseSet/Table/CaseJson';
-import { CaseSetTable } from '@/containers/CaseSet/Table/CaseSetTable';
-import { CaseTable } from '@/containers/CaseSet/Table/CaseTable';
-import { ExpectedResultJson } from '@/containers/CaseSet/Table/ExpectedResultJson';
-import { ExpectedResultTable } from '@/containers/CaseSet/Table/ExpectedResultTable';
-import { caseSetsAtom } from '@/recoil/status';
-import { ErrorFallback } from '@components';
+import { CaseSetBox } from './style';
 
-const CaseSetPage = () => {
+import { useCaseSetApi } from '@common/api';
+import { TablesBox, SubTablesBox, JSONDataBox, ErrorFallback } from '@components';
+import {
+  CaseSetTable,
+  CaseTable,
+  ExpectedResultTable,
+  CaseJsonLoader,
+  CaseExpectedResultJsonLoader,
+} from '@containers';
+import { caseSetsAtom } from '@recoil/status';
+
+export const CaseSetPage = () => {
   const caseSetApi = useCaseSetApi();
   const setCaseSets = useSetRecoilState(caseSetsAtom);
 
@@ -39,13 +41,11 @@ const CaseSetPage = () => {
             <ExpectedResultTable />
           </SubTablesBox>
           <JSONDataBox>
-            <CaseJson />
-            <ExpectedResultJson />
+            <CaseJsonLoader />
+            <CaseExpectedResultJsonLoader />
           </JSONDataBox>
         </TablesBox>
       </CaseSetBox>
     </ErrorBoundary>
   );
 };
-
-export default CaseSetPage;

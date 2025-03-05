@@ -1,20 +1,21 @@
 import React from 'react';
 
+import _ from 'lodash';
 import ReactJson from 'react-json-view';
 import { useRecoilValue } from 'recoil';
 
-import { JSONDataBoxBot, TableHeaderBox, TableDataBox, customTheme } from '@/components';
-import { jsonBotAtom } from '@/recoil/status';
+import { JSONDataBoxBot, TableHeaderBox, TableDataBox, customTheme } from '@components';
+import { jsonBotAtom } from '@recoil/status';
 
-export const ExpectedResultJson = () => {
-  const jsonData = useRecoilValue(jsonBotAtom);
+export const CaseExpectedResultJsonLoader = () => {
+  const jsonBot = useRecoilValue(jsonBotAtom);
   return (
     <JSONDataBoxBot>
       <TableHeaderBox>Expected result data</TableHeaderBox>
       <TableDataBox>
-        {Object.keys(jsonData).length > 0 && (
+        {!_.isEmpty(jsonBot) && (
           <ReactJson
-            src={jsonData}
+            src={jsonBot}
             theme={customTheme}
             name={false}
             collapsed={false}

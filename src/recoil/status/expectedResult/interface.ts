@@ -4,7 +4,4 @@ interface ExpectedResult {
   version: string;
   data: JSON;
 }
-export interface ExpectedResults {
-  message: string;
-  data: Array<ExpectedResult>;
-}
+export type ExpectedResults = Array<ExpectedResult>;

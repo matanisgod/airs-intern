@@ -34,3 +34,12 @@ export const StopButton = styled(Button)(() => ({
     background: 'gray',
   },
 }));
+
+export const CancelSubmitButton = styled(Button)(() => ({
+  color: 'black',
+  backgroundColor: 'white',
+  textTransform: 'none',
+  '&:hover': {
+    background: 'gray',
+  },
+}));

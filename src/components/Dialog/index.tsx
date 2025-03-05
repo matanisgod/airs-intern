@@ -7,7 +7,6 @@ export const CreateDialog = styled(Dialog)(() => ({
     border: '1px solid gray',
   },
 }));
-
 export const CreateDialogContentText = styled(DialogContentText)(() => ({
   color: 'white',
 }));
@@ -15,3 +14,14 @@ export const CreateDialogContentText = styled(DialogContentText)(() => ({
 export const CreateDialogTitle = styled(DialogTitle)(() => ({
   border: '1px solid gray',
 }));
+
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+export const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+  },
+};

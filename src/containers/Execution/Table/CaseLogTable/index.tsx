@@ -1,18 +1,18 @@
 import React from 'react';
 
-import { CaseLogTableBox } from '../style';
-// import { caseLogColumns } from '../util';
+import { CaseLogTableBox } from './style';
+// import { caseLogColumns } from './util';
 
-import { TableHeaderBox, TableDataBox } from '@/components';
+import { TableHeaderBox, TableDataBox } from '@components';
 
 export const CaseLogTable = () => {
-  // const caseLogRows = useRecoilValue;
+  // const caseLog = useRecoilValue;
   return (
     <CaseLogTableBox>
       <TableHeaderBox>Case log</TableHeaderBox>
       <TableDataBox>
         {/* <DataTable
-          rows={caseLogRows}
+          rows={caseLog}
           columns={caseLogColumns}
           hideFooter
           disableColumnMenu
