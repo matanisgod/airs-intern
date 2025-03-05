@@ -1,4 +1,4 @@
-import { AxiosExpectedResultReturn } from '../interface/expectedResult';
+import { AxiosExpectedResultReturn } from '../interface';
 
 import axiosDecorator from '@common/axios/axiosDecorator';
 

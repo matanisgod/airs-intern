@@ -3,9 +3,16 @@ import {
   AxiosCaseSetReturn,
   AxiosExecutionReturn,
   AxiosExpectedResultReturn,
+  AxiosCaseLogReturn,
 } from './interface';
 
-import { CaseApi, CaseSetApi, ExecutionApi, ExpectedResultApi } from '@common/api';
+import {
+  CaseApi,
+  CaseSetApi,
+  ExecutionApi,
+  ExpectedResultApi,
+  CaseLogApi,
+} from '@common/api';
 
 export * from './hooks';
 export * from './interface';
@@ -16,6 +23,7 @@ type ApiObject = {
   expectedResult: AxiosExpectedResultReturn;
   execution: AxiosExecutionReturn;
   case: AxiosCaseReturn;
+  caseLog: AxiosCaseLogReturn;
 };
 
 const api = (): ApiObject => {
@@ -24,6 +32,7 @@ const api = (): ApiObject => {
     expectedResult: ExpectedResultApi(),
     execution: ExecutionApi(),
     case: CaseApi(),
+    caseLog: CaseLogApi(),
   };
 };
 

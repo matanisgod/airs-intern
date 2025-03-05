@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { UseCaseSetApi } from '../interface/caseSet';
+import { UseCaseSetApi } from '../interface';
 
 import { logAxiosError } from '@/utils/logAxiosError';
 import api from '@common/api';

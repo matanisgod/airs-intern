@@ -1,4 +1,4 @@
-import { AxiosCaseReturn } from '../interface/case';
+import { AxiosCaseReturn } from '../interface';
 
 import axiosDecorator from '@common/axios/axiosDecorator';
 

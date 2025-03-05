@@ -5,8 +5,7 @@ import { useSetRecoilState, useRecoilValue, useRecoilState } from 'recoil';
 import { ExecutionLogTableBox } from './style';
 import { executionLogColumns } from './util';
 
-import { useCaseSetApi } from '@common/api';
-// import { useExecutionApi } from '@common/api';
+import { useCaseSetApi, useCaseLogApi } from '@common/api';
 import {
   CreateButton,
   TableHeaderBox,
@@ -20,16 +19,17 @@ import {
   caseSetsAtom,
   isExecutionDialogOpenAtom,
   executionLogsAtom,
+  caseLogsAtom,
 } from '@recoil/status';
 
 export const ExecutionLogTable = () => {
   const caseSetApi = useCaseSetApi();
+  const caseLogApi = useCaseLogApi();
 
   const executionLogs = useRecoilValue(executionLogsAtom);
   const [open, setOpen] = useRecoilState(isExecutionDialogOpenAtom);
   const setCaseSets = useSetRecoilState(caseSetsAtom);
-  // const setSelectedCaseLogs = useSetRecoilState(executionLogAtom);
-  // const executionApi = useExecutionApi();
+  const setCaseLogs = useSetRecoilState(caseLogsAtom);
 
   const handleOpen = () => {
     if (!caseSetApi) return;
@@ -46,13 +46,13 @@ export const ExecutionLogTable = () => {
     setOpen(false);
   };
 
-  // const getExecutionLog = async (params: string) => {
-  //   if (!executionApi) return;
-  //   const response = await executionApi.getExecutionLogById(params);
-  //   if (response) {
-  //     setSelectedCaseLogs(response);
-  //   }
-  // };
+  const getDistinctCaseLogs = async (body: string) => {
+    if (!caseLogApi) return;
+    const response = await caseLogApi.getDistinctCaseLogsById({ executionId: body });
+    if (response) {
+      setCaseLogs(response);
+    }
+  };
   return (
     <ExecutionLogTableBox>
       <TableHeaderBox>
@@ -78,9 +78,9 @@ export const ExecutionLogTable = () => {
           disableColumnMenu
           columnHeaderHeight={48}
           rowHeight={48}
-          // onRowClick={(params) => {
-          //   getExecutionLog(params.row.id);
-          // }}
+          onRowClick={(params) => {
+            getDistinctCaseLogs(params.row.id);
+          }}
         />
       </TableDataBox>
     </ExecutionLogTableBox>

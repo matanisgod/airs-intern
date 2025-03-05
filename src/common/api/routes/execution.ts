@@ -1,4 +1,4 @@
-import { AxiosExecutionReturn } from '../interface/execution';
+import { AxiosExecutionReturn } from '../interface';
 
 import axiosDecorator from '@common/axios/axiosDecorator';
 

@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { UseExecutionApi } from '../interface/execution';
+import { UseExecutionApi } from '../interface';
 
 import { logAxiosError } from '@/utils/logAxiosError';
 import api from '@common/api';
