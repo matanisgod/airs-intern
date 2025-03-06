@@ -2,6 +2,6 @@ interface ExpectedResult {
   id: string;
   name: string;
   version: string;
-  data: JSON;
+  data: object;
 }
 export type ExpectedResults = Array<ExpectedResult>;

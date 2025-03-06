@@ -10,5 +10,8 @@ export const CaseLogApi = (): AxiosCaseLogReturn => {
     getDistinctCaseLogsById: async (body) => {
       return instance.post('/distinct', body);
     },
+    getDetailsById: async (body) => {
+      return instance.post('/details', body);
+    },
   };
 };

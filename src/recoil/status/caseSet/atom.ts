@@ -11,3 +11,13 @@ export const casesAtom = atom<Cases>({
   key: 'casesAtom',
   default: [],
 });
+
+export const isCaseSetDialogOpenAtom = atom<boolean>({
+  key: 'isCaseSetDialogOpenAtom',
+  default: false,
+});
+
+export const caseJsonAtom = atom<object>({
+  key: 'caseJsonAtom',
+  default: {},
+});

@@ -46,6 +46,8 @@ export const TableHeaderBox = styled(Box)(() => ({
   height: '10%',
   display: 'flex',
   border: '1px solid white',
+  alignItems: 'center',
+  paddingLeft: '10px',
 }));
 
 export const TableDataBox = styled(Box)(() => ({
@@ -55,4 +57,37 @@ export const TableDataBox = styled(Box)(() => ({
   whiteSpace: 'pre-wrap',
   fontSize: '14px !important',
   overflow: 'auto',
+  '& .statusColor.running': {
+    backgroundColor: '#4A90E2 !important',
+  },
+  '& .statusColor.cancelled': {
+    backgroundColor: '#D0021B !important',
+  },
+  '& .statusColor.error': {
+    backgroundColor: '#F5A623 !important',
+  },
+  '& .statusColor.done': {
+    backgroundColor: '#7ED321 !important',
+  },
+}));
+
+export const ModalHeaderBox = styled(Box)(() => ({
+  width: '100%',
+  height: '30%',
+  display: 'flex',
+  fontSize: '60px',
+  justifyContent: 'center',
+  padding: '10px',
+  borderBottom: '3px solid red !important',
+  alignItems: 'center',
+}));
+
+export const ModalDataBox = styled(Box)(() => ({
+  width: '100%',
+  height: '70%',
+  display: 'flex',
+  whiteSpace: 'pre-wrap',
+  fontSize: '40px',
+  padding: '10px',
+  alignItems: 'center',
 }));

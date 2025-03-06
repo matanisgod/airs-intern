@@ -1,3 +1,3 @@
 export * from './CaseLogTable';
-export * from './DetailsTable';
+export * from './DetailTable';
 export * from './ExecutionLogTable';

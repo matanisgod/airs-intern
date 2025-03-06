@@ -6,3 +6,7 @@ export const expectedResultsAtom = atom<ExpectedResults>({
   key: 'expectedResultsAtom',
   default: [],
 });
+export const caseExpectedResultJsonAtom = atom<object>({
+  key: 'caseExpectedResultJsonAtom',
+  default: {},
+});

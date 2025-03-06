@@ -1,4 +1,4 @@
-type StatusType = 'running' | 'canceled' | 'error' | 'done';
+type StatusType = 'running' | 'cancelled' | 'error' | 'done';
 
 interface ExecutionLog {
   performer: string;

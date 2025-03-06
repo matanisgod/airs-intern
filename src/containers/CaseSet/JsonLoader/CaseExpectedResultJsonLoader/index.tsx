@@ -5,17 +5,17 @@ import ReactJson from 'react-json-view';
 import { useRecoilValue } from 'recoil';
 
 import { JSONDataBoxBot, TableHeaderBox, TableDataBox, customTheme } from '@components';
-import { jsonBotAtom } from '@recoil/status';
+import { caseExpectedResultJsonAtom } from '@recoil/status';
 
 export const CaseExpectedResultJsonLoader = () => {
-  const jsonBot = useRecoilValue(jsonBotAtom);
+  const caseExpectedResultJson = useRecoilValue(caseExpectedResultJsonAtom);
   return (
     <JSONDataBoxBot>
       <TableHeaderBox>Expected result data</TableHeaderBox>
       <TableDataBox>
-        {!_.isEmpty(jsonBot) && (
+        {!_.isEmpty(caseExpectedResultJson) && (
           <ReactJson
-            src={jsonBot}
+            src={caseExpectedResultJson}
             theme={customTheme}
             name={false}
             collapsed={false}

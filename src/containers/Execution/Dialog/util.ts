@@ -17,12 +17,12 @@ interface formFieldInterface {
 }
 
 export const formField: formFieldInterface[] = [
-  { label: 'test performer', name: 'testPerformer', type: 'text' },
-  { label: 'gate pc ip', name: 'gatePcIp', type: 'text' },
-  { label: 'dcs api port', name: 'dcsApiPort', type: 'number' },
-  { label: 'dcs dicom port', name: 'dcsDicomPort', type: 'number' },
-  { label: 'hospital realm', name: 'hospitalRealm', type: 'text' },
-  { label: 'keycloak url', name: 'keycloakUrl', type: 'text' },
-  { label: 'keycloak login id', name: 'keycloakLoginId', type: 'text' },
-  { label: 'keycloak login pw', name: 'keycloakLoginPw', type: 'text' },
+  { label: 'Test performer', name: 'testPerformer', type: 'text' },
+  { label: 'Gate pc ip', name: 'gatePcIp', type: 'text' },
+  { label: 'DCS api port', name: 'dcsApiPort', type: 'number' },
+  { label: 'DCS dicom port', name: 'dcsDicomPort', type: 'number' },
+  { label: 'Hospital realm', name: 'hospitalRealm', type: 'text' },
+  { label: 'Keycloak url', name: 'keycloakUrl', type: 'text' },
+  { label: 'Keycloak login id', name: 'keycloakLoginId', type: 'text' },
+  { label: 'Keycloak login pw', name: 'keycloakLoginPw', type: 'text' },
 ];

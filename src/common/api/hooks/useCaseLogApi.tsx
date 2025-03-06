@@ -9,9 +9,17 @@ export const useCaseLogApi = (): UseCaseLogApi => {
   const instance = useMemo(() => {
     if (api) {
       return {
-        getDistinctCaseLogsById: async (body) => {
+        getDistinctCaseLogsById: async (body: object) => {
           try {
             const response = await api().caseLog.getDistinctCaseLogsById(body);
+            return response.data;
+          } catch (e) {
+            logAxiosError(e);
+          }
+        },
+        getDetailsById: async (body: object) => {
+          try {
+            const response = await api().caseLog.getDetailsById(body);
             return response.data;
           } catch (e) {
             logAxiosError(e);

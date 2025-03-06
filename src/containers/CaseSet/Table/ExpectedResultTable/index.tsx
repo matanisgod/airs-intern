@@ -6,11 +6,11 @@ import { ExpectedResultTableBox } from './style';
 import { expectedResultColumns } from './util';
 
 import { TableHeaderBox, TableDataBox, DataTable } from '@components';
-import { expectedResultsAtom, jsonBotAtom } from '@recoil/status';
+import { expectedResultsAtom, caseExpectedResultJsonAtom } from '@recoil/status';
 
 export const ExpectedResultTable = () => {
   const expectedResults = useRecoilValue(expectedResultsAtom);
-  const setJsonBot = useSetRecoilState(jsonBotAtom);
+  const setcaseExpectedResultJson = useSetRecoilState(caseExpectedResultJsonAtom);
 
   return (
     <ExpectedResultTableBox>
@@ -24,7 +24,9 @@ export const ExpectedResultTable = () => {
           columnHeaderHeight={48}
           rowHeight={48}
           onRowClick={(params) => {
-            setJsonBot(JSON.parse(params.row.data.replace(/\bNaN\b/g, 'null')));
+            setcaseExpectedResultJson(
+              JSON.parse(params.row.data.replace(/\bNaN\b/g, 'null')),
+            );
           }}
         />
       </TableDataBox>

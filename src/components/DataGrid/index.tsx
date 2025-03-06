@@ -33,43 +33,13 @@ export const DataTable = styled(DataGrid)(() => ({
       '&  .MuiDataGrid-virtualScrollerRenderZone': {
         '& .MuiDataGrid-row': {
           '&:hover': {
-            background: 'red',
+            background: '#33373E',
           },
         },
         '& .MuiDataGrid-row.Mui-selected > .MuiDataGrid-cell': {
-          backgroundColor: 'purple',
+          backgroundColor: 'rgba(0, 143, 186, 0.3)',
         },
       },
     },
-  },
-}));
-
-export const ReadOnlyDataTable = styled(DataGrid)(() => ({
-  width: '100%',
-  color: 'white',
-  backgroundColor: 'black',
-  display: 'flex',
-  marginBottom: 'auto',
-  border: '1px solid white',
-  fontSize: '14px !important',
-  maxHeight: '100%',
-  '& .MuiDataGrid-cell': {
-    border: '1px solid gray',
-    padding: '0px',
-  },
-  '& .MuiDataGrid-columnHeader': {
-    backgroundColor: 'black',
-    border: '1px solid gray',
-    fontSize: '20px',
-    padding: '0px',
-  },
-  '& .MuiDataGrid-columnSeparator': {
-    display: 'none !important',
-  },
-  '& .MuiDataGrid-columnHeaderTitleContainerContent': {
-    width: '100%',
-    height: '100%',
-    display: 'flex',
-    justifyContent: 'center',
   },
 }));

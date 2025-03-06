@@ -42,7 +42,7 @@ export const CreateExecutionDialog = () => {
   return (
     <DialogContent>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <CreateDialogContentText>test sets: </CreateDialogContentText>
+        <CreateDialogContentText>Test sets: </CreateDialogContentText>
         <Controller
           name="testSets"
           control={control}

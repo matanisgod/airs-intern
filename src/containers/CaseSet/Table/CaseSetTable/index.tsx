@@ -1,28 +1,51 @@
 import React from 'react';
 
-import { useRecoilValue, useSetRecoilState, useResetRecoilState } from 'recoil';
+import {
+  useRecoilValue,
+  useSetRecoilState,
+  useResetRecoilState,
+  useRecoilState,
+} from 'recoil';
 
 import { CaseSetTableBox } from './style';
 import { caseSetColumns } from './util';
 
 import { useCaseApi } from '@common/api';
-import { CreateButton, TableHeaderBox, TableDataBox, DataTable } from '@components';
+import {
+  CreateButton,
+  TableHeaderBox,
+  TableDataBox,
+  DataTable,
+  CreateDialog,
+  CreateDialogTitle,
+} from '@components';
+import { CreateCaseSetDialog } from '@containers';
 import {
   caseSetsAtom,
   casesAtom,
-  jsonTopAtom,
-  jsonBotAtom,
+  caseJsonAtom,
+  caseExpectedResultJsonAtom,
   expectedResultsAtom,
+  isCaseSetDialogOpenAtom,
 } from '@recoil/status';
 
 export const CaseSetTable = () => {
   const caseApi = useCaseApi();
 
   const caseSets = useRecoilValue(caseSetsAtom);
+  const [open, setOpen] = useRecoilState(isCaseSetDialogOpenAtom);
+
   const setCases = useSetRecoilState(casesAtom);
-  const setExpectedResults = useResetRecoilState(expectedResultsAtom);
-  const setJsonTop = useResetRecoilState(jsonTopAtom);
-  const setJsonBot = useResetRecoilState(jsonBotAtom);
+  const resetExpectedResults = useResetRecoilState(expectedResultsAtom);
+  const resetCaseJson = useResetRecoilState(caseJsonAtom);
+  const resetCaseExpectedResultJson = useResetRecoilState(caseExpectedResultJsonAtom);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const getCasesByCaseSet = async (params: string) => {
     if (!caseApi) return;
@@ -32,16 +55,27 @@ export const CaseSetTable = () => {
     }
   };
   const thanos = () => {
-    setExpectedResults();
-    setJsonTop();
-    setJsonBot();
+    resetExpectedResults();
+    resetCaseJson();
+    resetCaseExpectedResultJson();
   };
 
   return (
     <CaseSetTableBox>
       <TableHeaderBox>
         Case set
-        <CreateButton>Create case set</CreateButton>
+        <CreateButton onClick={handleOpen}>Create case set</CreateButton>
+        <CreateDialog
+          open={open}
+          onClose={(_, reason) => {
+            if (reason === 'backdropClick') return;
+            handleClose();
+          }}
+          disableRestoreFocus
+        >
+          <CreateDialogTitle>Create case set</CreateDialogTitle>
+          <CreateCaseSetDialog />
+        </CreateDialog>
       </TableHeaderBox>
       <TableDataBox>
         <DataTable

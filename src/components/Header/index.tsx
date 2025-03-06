@@ -2,20 +2,78 @@ import React from 'react';
 
 import { Outlet } from 'react-router-dom';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useResetRecoilState } from 'recoil';
 
 import { HeaderBox, PageButton } from './style';
+
+import {
+  actualResultJsonAtom,
+  caseExpectedResultJsonAtom,
+  caseJsonAtom,
+  caseLogsAtom,
+  casesAtom,
+  caseSetsAtom,
+  detailsAtom,
+  detailsExpectedResultJsonAtom,
+  executionLogsAtom,
+  expectedResultsAtom,
+} from '@/recoil/status';
 
 export const Header = () => {
   const nextPage = useNavigate();
   const currentPage = useLocation();
+
+  const resetCases = useResetRecoilState(casesAtom);
+  const resetCaseSets = useResetRecoilState(caseSetsAtom);
+  const resetExpectedResults = useResetRecoilState(expectedResultsAtom);
+  const resetCaseJson = useResetRecoilState(caseJsonAtom);
+  const resetCaseExpectedResultJson = useResetRecoilState(caseExpectedResultJsonAtom);
+  const resetExecutionLogs = useResetRecoilState(executionLogsAtom);
+  const resetCaseLogs = useResetRecoilState(caseLogsAtom);
+  const resetDetails = useResetRecoilState(detailsAtom);
+  const resetActualResultJson = useResetRecoilState(actualResultJsonAtom);
+  const resetDetailsExpectedResultJson = useResetRecoilState(
+    detailsExpectedResultJsonAtom,
+  );
+
+  const caseSetPageCleaner = () => {
+    resetCases();
+    resetCaseSets();
+    resetExpectedResults();
+    resetCaseJson();
+    resetCaseExpectedResultJson();
+  };
+
+  const executionPageCleaner = () => {
+    resetExecutionLogs();
+    resetCaseLogs();
+    resetDetails();
+    resetActualResultJson();
+    resetDetailsExpectedResultJson();
+  };
+
   return (
     <React.Fragment>
       <HeaderBox>PQ Automation Test</HeaderBox>
       {currentPage.pathname === '/execution' && (
-        <PageButton onClick={() => nextPage('/caseset')}>Move to caseset</PageButton>
+        <PageButton
+          onClick={() => {
+            executionPageCleaner();
+            nextPage('/caseset');
+          }}
+        >
+          Move to caseset
+        </PageButton>
       )}
       {currentPage.pathname === '/caseset' && (
-        <PageButton onClick={() => nextPage('/execution')}>Move to execution</PageButton>
+        <PageButton
+          onClick={() => {
+            caseSetPageCleaner();
+            nextPage('/execution');
+          }}
+        >
+          Move to execution
+        </PageButton>
       )}
       <Outlet />
     </React.Fragment>

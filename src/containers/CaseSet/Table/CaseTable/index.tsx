@@ -7,15 +7,20 @@ import { caseColumns } from './util';
 
 import { useExpectedResultApi } from '@common/api';
 import { TableHeaderBox, TableDataBox, DataTable } from '@components';
-import { casesAtom, jsonTopAtom, jsonBotAtom, expectedResultsAtom } from '@recoil/status';
+import {
+  casesAtom,
+  caseJsonAtom,
+  caseExpectedResultJsonAtom,
+  expectedResultsAtom,
+} from '@recoil/status';
 
 export const CaseTable = () => {
   const expectedResultApi = useExpectedResultApi();
 
   const cases = useRecoilValue(casesAtom);
   const setExpectedResults = useSetRecoilState(expectedResultsAtom);
-  const setJsonTop = useSetRecoilState(jsonTopAtom);
-  const setJsonBot = useResetRecoilState(jsonBotAtom);
+  const setCaseJson = useSetRecoilState(caseJsonAtom);
+  const resetCaseExpectedResultJson = useResetRecoilState(caseExpectedResultJsonAtom);
 
   const getExpectedResult = async (params: string) => {
     if (!expectedResultApi) return;
@@ -38,8 +43,8 @@ export const CaseTable = () => {
           rowHeight={48}
           onRowClick={(params) => {
             getExpectedResult(params.row.id);
-            setJsonTop(JSON.parse(params.row.data.replace(/\bNaN\b/g, 'null')));
-            setJsonBot();
+            setCaseJson(JSON.parse(params.row.data.replace(/\bNaN\b/g, 'null')));
+            resetCaseExpectedResultJson();
           }}
         />
       </TableDataBox>
