@@ -40,8 +40,7 @@ export const CreateExecutionDialog = () => {
   const handleClose = () => {
     setOpen(false);
   };
-  //TODO: execution log table에 response 추가
-  const createExecution = async (body: ExecutionForm) => {
+  const fetchExecution = async (body: ExecutionForm) => {
     if (!executionApi) return;
     const response = await executionApi.createExecution(body);
     if (response) {
@@ -53,7 +52,7 @@ export const CreateExecutionDialog = () => {
     }
   };
   const onSubmit: SubmitHandler<ExecutionForm> = (data) => {
-    createExecution(data);
+    fetchExecution(data);
   };
 
   const TestSetsMenu = styled(MenuItem)(() => ({}));

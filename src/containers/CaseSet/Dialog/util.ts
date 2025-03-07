@@ -1,5 +1,6 @@
 export interface caseSetForm {
-  //TODO: yaml 파일 두 개
+  caseYmlFile: string;
+  erYmlFile: string;
   type: string;
   title: string;
 }
@@ -11,6 +12,8 @@ interface formFieldInterface {
 }
 
 export const formField: formFieldInterface[] = [
+  { label: 'Case YAML File', name: 'caseYmlFile', type: 'text' },
+  { label: 'Expected result YAML File', name: 'erYmlFile', type: 'text' },
   { label: 'Type', name: 'type', type: 'text' },
   { label: 'Title', name: 'title', type: 'text' },
 ];

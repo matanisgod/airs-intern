@@ -12,7 +12,7 @@ import { useRecoilValue } from 'recoil';
 import { CaseSetPage, ExecutionPage } from './pages';
 
 import { themeSelector } from '@/theme';
-import { Header } from '@components';
+import { Header } from '@containers';
 import { RecoilHooks } from '@recoil/hooks';
 import { currentThemeAtom } from '@recoil/status';
 

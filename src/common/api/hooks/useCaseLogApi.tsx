@@ -36,6 +36,7 @@ export const useCaseLogApi = (): UseCaseLogApi => {
             return response.data;
           } catch (e) {
             logAxiosError(e);
+            Errorsetter(e);
           }
         },
       };

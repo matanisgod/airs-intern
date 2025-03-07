@@ -1,15 +1,18 @@
 import type { CaseSets } from '@recoil/status';
 
 export type UseCaseSetApi = {
-  importCaseSet: () => Promise<CaseSets | undefined>;
+  importCaseSet: (body: object) => Promise<string | undefined>;
   getCaseSets: () => Promise<CaseSets | undefined>;
 } | null;
 
 export interface AxiosCaseSetReturn {
-  importCaseSet: () => Promise<GetCaseSetsResBody>;
+  importCaseSet: (body: object) => Promise<ImportCaseSetResBody>;
   getCaseSets: () => Promise<GetCaseSetsResBody>;
 }
-export interface GetCaseSetsResBody {
+interface GetCaseSetsResBody {
   message: string;
   data: CaseSets;
+}
+interface ImportCaseSetResBody {
+  message: string;
 }

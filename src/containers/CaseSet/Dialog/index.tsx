@@ -12,20 +12,38 @@ import { useSetRecoilState } from 'recoil';
 
 import { caseSetForm, formField } from './util';
 
+import { useCaseSetApi } from '@/common/api';
 import { CreateDialogContentText, CancelSubmitButton } from '@components';
-import { isCaseSetDialogOpenAtom } from '@recoil/status';
+import {
+  caseSetsAtom,
+  isCaseSetDialogOpenAtom,
+  isErrorModalOpenAtom,
+} from '@recoil/status';
 
 export const CreateCaseSetDialog = () => {
+  const caseSetApi = useCaseSetApi();
   const { control, handleSubmit } = useForm<caseSetForm>();
+  const setErrorModalOpen = useSetRecoilState(isErrorModalOpenAtom);
+  const setCaseSets = useSetRecoilState(caseSetsAtom);
   const setOpen = useSetRecoilState(isCaseSetDialogOpenAtom);
 
   const handleClose = () => {
     setOpen(false);
   };
-  //TODO: post ㄱㄱㄱ
+
+  const fetchCaseSet = async (body: caseSetForm) => {
+    if (!caseSetApi) return;
+    const response = await caseSetApi.importCaseSet(body);
+    if (response) {
+      console.log(response);
+      setCaseSets((caseSets) => [...caseSets, response]);
+      handleClose();
+    } else {
+      setErrorModalOpen(true);
+    }
+  };
   const onSubmit: SubmitHandler<caseSetForm> = (data) => {
-    console.log(data);
-    handleClose();
+    fetchCaseSet(data);
   };
 
   return (

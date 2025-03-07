@@ -18,6 +18,7 @@ import {
   DataTable,
   CreateDialog,
   CreateDialogTitle,
+  ErrorModal,
 } from '@components';
 import { CreateCaseSetDialog } from '@containers';
 import {
@@ -74,6 +75,7 @@ export const CaseSetTable = () => {
   }, [caseSetApi, setCaseSets]);
   return (
     <CaseSetTableBox>
+      <ErrorModal />
       <TableHeaderBox>
         Case set
         <CreateButton onClick={handleOpen}>Create case set</CreateButton>
