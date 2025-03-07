@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import {
   useRecoilValue,
@@ -10,7 +10,7 @@ import {
 import { CaseSetTableBox } from './style';
 import { caseSetColumns } from './util';
 
-import { useCaseApi } from '@common/api';
+import { useCaseApi, useCaseSetApi } from '@common/api';
 import {
   CreateButton,
   TableHeaderBox,
@@ -31,9 +31,11 @@ import {
 
 export const CaseSetTable = () => {
   const caseApi = useCaseApi();
+  const caseSetApi = useCaseSetApi();
 
   const caseSets = useRecoilValue(caseSetsAtom);
   const [open, setOpen] = useRecoilState(isCaseSetDialogOpenAtom);
+  const setCaseSets = useSetRecoilState(caseSetsAtom);
 
   const setCases = useSetRecoilState(casesAtom);
   const resetExpectedResults = useResetRecoilState(expectedResultsAtom);
@@ -60,6 +62,16 @@ export const CaseSetTable = () => {
     resetCaseExpectedResultJson();
   };
 
+  useEffect(() => {
+    if (!caseSetApi) return;
+    const fetchCaseSets = async () => {
+      const response = await caseSetApi.getCaseSets();
+      if (response) {
+        setCaseSets(response);
+      }
+    };
+    fetchCaseSets();
+  }, [caseSetApi, setCaseSets]);
   return (
     <CaseSetTableBox>
       <TableHeaderBox>

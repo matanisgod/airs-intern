@@ -10,8 +10,8 @@ export const ExecutionApi = (): AxiosExecutionReturn => {
     getExecutionLogs: async () => {
       return instance.get('/');
     },
-    postExecution: async () => {
-      return instance.post('/');
+    createExecution: async (body) => {
+      return instance.post('/', body);
     },
     cancelExecution: async () => {
       return instance.post(':cancel');

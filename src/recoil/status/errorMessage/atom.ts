@@ -1,8 +1,8 @@
 import { atom } from 'recoil';
 
-import type { errorMessage } from './interface';
+import type { ErrorMessage } from './interface';
 
-export const errorMessageAtom = atom<errorMessage>({
+export const errorMessageAtom = atom<ErrorMessage>({
   key: 'errorMessageAtom',
-  default: { errorStatus: '', errorStatusText: '', errorData: '' },
+  default: { errorStatus: '', errorStatusText: '', errorData: { detail: '' } },
 });

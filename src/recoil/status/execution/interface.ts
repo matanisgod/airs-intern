@@ -1,6 +1,6 @@
 type StatusType = 'running' | 'cancelled' | 'error' | 'done';
 
-interface ExecutionLog {
+export interface ExecutionLog {
   performer: string;
   createdAt: string;
   status: StatusType;

@@ -73,7 +73,7 @@ export const TableDataBox = styled(Box)(() => ({
 
 export const ModalHeaderBox = styled(Box)(() => ({
   width: '100%',
-  height: '30%',
+  height: '20%',
   display: 'flex',
   fontSize: '60px',
   justifyContent: 'center',
@@ -84,10 +84,10 @@ export const ModalHeaderBox = styled(Box)(() => ({
 
 export const ModalDataBox = styled(Box)(() => ({
   width: '100%',
-  height: '70%',
+  height: '80%',
   display: 'flex',
   whiteSpace: 'pre-wrap',
   fontSize: '40px',
-  padding: '10px',
-  alignItems: 'center',
+  alignItems: 'flex-start',
+  overflow: 'auto',
 }));

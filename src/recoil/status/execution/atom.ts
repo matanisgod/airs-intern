@@ -16,8 +16,3 @@ export const isErrorModalOpenAtom = atom<boolean>({
   key: 'isErrorModalOpenAtom',
   default: false,
 });
-
-export const executionIdAtom = atom<string>({
-  key: 'executionIdAtom',
-  default: '',
-});

@@ -1,20 +1,25 @@
-import type { ExecutionLogs } from '@recoil/status';
+import type { ExecutionLogs, ExecutionLog } from '@recoil/status';
 
 export type UseExecutionApi = {
   getExecutionLogs: () => Promise<ExecutionLogs | undefined>;
-  postExecution: () => Promise<ExecutionLogs | undefined>;
-  cancelExecution: () => Promise<ExecutionLogs | undefined>;
-  cancelExecutionById: (params) => Promise<ExecutionLogs | undefined>;
+  createExecution: (body: object) => Promise<ExecutionLog | undefined>;
+  cancelExecution: () => Promise<ExecutionLog | undefined>;
+  cancelExecutionById: (params: string) => Promise<ExecutionLog | undefined>;
 } | null;
 
 export interface AxiosExecutionReturn {
-  getExecutionLogs: () => Promise<GetExecutionLogsResBody>;
-  postExecution: () => Promise<ExecutionLogs>;
-  cancelExecution: () => Promise<ExecutionLogs>;
-  cancelExecutionById: (params) => Promise<ExecutionLogs>;
+  getExecutionLogs: () => Promise<ExecutionLogsResBody>;
+  createExecution: (body: object) => Promise<PostExecutionLogsResBody>;
+  cancelExecution: () => Promise<PostExecutionLogsResBody>;
+  cancelExecutionById: (params: string) => Promise<PostExecutionLogsResBody>;
 }
 
-export interface GetExecutionLogsResBody {
+export interface ExecutionLogsResBody {
   message: string;
   data: ExecutionLogs;
+}
+
+export interface PostExecutionLogsResBody {
+  message: string;
+  data: ExecutionLog;
 }

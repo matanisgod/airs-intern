@@ -17,23 +17,43 @@ import { useSetRecoilState, useRecoilValue } from 'recoil';
 
 import { ExecutionForm, formField } from './util';
 
+import { useExecutionApi } from '@common/api';
 import { CreateDialogContentText, CancelSubmitButton, MenuProps } from '@components';
-import { caseSetsAtom, isExecutionDialogOpenAtom } from '@recoil/status';
+import {
+  caseSetsAtom,
+  isExecutionDialogOpenAtom,
+  isErrorModalOpenAtom,
+  executionLogsAtom,
+} from '@recoil/status';
 
 export const CreateExecutionDialog = () => {
+  const executionApi = useExecutionApi();
+
   const { control, handleSubmit } = useForm<ExecutionForm>();
-  const setOpen = useSetRecoilState(isExecutionDialogOpenAtom);
   const caseSet = useRecoilValue(caseSetsAtom);
+  const setExecutionLogs = useSetRecoilState(executionLogsAtom);
+  const setErrorModalOpen = useSetRecoilState(isErrorModalOpenAtom);
+  const setOpen = useSetRecoilState(isExecutionDialogOpenAtom);
 
   const testSetsList = caseSet.map((item) => item.title);
 
   const handleClose = () => {
     setOpen(false);
   };
-  //TODO: post ㄱㄱㄱ
+  //TODO: execution log table에 response 추가
+  const createExecution = async (body: ExecutionForm) => {
+    if (!executionApi) return;
+    const response = await executionApi.createExecution(body);
+    if (response) {
+      console.log(response);
+      setExecutionLogs((executionLogs) => [...executionLogs, response]);
+      handleClose();
+    } else {
+      setErrorModalOpen(true);
+    }
+  };
   const onSubmit: SubmitHandler<ExecutionForm> = (data) => {
-    console.log(data);
-    handleClose();
+    createExecution(data);
   };
 
   const TestSetsMenu = styled(MenuItem)(() => ({}));

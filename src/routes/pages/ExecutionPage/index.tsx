@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { ErrorBoundary } from 'react-error-boundary';
-import { useSetRecoilState } from 'recoil';
 
 import { ExecutionBox } from './style';
 
-import { useExecutionApi } from '@common/api';
 import { TablesBox, SubTablesBox, JSONDataBox, ErrorFallback } from '@components';
 import {
   ExecutionLogTable,
@@ -14,23 +12,8 @@ import {
   ActualResultJsonLoader,
   DetailsExpectedResultJsonLoader,
 } from '@containers';
-import { executionLogsAtom } from '@recoil/status';
 
 export const ExecutionPage = () => {
-  const executionApi = useExecutionApi();
-  const setExecutionLog = useSetRecoilState(executionLogsAtom);
-
-  useEffect(() => {
-    if (!executionApi) return;
-    const getExecutionLog = async () => {
-      const response = await executionApi.getExecutionLogs();
-      if (response) {
-        setExecutionLog(response);
-      }
-    };
-    getExecutionLog();
-  }, [executionApi]);
-
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
       <ExecutionBox>

@@ -1,14 +1,12 @@
 import React from 'react';
 
-import { Modal } from '@mui/material';
 import { GridCellParams, GridColDef } from '@mui/x-data-grid';
 import clsx from 'clsx';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 
-import { ErrorModalBox } from './style';
-
-import { executionIdAtom, isErrorModalOpenAtom } from '@/recoil/status';
-import { ModalDataBox, ModalHeaderBox, StopAllButton, StopButton } from '@components';
+import { useExecutionApi } from '@/common/api';
+import { isErrorModalOpenAtom } from '@/recoil/status';
+import { StopAllButton, StopButton } from '@components';
 
 export const executionLogColumns: GridColDef[] = [
   {
@@ -52,29 +50,46 @@ export const executionLogColumns: GridColDef[] = [
     sortable: false,
     headerAlign: 'center',
     align: 'center',
-    renderHeader: () => <StopAllButton>Stop all</StopAllButton>,
-    renderCell: () => <StopButton>Stop</StopButton>,
+    renderHeader: function CancelExecution() {
+      const executionApi = useExecutionApi();
+      const setErrorModalOpen = useSetRecoilState(isErrorModalOpenAtom);
+
+      const fetchExecution = async () => {
+        if (!executionApi) return;
+        const response = await executionApi.cancelExecution();
+        if (response) {
+          console.log(response);
+        } else {
+          setErrorModalOpen(true);
+        }
+      };
+
+      return <StopAllButton onClick={fetchExecution}>Stop all</StopAllButton>;
+    },
+    renderCell: function CancelExecutionById(params) {
+      const executionApi = useExecutionApi();
+      const setErrorModalOpen = useSetRecoilState(isErrorModalOpenAtom);
+
+      const fetchExecutionById = async (params) => {
+        if (!executionApi) return;
+        const response = await executionApi.cancelExecutionById(params.row.id);
+        if (response) {
+          console.log(response);
+        } else {
+          setErrorModalOpen(true);
+        }
+      };
+
+      return (
+        <StopButton
+          onClick={(event) => {
+            event.stopPropagation();
+            fetchExecutionById(params);
+          }}
+        >
+          Stop
+        </StopButton>
+      );
+    },
   },
 ];
-
-//질문: logAxiosError에서 어떻게 못 가져오나?
-export const ErrorModal = () => {
-  const executionId = useRecoilValue(executionIdAtom);
-  const [errorModalOpen, setErrorModalOpen] = useRecoilState(isErrorModalOpenAtom);
-  const handleErrorModalClose = () => setErrorModalOpen(false);
-
-  return (
-    <Modal open={errorModalOpen} onClose={handleErrorModalClose}>
-      <ErrorModalBox>
-        <ModalHeaderBox>404 not found</ModalHeaderBox>
-        <ModalDataBox>
-          CaseLogs with execution id
-          {'\n"'}
-          {executionId}
-          {'"\n'}
-          not found
-        </ModalDataBox>
-      </ErrorModalBox>
-    </Modal>
-  );
-};

@@ -19,9 +19,9 @@
 
 api
 
-1. POST executions
-2. POST executions/{execution_id}:cancel
-3. POST executions:cancel
+1. POST executions (done)
+2. POST executions/{execution_id}:cancel (done)
+3. POST executions:cancel (done)
 4. POST casesets:import
 
    이 외 다수

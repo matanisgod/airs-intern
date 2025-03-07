@@ -1,16 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-import {
-  useSetRecoilState,
-  useRecoilValue,
-  useRecoilState,
-  useResetRecoilState,
-} from 'recoil';
+import { useSetRecoilState, useRecoilState, useResetRecoilState } from 'recoil';
 
 import { ExecutionLogTableBox } from './style';
-import { ErrorModal, executionLogColumns } from './util';
+import { executionLogColumns } from './util';
 
-import { useCaseSetApi, useCaseLogApi } from '@common/api';
+import { useCaseSetApi, useCaseLogApi, useExecutionApi } from '@common/api';
 import {
   CreateButton,
   TableHeaderBox,
@@ -18,6 +13,7 @@ import {
   DataTable,
   CreateDialog,
   CreateDialogTitle,
+  ErrorModal,
 } from '@components';
 import { CreateExecutionDialog } from '@containers';
 import {
@@ -29,21 +25,19 @@ import {
   actualResultJsonAtom,
   detailsExpectedResultJsonAtom,
   isErrorModalOpenAtom,
-  executionIdAtom,
 } from '@recoil/status';
 
 export const ExecutionLogTable = () => {
   const caseSetApi = useCaseSetApi();
   const caseLogApi = useCaseLogApi();
-
-  const executionLogs = useRecoilValue(executionLogsAtom);
+  const executionApi = useExecutionApi();
   const [executionDialogOpen, setExecutionDialogOpen] = useRecoilState(
     isExecutionDialogOpenAtom,
   );
+  const [executionLogs, setExecutionLogs] = useRecoilState(executionLogsAtom);
   const setErrorModalOpen = useSetRecoilState(isErrorModalOpenAtom);
   const setCaseSets = useSetRecoilState(caseSetsAtom);
   const setCaseLogs = useSetRecoilState(caseLogsAtom);
-  const setExecutionId = useSetRecoilState(executionIdAtom);
   const resetCaseLogs = useResetRecoilState(caseLogsAtom);
   const resetDetails = useResetRecoilState(detailsAtom);
   const resetActualResultJson = useResetRecoilState(actualResultJsonAtom);
@@ -52,13 +46,13 @@ export const ExecutionLogTable = () => {
   );
   const handleOpen = () => {
     if (!caseSetApi) return;
-    const getCaseSets = async () => {
+    const fetchCaseSets = async () => {
       const response = await caseSetApi.getCaseSets();
       if (response) {
         setCaseSets(response);
       }
     };
-    getCaseSets();
+    fetchCaseSets();
     setExecutionDialogOpen(true);
   };
   const handleClose = () => {
@@ -80,7 +74,16 @@ export const ExecutionLogTable = () => {
     resetActualResultJson();
     resetDetailsExpectedResultJson();
   };
-
+  useEffect(() => {
+    if (!executionApi) return;
+    const fetchExecutionLog = async () => {
+      const response = await executionApi.getExecutionLogs();
+      if (response) {
+        setExecutionLogs(response);
+      }
+    };
+    fetchExecutionLog();
+  }, [executionApi, setExecutionLogs]);
   return (
     <ExecutionLogTableBox>
       <ErrorModal />
@@ -109,7 +112,6 @@ export const ExecutionLogTable = () => {
           rowHeight={48}
           onRowClick={(params) => {
             getDistinctCaseLogs(params.row.id);
-            setExecutionId(params.row.id);
             thanos();
           }}
         />
