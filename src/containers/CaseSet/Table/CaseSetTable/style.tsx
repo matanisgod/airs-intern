@@ -6,5 +6,4 @@ export const CaseSetTableBox = styled(Box)(() => ({
   display: 'flex',
   alignSelf: 'center',
   flexDirection: 'column',
-  border: '1px solid white',
 }));

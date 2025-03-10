@@ -35,7 +35,6 @@ export const CreateCaseSetDialog = () => {
     if (!caseSetApi) return;
     const response = await caseSetApi.importCaseSet(body);
     if (response) {
-      console.log(response);
       setCaseSets((caseSets) => [...caseSets, response]);
       handleClose();
     } else {

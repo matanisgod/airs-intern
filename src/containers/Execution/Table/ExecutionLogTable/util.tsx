@@ -58,7 +58,7 @@ export const executionLogColumns: GridColDef[] = [
         if (!executionApi) return;
         const response = await executionApi.cancelExecution();
         if (response) {
-          console.log(response);
+          console.log('ok');
         } else {
           setErrorModalOpen(true);
         }
@@ -74,7 +74,7 @@ export const executionLogColumns: GridColDef[] = [
         if (!executionApi) return;
         const response = await executionApi.cancelExecutionById(params.row.id);
         if (response) {
-          console.log(response);
+          console.log('ok');
         } else {
           setErrorModalOpen(true);
         }

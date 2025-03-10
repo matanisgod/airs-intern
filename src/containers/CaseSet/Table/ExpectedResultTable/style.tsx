@@ -7,5 +7,4 @@ export const ExpectedResultTableBox = styled(Box)(() => ({
   alignSelf: 'flex-end',
   marginTop: 'auto',
   flexDirection: 'column',
-  border: '1px solid white',
 }));

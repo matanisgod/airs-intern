@@ -57,6 +57,9 @@ export const CaseLogTable = () => {
             );
             thanos();
           }}
+          localeText={{
+            noRowsLabel: 'Select execution log',
+          }}
         />
       </TableDataBox>
     </CaseLogTableBox>

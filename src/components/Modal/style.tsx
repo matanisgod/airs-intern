@@ -7,9 +7,9 @@ export const ErrorModalBox = styled(Box)({
   transform: 'translate(-50%, -50%)',
   width: '50%',
   height: '60%',
-  backgroundColor: 'white',
-  border: '3px solid red !important',
-  color: 'black',
+  backgroundColor: '#121212',
+  border: '1px solid white !important',
+  color: 'white',
   display: 'flex',
   flexDirection: 'column',
 });

@@ -35,6 +35,9 @@ export const DetailsTable = () => {
               JSON.parse(params.row.expectedResult.data.replace(/\bNaN\b/g, 'null')),
             );
           }}
+          localeText={{
+            noRowsLabel: 'Select case log',
+          }}
         />
       </TableDataBox>
     </DetailsTableBox>

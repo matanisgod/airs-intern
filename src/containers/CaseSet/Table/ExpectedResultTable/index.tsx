@@ -28,6 +28,9 @@ export const ExpectedResultTable = () => {
               JSON.parse(params.row.data.replace(/\bNaN\b/g, 'null')),
             );
           }}
+          localeText={{
+            noRowsLabel: 'Select case',
+          }}
         />
       </TableDataBox>
     </ExpectedResultTableBox>

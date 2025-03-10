@@ -7,5 +7,4 @@ export const DetailsTableBox = styled(Box)(() => ({
   alignSelf: 'flex-end',
   marginTop: 'auto',
   flexDirection: 'column',
-  border: '1px solid white',
 }));

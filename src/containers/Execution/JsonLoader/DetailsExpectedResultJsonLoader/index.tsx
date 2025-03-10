@@ -24,6 +24,7 @@ export const DetailsExpectedResultJsonLoader = () => {
             displayObjectSize={false}
             enableClipboard={false}
             quotesOnKeys={false}
+            displayArrayKey={false}
           />
         )}
       </TableDataBox>

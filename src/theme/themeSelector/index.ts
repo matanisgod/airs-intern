@@ -62,7 +62,7 @@ export const themeSelector = (mode: PaletteMode): ThemeOptions => ({
             light: '#121212',
           },
           background: {
-            default: '#202027',
+            default: '#12182B', //배경 색
           },
         }),
   },

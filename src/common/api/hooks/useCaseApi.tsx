@@ -24,7 +24,8 @@ export const useCaseApi = (): UseCaseApi => {
         getCasesByCaseSetId: async (params: string) => {
           try {
             const response = await api().case.getCasesByCaseSetId(params);
-            return response.data;
+            const cases = response.data;
+            return cases;
           } catch (e) {
             logAxiosError(e);
             Errorsetter(e);

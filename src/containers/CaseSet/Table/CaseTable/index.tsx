@@ -46,6 +46,9 @@ export const CaseTable = () => {
             setCaseJson(JSON.parse(params.row.data.replace(/\bNaN\b/g, 'null')));
             resetCaseExpectedResultJson();
           }}
+          localeText={{
+            noRowsLabel: 'Select case set',
+          }}
         />
       </TableDataBox>
     </CaseTableBox>

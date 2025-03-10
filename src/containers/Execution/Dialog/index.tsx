@@ -44,7 +44,6 @@ export const CreateExecutionDialog = () => {
     if (!executionApi) return;
     const response = await executionApi.createExecution(body);
     if (response) {
-      console.log(response);
       setExecutionLogs((executionLogs) => [...executionLogs, response]);
       handleClose();
     } else {

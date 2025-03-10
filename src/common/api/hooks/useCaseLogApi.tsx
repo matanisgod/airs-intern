@@ -24,7 +24,8 @@ export const useCaseLogApi = (): UseCaseLogApi => {
         getDistinctCaseLogsById: async (body: object) => {
           try {
             const response = await api().caseLog.getDistinctCaseLogsById(body);
-            return response.data;
+            const distinctCaseLogs = response.data;
+            return distinctCaseLogs;
           } catch (e) {
             logAxiosError(e);
             Errorsetter(e);
@@ -33,7 +34,8 @@ export const useCaseLogApi = (): UseCaseLogApi => {
         getDetailsById: async (body: object) => {
           try {
             const response = await api().caseLog.getDetailsById(body);
-            return response.data;
+            const details = response.data;
+            return details;
           } catch (e) {
             logAxiosError(e);
             Errorsetter(e);

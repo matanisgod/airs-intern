@@ -25,6 +25,7 @@ export const CaseJsonLoader = () => {
             enableClipboard={false}
             quotesOnKeys={false}
             theme={customTheme}
+            displayArrayKey={false}
           />
         )}
       </TableDataBox>

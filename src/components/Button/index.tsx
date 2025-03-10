@@ -11,27 +11,28 @@ export const CreateButton = styled(Button)(() => ({
     background: 'gray',
   },
   marginLeft: 'auto',
+  marginRight: '10px',
 }));
 export const StopAllButton = styled(Button)(() => ({
-  width: '80%',
-  height: '80%',
+  width: '100%',
+  height: '100%',
   color: 'black',
-  backgroundColor: 'white',
+  backgroundColor: '#ffffff ',
   textTransform: 'none',
   fontSize: '20px',
   '&:hover': {
-    background: 'gray',
+    background: '#888888',
   },
 }));
 export const StopButton = styled(Button)(() => ({
-  width: '80%',
-  height: '80%',
+  width: '100%',
+  height: '100%',
   color: 'black',
-  backgroundColor: 'white',
+  backgroundColor: '#ffffff ',
   textTransform: 'none',
   fontSize: '14px',
   '&:hover': {
-    background: 'gray',
+    background: '#888888',
   },
 }));
 

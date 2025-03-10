@@ -2,22 +2,24 @@ import { styled } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 
 export const DataTable = styled(DataGrid)(() => ({
+  border: '1px solid black ',
   width: '100%',
   color: 'white',
-  backgroundColor: 'black',
+  backgroundColor: '#222222',
   display: 'flex',
-  marginBottom: 'auto',
   fontSize: '14px !important',
   maxHeight: '100%',
+
   '& .MuiDataGrid-cell': {
-    border: '1px solid gray',
     padding: '0px',
+    border: '1px solid black ',
   },
+
   '& .MuiDataGrid-columnHeader': {
-    backgroundColor: 'black',
-    border: '1px solid gray',
+    backgroundColor: '#4B5563',
     fontSize: '20px',
     padding: '0px',
+    border: '1px solid black ',
   },
   '& .MuiDataGrid-columnSeparator': {
     display: 'none !important',
@@ -33,7 +35,7 @@ export const DataTable = styled(DataGrid)(() => ({
       '&  .MuiDataGrid-virtualScrollerRenderZone': {
         '& .MuiDataGrid-row': {
           '&:hover': {
-            background: '#33373E',
+            background: '#000000',
           },
         },
         '& .MuiDataGrid-row.Mui-selected > .MuiDataGrid-cell': {
@@ -41,5 +43,15 @@ export const DataTable = styled(DataGrid)(() => ({
         },
       },
     },
+  },
+  '& .MuiDataGrid-cell:focus, & .MuiDataGrid-columnHeader:focus': {
+    outline: 'none',
+  },
+  '& .MuiDataGrid-cell:focus-within, & .MuiDataGrid-columnHeader:focus-within': {
+    outline: 'none',
+  },
+  '& .MuiDataGrid-overlay': {
+    backgroundColor: '#222222',
+    fontSize: '20px',
   },
 }));

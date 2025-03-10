@@ -5,6 +5,7 @@ export const CreateDialog = styled(Dialog)(() => ({
     width: '500px',
     maxWidth: '500px',
     border: '1px solid gray',
+    backgroundColor: '#121212',
   },
 }));
 export const CreateDialogContentText = styled(DialogContentText)(() => ({
@@ -12,7 +13,7 @@ export const CreateDialogContentText = styled(DialogContentText)(() => ({
 }));
 
 export const CreateDialogTitle = styled(DialogTitle)(() => ({
-  border: '1px solid gray',
+  borderBottom: '1px solid gray',
 }));
 
 const ITEM_HEIGHT = 48;

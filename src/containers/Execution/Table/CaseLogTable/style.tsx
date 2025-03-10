@@ -6,5 +6,4 @@ export const CaseLogTableBox = styled(Box)(() => ({
   display: 'flex',
   alignSelf: 'flex-end',
   flexDirection: 'column',
-  border: '1px solid white',
 }));

@@ -24,7 +24,8 @@ export const useExpectedResultApi = (): UseExpectedResultApi => {
         getExpectedResultById: async (params: string) => {
           try {
             const response = await api().expectedResult.getExpectedResultById(params);
-            return response.data;
+            const expectedResult = response.data;
+            return expectedResult;
           } catch (e) {
             logAxiosError(e);
             Errorsetter(e);
