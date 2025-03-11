@@ -1,0 +1,5322 @@
+- case_name: wildcard_seriesname_si
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 19
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: MIP
+      protocolName: siemens_g1_auto_sof_a_sm_wildcard_auto
+      seriesDescription: mip_wildcard_recon
+      seriesNumber: 1012001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: siemens_g1_auto_sof_a_sm_wildcard_auto_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 19
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: MIP
+      protocolName: siemens_g1_auto_sof_a_sm_wildcard_auto
+      seriesDescription: mip_wildcard
+      seriesNumber: 1012001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: siemens_g1_auto_sof_a_sm_wildcard_auto
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - Source
+      protocolName: AX T2 TSE
+      scanItemNames:
+      - wildcard_seriesname_si
+      seriesDescription: siemens_g1_auto_sof_a_sm_wildcard_auto
+      seriesName: siemens_g1_auto_sof_a_sm_wildcard_auto
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 19
+      numberOfInstancesAfterReconstruction: 19
+      postProcessingTypes:
+      - MIP
+      protocolName: siemens_g1_auto_sof_a_sm_wildcard_auto
+      scanItemNames:
+      - wildcard_seriesname_si
+      seriesDescription: mip_wildcard
+      seriesName: siemens_g1_auto_sof_a_sm_wildcard_auto
+      seriesNumber: 1012001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 49
+      numberOfSeries: 2
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: wildcard_seriesname_si
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: wildcard_seriesname_si
+    created_at: '2024-12-04 16:48:26'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_g1_auto_sof_a_sm_wildcard_auto_recon
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 19
+    RemoteAET: SWIFTMR
+    SeriesDescription: mip_wildcard_recon
+    SeriesNumber: 1012001
+    SeriesStorageOrderIndex: 1
+- case_name: wildcard_seriesname_si_portion
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 19
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: MIP
+      protocolName: siemens_g1_auto_sof_a_sm_wildcard_auto_ilbu
+      seriesDescription: mip_wildcard_ilbu_recon
+      seriesNumber: 1012001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: siemens_g1_auto_sof_a_sm_wildcard_auto_ilbu_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 19
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: MIP
+      protocolName: siemens_g1_auto_sof_a_sm_wildcard_auto_ilbu
+      seriesDescription: mip_wildcard_ilbu
+      seriesNumber: 1012001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: siemens_g1_auto_sof_a_sm_wildcard_auto_ilbu
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - Source
+      protocolName: AX T2 TSE
+      scanItemNames:
+      - wildcard_seriesname_si_portion
+      seriesDescription: siemens_g1_auto_sof_a_sm_wildcard_auto_ilbu
+      seriesName: siemens_g1_auto_sof_a_sm_wildcard_auto_ilbu
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 19
+      numberOfInstancesAfterReconstruction: 19
+      postProcessingTypes:
+      - MIP
+      protocolName: siemens_g1_auto_sof_a_sm_wildcard_auto_ilbu
+      scanItemNames:
+      - wildcard_seriesname_si_portion
+      seriesDescription: mip_wildcard_ilbu
+      seriesName: siemens_g1_auto_sof_a_sm_wildcard_auto_ilbu
+      seriesNumber: 1012001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 49
+      numberOfSeries: 2
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: wildcard_seriesname_si_portion
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: wildcard_seriesname_si_portion
+    created_at: '2024-12-04 16:50:59'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_g1_auto_sof_a_sm_wildcard_auto_ilbu_recon
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 19
+    RemoteAET: SWIFTMR
+    SeriesDescription: mip_wildcard_ilbu_recon
+    SeriesNumber: 1012001
+    SeriesStorageOrderIndex: 1
+- case_name: wildcard_seriesdescription_si
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 19
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: MIP
+      protocolName: siemens_g1_auto_sof_a_sm_wildcard_mip
+      seriesDescription: mip_wildcard_recon
+      seriesNumber: 1012001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: siemens_g1_auto_sof_a_sm_wildcard_mip_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 19
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: MIP
+      protocolName: siemens_g1_auto_sof_a_sm_wildcard_mip
+      seriesDescription: mip_wildcard
+      seriesNumber: 1012001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: siemens_g1_auto_sof_a_sm_wildcard_mip
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - Source
+      protocolName: AX T2 TSE
+      scanItemNames:
+      - wildcard_seriesdescription_si
+      seriesDescription: siemens_g1_auto_sof_a_sm_wildcard_mip
+      seriesName: siemens_g1_auto_sof_a_sm_wildcard_mip
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 19
+      numberOfInstancesAfterReconstruction: 19
+      postProcessingTypes:
+      - MIP
+      protocolName: siemens_g1_auto_sof_a_sm_wildcard_mip
+      scanItemNames:
+      - wildcard_seriesdescription_si
+      seriesDescription: mip_wildcard
+      seriesName: siemens_g1_auto_sof_a_sm_wildcard_mip
+      seriesNumber: 1012001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 49
+      numberOfSeries: 2
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: wildcard_seriesdescription_si
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: wildcard_seriesdescription_si
+    created_at: '2024-12-04 16:53:27'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_g1_auto_sof_a_sm_wildcard_mip_recon
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 19
+    RemoteAET: SWIFTMR
+    SeriesDescription: mip_wildcard_recon
+    SeriesNumber: 1012001
+    SeriesStorageOrderIndex: 1
+- case_name: wildcard_seriesdescription_si_portion
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 19
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: MIP
+      protocolName: siemens_g1_auto_sof_a_sm_wildcard_mip_ilbu
+      seriesDescription: mip_wildcard_ilbu_recon
+      seriesNumber: 1012001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: siemens_g1_auto_sof_a_sm_wildcard_mip_ilbu_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 19
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: MIP
+      protocolName: siemens_g1_auto_sof_a_sm_wildcard_mip_ilbu
+      seriesDescription: mip_wildcard_ilbu
+      seriesNumber: 1012001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: siemens_g1_auto_sof_a_sm_wildcard_mip_ilbu
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - Source
+      protocolName: AX T2 TSE
+      scanItemNames:
+      - wildcard_seriesdescription_si_portion
+      seriesDescription: siemens_g1_auto_sof_a_sm_wildcard_mip_ilbu
+      seriesName: siemens_g1_auto_sof_a_sm_wildcard_mip_ilbu
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 19
+      numberOfInstancesAfterReconstruction: 19
+      postProcessingTypes:
+      - MIP
+      protocolName: siemens_g1_auto_sof_a_sm_wildcard_mip_ilbu
+      scanItemNames:
+      - wildcard_seriesdescription_si_portion
+      seriesDescription: mip_wildcard_ilbu
+      seriesName: siemens_g1_auto_sof_a_sm_wildcard_mip_ilbu
+      seriesNumber: 1012001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 49
+      numberOfSeries: 2
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: wildcard_seriesdescription_si_portion
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: wildcard_seriesdescription_si_portion
+    created_at: '2024-12-04 16:56:01'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_g1_auto_sof_a_sm_wildcard_mip_ilbu_recon
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 19
+    RemoteAET: SWIFTMR
+    SeriesDescription: mip_wildcard_ilbu_recon
+    SeriesNumber: 1012001
+    SeriesStorageOrderIndex: 1
+- case_name: wildcard_pp_seriesdescription_si
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 19
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: MIP
+      protocolName: siemens_g1_auto_sof_a_sm_pp_wildcard_mip
+      seriesDescription: mip_wildcard_recon
+      seriesNumber: 1012001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: siemens_g1_auto_sof_a_sm_pp_wildcard_mip_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 19
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: MIP
+      protocolName: siemens_g1_auto_sof_a_sm_pp_wildcard_mip
+      seriesDescription: mip_wildcard
+      seriesNumber: 1012001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: siemens_g1_auto_sof_a_sm_pp_wildcard_mip
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - Source
+      protocolName: AX T2 TSE
+      scanItemNames:
+      - wildcard_pp_seriesdescription_si
+      seriesDescription: siemens_g1_auto_sof_a_sm_pp_wildcard_mip
+      seriesName: siemens_g1_auto_sof_a_sm_pp_wildcard_mip
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 19
+      numberOfInstancesAfterReconstruction: 19
+      postProcessingTypes:
+      - MIP
+      protocolName: siemens_g1_auto_sof_a_sm_pp_wildcard_mip
+      scanItemNames:
+      - wildcard_pp_seriesdescription_si
+      seriesDescription: mip_wildcard
+      seriesName: siemens_g1_auto_sof_a_sm_pp_wildcard_mip
+      seriesNumber: 1012001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 49
+      numberOfSeries: 2
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: wildcard_pp_seriesdescription_si
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: wildcard_pp_seriesdescription_si
+    created_at: '2024-12-04 16:58:34'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_g1_auto_sof_a_sm_pp_wildcard_mip_recon
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 19
+    RemoteAET: SWIFTMR
+    SeriesDescription: mip_wildcard_recon
+    SeriesNumber: 1012001
+    SeriesStorageOrderIndex: 1
+- case_name: wildcard_pp_seriesdescription_si_portion
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 19
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: MIP
+      protocolName: siemens_g1_auto_sof_a_sm_pp_wildcard_mip_ilbu
+      seriesDescription: mip_wildcard_ilbu_recon
+      seriesNumber: 1012001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: siemens_g1_auto_sof_a_sm_pp_wildcard_mip_ilbu_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 19
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: MIP
+      protocolName: siemens_g1_auto_sof_a_sm_pp_wildcard_mip_ilbu
+      seriesDescription: mip_wildcard_ilbu
+      seriesNumber: 1012001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: siemens_g1_auto_sof_a_sm_pp_wildcard_mip_ilbu
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - Source
+      protocolName: AX T2 TSE
+      scanItemNames:
+      - wildcard_pp_seriesdescription_si_portion
+      seriesDescription: siemens_g1_auto_sof_a_sm_pp_wildcard_mip_ilbu
+      seriesName: siemens_g1_auto_sof_a_sm_pp_wildcard_mip_ilbu
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 19
+      numberOfInstancesAfterReconstruction: 19
+      postProcessingTypes:
+      - MIP
+      protocolName: siemens_g1_auto_sof_a_sm_pp_wildcard_mip_ilbu
+      scanItemNames:
+      - wildcard_pp_seriesdescription_si_portion
+      seriesDescription: mip_wildcard_ilbu
+      seriesName: siemens_g1_auto_sof_a_sm_pp_wildcard_mip_ilbu
+      seriesNumber: 1012001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 49
+      numberOfSeries: 2
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: wildcard_pp_seriesdescription_si_portion
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: wildcard_pp_seriesdescription_si_portion
+    created_at: '2024-12-04 17:01:07'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_g1_auto_sof_a_sm_pp_wildcard_mip_ilbu_recon
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 19
+    RemoteAET: SWIFTMR
+    SeriesDescription: mip_wildcard_ilbu_recon
+    SeriesNumber: 1012001
+    SeriesStorageOrderIndex: 1
+- case_name: skip_pp_vs_enforced_match_si
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 37
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: MIP
+      protocolName: siemens_auto_sof_a_mip_sm_skip
+      seriesDescription: siemens_mip2_recon
+      seriesNumber: 100
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 256
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: TOF_3D_multi-slab_neck_swift
+      seriesDescription: siemens_auto_sof_a_mip_sm_skip_recon
+      seriesNumber: 3
+    - deviceId: 1
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Navigator
+      protocolName: siemens_auto_sof_a_mip_sm_skip
+      seriesDescription: siemens_mip2_recon
+      seriesNumber: 100
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 37
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: MIP
+      protocolName: siemens_auto_sof_a_mip_sm_skip
+      seriesDescription: siemens_mip2
+      seriesNumber: 100
+    - deviceId: 1
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Navigator
+      protocolName: siemens_auto_sof_a_mip_sm_skip
+      seriesDescription: siemens_mip2
+      seriesNumber: 100
+    - deviceId: 1
+      dispatchType: SkipRecon
+      fileCount: 37
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: MIP
+      protocolName: siemens_auto_sof_a_mip_sm_skip
+      seriesDescription: siemens_mip1
+      seriesNumber: 100
+    - deviceId: 1
+      dispatchType: SkipRecon
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Navigator
+      protocolName: siemens_auto_sof_a_mip_sm_skip
+      seriesDescription: siemens_mip1
+      seriesNumber: 100
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 256
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: TOF_3D_multi-slab_neck_swift
+      seriesDescription: siemens_auto_sof_a_mip_sm_skip
+      seriesNumber: 3
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 256
+      numberOfInstancesAfterReconstruction: 256.0
+      postProcessingTypes:
+      - Source
+      protocolName: TOF_3D_multi-slab_neck_swift
+      scanItemNames:
+      - skip_pp_vs_enforced_match_si
+      seriesDescription: siemens_auto_sof_a_mip_sm_skip
+      seriesName: siemens_auto_sof_a_mip_sm_skip
+      seriesNumber: 3
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - defaultPACS
+      - orthanc
+      isSupported: true
+      numberOfInstances: 38
+      numberOfInstancesAfterReconstruction: 38.0
+      postProcessingTypes:
+      - Navigator
+      - MIP
+      protocolName: siemens_auto_sof_a_mip_sm_skip
+      scanItemNames:
+      - skip_pp_vs_enforced_match_si
+      seriesDescription: siemens_mip2
+      seriesName: siemens_auto_sof_a_mip_sm_skip
+      seriesNumber: 100
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - defaultPACS
+      - orthanc
+      isSupported: false
+      numberOfInstances: 38
+      numberOfInstancesAfterReconstruction: .nan
+      postProcessingTypes:
+      - Navigator
+      - MIP
+      protocolName: siemens_auto_sof_a_mip_sm_skip
+      scanItemNames:
+      - skip_pp_vs_enforced_match_si
+      seriesDescription: siemens_mip1
+      seriesName: siemens_auto_sof_a_mip_sm_skip
+      seriesNumber: 100
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 332
+      numberOfSeries: 3
+      patientAge: 059Y
+      patientSex: M
+      status: Complete
+      studyDescription: skip_pp_vs_enforced_match_si
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: skip_pp_vs_enforced_match_si
+    created_at: '2024-12-04 17:03:27'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 256
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_auto_sof_a_mip_sm_skip_recon
+    SeriesNumber: 3
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 38
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_mip1
+    SeriesNumber: 100
+    SeriesStorageOrderIndex: 2
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 38
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_mip2_recon
+    SeriesNumber: 100
+    SeriesStorageOrderIndex: 1
+- case_name: skip_pp_vs_regular_match_si
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 45
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      seriesDescription: siemens_auto_dwi_combined3_sof_a_sm_case5_recon
+      seriesNumber: 55003
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 45
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      seriesDescription: siemens_auto_dwi_combined1_sof_a_sm_case5_recon
+      seriesNumber: 55001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 45
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      seriesDescription: siemens_auto_dwi_combined2_sof_a_sm_case5_recon
+      seriesNumber: 55002
+    - deviceId: 1
+      dispatchType: SkipRecon
+      fileCount: 45
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: ADC
+      protocolName: DWI AX b50 400 800 Free breath P2
+      seriesDescription: siemens_11auto_combined_adc_sm_case5
+      seriesNumber: 56001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 45
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      seriesDescription: siemens_auto_dwi_combined3_sof_a_sm_case5
+      seriesNumber: 55003
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 45
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      seriesDescription: siemens_auto_dwi_combined2_sof_a_sm_case5
+      seriesNumber: 55002
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 45
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      seriesDescription: siemens_auto_dwi_combined1_sof_a_sm_case5
+      seriesNumber: 55001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 45
+      numberOfInstancesAfterReconstruction: 45.0
+      postProcessingTypes:
+      - Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      scanItemNames:
+      - skip_pp_vs_regular_match_si
+      seriesDescription: siemens_auto_dwi_combined1_sof_a_sm_case5
+      seriesName: siemens_auto_dwi_combined_sof_a_sm_case5
+      seriesNumber: 55001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 45
+      numberOfInstancesAfterReconstruction: 45.0
+      postProcessingTypes:
+      - Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      scanItemNames:
+      - skip_pp_vs_regular_match_si
+      seriesDescription: siemens_auto_dwi_combined2_sof_a_sm_case5
+      seriesName: siemens_auto_dwi_combined_sof_a_sm_case5
+      seriesNumber: 55002
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 45
+      numberOfInstancesAfterReconstruction: 45.0
+      postProcessingTypes:
+      - Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      scanItemNames:
+      - skip_pp_vs_regular_match_si
+      seriesDescription: siemens_auto_dwi_combined3_sof_a_sm_case5
+      seriesName: siemens_auto_dwi_combined_sof_a_sm_case5
+      seriesNumber: 55003
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: false
+      numberOfInstances: 45
+      numberOfInstancesAfterReconstruction: .nan
+      postProcessingTypes:
+      - ADC
+      protocolName: DWI AX b50 400 800 Free breath P2
+      scanItemNames:
+      - skip_pp_vs_regular_match_si
+      seriesDescription: siemens_11auto_combined_adc_sm_case5
+      seriesName: siemens_auto_dwi_combined_sof_a_sm_case5
+      seriesNumber: 56001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: ABDOMEN
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 180
+      numberOfSeries: 4
+      patientAge: 069Y
+      patientSex: M
+      status: Complete
+      studyDescription: skip_pp_vs_regular_match_si
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: skip_pp_vs_regular_match_si
+    created_at: '2024-12-04 17:05:17'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 45
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_auto_dwi_combined1_sof_a_sm_case5_recon
+    SeriesNumber: 55001
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 45
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_auto_dwi_combined2_sof_a_sm_case5_recon
+    SeriesNumber: 55002
+    SeriesStorageOrderIndex: 1
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 45
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_auto_dwi_combined3_sof_a_sm_case5_recon
+    SeriesNumber: 55003
+    SeriesStorageOrderIndex: 2
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 45
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_11auto_combined_adc_sm_case5
+    SeriesNumber: 56001
+    SeriesStorageOrderIndex: 3
+- case_name: regular_match_vs_pp_enforced_si
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 19
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: MPR
+      protocolName: siemens_g1_auto_sot_a_swift_case2
+      seriesDescription: case2_pp_recon
+      seriesNumber: 100
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: siemens_g1_auto_sot_a_swift_case2
+      seriesDescription: case2_source_recon
+      seriesNumber: 5
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 19
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: MPR
+      protocolName: siemens_g1_auto_sot_a_swift_case2
+      seriesDescription: case2_pp
+      seriesNumber: 100
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: siemens_g1_auto_sot_a_swift_case2
+      seriesDescription: case2_source
+      seriesNumber: 5
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 20
+      numberOfInstancesAfterReconstruction: 20
+      postProcessingTypes:
+      - Source
+      protocolName: siemens_g1_auto_sot_a_swift_case2
+      scanItemNames:
+      - regular_match_vs_pp_enforced_si
+      seriesDescription: case2_source
+      seriesName: siemens_g1_auto_sot_a_swift_case2
+      seriesNumber: 5
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 19
+      numberOfInstancesAfterReconstruction: 19
+      postProcessingTypes:
+      - MPR
+      protocolName: siemens_g1_auto_sot_a_swift_case2
+      scanItemNames:
+      - regular_match_vs_pp_enforced_si
+      seriesDescription: case2_pp
+      seriesName: siemens_g1_auto_sot_a_swift_case2
+      seriesNumber: 100
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: SPINE
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 39
+      numberOfSeries: 2
+      patientAge: 032Y
+      patientSex: F
+      status: Complete
+      studyDescription: regular_match_vs_pp_enforced_si
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: regular_match_vs_pp_enforced_si
+    created_at: '2024-12-04 17:06:06'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 20
+    RemoteAET: SWIFTMR
+    SeriesDescription: case2_source_recon
+    SeriesNumber: 5
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 19
+    RemoteAET: SWIFTMR
+    SeriesDescription: case2_pp_recon
+    SeriesNumber: 100
+    SeriesStorageOrderIndex: 1
+- case_name: adc_source_match_vs_regular_match_si
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 45
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: ADC
+      protocolName: DWI AX b50 400 800 Free breath P2
+      seriesDescription: siemens_source_in_adc_swift_recon
+      seriesNumber: 56001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 45
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      seriesDescription: siemens_auto_dwi_combined1_sot_a_swift_recon
+      seriesNumber: 55001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 45
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      seriesDescription: siemens_auto_dwi_combined3_sot_a_swift_recon
+      seriesNumber: 55003
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 45
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      seriesDescription: siemens_auto_dwi_combined2_sot_a_swift_recon
+      seriesNumber: 55002
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 45
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: ADC
+      protocolName: DWI AX b50 400 800 Free breath P2
+      seriesDescription: siemens_source_in_adc_swift
+      seriesNumber: 56001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 45
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      seriesDescription: siemens_auto_dwi_combined3_sot_a_swift
+      seriesNumber: 55003
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 45
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      seriesDescription: siemens_auto_dwi_combined2_sot_a_swift
+      seriesNumber: 55002
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 45
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      seriesDescription: siemens_auto_dwi_combined1_sot_a_swift
+      seriesNumber: 55001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 45
+      numberOfInstancesAfterReconstruction: 45
+      postProcessingTypes:
+      - Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      scanItemNames:
+      - adc_source_match_vs_regular_match_si
+      seriesDescription: siemens_auto_dwi_combined1_sot_a_swift
+      seriesName: siemens_auto_dwi_combined_sot_a_swift_case1
+      seriesNumber: 55001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 45
+      numberOfInstancesAfterReconstruction: 45
+      postProcessingTypes:
+      - Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      scanItemNames:
+      - adc_source_match_vs_regular_match_si
+      seriesDescription: siemens_auto_dwi_combined2_sot_a_swift
+      seriesName: siemens_auto_dwi_combined_sot_a_swift_case1
+      seriesNumber: 55002
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 45
+      numberOfInstancesAfterReconstruction: 45
+      postProcessingTypes:
+      - Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      scanItemNames:
+      - adc_source_match_vs_regular_match_si
+      seriesDescription: siemens_auto_dwi_combined3_sot_a_swift
+      seriesName: siemens_auto_dwi_combined_sot_a_swift_case1
+      seriesNumber: 55003
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 45
+      numberOfInstancesAfterReconstruction: 45
+      postProcessingTypes:
+      - ADC
+      protocolName: DWI AX b50 400 800 Free breath P2
+      scanItemNames:
+      - adc_source_match_vs_regular_match_si
+      seriesDescription: siemens_source_in_adc_swift
+      seriesName: siemens_auto_dwi_combined_sot_a_swift_case1
+      seriesNumber: 56001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: ABDOMEN
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 180
+      numberOfSeries: 4
+      patientAge: 069Y
+      patientSex: M
+      status: Complete
+      studyDescription: adc_source_match_vs_regular_match_si
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: adc_source_match_vs_regular_match_si
+    created_at: '2024-12-04 17:07:47'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 45
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_auto_dwi_combined1_sot_a_swift_recon
+    SeriesNumber: 55001
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 45
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_auto_dwi_combined2_sot_a_swift_recon
+    SeriesNumber: 55002
+    SeriesStorageOrderIndex: 1
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 45
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_auto_dwi_combined3_sot_a_swift_recon
+    SeriesNumber: 55003
+    SeriesStorageOrderIndex: 2
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 45
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_source_in_adc_swift_recon
+    SeriesNumber: 56001
+    SeriesStorageOrderIndex: 3
+- case_name: wildcard_seriesname_ge
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 167
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: MPR
+      protocolName: ge_g1_auto_sof_a_sm_wildcard_auto
+      seriesDescription: mpr_wildcard_recon
+      seriesNumber: 250
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 32
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AIRS_SF_Test Hip_accel
+      seriesDescription: ge_g1_auto_sof_a_sm_wildcard_auto_recon
+      seriesNumber: 2
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Navigator
+      protocolName: ge_g1_auto_sof_a_sm_wildcard_auto
+      seriesDescription: mpr_wildcard_recon
+      seriesNumber: 250
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 167
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: MPR
+      protocolName: ge_g1_auto_sof_a_sm_wildcard_auto
+      seriesDescription: mpr_wildcard
+      seriesNumber: 250
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Navigator
+      protocolName: ge_g1_auto_sof_a_sm_wildcard_auto
+      seriesDescription: mpr_wildcard
+      seriesNumber: 250
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 32
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AIRS_SF_Test Hip_accel
+      seriesDescription: ge_g1_auto_sof_a_sm_wildcard_auto
+      seriesNumber: 2
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 32
+      numberOfInstancesAfterReconstruction: 32
+      postProcessingTypes:
+      - Source
+      protocolName: AIRS_SF_Test Hip_accel
+      scanItemNames:
+      - wildcard_seriesname_ge
+      seriesDescription: ge_g1_auto_sof_a_sm_wildcard_auto
+      seriesName: ge_g1_auto_sof_a_sm_wildcard_auto
+      seriesNumber: 2
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      - orthanc
+      isSupported: true
+      numberOfInstances: 168
+      numberOfInstancesAfterReconstruction: 168
+      postProcessingTypes:
+      - Navigator
+      - MPR
+      protocolName: ge_g1_auto_sof_a_sm_wildcard_auto
+      scanItemNames:
+      - wildcard_seriesname_ge
+      seriesDescription: mpr_wildcard
+      seriesName: mpr_wildcard
+      seriesNumber: 250
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HIP
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 200
+      numberOfSeries: 2
+      patientAge: 000Y
+      patientSex: UNKNOWN
+      status: Complete
+      studyDescription: wildcard_seriesname_ge
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: wildcard_seriesname_ge
+    created_at: '2024-12-04 17:11:33'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 32
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_g1_auto_sof_a_sm_wildcard_auto_recon
+    SeriesNumber: 2
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 168
+    RemoteAET: SWIFTMR
+    SeriesDescription: mpr_wildcard_recon
+    SeriesNumber: 250
+    SeriesStorageOrderIndex: 1
+- case_name: wildcard_seriesname_ge_portion
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 167
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: MPR
+      protocolName: ge_g1_auto_sof_a_sm_wildcard_auto_ilbu
+      seriesDescription: mpr_wildcard_ilbu_recon
+      seriesNumber: 250
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 32
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AIRS_SF_Test Hip_accel
+      seriesDescription: ge_g1_auto_sof_a_sm_wildcard_auto_ilbu_recon
+      seriesNumber: 2
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Navigator
+      protocolName: ge_g1_auto_sof_a_sm_wildcard_auto_ilbu
+      seriesDescription: mpr_wildcard_ilbu_recon
+      seriesNumber: 250
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 32
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AIRS_SF_Test Hip_accel
+      seriesDescription: ge_g1_auto_sof_a_sm_wildcard_auto_ilbu
+      seriesNumber: 2
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 167
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: MPR
+      protocolName: ge_g1_auto_sof_a_sm_wildcard_auto_ilbu
+      seriesDescription: mpr_wildcard_ilbu
+      seriesNumber: 250
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Navigator
+      protocolName: ge_g1_auto_sof_a_sm_wildcard_auto_ilbu
+      seriesDescription: mpr_wildcard_ilbu
+      seriesNumber: 250
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 32
+      numberOfInstancesAfterReconstruction: 32
+      postProcessingTypes:
+      - Source
+      protocolName: AIRS_SF_Test Hip_accel
+      scanItemNames:
+      - wildcard_seriesname_ge_portion
+      seriesDescription: ge_g1_auto_sof_a_sm_wildcard_auto_ilbu
+      seriesName: ge_g1_auto_sof_a_sm_wildcard_auto_ilbu
+      seriesNumber: 2
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      - defaultPACS
+      isSupported: true
+      numberOfInstances: 168
+      numberOfInstancesAfterReconstruction: 168
+      postProcessingTypes:
+      - MPR
+      - Navigator
+      protocolName: ge_g1_auto_sof_a_sm_wildcard_auto_ilbu
+      scanItemNames:
+      - wildcard_seriesname_ge_portion
+      seriesDescription: mpr_wildcard_ilbu
+      seriesName: mpr_wildcard_ilbu
+      seriesNumber: 250
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HIP
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 200
+      numberOfSeries: 2
+      patientAge: 000Y
+      patientSex: UNKNOWN
+      status: Complete
+      studyDescription: wildcard_seriesname_ge_portion
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: wildcard_seriesname_ge_portion
+    created_at: '2024-12-04 17:13:16'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 32
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_g1_auto_sof_a_sm_wildcard_auto_ilbu_recon
+    SeriesNumber: 2
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 168
+    RemoteAET: SWIFTMR
+    SeriesDescription: mpr_wildcard_ilbu_recon
+    SeriesNumber: 250
+    SeriesStorageOrderIndex: 1
+- case_name: wildcard_seriesdescription_ge
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 167
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: MPR
+      protocolName: ge_g1_auto_sof_a_sm_wildcard_mpr
+      seriesDescription: mpr_wildcard_recon
+      seriesNumber: 250
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 32
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AIRS_SF_Test Hip_accel
+      seriesDescription: ge_g1_auto_sof_a_sm_wildcard_mpr_recon
+      seriesNumber: 2
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Navigator
+      protocolName: ge_g1_auto_sof_a_sm_wildcard_mpr
+      seriesDescription: mpr_wildcard_recon
+      seriesNumber: 250
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 32
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AIRS_SF_Test Hip_accel
+      seriesDescription: ge_g1_auto_sof_a_sm_wildcard_mpr
+      seriesNumber: 2
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 167
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: MPR
+      protocolName: ge_g1_auto_sof_a_sm_wildcard_mpr
+      seriesDescription: mpr_wildcard
+      seriesNumber: 250
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Navigator
+      protocolName: ge_g1_auto_sof_a_sm_wildcard_mpr
+      seriesDescription: mpr_wildcard
+      seriesNumber: 250
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 32
+      numberOfInstancesAfterReconstruction: 32
+      postProcessingTypes:
+      - Source
+      protocolName: AIRS_SF_Test Hip_accel
+      scanItemNames:
+      - wildcard_seriesdescription_ge
+      seriesDescription: ge_g1_auto_sof_a_sm_wildcard_mpr
+      seriesName: ge_g1_auto_sof_a_sm_wildcard_mpr
+      seriesNumber: 2
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      - orthanc
+      isSupported: true
+      numberOfInstances: 168
+      numberOfInstancesAfterReconstruction: 168
+      postProcessingTypes:
+      - Navigator
+      - MPR
+      protocolName: ge_g1_auto_sof_a_sm_wildcard_mpr
+      scanItemNames:
+      - wildcard_seriesdescription_ge
+      seriesDescription: mpr_wildcard
+      seriesName: mpr_wildcard
+      seriesNumber: 250
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HIP
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 200
+      numberOfSeries: 2
+      patientAge: 000Y
+      patientSex: UNKNOWN
+      status: Complete
+      studyDescription: wildcard_seriesdescription_ge
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: wildcard_seriesdescription_ge
+    created_at: '2024-12-04 17:15:00'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 32
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_g1_auto_sof_a_sm_wildcard_mpr_recon
+    SeriesNumber: 2
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 168
+    RemoteAET: SWIFTMR
+    SeriesDescription: mpr_wildcard_recon
+    SeriesNumber: 250
+    SeriesStorageOrderIndex: 1
+- case_name: wildcard_seriesdescription_ge_portion
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 167
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: MPR
+      protocolName: ge_g1_auto_sof_a_sm_wildcard_mpr_ilbu
+      seriesDescription: mpr_wildcard_ilbu_recon
+      seriesNumber: 250
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 32
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AIRS_SF_Test Hip_accel
+      seriesDescription: ge_g1_auto_sof_a_sm_wildcard_mpr_ilbu_recon
+      seriesNumber: 2
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Navigator
+      protocolName: ge_g1_auto_sof_a_sm_wildcard_mpr_ilbu
+      seriesDescription: mpr_wildcard_ilbu_recon
+      seriesNumber: 250
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 32
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AIRS_SF_Test Hip_accel
+      seriesDescription: ge_g1_auto_sof_a_sm_wildcard_mpr_ilbu
+      seriesNumber: 2
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 167
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: MPR
+      protocolName: ge_g1_auto_sof_a_sm_wildcard_mpr_ilbu
+      seriesDescription: mpr_wildcard_ilbu
+      seriesNumber: 250
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Navigator
+      protocolName: ge_g1_auto_sof_a_sm_wildcard_mpr_ilbu
+      seriesDescription: mpr_wildcard_ilbu
+      seriesNumber: 250
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 32
+      numberOfInstancesAfterReconstruction: 32
+      postProcessingTypes:
+      - Source
+      protocolName: AIRS_SF_Test Hip_accel
+      scanItemNames:
+      - wildcard_seriesdescription_ge_portion
+      seriesDescription: ge_g1_auto_sof_a_sm_wildcard_mpr_ilbu
+      seriesName: ge_g1_auto_sof_a_sm_wildcard_mpr_ilbu
+      seriesNumber: 2
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      - orthanc
+      isSupported: true
+      numberOfInstances: 168
+      numberOfInstancesAfterReconstruction: 168
+      postProcessingTypes:
+      - Navigator
+      - MPR
+      protocolName: ge_g1_auto_sof_a_sm_wildcard_mpr_ilbu
+      scanItemNames:
+      - wildcard_seriesdescription_ge_portion
+      seriesDescription: mpr_wildcard_ilbu
+      seriesName: mpr_wildcard_ilbu
+      seriesNumber: 250
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HIP
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 200
+      numberOfSeries: 2
+      patientAge: 000Y
+      patientSex: UNKNOWN
+      status: Complete
+      studyDescription: wildcard_seriesdescription_ge_portion
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: wildcard_seriesdescription_ge_portion
+    created_at: '2024-12-04 17:16:38'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 32
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_g1_auto_sof_a_sm_wildcard_mpr_ilbu_recon
+    SeriesNumber: 2
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 168
+    RemoteAET: SWIFTMR
+    SeriesDescription: mpr_wildcard_ilbu_recon
+    SeriesNumber: 250
+    SeriesStorageOrderIndex: 1
+- case_name: wildcard_pp_seriesdescription_ge
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 167
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: MPR
+      protocolName: ge_g1_auto_sof_a_sm_pp_wildcard_mpr
+      seriesDescription: mpr_wildcard_recon
+      seriesNumber: 250
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 32
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AIRS_SF_Test Hip_accel
+      seriesDescription: ge_g1_auto_sof_a_sm_pp_wildcard_mpr_recon
+      seriesNumber: 2
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Navigator
+      protocolName: ge_g1_auto_sof_a_sm_pp_wildcard_mpr
+      seriesDescription: mpr_wildcard_recon
+      seriesNumber: 250
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 32
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AIRS_SF_Test Hip_accel
+      seriesDescription: ge_g1_auto_sof_a_sm_pp_wildcard_mpr
+      seriesNumber: 2
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 167
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: MPR
+      protocolName: ge_g1_auto_sof_a_sm_pp_wildcard_mpr
+      seriesDescription: mpr_wildcard
+      seriesNumber: 250
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Navigator
+      protocolName: ge_g1_auto_sof_a_sm_pp_wildcard_mpr
+      seriesDescription: mpr_wildcard
+      seriesNumber: 250
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 32
+      numberOfInstancesAfterReconstruction: 32
+      postProcessingTypes:
+      - Source
+      protocolName: AIRS_SF_Test Hip_accel
+      scanItemNames:
+      - wildcard_pp_seriesdescription_ge
+      seriesDescription: ge_g1_auto_sof_a_sm_pp_wildcard_mpr
+      seriesName: ge_g1_auto_sof_a_sm_pp_wildcard_mpr
+      seriesNumber: 2
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      - defaultPACS
+      isSupported: true
+      numberOfInstances: 168
+      numberOfInstancesAfterReconstruction: 168
+      postProcessingTypes:
+      - MPR
+      - Navigator
+      protocolName: ge_g1_auto_sof_a_sm_pp_wildcard_mpr
+      scanItemNames:
+      - wildcard_pp_seriesdescription_ge
+      seriesDescription: mpr_wildcard
+      seriesName: mpr_wildcard
+      seriesNumber: 250
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HIP
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 200
+      numberOfSeries: 2
+      patientAge: 000Y
+      patientSex: UNKNOWN
+      status: Complete
+      studyDescription: wildcard_pp_seriesdescription_ge
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: wildcard_pp_seriesdescription_ge
+    created_at: '2024-12-04 17:18:23'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 32
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_g1_auto_sof_a_sm_pp_wildcard_mpr_recon
+    SeriesNumber: 2
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 168
+    RemoteAET: SWIFTMR
+    SeriesDescription: mpr_wildcard_recon
+    SeriesNumber: 250
+    SeriesStorageOrderIndex: 1
+- case_name: wildcard_pp_seriesdescription_ge_portion
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 167
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: MPR
+      protocolName: ge_g1_auto_sof_a_sm_pp_wildcard_mpr_ilbu
+      seriesDescription: mpr_wildcard_recon
+      seriesNumber: 250
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 32
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AIRS_SF_Test Hip_accel
+      seriesDescription: ge_g1_auto_sof_a_sm_pp_wildcard_mpr_ilbu_recon
+      seriesNumber: 2
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Navigator
+      protocolName: ge_g1_auto_sof_a_sm_pp_wildcard_mpr_ilbu
+      seriesDescription: mpr_wildcard_recon
+      seriesNumber: 250
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 32
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AIRS_SF_Test Hip_accel
+      seriesDescription: ge_g1_auto_sof_a_sm_pp_wildcard_mpr_ilbu
+      seriesNumber: 2
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 167
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: MPR
+      protocolName: ge_g1_auto_sof_a_sm_pp_wildcard_mpr_ilbu
+      seriesDescription: mpr_wildcard
+      seriesNumber: 250
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Navigator
+      protocolName: ge_g1_auto_sof_a_sm_pp_wildcard_mpr_ilbu
+      seriesDescription: mpr_wildcard
+      seriesNumber: 250
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 32
+      numberOfInstancesAfterReconstruction: 32
+      postProcessingTypes:
+      - Source
+      protocolName: AIRS_SF_Test Hip_accel
+      scanItemNames:
+      - wildcard_pp_seriesdescription_ge_portion
+      seriesDescription: ge_g1_auto_sof_a_sm_pp_wildcard_mpr_ilbu
+      seriesName: ge_g1_auto_sof_a_sm_pp_wildcard_mpr_ilbu
+      seriesNumber: 2
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      - defaultPACS
+      isSupported: true
+      numberOfInstances: 168
+      numberOfInstancesAfterReconstruction: 168
+      postProcessingTypes:
+      - MPR
+      - Navigator
+      protocolName: ge_g1_auto_sof_a_sm_pp_wildcard_mpr_ilbu
+      scanItemNames:
+      - wildcard_pp_seriesdescription_ge_portion
+      seriesDescription: mpr_wildcard
+      seriesName: mpr_wildcard
+      seriesNumber: 250
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HIP
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 200
+      numberOfSeries: 2
+      patientAge: 000Y
+      patientSex: UNKNOWN
+      status: Complete
+      studyDescription: wildcard_pp_seriesdescription_ge_portion
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: wildcard_pp_seriesdescription_ge_portion
+    created_at: '2024-12-04 17:20:02'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 32
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_g1_auto_sof_a_sm_pp_wildcard_mpr_ilbu_recon
+    SeriesNumber: 2
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 168
+    RemoteAET: SWIFTMR
+    SeriesDescription: mpr_wildcard_recon
+    SeriesNumber: 250
+    SeriesStorageOrderIndex: 1
+- case_name: skip_pp_vs_enforced_match_ge
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: MIP
+      protocolName: Brain_SWIFT/10
+      seriesDescription: ge_mip2_recon
+      seriesNumber: 700
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 148
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: Brain_SWIFT/10
+      seriesDescription: ge_auto_sof_a_mip_sm_skip_recon
+      seriesNumber: 7
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Navigator
+      protocolName: Brain_SWIFT/10
+      seriesDescription: ge_mip2_recon
+      seriesNumber: 700
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: MIP
+      protocolName: Brain_SWIFT/10
+      seriesDescription: ge_mip2
+      seriesNumber: 700
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Navigator
+      protocolName: Brain_SWIFT/10
+      seriesDescription: ge_mip2
+      seriesNumber: 700
+    - deviceId: 2
+      dispatchType: SkipRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: MIP
+      protocolName: Brain_SWIFT/10
+      seriesDescription: ge_mip1
+      seriesNumber: 700
+    - deviceId: 2
+      dispatchType: SkipRecon
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Navigator
+      protocolName: Brain_SWIFT/10
+      seriesDescription: ge_mip1
+      seriesNumber: 700
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 148
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: Brain_SWIFT/10
+      seriesDescription: ge_auto_sof_a_mip_sm_skip
+      seriesNumber: 7
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 148
+      numberOfInstancesAfterReconstruction: 148.0
+      postProcessingTypes:
+      - Source
+      protocolName: Brain_SWIFT/10
+      scanItemNames:
+      - skip_pp_vs_enforced_match_ge
+      seriesDescription: ge_auto_sof_a_mip_sm_skip
+      seriesName: ge_auto_sof_a_mip_sm_skip
+      seriesNumber: 7
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      - orthanc
+      isSupported: true
+      numberOfInstances: 31
+      numberOfInstancesAfterReconstruction: 31.0
+      postProcessingTypes:
+      - Navigator
+      - MIP
+      protocolName: Brain_SWIFT/10
+      scanItemNames:
+      - skip_pp_vs_enforced_match_ge
+      seriesDescription: ge_mip2
+      seriesName: ge_mip2
+      seriesNumber: 700
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 31
+      numberOfInstancesAfterReconstruction: .nan
+      postProcessingTypes:
+      - MIP
+      - Navigator
+      protocolName: Brain_SWIFT/10
+      scanItemNames:
+      - skip_pp_vs_enforced_match_ge
+      seriesDescription: ge_mip1
+      seriesName: ge_mip1
+      seriesNumber: 700
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: UNKNOWN
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 210
+      numberOfSeries: 3
+      patientAge: ''
+      patientSex: F
+      status: Complete
+      studyDescription: skip_pp_vs_enforced_match_ge
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: skip_pp_vs_enforced_match_ge
+    created_at: '2024-12-04 17:21:58'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 148
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_auto_sof_a_mip_sm_skip_recon
+    SeriesNumber: 7
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 31
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_mip1
+    SeriesNumber: 700
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 31
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_mip2_recon
+    SeriesNumber: 700
+    SeriesStorageOrderIndex: 1
+- case_name: skip_pp_vs_regular_match_ge
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 36
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: ge_auto_dwi_combined3_sof_a_sm_case4_recon
+      seriesNumber: 302
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 36
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: ge_auto_dwi_combined1_sof_a_sm_case4_recon
+      seriesNumber: 3
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 36
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: ge_auto_dwi_combined1_sof_a_sm_case4_recon
+      seriesNumber: 3
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 36
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: ge_auto_dwi_combined2_sof_a_sm_case4_recon
+      seriesNumber: 301
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 36
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: ge_auto_dwi_combined2_sof_a_sm_case4
+      seriesNumber: 301
+    - deviceId: 2
+      dispatchType: SkipRecon
+      fileCount: 36
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: ADC
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: ge_auto_combined_adc_sm_case4
+      seriesNumber: 350
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 36
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: ge_auto_dwi_combined3_sof_a_sm_case4
+      seriesNumber: 302
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 36
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: ge_auto_dwi_combined1_sof_a_sm_case4
+      seriesNumber: 3
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 36
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: ge_auto_dwi_combined1_sof_a_sm_case4
+      seriesNumber: 3
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 72
+      numberOfInstancesAfterReconstruction: 72.0
+      postProcessingTypes:
+      - Source
+      protocolName: '**Glioma study P.M(+)'
+      scanItemNames:
+      - ge_auto_skip_pp_vs_regular_match
+      seriesDescription: ge_auto_dwi_combined1_sof_a_sm_case4
+      seriesName: ge_auto_dwi_combined_sof_a_sm_case4
+      seriesNumber: 3
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 36
+      numberOfInstancesAfterReconstruction: 36.0
+      postProcessingTypes:
+      - Source
+      protocolName: '**Glioma study P.M(+)'
+      scanItemNames:
+      - ge_auto_skip_pp_vs_regular_match
+      seriesDescription: ge_auto_dwi_combined2_sof_a_sm_case4
+      seriesName: ge_auto_dwi_combined_sof_a_sm_case4
+      seriesNumber: 301
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 36
+      numberOfInstancesAfterReconstruction: 36.0
+      postProcessingTypes:
+      - Source
+      protocolName: '**Glioma study P.M(+)'
+      scanItemNames:
+      - ge_auto_skip_pp_vs_regular_match
+      seriesDescription: ge_auto_dwi_combined3_sof_a_sm_case4
+      seriesName: ge_auto_dwi_combined_sof_a_sm_case4
+      seriesNumber: 302
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: false
+      numberOfInstances: 36
+      numberOfInstancesAfterReconstruction: .nan
+      postProcessingTypes:
+      - ADC
+      protocolName: '**Glioma study P.M(+)'
+      scanItemNames:
+      - ge_auto_skip_pp_vs_regular_match
+      seriesDescription: ge_auto_combined_adc_sm_case4
+      seriesName: ge_auto_combined_adc_sm_case4
+      seriesNumber: 350
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 180
+      numberOfSeries: 4
+      patientAge: 060Y
+      patientSex: F
+      status: Complete
+      studyDescription: skip_pp_vs_regular_match_ge
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: skip_pp_vs_regular_match_ge
+    created_at: '2024-12-04 17:24:02'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 72
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_auto_dwi_combined1_sof_a_sm_case4_recon
+    SeriesNumber: 3
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 36
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_auto_dwi_combined2_sof_a_sm_case4_recon
+    SeriesNumber: 301
+    SeriesStorageOrderIndex: 1
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 36
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_auto_dwi_combined3_sof_a_sm_case4_recon
+    SeriesNumber: 302
+    SeriesStorageOrderIndex: 2
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 36
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_auto_combined_adc_sm_case4
+    SeriesNumber: 350
+    SeriesStorageOrderIndex: 3
+- case_name: regular_match_vs_pp_enforced_ge
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 139
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: MinIP
+      protocolName: '**(HPC) Brain MRI+MRA(-)'
+      seriesDescription: case13_pp_recon
+      seriesNumber: 501
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 116
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: '**(HPC) Brain MRI+MRA(-)'
+      seriesDescription: case13_source_recon
+      seriesNumber: 5
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 116
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: '**(HPC) Brain MRI+MRA(-)'
+      seriesDescription: case13_source
+      seriesNumber: 5
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 139
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: MinIP
+      protocolName: '**(HPC) Brain MRI+MRA(-)'
+      seriesDescription: case13_pp
+      seriesNumber: 501
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 116
+      numberOfInstancesAfterReconstruction: 116
+      postProcessingTypes:
+      - Source
+      protocolName: '**(HPC) Brain MRI+MRA(-)'
+      scanItemNames:
+      - ge_auto_regular_match_vs_pp_enforced
+      seriesDescription: case13_source
+      seriesName: ge_g1_auto_sot_a_swift_case13
+      seriesNumber: 5
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 139
+      numberOfInstancesAfterReconstruction: 139
+      postProcessingTypes:
+      - MinIP
+      protocolName: '**(HPC) Brain MRI+MRA(-)'
+      scanItemNames:
+      - ge_auto_regular_match_vs_pp_enforced
+      seriesDescription: case13_pp
+      seriesName: SWAN 2.0
+      seriesNumber: 501
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 255
+      numberOfSeries: 2
+      patientAge: 000Y
+      patientSex: UNKNOWN
+      status: Complete
+      studyDescription: regular_match_vs_pp_enforced_ge
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: regular_match_vs_pp_enforced_ge
+    created_at: '2024-12-04 17:26:08'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 116
+    RemoteAET: SWIFTMR
+    SeriesDescription: case13_source_recon
+    SeriesNumber: 5
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 139
+    RemoteAET: SWIFTMR
+    SeriesDescription: case13_pp_recon
+    SeriesNumber: 501
+    SeriesStorageOrderIndex: 1
+- case_name: adc_source_match_vs_regular_match_ge
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 36
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: ADC
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: ge_auto_combined_adc_swift_recon
+      seriesNumber: 350
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 36
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: ge_auto_dwi_combined1_sot_a_swift_recon
+      seriesNumber: 3
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 36
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: ge_auto_dwi_combined1_sot_a_swift_recon
+      seriesNumber: 3
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 36
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: ge_auto_dwi_combined2_sot_a_swift_recon
+      seriesNumber: 301
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 36
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: ge_auto_dwi_combined3_sot_a_swift_recon
+      seriesNumber: 302
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 36
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: ADC
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: ge_auto_combined_adc_swift
+      seriesNumber: 350
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 36
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: ge_auto_dwi_combined2_sot_a_swift
+      seriesNumber: 301
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 36
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: ge_auto_dwi_combined3_sot_a_swift
+      seriesNumber: 302
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 36
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: ge_auto_dwi_combined1_sot_a_swift
+      seriesNumber: 3
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 36
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: ge_auto_dwi_combined1_sot_a_swift
+      seriesNumber: 3
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 72
+      numberOfInstancesAfterReconstruction: 72
+      postProcessingTypes:
+      - Source
+      protocolName: '**Glioma study P.M(+)'
+      scanItemNames:
+      - adc_source_match_vs_regular_match_ge
+      seriesDescription: ge_auto_dwi_combined1_sot_a_swift
+      seriesName: ge_auto_dwi_combined_sot_a_swift_case5
+      seriesNumber: 3
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 36
+      numberOfInstancesAfterReconstruction: 36
+      postProcessingTypes:
+      - Source
+      protocolName: '**Glioma study P.M(+)'
+      scanItemNames:
+      - adc_source_match_vs_regular_match_ge
+      seriesDescription: ge_auto_dwi_combined2_sot_a_swift
+      seriesName: ge_auto_dwi_combined_sot_a_swift_case5
+      seriesNumber: 301
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 36
+      numberOfInstancesAfterReconstruction: 36
+      postProcessingTypes:
+      - Source
+      protocolName: '**Glioma study P.M(+)'
+      scanItemNames:
+      - adc_source_match_vs_regular_match_ge
+      seriesDescription: ge_auto_dwi_combined3_sot_a_swift
+      seriesName: ge_auto_dwi_combined_sot_a_swift_case5
+      seriesNumber: 302
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 36
+      numberOfInstancesAfterReconstruction: 36
+      postProcessingTypes:
+      - ADC
+      protocolName: '**Glioma study P.M(+)'
+      scanItemNames:
+      - adc_source_match_vs_regular_match_ge
+      seriesDescription: ge_auto_combined_adc_swift
+      seriesName: ge_auto_combined_adc_swift
+      seriesNumber: 350
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 180
+      numberOfSeries: 4
+      patientAge: 060Y
+      patientSex: F
+      status: Complete
+      studyDescription: adc_source_match_vs_regular_match_ge
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: adc_source_match_vs_regular_match_ge
+    created_at: '2024-12-04 17:27:55'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 72
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_auto_dwi_combined1_sot_a_swift_recon
+    SeriesNumber: 3
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 36
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_auto_dwi_combined2_sot_a_swift_recon
+    SeriesNumber: 301
+    SeriesStorageOrderIndex: 1
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 36
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_auto_dwi_combined3_sot_a_swift_recon
+    SeriesNumber: 302
+    SeriesStorageOrderIndex: 2
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 36
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_auto_combined_adc_swift_recon
+    SeriesNumber: 350
+    SeriesStorageOrderIndex: 3
+- case_name: ge_subtraction_sd_wildcard
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 18
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: MIP
+      protocolName: '* 7)KS Angio'
+      seriesDescription: sub_mip_recon
+      seriesNumber: 50250
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: '* 7)KS Angio'
+      seriesDescription: ge_3d_post_sub_sof_a_auto_sm_wc_recon
+      seriesNumber: 10402
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: '* 7)KS Angio'
+      seriesDescription: ge_3d_post_sof_a_auto_sm_wc_recon
+      seriesNumber: 401
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: '* 7)KS Angio'
+      seriesDescription: ge_3d_pre_sof_a_auto_sm_wc_recon
+      seriesNumber: 400
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Navigator
+      protocolName: '* 7)KS Angio'
+      seriesDescription: sub_mip_recon
+      seriesNumber: 50250
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 18
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: MIP
+      protocolName: '* 7)KS Angio'
+      seriesDescription: sub_mip
+      seriesNumber: 50250
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Navigator
+      protocolName: '* 7)KS Angio'
+      seriesDescription: sub_mip
+      seriesNumber: 50250
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: '* 7)KS Angio'
+      seriesDescription: ge_3d_post_sof_a_auto_sm_wc
+      seriesNumber: 401
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: '* 7)KS Angio'
+      seriesDescription: ge_3d_pre_sof_a_auto_sm_wc
+      seriesNumber: 400
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: '* 7)KS Angio'
+      seriesDescription: ge_3d_post_sub_sof_a_auto_sm_wc
+      seriesNumber: 10402
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 40
+      numberOfInstancesAfterReconstruction: 40
+      postProcessingTypes:
+      - Source
+      protocolName: '* 7)KS Angio'
+      scanItemNames:
+      - ge_subtraction_sd_wildcard
+      seriesDescription: ge_3d_pre_sof_a_auto_sm_wc
+      seriesName: ge_3d_subtraction_sof_a_auto_sm_wc
+      seriesNumber: 400
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 40
+      numberOfInstancesAfterReconstruction: 40
+      postProcessingTypes:
+      - Source
+      protocolName: '* 7)KS Angio'
+      scanItemNames:
+      - ge_subtraction_sd_wildcard
+      seriesDescription: ge_3d_post_sof_a_auto_sm_wc
+      seriesName: ge_3d_subtraction_sof_a_auto_sm_wc
+      seriesNumber: 401
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 40
+      numberOfInstancesAfterReconstruction: 40
+      postProcessingTypes:
+      - Source
+      protocolName: '* 7)KS Angio'
+      scanItemNames:
+      - ge_subtraction_sd_wildcard
+      seriesDescription: ge_3d_post_sub_sof_a_auto_sm_wc
+      seriesName: ge_3d_post_sub_sof_a_auto_sm_wc
+      seriesNumber: 10402
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      - orthanc
+      isSupported: true
+      numberOfInstances: 19
+      numberOfInstancesAfterReconstruction: 19
+      postProcessingTypes:
+      - Navigator
+      - MIP
+      protocolName: '* 7)KS Angio'
+      scanItemNames:
+      - ge_subtraction_sd_wildcard
+      seriesDescription: sub_mip
+      seriesName: sub_mip
+      seriesNumber: 50250
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 139
+      numberOfSeries: 4
+      patientAge: 000Y
+      patientSex: UNKNOWN
+      status: Complete
+      studyDescription: ge_subtraction_sd_wildcard
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: ge_subtraction_sd_wildcard
+    created_at: '2024-12-04 17:31:47'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 40
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_3d_pre_sof_a_auto_sm_wc_recon
+    SeriesNumber: 400
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 40
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_3d_post_sof_a_auto_sm_wc_recon
+    SeriesNumber: 401
+    SeriesStorageOrderIndex: 1
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 40
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_3d_post_sub_sof_a_auto_sm_wc_recon
+    SeriesNumber: 10402
+    SeriesStorageOrderIndex: 2
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 19
+    RemoteAET: SWIFTMR
+    SeriesDescription: sub_mip_recon
+    SeriesNumber: 50250
+    SeriesStorageOrderIndex: 3
+- case_name: ge_subtraction_sn_wildcard
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 18
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: MIP
+      protocolName: '* 7)KS Angio'
+      seriesDescription: sub_mip_recon
+      seriesNumber: 50250
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: '* 7)KS Angio'
+      seriesDescription: ge_3d_post_sub_sof_a_auto_sm_wc2_recon
+      seriesNumber: 10402
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: '* 7)KS Angio'
+      seriesDescription: ge_3d_post_sof_a_auto_sm_wc2_recon
+      seriesNumber: 401
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: '* 7)KS Angio'
+      seriesDescription: ge_3d_pre_sof_a_auto_sm_wc2_recon
+      seriesNumber: 400
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Navigator
+      protocolName: '* 7)KS Angio'
+      seriesDescription: sub_mip_recon
+      seriesNumber: 50250
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 18
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: MIP
+      protocolName: '* 7)KS Angio'
+      seriesDescription: sub_mip
+      seriesNumber: 50250
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Navigator
+      protocolName: '* 7)KS Angio'
+      seriesDescription: sub_mip
+      seriesNumber: 50250
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: '* 7)KS Angio'
+      seriesDescription: ge_3d_post_sub_sof_a_auto_sm_wc2
+      seriesNumber: 10402
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: '* 7)KS Angio'
+      seriesDescription: ge_3d_post_sof_a_auto_sm_wc2
+      seriesNumber: 401
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: '* 7)KS Angio'
+      seriesDescription: ge_3d_pre_sof_a_auto_sm_wc2
+      seriesNumber: 400
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 40
+      numberOfInstancesAfterReconstruction: 40
+      postProcessingTypes:
+      - Source
+      protocolName: '* 7)KS Angio'
+      scanItemNames:
+      - ge_subtraction_sn_wildcard
+      seriesDescription: ge_3d_pre_sof_a_auto_sm_wc2
+      seriesName: ge_3d_subtraction_sof_a_auto_sm_wc2
+      seriesNumber: 400
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 40
+      numberOfInstancesAfterReconstruction: 40
+      postProcessingTypes:
+      - Source
+      protocolName: '* 7)KS Angio'
+      scanItemNames:
+      - ge_subtraction_sn_wildcard
+      seriesDescription: ge_3d_post_sof_a_auto_sm_wc2
+      seriesName: ge_3d_subtraction_sof_a_auto_sm_wc2
+      seriesNumber: 401
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 40
+      numberOfInstancesAfterReconstruction: 40
+      postProcessingTypes:
+      - Source
+      protocolName: '* 7)KS Angio'
+      scanItemNames:
+      - ge_subtraction_sn_wildcard
+      seriesDescription: ge_3d_post_sub_sof_a_auto_sm_wc2
+      seriesName: ge_3d_post_sub_sof_a_auto_sm_wc2
+      seriesNumber: 10402
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      - orthanc
+      isSupported: true
+      numberOfInstances: 19
+      numberOfInstancesAfterReconstruction: 19
+      postProcessingTypes:
+      - Navigator
+      - MIP
+      protocolName: '* 7)KS Angio'
+      scanItemNames:
+      - ge_subtraction_sn_wildcard
+      seriesDescription: sub_mip
+      seriesName: sub_mip
+      seriesNumber: 50250
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 139
+      numberOfSeries: 4
+      patientAge: 000Y
+      patientSex: UNKNOWN
+      status: Complete
+      studyDescription: ge_subtraction_sn_wildcard
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: ge_subtraction_sn_wildcard
+    created_at: '2024-12-04 17:33:31'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 40
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_3d_pre_sof_a_auto_sm_wc2_recon
+    SeriesNumber: 400
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 40
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_3d_post_sof_a_auto_sm_wc2_recon
+    SeriesNumber: 401
+    SeriesStorageOrderIndex: 1
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 40
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_3d_post_sub_sof_a_auto_sm_wc2_recon
+    SeriesNumber: 10402
+    SeriesStorageOrderIndex: 2
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 19
+    RemoteAET: SWIFTMR
+    SeriesDescription: sub_mip_recon
+    SeriesNumber: 50250
+    SeriesStorageOrderIndex: 3
+- case_name: wildcard_seriesname_philips
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: NotMatched
+      fileCount: 9
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: MinIP
+      protocolName: VsT2 mDixon AX IP
+      seriesDescription: minip_wildcard
+      seriesNumber: 405
+    - deviceId: 3
+      dispatchType: NotMatched
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sT2 mDixon AX IP
+      seriesDescription: philips_g1_auto_sof_a_swift_wildcard_auto
+      seriesNumber: 403
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 25
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: sT2 mDixon AX IP
+      scanItemNames: []
+      seriesDescription: philips_g1_auto_sof_a_swift_wildcard_auto
+      seriesName: philips_g1_auto_sof_a_swift_wildcard_auto
+      seriesNumber: 403
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 9
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - MinIP
+      protocolName: VsT2 mDixon AX IP
+      scanItemNames: []
+      seriesDescription: minip_wildcard
+      seriesName: minip_wildcard
+      seriesNumber: 405
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 333name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 34
+      numberOfSeries: 2
+      patientAge: 057Y
+      patientSex: M
+      status: Complete
+      studyDescription: wildcard_seriesname_philips
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: wildcard_seriesname_philips
+    created_at: '2024-12-04 17:34:15'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 25
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_g1_auto_sof_a_swift_wildcard_auto
+    SeriesNumber: 403
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 9
+    RemoteAET: SWIFTMR
+    SeriesDescription: minip_wildcard
+    SeriesNumber: 405
+    SeriesStorageOrderIndex: 1
+- case_name: wildcard_seriesname_philips_portion
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 9
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: MinIP
+      protocolName: VsT2 mDixon AX IP
+      seriesDescription: minip_wildcard_recon
+      seriesNumber: 405
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sT2 mDixon AX IP
+      seriesDescription: philips_g1_auto_sof_a_swift_wildcard_auto_ilbu1_recon
+      seriesNumber: 403
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 9
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: MinIP
+      protocolName: VsT2 mDixon AX IP
+      seriesDescription: minip_wildcard
+      seriesNumber: 405
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sT2 mDixon AX IP
+      seriesDescription: philips_g1_auto_sof_a_swift_wildcard_auto_ilbu1
+      seriesNumber: 403
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 25
+      numberOfInstancesAfterReconstruction: 25
+      postProcessingTypes:
+      - Source
+      protocolName: sT2 mDixon AX IP
+      scanItemNames:
+      - wildcard_seriesname_philips_portion
+      seriesDescription: philips_g1_auto_sof_a_swift_wildcard_auto_ilbu1
+      seriesName: philips_g1_auto_sof_a_swift_wildcard_auto_ilbu1
+      seriesNumber: 403
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 9
+      numberOfInstancesAfterReconstruction: 9
+      postProcessingTypes:
+      - MinIP
+      protocolName: VsT2 mDixon AX IP
+      scanItemNames:
+      - wildcard_seriesname_philips_portion
+      seriesDescription: minip_wildcard
+      seriesName: minip_wildcard
+      seriesNumber: 405
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 333name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 34
+      numberOfSeries: 2
+      patientAge: 057Y
+      patientSex: M
+      status: Complete
+      studyDescription: wildcard_seriesname_philips_portion
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: wildcard_seriesname_philips_portion
+    created_at: '2024-12-04 17:35:09'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 25
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_g1_auto_sof_a_swift_wildcard_auto_ilbu1_recon
+    SeriesNumber: 403
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 9
+    RemoteAET: SWIFTMR
+    SeriesDescription: minip_wildcard_recon
+    SeriesNumber: 405
+    SeriesStorageOrderIndex: 1
+- case_name: wildcard_seriesname_philips_portion2
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 9
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: MinIP
+      protocolName: VsT2 mDixon AX IP
+      seriesDescription: minip_wildcard_recon
+      seriesNumber: 405
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sT2 mDixon AX IP
+      seriesDescription: philips_g1_auto_sof_a_swift_wildcard_auto_ilbu2_recon
+      seriesNumber: 403
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 9
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: MinIP
+      protocolName: VsT2 mDixon AX IP
+      seriesDescription: minip_wildcard
+      seriesNumber: 405
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sT2 mDixon AX IP
+      seriesDescription: philips_g1_auto_sof_a_swift_wildcard_auto_ilbu2
+      seriesNumber: 403
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 25
+      numberOfInstancesAfterReconstruction: 25
+      postProcessingTypes:
+      - Source
+      protocolName: sT2 mDixon AX IP
+      scanItemNames:
+      - wildcard_seriesname_philips_portion2
+      seriesDescription: philips_g1_auto_sof_a_swift_wildcard_auto_ilbu2
+      seriesName: philips_g1_auto_sof_a_swift_wildcard_auto_ilbu2
+      seriesNumber: 403
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 9
+      numberOfInstancesAfterReconstruction: 9
+      postProcessingTypes:
+      - MinIP
+      protocolName: VsT2 mDixon AX IP
+      scanItemNames:
+      - wildcard_seriesname_philips_portion2
+      seriesDescription: minip_wildcard
+      seriesName: minip_wildcard
+      seriesNumber: 405
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 333name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 34
+      numberOfSeries: 2
+      patientAge: 057Y
+      patientSex: M
+      status: Complete
+      studyDescription: wildcard_seriesname_philips_portion2
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: wildcard_seriesname_philips_portion2
+    created_at: '2024-12-04 17:36:09'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 25
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_g1_auto_sof_a_swift_wildcard_auto_ilbu2_recon
+    SeriesNumber: 403
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 9
+    RemoteAET: SWIFTMR
+    SeriesDescription: minip_wildcard_recon
+    SeriesNumber: 405
+    SeriesStorageOrderIndex: 1
+- case_name: wildcard_pp_seriesdescription_philips
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 9
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: MinIP
+      protocolName: VsT2 mDixon AX IP
+      seriesDescription: minip_wildcard_recon
+      seriesNumber: 405
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sT2 mDixon AX IP
+      seriesDescription: philips_g1_auto_sof_a_swift_wildcard_minip_recon
+      seriesNumber: 403
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sT2 mDixon AX IP
+      seriesDescription: philips_g1_auto_sof_a_swift_wildcard_minip
+      seriesNumber: 403
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 9
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: MinIP
+      protocolName: VsT2 mDixon AX IP
+      seriesDescription: minip_wildcard
+      seriesNumber: 405
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 25
+      numberOfInstancesAfterReconstruction: 25
+      postProcessingTypes:
+      - Source
+      protocolName: sT2 mDixon AX IP
+      scanItemNames:
+      - wildcard_pp_seriesdescription_philips
+      seriesDescription: philips_g1_auto_sof_a_swift_wildcard_minip
+      seriesName: philips_g1_auto_sof_a_swift_wildcard_minip
+      seriesNumber: 403
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 9
+      numberOfInstancesAfterReconstruction: 9
+      postProcessingTypes:
+      - MinIP
+      protocolName: VsT2 mDixon AX IP
+      scanItemNames:
+      - wildcard_pp_seriesdescription_philips
+      seriesDescription: minip_wildcard
+      seriesName: minip_wildcard
+      seriesNumber: 405
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 333name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 34
+      numberOfSeries: 2
+      patientAge: 057Y
+      patientSex: M
+      status: Complete
+      studyDescription: wildcard_pp_seriesdescription_philips
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: wildcard_pp_seriesdescription_philips
+    created_at: '2024-12-04 17:37:09'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 25
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_g1_auto_sof_a_swift_wildcard_minip_recon
+    SeriesNumber: 403
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 9
+    RemoteAET: SWIFTMR
+    SeriesDescription: minip_wildcard_recon
+    SeriesNumber: 405
+    SeriesStorageOrderIndex: 1
+- case_name: wildcard_pp_seriesdescription_philips_portion
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 9
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: MinIP
+      protocolName: VsT2 mDixon AX IP
+      seriesDescription: minip_wildcard_recon
+      seriesNumber: 405
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sT2 mDixon AX IP
+      seriesDescription: philips_g1_auto_sof_a_swift_wildcard_minip_ilbu_recon
+      seriesNumber: 403
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sT2 mDixon AX IP
+      seriesDescription: philips_g1_auto_sof_a_swift_wildcard_minip_ilbu
+      seriesNumber: 403
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 9
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: MinIP
+      protocolName: VsT2 mDixon AX IP
+      seriesDescription: minip_wildcard
+      seriesNumber: 405
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 25
+      numberOfInstancesAfterReconstruction: 25
+      postProcessingTypes:
+      - Source
+      protocolName: sT2 mDixon AX IP
+      scanItemNames:
+      - wildcard_pp_seriesdescription_philips_portion
+      seriesDescription: philips_g1_auto_sof_a_swift_wildcard_minip_ilbu
+      seriesName: philips_g1_auto_sof_a_swift_wildcard_minip_ilbu
+      seriesNumber: 403
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 9
+      numberOfInstancesAfterReconstruction: 9
+      postProcessingTypes:
+      - MinIP
+      protocolName: VsT2 mDixon AX IP
+      scanItemNames:
+      - wildcard_pp_seriesdescription_philips_portion
+      seriesDescription: minip_wildcard
+      seriesName: minip_wildcard
+      seriesNumber: 405
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 333name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 34
+      numberOfSeries: 2
+      patientAge: 057Y
+      patientSex: M
+      status: Complete
+      studyDescription: wildcard_pp_seriesdescription_philips_portion
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: wildcard_pp_seriesdescription_philips_portion
+    created_at: '2024-12-04 17:38:03'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 25
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_g1_auto_sof_a_swift_wildcard_minip_ilbu_recon
+    SeriesNumber: 403
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 9
+    RemoteAET: SWIFTMR
+    SeriesDescription: minip_wildcard_recon
+    SeriesNumber: 405
+    SeriesStorageOrderIndex: 1
+- case_name: wildcard_pp_seriesdescription_philips_portion2
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 9
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: MinIP
+      protocolName: VsT2 mDixon AX IP
+      seriesDescription: minip_wildcard_recon
+      seriesNumber: 405
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sT2 mDixon AX IP
+      seriesDescription: philips_g1_auto_sof_a_swift_wildcard_minip_ilbu2_recon
+      seriesNumber: 403
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 9
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: MinIP
+      protocolName: VsT2 mDixon AX IP
+      seriesDescription: minip_wildcard
+      seriesNumber: 405
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sT2 mDixon AX IP
+      seriesDescription: philips_g1_auto_sof_a_swift_wildcard_minip_ilbu2
+      seriesNumber: 403
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 25
+      numberOfInstancesAfterReconstruction: 25
+      postProcessingTypes:
+      - Source
+      protocolName: sT2 mDixon AX IP
+      scanItemNames:
+      - wildcard_pp_seriesdescription_philips_portion2
+      seriesDescription: philips_g1_auto_sof_a_swift_wildcard_minip_ilbu2
+      seriesName: philips_g1_auto_sof_a_swift_wildcard_minip_ilbu2
+      seriesNumber: 403
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 9
+      numberOfInstancesAfterReconstruction: 9
+      postProcessingTypes:
+      - MinIP
+      protocolName: VsT2 mDixon AX IP
+      scanItemNames:
+      - wildcard_pp_seriesdescription_philips_portion2
+      seriesDescription: minip_wildcard
+      seriesName: minip_wildcard
+      seriesNumber: 405
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 333name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 34
+      numberOfSeries: 2
+      patientAge: 057Y
+      patientSex: M
+      status: Complete
+      studyDescription: wildcard_pp_seriesdescription_philips_portion2
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: wildcard_pp_seriesdescription_philips_portion2
+    created_at: '2024-12-04 17:39:09'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 25
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_g1_auto_sof_a_swift_wildcard_minip_ilbu2_recon
+    SeriesNumber: 403
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 9
+    RemoteAET: SWIFTMR
+    SeriesDescription: minip_wildcard_recon
+    SeriesNumber: 405
+    SeriesStorageOrderIndex: 1
+- case_name: wildcard_pp_seriesdescription_philips_portion3
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 9
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: MinIP
+      protocolName: VsT2 mDixon AX IP
+      seriesDescription: minip_wildcard_recon
+      seriesNumber: 405
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sT2 mDixon AX IP
+      seriesDescription: philips_g1_auto_sof_a_swift_wildcard_minip_ilbu3_recon
+      seriesNumber: 403
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 9
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: MinIP
+      protocolName: VsT2 mDixon AX IP
+      seriesDescription: minip_wildcard
+      seriesNumber: 405
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sT2 mDixon AX IP
+      seriesDescription: philips_g1_auto_sof_a_swift_wildcard_minip_ilbu3
+      seriesNumber: 403
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 25
+      numberOfInstancesAfterReconstruction: 25
+      postProcessingTypes:
+      - Source
+      protocolName: sT2 mDixon AX IP
+      scanItemNames:
+      - wildcard_pp_seriesdescription_philips_portion3
+      seriesDescription: philips_g1_auto_sof_a_swift_wildcard_minip_ilbu3
+      seriesName: philips_g1_auto_sof_a_swift_wildcard_minip_ilbu3
+      seriesNumber: 403
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 9
+      numberOfInstancesAfterReconstruction: 9
+      postProcessingTypes:
+      - MinIP
+      protocolName: VsT2 mDixon AX IP
+      scanItemNames:
+      - wildcard_pp_seriesdescription_philips_portion3
+      seriesDescription: minip_wildcard
+      seriesName: minip_wildcard
+      seriesNumber: 405
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 333name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 34
+      numberOfSeries: 2
+      patientAge: 057Y
+      patientSex: M
+      status: Complete
+      studyDescription: wildcard_pp_seriesdescription_philips_portion3
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: wildcard_pp_seriesdescription_philips_portion3
+    created_at: '2024-12-04 17:40:09'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 25
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_g1_auto_sof_a_swift_wildcard_minip_ilbu3_recon
+    SeriesNumber: 403
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 9
+    RemoteAET: SWIFTMR
+    SeriesDescription: minip_wildcard_recon
+    SeriesNumber: 405
+    SeriesStorageOrderIndex: 1
+- case_name: skip_pp_vs_enforced_match_philips
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 37
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: MIP
+      protocolName: Brain TOF RL
+      seriesDescription: philips_mip2_recon
+      seriesNumber: 404029
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 144
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: WIP 3D TOF MRA
+      seriesDescription: philips_auto_sof_a_mip_swift_skip_recon
+      seriesNumber: 401029
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 37
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: MIP
+      protocolName: Brain TOF RL
+      seriesDescription: philips_mip2
+      seriesNumber: 404029
+    - deviceId: 3
+      dispatchType: SkipRecon
+      fileCount: 37
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: MIP
+      protocolName: Brain TOF RL
+      seriesDescription: philips_mip1
+      seriesNumber: 404029
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 144
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: WIP 3D TOF MRA
+      seriesDescription: philips_auto_sof_a_mip_swift_skip
+      seriesNumber: 401029
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 144
+      numberOfInstancesAfterReconstruction: 144.0
+      postProcessingTypes:
+      - Source
+      protocolName: WIP 3D TOF MRA
+      scanItemNames:
+      - skip_pp_vs_enforced_match_philips
+      seriesDescription: philips_auto_sof_a_mip_swift_skip
+      seriesName: philips_auto_sof_a_mip_swift_skip
+      seriesNumber: 401029
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 37
+      numberOfInstancesAfterReconstruction: 37.0
+      postProcessingTypes:
+      - MIP
+      protocolName: Brain TOF RL
+      scanItemNames:
+      - skip_pp_vs_enforced_match_philips
+      seriesDescription: philips_mip2
+      seriesName: philips_mip2
+      seriesNumber: 404029
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: false
+      numberOfInstances: 37
+      numberOfInstancesAfterReconstruction: .nan
+      postProcessingTypes:
+      - MIP
+      protocolName: Brain TOF RL
+      scanItemNames:
+      - skip_pp_vs_enforced_match_philips
+      seriesDescription: philips_mip1
+      seriesName: philips_mip1
+      seriesNumber: 404029
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 333name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 218
+      numberOfSeries: 3
+      patientAge: 063Y
+      patientSex: F
+      status: Complete
+      studyDescription: skip_pp_vs_enforced_match_philips
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: skip_pp_vs_enforced_match_philips
+    created_at: '2024-12-04 17:42:16'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 144
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_auto_sof_a_mip_swift_skip_recon
+    SeriesNumber: 401029
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 37
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_mip1
+    SeriesNumber: 404029
+    SeriesStorageOrderIndex: 2
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 37
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_mip2_recon
+    SeriesNumber: 404029
+    SeriesStorageOrderIndex: 1
+- case_name: skip_pp_vs_regular_match_philips
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP DWI b0_400_800_1400  FOV200 single coil
+      seriesDescription: philips_auto_dwi_combined1_sof_a_swift_case4_recon
+      seriesNumber: 1001
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP DWI b0_400_800_1400  FOV200 single coil
+      seriesDescription: philips_auto_dwi_combined1_sof_a_swift_case4_recon
+      seriesNumber: 1001
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP DWI b0_400_800_1400  FOV200 single coil
+      seriesDescription: philips_auto_dwi_combined1_sof_a_swift_case4_recon
+      seriesNumber: 1001
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP DWI b0_400_800_1400  FOV200 single coil
+      seriesDescription: philips_auto_dwi_combined1_sof_a_swift_case4_recon
+      seriesNumber: 1001
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sDWI b800
+      seriesDescription: philips_auto_dwi_combined4_sof_a_swift_case4_recon
+      seriesNumber: 1004
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sDWI b400
+      seriesDescription: philips_auto_dwi_combined3_sof_a_swift_case4_recon
+      seriesNumber: 1003
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sDWI b0
+      seriesDescription: philips_auto_dwi_combined2_sof_a_swift_case4_recon
+      seriesNumber: 1002
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sDWI b800
+      seriesDescription: philips_auto_dwi_combined4_sof_a_swift_case4
+      seriesNumber: 1004
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP DWI b0_400_800_1400  FOV200 single coil
+      seriesDescription: philips_auto_dwi_combined1_sof_a_swift_case4
+      seriesNumber: 1001
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP DWI b0_400_800_1400  FOV200 single coil
+      seriesDescription: philips_auto_dwi_combined1_sof_a_swift_case4
+      seriesNumber: 1001
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP DWI b0_400_800_1400  FOV200 single coil
+      seriesDescription: philips_auto_dwi_combined1_sof_a_swift_case4
+      seriesNumber: 1001
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP DWI b0_400_800_1400  FOV200 single coil
+      seriesDescription: philips_auto_dwi_combined1_sof_a_swift_case4
+      seriesNumber: 1001
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sDWI b0
+      seriesDescription: philips_auto_dwi_combined2_sof_a_swift_case4
+      seriesNumber: 1002
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sDWI b400
+      seriesDescription: philips_auto_dwi_combined3_sof_a_swift_case4
+      seriesNumber: 1003
+    - deviceId: 3
+      dispatchType: SkipRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: ADC
+      protocolName: dADC
+      seriesDescription: philips_auto_combined_adc2_swift_case4
+      seriesNumber: 1005
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 100
+      numberOfInstancesAfterReconstruction: 100.0
+      postProcessingTypes:
+      - Source
+      protocolName: WIP DWI b0_400_800_1400  FOV200 single coil
+      scanItemNames:
+      - skip_pp_vs_regular_match_philips
+      seriesDescription: philips_auto_dwi_combined1_sof_a_swift_case4
+      seriesName: philips_auto_dwi_combined1_sof_a_swift_case4
+      seriesNumber: 1001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 25
+      numberOfInstancesAfterReconstruction: 25.0
+      postProcessingTypes:
+      - Source
+      protocolName: sDWI b0
+      scanItemNames:
+      - skip_pp_vs_regular_match_philips
+      seriesDescription: philips_auto_dwi_combined2_sof_a_swift_case4
+      seriesName: philips_auto_dwi_combined2_sof_a_swift_case4
+      seriesNumber: 1002
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 25
+      numberOfInstancesAfterReconstruction: 25.0
+      postProcessingTypes:
+      - Source
+      protocolName: sDWI b400
+      scanItemNames:
+      - skip_pp_vs_regular_match_philips
+      seriesDescription: philips_auto_dwi_combined3_sof_a_swift_case4
+      seriesName: philips_auto_dwi_combined3_sof_a_swift_case4
+      seriesNumber: 1003
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 25
+      numberOfInstancesAfterReconstruction: 25.0
+      postProcessingTypes:
+      - Source
+      protocolName: sDWI b800
+      scanItemNames:
+      - skip_pp_vs_regular_match_philips
+      seriesDescription: philips_auto_dwi_combined4_sof_a_swift_case4
+      seriesName: philips_auto_dwi_combined4_sof_a_swift_case4
+      seriesNumber: 1004
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: false
+      numberOfInstances: 25
+      numberOfInstancesAfterReconstruction: .nan
+      postProcessingTypes:
+      - ADC
+      protocolName: dADC
+      scanItemNames:
+      - skip_pp_vs_regular_match_philips
+      seriesDescription: philips_auto_combined_adc2_swift_case4
+      seriesName: philips_auto_combined_adc2_swift_case4
+      seriesNumber: 1005
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: SHOULDER
+      deviceNames: 333name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 200
+      numberOfSeries: 5
+      patientAge: 048Y
+      patientSex: F
+      status: Complete
+      studyDescription: skip_pp_vs_regular_match_philips
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: skip_pp_vs_regular_match_philips
+    created_at: '2024-12-04 17:44:59'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 100
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_auto_dwi_combined1_sof_a_swift_case4_recon
+    SeriesNumber: 1001
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 25
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_auto_dwi_combined2_sof_a_swift_case4_recon
+    SeriesNumber: 1002
+    SeriesStorageOrderIndex: 1
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 25
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_auto_dwi_combined3_sof_a_swift_case4_recon
+    SeriesNumber: 1003
+    SeriesStorageOrderIndex: 2
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 25
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_auto_dwi_combined4_sof_a_swift_case4_recon
+    SeriesNumber: 1004
+    SeriesStorageOrderIndex: 3
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 25
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_auto_combined_adc2_swift_case4
+    SeriesNumber: 1005
+    SeriesStorageOrderIndex: 4
+- case_name: regular_match_vs_pp_enforced_philips
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 9
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: MIP
+      protocolName: VsT2 mDixon AX IP
+      seriesDescription: auto_pp_case14_recon
+      seriesNumber: 405
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sT2 mDixon AX IP
+      seriesDescription: philips_g1_auto_sot_a_swift_case14_recon
+      seriesNumber: 403
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 9
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: MIP
+      protocolName: VsT2 mDixon AX IP
+      seriesDescription: auto_pp_case14
+      seriesNumber: 405
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sT2 mDixon AX IP
+      seriesDescription: philips_g1_auto_sot_a_swift_case14
+      seriesNumber: 403
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 25
+      numberOfInstancesAfterReconstruction: 25
+      postProcessingTypes:
+      - Source
+      protocolName: sT2 mDixon AX IP
+      scanItemNames:
+      - regular_match_vs_pp_enforced_philips
+      seriesDescription: philips_g1_auto_sot_a_swift_case14
+      seriesName: philips_g1_auto_sot_a_swift_case14
+      seriesNumber: 403
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 9
+      numberOfInstancesAfterReconstruction: 9
+      postProcessingTypes:
+      - MIP
+      protocolName: VsT2 mDixon AX IP
+      scanItemNames:
+      - regular_match_vs_pp_enforced_philips
+      seriesDescription: auto_pp_case14
+      seriesName: auto_pp_case14
+      seriesNumber: 405
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 333name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 34
+      numberOfSeries: 2
+      patientAge: 057Y
+      patientSex: M
+      status: Complete
+      studyDescription: regular_match_vs_pp_enforced_philips
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: regular_match_vs_pp_enforced_philips
+    created_at: '2024-12-04 17:46:00'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 25
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_g1_auto_sot_a_swift_case14_recon
+    SeriesNumber: 403
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 9
+    RemoteAET: SWIFTMR
+    SeriesDescription: auto_pp_case14_recon
+    SeriesNumber: 405
+    SeriesStorageOrderIndex: 1
+- case_name: adc_source_match_vs_regular_match_philips
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: ADC
+      protocolName: dADC
+      seriesDescription: philips_auto11_combined_adc1_swift_9_recon
+      seriesNumber: 1005
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP DWI b0_400_800_1400  FOV200 single coil
+      seriesDescription: philips_auto_dwi_combined1_sot_a_swift_case9_recon
+      seriesNumber: 1001
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP DWI b0_400_800_1400  FOV200 single coil
+      seriesDescription: philips_auto_dwi_combined1_sot_a_swift_case9_recon
+      seriesNumber: 1001
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP DWI b0_400_800_1400  FOV200 single coil
+      seriesDescription: philips_auto_dwi_combined1_sot_a_swift_case9_recon
+      seriesNumber: 1001
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP DWI b0_400_800_1400  FOV200 single coil
+      seriesDescription: philips_auto_dwi_combined1_sot_a_swift_case9_recon
+      seriesNumber: 1001
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sDWI b0
+      seriesDescription: philips_auto_dwi_combined2_sot_a_swift_case9_recon
+      seriesNumber: 1002
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sDWI b400
+      seriesDescription: philips_auto_dwi_combined3_sot_a_swift_case9_recon
+      seriesNumber: 1003
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sDWI b400
+      seriesDescription: philips_auto_dwi_combined3_sot_a_swift_case9
+      seriesNumber: 1003
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sDWI b0
+      seriesDescription: philips_auto_dwi_combined2_sot_a_swift_case9
+      seriesNumber: 1002
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP DWI b0_400_800_1400  FOV200 single coil
+      seriesDescription: philips_auto_dwi_combined1_sot_a_swift_case9
+      seriesNumber: 1001
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP DWI b0_400_800_1400  FOV200 single coil
+      seriesDescription: philips_auto_dwi_combined1_sot_a_swift_case9
+      seriesNumber: 1001
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP DWI b0_400_800_1400  FOV200 single coil
+      seriesDescription: philips_auto_dwi_combined1_sot_a_swift_case9
+      seriesNumber: 1001
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP DWI b0_400_800_1400  FOV200 single coil
+      seriesDescription: philips_auto_dwi_combined1_sot_a_swift_case9
+      seriesNumber: 1001
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: ADC
+      protocolName: dADC
+      seriesDescription: philips_auto11_combined_adc1_swift_9
+      seriesNumber: 1005
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 100
+      numberOfInstancesAfterReconstruction: 100
+      postProcessingTypes:
+      - Source
+      protocolName: WIP DWI b0_400_800_1400  FOV200 single coil
+      scanItemNames:
+      - adc_source_match_vs_regular_match_philips
+      seriesDescription: philips_auto_dwi_combined1_sot_a_swift_case9
+      seriesName: philips_auto_dwi_combined1_sot_a_swift_case9
+      seriesNumber: 1001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 25
+      numberOfInstancesAfterReconstruction: 25
+      postProcessingTypes:
+      - Source
+      protocolName: sDWI b0
+      scanItemNames:
+      - adc_source_match_vs_regular_match_philips
+      seriesDescription: philips_auto_dwi_combined2_sot_a_swift_case9
+      seriesName: philips_auto_dwi_combined2_sot_a_swift_case9
+      seriesNumber: 1002
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 25
+      numberOfInstancesAfterReconstruction: 25
+      postProcessingTypes:
+      - Source
+      protocolName: sDWI b400
+      scanItemNames:
+      - adc_source_match_vs_regular_match_philips
+      seriesDescription: philips_auto_dwi_combined3_sot_a_swift_case9
+      seriesName: philips_auto_dwi_combined3_sot_a_swift_case9
+      seriesNumber: 1003
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 25
+      numberOfInstancesAfterReconstruction: 25
+      postProcessingTypes:
+      - ADC
+      protocolName: dADC
+      scanItemNames:
+      - adc_source_match_vs_regular_match_philips
+      seriesDescription: philips_auto11_combined_adc1_swift_9
+      seriesName: philips_auto11_combined_adc1_swift_9
+      seriesNumber: 1005
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: SHOULDER
+      deviceNames: 333name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 175
+      numberOfSeries: 4
+      patientAge: 048Y
+      patientSex: F
+      status: Complete
+      studyDescription: adc_source_match_vs_regular_match_philips
+  metadata:
+    case_data_file: regression\dispatch_priority.yml
+    case_name: adc_source_match_vs_regular_match_philips
+    created_at: '2024-12-04 17:48:07'
+    dcs_setup_file: regression\dispatch_priority.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 100
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_auto_dwi_combined1_sot_a_swift_case9_recon
+    SeriesNumber: 1001
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 25
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_auto_dwi_combined2_sot_a_swift_case9_recon
+    SeriesNumber: 1002
+    SeriesStorageOrderIndex: 1
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 25
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_auto_dwi_combined3_sot_a_swift_case9_recon
+    SeriesNumber: 1003
+    SeriesStorageOrderIndex: 2
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 25
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_auto11_combined_adc1_swift_9_recon
+    SeriesNumber: 1005
+    SeriesStorageOrderIndex: 3

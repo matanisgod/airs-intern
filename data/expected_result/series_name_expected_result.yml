@@ -1,0 +1,2038 @@
+- case_name: si_new_CSA_Header
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - Source
+      protocolName: AX T2 TSE
+      scanItemNames:
+      - si_new_CSA_Header
+      seriesDescription: AX T2 TSE
+      seriesName: case1_siemens_g1_auto_sof_a_swift
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_new_CSA_Header
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: si_new_CSA_Header
+    created_at: '2024-12-03 17:00:16'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: AX T2 TSE_recon
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+- case_name: si_old_CSA_Header
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: C-T-L SAG T2 TSE DFS 3STEP_1
+      seriesDescription: C-T-L SAG T2 TSE DFS 3STEP_opp_recon
+      seriesNumber: 5
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: C-T-L SAG T2 TSE DFS 3STEP_1
+      seriesDescription: C-T-L SAG T2 TSE DFS 3STEP_opp
+      seriesNumber: 5
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 20
+      numberOfInstancesAfterReconstruction: 20
+      postProcessingTypes:
+      - Source
+      protocolName: C-T-L SAG T2 TSE DFS 3STEP_1
+      scanItemNames:
+      - si_old_CSA_Header
+      seriesDescription: C-T-L SAG T2 TSE DFS 3STEP_opp
+      seriesName: case2_siemens_g1_auto_sof_a_sm
+      seriesNumber: 5
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: SPINE
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 20
+      numberOfSeries: 1
+      patientAge: 032Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_old_CSA_Header
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: si_old_CSA_Header
+    created_at: '2024-12-03 17:01:03'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 20
+    RemoteAET: SWIFTMR
+    SeriesDescription: C-T-L SAG T2 TSE DFS 3STEP_opp_recon
+    SeriesNumber: 5
+    SeriesStorageOrderIndex: 0
+- case_name: si_protocolName
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: case3_siemens_g1_auto_sof_a_sm
+      seriesDescription: AX T2 TSE_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: case3_siemens_g1_auto_sof_a_sm
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - Source
+      protocolName: case3_siemens_g1_auto_sof_a_sm
+      scanItemNames:
+      - si_protocolName
+      seriesDescription: AX T2 TSE
+      seriesName: case3_siemens_g1_auto_sof_a_sm
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_protocolName
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: si_protocolName
+    created_at: '2024-12-03 17:02:05'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: AX T2 TSE_recon
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+- case_name: si_new_CSA_Header_notmatch_protocol_match
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: case4_siemens_g1_auto_sof_a_sm
+      seriesDescription: AX T2 TSE_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: case4_siemens_g1_auto_sof_a_sm
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - Source
+      protocolName: case4_siemens_g1_auto_sof_a_sm
+      scanItemNames:
+      - si_new_CSA_Header_notmatch_protocol_match
+      seriesDescription: AX T2 TSE
+      seriesName: case4_siemens_g1_auto_sof_a_sm_not_matched
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_new_CSA_Header_notmatch_protocol_match
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: si_new_CSA_Header_notmatch_protocol_match
+    created_at: '2024-12-03 17:03:07'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: AX T2 TSE_recon
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+- case_name: si_old_CSA_Header_notmatch_protocol_match
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: case5_siemens_g1_auto_sof_a_sm
+      seriesDescription: C-T-L SAG T2 TSE DFS 3STEP_opp_recon
+      seriesNumber: 5
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: case5_siemens_g1_auto_sof_a_sm
+      seriesDescription: C-T-L SAG T2 TSE DFS 3STEP_opp
+      seriesNumber: 5
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 20
+      numberOfInstancesAfterReconstruction: 20
+      postProcessingTypes:
+      - Source
+      protocolName: case5_siemens_g1_auto_sof_a_sm
+      scanItemNames:
+      - si_old_CSA_Header_notmatch_protocol_match
+      seriesDescription: C-T-L SAG T2 TSE DFS 3STEP_opp
+      seriesName: case5_siemens_g1_auto_sof_a_sm_not_matched
+      seriesNumber: 5
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: SPINE
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 20
+      numberOfSeries: 1
+      patientAge: 032Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_old_CSA_Header_notmatch_protocol_match
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: si_old_CSA_Header_notmatch_protocol_match
+    created_at: '2024-12-03 17:03:59'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: true
+    NumberOfInstance: 20
+    RemoteAET: SWIFTMR
+    SeriesDescription: C-T-L SAG T2 TSE DFS 3STEP_opp_recon
+    SeriesNumber: 5
+    SeriesStorageOrderIndex: 0
+- case_name: si_protocolName_notmatch_NS
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: case6_siemens_g1_auto_sof_a_sm_not_matched
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: case6_siemens_g1_auto_sof_a_sm_not_matched
+      scanItemNames: []
+      seriesDescription: AX T2 TSE
+      seriesName: case6_siemens_g1_auto_sof_a_sm_not_matched
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_protocolName_notmatch_NS
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: si_protocolName_notmatch_NS
+    created_at: '2024-12-03 17:04:37'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: AX T2 TSE
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+- case_name: si_new_CSA_Header_with_SD
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: case7_siemens_g1_auto_sof_a_swift_sd_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: case7_siemens_g1_auto_sof_a_swift_sd
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - Source
+      protocolName: AX T2 TSE
+      scanItemNames:
+      - si_new_CSA_Header_with_SD
+      seriesDescription: case7_siemens_g1_auto_sof_a_swift_sd
+      seriesName: case7_siemens_g1_auto_sof_a_swift
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_new_CSA_Header_with_SD
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: si_new_CSA_Header_with_SD
+    created_at: '2024-12-03 17:05:39'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: case7_siemens_g1_auto_sof_a_swift_sd_recon
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+- case_name: si_old_CSA_Header_with_SD
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: C-T-L SAG T2 TSE DFS 3STEP_1
+      seriesDescription: case8_siemens_g1_auto_sof_a_swift_sd_recon
+      seriesNumber: 5
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: C-T-L SAG T2 TSE DFS 3STEP_1
+      seriesDescription: case8_siemens_g1_auto_sof_a_swift_sd
+      seriesNumber: 5
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 20
+      numberOfInstancesAfterReconstruction: 20
+      postProcessingTypes:
+      - Source
+      protocolName: C-T-L SAG T2 TSE DFS 3STEP_1
+      scanItemNames:
+      - si_old_CSA_Header_with_SD
+      seriesDescription: case8_siemens_g1_auto_sof_a_swift_sd
+      seriesName: case8_siemens_g1_auto_sof_a_sm
+      seriesNumber: 5
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: SPINE
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 20
+      numberOfSeries: 1
+      patientAge: 032Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_old_CSA_Header_with_SD
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: si_old_CSA_Header_with_SD
+    created_at: '2024-12-03 17:06:20'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 20
+    RemoteAET: SWIFTMR
+    SeriesDescription: case8_siemens_g1_auto_sof_a_swift_sd_recon
+    SeriesNumber: 5
+    SeriesStorageOrderIndex: 0
+- case_name: si_protocolName_with_SD
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: case9_siemens_g1_auto_sof_a_sm
+      seriesDescription: case9_siemens_g1_auto_sof_a_swift_sd_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: case9_siemens_g1_auto_sof_a_sm
+      seriesDescription: case9_siemens_g1_auto_sof_a_swift_sd
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - Source
+      protocolName: case9_siemens_g1_auto_sof_a_sm
+      scanItemNames:
+      - si_protocolName_with_SD
+      seriesDescription: case9_siemens_g1_auto_sof_a_swift_sd
+      seriesName: case9_siemens_g1_auto_sof_a_sm
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_protocolName_with_SD
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: si_protocolName_with_SD
+    created_at: '2024-12-03 17:07:22'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: case9_siemens_g1_auto_sof_a_swift_sd_recon
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+- case_name: si_new_CSA_Header_notmatch_protocol_match_with_SD
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: case10_siemens_g1_auto_sof_a_sm
+      seriesDescription: case10_siemens_g1_auto_sof_a_swift_sd_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: case10_siemens_g1_auto_sof_a_sm
+      seriesDescription: case10_siemens_g1_auto_sof_a_swift_sd
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - Source
+      protocolName: case10_siemens_g1_auto_sof_a_sm
+      scanItemNames:
+      - si_new_CSA_Header_notmatch_protocol_match_with_SD
+      seriesDescription: case10_siemens_g1_auto_sof_a_swift_sd
+      seriesName: case10_siemens_g1_auto_sof_a_sm_not_matched
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_new_CSA_Header_notmatch_protocol_match_with_SD
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: si_new_CSA_Header_notmatch_protocol_match_with_SD
+    created_at: '2024-12-03 17:08:25'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: case10_siemens_g1_auto_sof_a_swift_sd_recon
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+- case_name: si_old_CSA_Header_notmatch_protocol_match_with_SD
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: case11_siemens_g1_auto_sof_a_sm
+      seriesDescription: case11_siemens_g1_auto_sof_a_swift_sd_recon
+      seriesNumber: 5
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: case11_siemens_g1_auto_sof_a_sm
+      seriesDescription: case11_siemens_g1_auto_sof_a_swift_sd
+      seriesNumber: 5
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 20
+      numberOfInstancesAfterReconstruction: 20
+      postProcessingTypes:
+      - Source
+      protocolName: case11_siemens_g1_auto_sof_a_sm
+      scanItemNames:
+      - si_old_CSA_Header_notmatch_protocol_match_with_SD
+      seriesDescription: case11_siemens_g1_auto_sof_a_swift_sd
+      seriesName: case11_siemens_g1_auto_sof_a_sm_not_matched
+      seriesNumber: 5
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: SPINE
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 20
+      numberOfSeries: 1
+      patientAge: 032Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_old_CSA_Header_notmatch_protocol_match_with_SD
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: si_old_CSA_Header_notmatch_protocol_match_with_SD
+    created_at: '2024-12-03 17:09:13'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 20
+    RemoteAET: SWIFTMR
+    SeriesDescription: case11_siemens_g1_auto_sof_a_swift_sd_recon
+    SeriesNumber: 5
+    SeriesStorageOrderIndex: 0
+- case_name: si_new_CSA_Header_with_SD_NS
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: case12_siemens_g1_auto_sof_a_swift_sd_not_matched
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: AX T2 TSE
+      scanItemNames: []
+      seriesDescription: case12_siemens_g1_auto_sof_a_swift_sd_not_matched
+      seriesName: case12_siemens_g1_auto_sof_a_swift
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_new_CSA_Header_with_SD_NS
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: si_new_CSA_Header_with_SD_NS
+    created_at: '2024-12-03 17:09:50'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: case12_siemens_g1_auto_sof_a_swift_sd_not_matched
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+- case_name: si_old_CSA_Header_with_SD_NS
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: NotMatched
+      fileCount: 20
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: C-T-L SAG T2 TSE DFS 3STEP_1
+      seriesDescription: case13_siemens_g1_auto_sof_a_swift_sd_not_matched
+      seriesNumber: 5
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 20
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: C-T-L SAG T2 TSE DFS 3STEP_1
+      scanItemNames: []
+      seriesDescription: case13_siemens_g1_auto_sof_a_swift_sd_not_matched
+      seriesName: case13_siemens_g1_auto_sof_a_sm
+      seriesNumber: 5
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: SPINE
+      deviceNames: 111name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 20
+      numberOfSeries: 1
+      patientAge: 032Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_old_CSA_Header_with_SD_NS
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: si_old_CSA_Header_with_SD_NS
+    created_at: '2024-12-03 17:10:17'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 20
+    RemoteAET: SWIFTMR
+    SeriesDescription: case13_siemens_g1_auto_sof_a_swift_sd_not_matched
+    SeriesNumber: 5
+    SeriesStorageOrderIndex: 0
+- case_name: si_protocolName_with_SD_NS
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: case14_siemens_g1_auto_sof_a_sm
+      seriesDescription: case14_siemens_g1_auto_sof_a_swift_sd_not_matched
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: case14_siemens_g1_auto_sof_a_sm
+      scanItemNames: []
+      seriesDescription: case14_siemens_g1_auto_sof_a_swift_sd_not_matched
+      seriesName: case14_siemens_g1_auto_sof_a_sm
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_protocolName_with_SD_NS
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: si_protocolName_with_SD_NS
+    created_at: '2024-12-03 17:10:49'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: case14_siemens_g1_auto_sof_a_swift_sd_not_matched
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+- case_name: si_new_CSA_Header_notmatch_protocol_match_with_SD_NS
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: case15_siemens_g1_auto_sof_a_sm
+      seriesDescription: case15_siemens_g1_auto_sof_a_swift_sd_not_matched
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: case15_siemens_g1_auto_sof_a_sm
+      scanItemNames: []
+      seriesDescription: case15_siemens_g1_auto_sof_a_swift_sd_not_matched
+      seriesName: case15_siemens_g1_auto_sof_a_sm_not_matched
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_new_CSA_Header_notmatch_protocol_match_with_SD_NS
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: si_new_CSA_Header_notmatch_protocol_match_with_SD_NS
+    created_at: '2024-12-03 17:11:26'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: case15_siemens_g1_auto_sof_a_swift_sd_not_matched
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+- case_name: si_old_CSA_Header_notmatch_protocol_match_with_SD_NS
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: NotMatched
+      fileCount: 20
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: case16_siemens_g1_auto_sof_a_sm
+      seriesDescription: case16_siemens_g1_auto_sof_a_swift_sd_not_matched
+      seriesNumber: 5
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 20
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: case16_siemens_g1_auto_sof_a_sm
+      scanItemNames: []
+      seriesDescription: case16_siemens_g1_auto_sof_a_swift_sd_not_matched
+      seriesName: case16_siemens_g1_auto_sof_a_sm_not_matched
+      seriesNumber: 5
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: SPINE
+      deviceNames: 111name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 20
+      numberOfSeries: 1
+      patientAge: 032Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_old_CSA_Header_notmatch_protocol_match_with_SD_NS
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: si_old_CSA_Header_notmatch_protocol_match_with_SD_NS
+    created_at: '2024-12-03 17:11:53'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 20
+    RemoteAET: SWIFTMR
+    SeriesDescription: case16_siemens_g1_auto_sof_a_swift_sd_not_matched
+    SeriesNumber: 5
+    SeriesStorageOrderIndex: 0
+- case_name: si_protocolName_notmatch_NS_with_SD_NS
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: case17_siemens_g1_auto_sof_a_sm_not_matched
+      seriesDescription: case17_siemens_g1_auto_sof_a_swift_sd
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: case17_siemens_g1_auto_sof_a_sm_not_matched
+      scanItemNames: []
+      seriesDescription: case17_siemens_g1_auto_sof_a_swift_sd
+      seriesName: case17_siemens_g1_auto_sof_a_sm_not_matched
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_protocolName_notmatch_NS_with_SD_NS
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: si_protocolName_notmatch_NS_with_SD_NS
+    created_at: '2024-12-03 17:12:24'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: case17_siemens_g1_auto_sof_a_swift_sd
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+- case_name: si_protocolName_notmatch_NS_with_notmatch_SD_NS
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: case18_siemens_g1_auto_sof_a_sm_not_matched
+      seriesDescription: case18_siemens_g1_auto_sof_a_swift_sd_not_matched
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: case18_siemens_g1_auto_sof_a_sm_not_matched
+      scanItemNames: []
+      seriesDescription: case18_siemens_g1_auto_sof_a_swift_sd_not_matched
+      seriesName: case18_siemens_g1_auto_sof_a_sm_not_matched
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_protocolName_notmatch_NS_with_notmatch_SD_NS
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: si_protocolName_notmatch_NS_with_notmatch_SD_NS
+    created_at: '2024-12-03 17:13:04'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: case18_siemens_g1_auto_sof_a_swift_sd_not_matched
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+- case_name: ge_with_PDB_match
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High_recon
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - Source
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames:
+      - ge_with_PDB_match
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesName: case1_ge_g1_auto_sof_a_sm
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_with_PDB_match
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: ge_with_PDB_match
+    created_at: '2024-12-03 17:13:59'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: Ax T2 FLAIR FS DL High_recon
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+- case_name: ge_no_PDB_match_SD
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: case2_ge_g1_auto_sof_a_sm_sd_recon
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: case2_ge_g1_auto_sof_a_sm_sd
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - Source
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames:
+      - ge_no_PDB_match_SD
+      seriesDescription: case2_ge_g1_auto_sof_a_sm_sd
+      seriesName: case2_ge_g1_auto_sof_a_sm_sd
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_no_PDB_match_SD
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: ge_no_PDB_match_SD
+    created_at: '2024-12-03 17:14:47'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: case2_ge_g1_auto_sof_a_sm_sd_recon
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+- case_name: ge_with_PDB_notmatch_NS
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames: []
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesName: case3_ge_g1_auto_sof_a_sm_notmatched
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_with_PDB_notmatch_NS
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: ge_with_PDB_notmatch_NS
+    created_at: '2024-12-03 17:15:15'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: Ax T2 FLAIR FS DL High
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+- case_name: ge_no_PDB_notmatch_SD_notmatch_NS
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: case4_ge_g1_auto_sof_a_sm_sd_not_matched
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames: []
+      seriesDescription: case4_ge_g1_auto_sof_a_sm_sd_not_matched
+      seriesName: case4_ge_g1_auto_sof_a_sm_sd_not_matched
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_no_PDB_notmatch_SD_notmatch_NS
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: ge_no_PDB_notmatch_SD_notmatch_NS
+    created_at: '2024-12-03 17:15:43'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: case4_ge_g1_auto_sof_a_sm_sd_not_matched
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+- case_name: ge_with_PDB_match_with_SD
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: case5_ge_g1_auto_sof_a_sm_sd_recon
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: case5_ge_g1_auto_sof_a_sm_sd
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - Source
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames:
+      - ge_with_PDB_match_with_SD
+      seriesDescription: case5_ge_g1_auto_sof_a_sm_sd
+      seriesName: case5_ge_g1_auto_sof_a_sm
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_with_PDB_match_with_SD
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: ge_with_PDB_match_with_SD
+    created_at: '2024-12-03 17:16:36'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: case5_ge_g1_auto_sof_a_sm_sd_recon
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+- case_name: ge_no_PDB_match_SD_with_SD
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: case6_ge_g1_auto_sof_a_sm_sd_recon
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: case6_ge_g1_auto_sof_a_sm_sd
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - Source
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames:
+      - ge_no_PDB_match_SD_with_SD
+      seriesDescription: case6_ge_g1_auto_sof_a_sm_sd
+      seriesName: case6_ge_g1_auto_sof_a_sm_sd
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_no_PDB_match_SD_with_SD
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: ge_no_PDB_match_SD_with_SD
+    created_at: '2024-12-03 17:17:25'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: case6_ge_g1_auto_sof_a_sm_sd_recon
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+- case_name: ge_with_PDB_match_with_SD_NS
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: case7_ge_g1_auto_sof_a_sm_sd_not_matched
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames: []
+      seriesDescription: case7_ge_g1_auto_sof_a_sm_sd_not_matched
+      seriesName: case7_ge_g1_auto_sof_a_sm
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_with_PDB_match_with_SD_NS
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: ge_with_PDB_match_with_SD_NS
+    created_at: '2024-12-03 17:17:54'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: case7_ge_g1_auto_sof_a_sm_sd_not_matched
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+- case_name: ge_with_PDB_notmatch_with_SD_NS
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: case8_ge_g1_auto_sof_a_sm_sd
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames: []
+      seriesDescription: case8_ge_g1_auto_sof_a_sm_sd
+      seriesName: case8_ge_g1_auto_sof_a_sm_not_matched
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_with_PDB_notmatch_with_SD_NS
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: ge_with_PDB_notmatch_with_SD_NS
+    created_at: '2024-12-03 17:18:23'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: case8_ge_g1_auto_sof_a_sm_sd
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+- case_name: ge_no_PDB_match_SD_with_SD_NS
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: case9_ge_g1_auto_sof_a_sm_sd
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames: []
+      seriesDescription: case9_ge_g1_auto_sof_a_sm_sd
+      seriesName: case9_ge_g1_auto_sof_a_sm_sd
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_no_PDB_match_SD_with_SD_NS
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: ge_no_PDB_match_SD_with_SD_NS
+    created_at: '2024-12-03 17:18:53'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: case9_ge_g1_auto_sof_a_sm_sd
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+- case_name: ge_with_PDB_notmatch_SD_match_NS
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: case10_ge_g1_auto_sof_a_sm_sd
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames: []
+      seriesDescription: case10_ge_g1_auto_sof_a_sm_sd
+      seriesName: case10_ge_g1_auto_sof_a_sm_sd_not_matched
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_with_PDB_notmatch_SD_match_NS
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: ge_with_PDB_notmatch_SD_match_NS
+    created_at: '2024-12-03 17:19:23'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: case10_ge_g1_auto_sof_a_sm_sd
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+- case_name: ge_with_PDB_notmatch_SD_notmatch_SD_match_NS
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: case11_ge_g1_auto_sof_a_sm_sd
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames: []
+      seriesDescription: case11_ge_g1_auto_sof_a_sm_sd
+      seriesName: case11_ge_g1_auto_sof_a_sm_sd_not_matched
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_with_PDB_notmatch_SD_notmatch_SD_match_NS
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: ge_with_PDB_notmatch_SD_notmatch_SD_match_NS
+    created_at: '2024-12-03 17:19:53'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: case11_ge_g1_auto_sof_a_sm_sd
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+- case_name: ge_no_PDB_notmatch_SD_notmatch_SD_match_NS
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: case12_ge_g1_auto_sof_a_sm_sd
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames: []
+      seriesDescription: case12_ge_g1_auto_sof_a_sm_sd
+      seriesName: case12_ge_g1_auto_sof_a_sm_sd
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_no_PDB_notmatch_SD_notmatch_SD_match_NS
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: ge_no_PDB_notmatch_SD_notmatch_SD_match_NS
+    created_at: '2024-12-03 17:20:22'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: case12_ge_g1_auto_sof_a_sm_sd
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+- case_name: ge_with_PDB_notmatch_SD_SD_notmatch_NS
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: case13_ge_g1_auto_sof_a_sm_sd_not_matched
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames: []
+      seriesDescription: case13_ge_g1_auto_sof_a_sm_sd_not_matched
+      seriesName: case13_ge_g1_auto_sof_a_sm_sd_not_matched
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_with_PDB_notmatch_SD_SD_notmatch_NS
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: ge_with_PDB_notmatch_SD_SD_notmatch_NS
+    created_at: '2024-12-03 17:20:52'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: case13_ge_g1_auto_sof_a_sm_sd_not_matched
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+- case_name: ge_no_PDB_notmatch_SD_notmatch_SD_notmatch_NS
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: case14_ge_g1_auto_sof_a_sm_sd
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames: []
+      seriesDescription: case14_ge_g1_auto_sof_a_sm_sd
+      seriesName: case14_ge_g1_auto_sof_a_sm_sd
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_no_PDB_notmatch_SD_notmatch_SD_notmatch_NS
+  metadata:
+    case_data_file: regression\series_name.yml
+    case_name: ge_no_PDB_notmatch_SD_notmatch_SD_notmatch_NS
+    created_at: '2024-12-03 17:21:22'
+    dcs_setup_file: regression\series_name.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: case14_ge_g1_auto_sof_a_sm_sd
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0

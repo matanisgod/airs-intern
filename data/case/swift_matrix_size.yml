@@ -1,0 +1,597 @@
+- case_name: siemens_2d_legacy
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.2d_minip.siemens_xa_2d_pp.2d_source
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sot_a_swift_legecy
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sot_a_swift_legacy
+
+- case_name: siemens_2d_original
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.2d_minip.siemens_xa_2d_pp.2d_source
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sot_a_swift_original
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sot_a_swift_original
+
+- case_name: siemens_2d_default
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.2d_minip.siemens_xa_2d_pp.2d_source
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sot_a_swift_default
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sot_a_swift_default
+
+- case_name: siemens_2d_custom_128
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.2d_minip.siemens_xa_2d_pp.2d_source
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sot_a_swift_custom_128
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sot_a_swift_custom_128
+
+- case_name: siemens_2d_custom_256
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.2d_minip.siemens_xa_2d_pp.2d_source
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sot_a_swift_custom_256
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sot_a_swift_custom_256
+
+- case_name: siemens_3d_sourcempr_default
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.3d_mpr.general3.Source_General_post SAG T1 MPRAGE_15
+          mpr1: Siemens.3d_mpr.general3.MPR_General_MPR Range1_101
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sot_a_swift_default
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sot_a_swift_default
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: auto_pp
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sot_a_swift_default
+
+- case_name: siemens_3d_sourcempr_custom
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.3d_mpr.general3.Source_General_post SAG T1 MPRAGE_15
+          mpr1: Siemens.3d_mpr.general3.MPR_General_MPR Range1_101
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sot_a_swift_custom_128
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sot_a_swift_custom_128
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: auto_pp
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sot_a_swift_custom_128
+
+- case_name: siemens_tof_legacy
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.3d_mip.2MIP.TOF_3D_multi-slab_WillisMRA_b3b8
+          mip1: Siemens.3d_mip.2MIP.MIPThinRange_2933
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sot_a_swift_legacy
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sot_a_swift_legacy
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: auto_pp
+
+- case_name: siemens_tof_original
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.3d_mip.2MIP.TOF_3D_multi-slab_WillisMRA_b3b8
+          mip1: Siemens.3d_mip.2MIP.MIPThinRange_2933
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sot_a_swift_original
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sot_a_swift_original
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: auto_pp
+
+- case_name: ge_2d_default
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.2d_source.2dpp1.source
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sot_a_swift_default
+
+- case_name: ge_2d_custom
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.2d_source.2dpp1.source
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sot_a_swift_custom_128
+
+- case_name: ge_3d_sourcempr_legacy
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.3d_with_mpr.general1.Source_Navigate_3D T1 SAG fSPGRAswift_4_151950
+          mpr1: GE.3d_with_mpr.general1.MPR_General_Processed Images_452_151950
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sot_a_swift_legacy
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: auto_pp
+
+- case_name: ge_3d_sourcempr_original
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.3d_with_mpr.general1.Source_Navigate_3D T1 SAG fSPGRAswift_4_151950
+          mpr1: GE.3d_with_mpr.general1.MPR_General_Processed Images_452_151950
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sot_a_swift_original
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: auto_pp
+
+- case_name: ge_3d_sourcempr_default
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.3d_with_mpr.general1.Source_Navigate_3D T1 SAG fSPGRAswift_4_151950
+          mpr1: GE.3d_with_mpr.general1.MPR_General_Processed Images_452_151950
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sot_a_swift_default
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: auto_pp
+
+- case_name: ge_3d_sourcempr_custom1
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.3d_with_mpr.general1.Source_Navigate_3D T1 SAG fSPGRAswift_4_151950
+          mpr1: GE.3d_with_mpr.general1.MPR_General_Processed Images_452_151950
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sot_a_swift_custom_128
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: auto_pp
+
+- case_name: ge_3d_sourcempr_custom2
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.3d_with_mpr.general1.Source_Navigate_3D T1 SAG fSPGRAswift_4_151950
+          mpr1: GE.3d_with_mpr.general1.MPR_General_Processed Images_452_151950
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sot_a_swift_custom_256
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: auto_pp
+
+- case_name: ge_tof_legacy
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.3d_with_mip.general1.Source_General_3D TOF MRA_3
+          mip1: GE.3d_with_mip.general1.MIP_auto_General_18_369
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sot_a_swift_legacy
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: auto_pp
+
+- case_name: ge_tof_original
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.3d_with_mip.general1.Source_General_3D TOF MRA_3
+          mip1: GE.3d_with_mip.general1.MIP_auto_General_18_369
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sot_a_swift_original
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: auto_pp
+
+- case_name: philips_2d_legacy
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.2d_source.philips_2d_pp.2d_source
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sot_a_swift_legacy
+
+- case_name: philips_2d_original
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.2d_source.philips_2d_pp.2d_source
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sot_a_swift_original
+
+- case_name: philips_3d_sourcempr_default
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.3d_mpr.general1.Source_General_Pre 3D T1 FFE SAGswift_401_142433
+          mpr1: Philips.3d_mpr.general1.MPR_General_1mm AXL_403_142433
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sot_a_swift_default
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: auto_pp
+
+- case_name: philips_3d_sourcempr_custom
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.3d_mpr.general1.Source_General_Pre 3D T1 FFE SAGswift_401_142433
+          mpr1: Philips.3d_mpr.general1.MPR_General_1mm AXL_403_142433
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sot_a_swift_custom_128
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: auto_pp
+
+- case_name: philips_tof_legacy
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.3d_mip.MIP.401029_3D TOF MRA
+          mip1: Philips.3d_mip.MIP.404029_Brain TOF RL
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sot_a_swift_legacy
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: auto_pp
+
+- case_name: philips_tof_original
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.3d_mip.MIP.401029_3D TOF MRA
+          mip1: Philips.3d_mip.MIP.404029_Brain TOF RL
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sot_a_swift_original
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: auto_pp
+
+- case_name: philips_tof_default
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.3d_mip.MIP.401029_3D TOF MRA
+          mip1: Philips.3d_mip.MIP.404029_Brain TOF RL
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sot_a_swift_default
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: auto_pp
+
+- case_name: philips_tof_custom1
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.3d_mip.MIP.401029_3D TOF MRA
+          mip1: Philips.3d_mip.MIP.404029_Brain TOF RL
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sot_a_swift_custom_128
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: auto_pp
+
+- case_name: philips_tof_custom2
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.3d_mip.MIP.401029_3D TOF MRA
+          mip1: Philips.3d_mip.MIP.404029_Brain TOF RL
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sot_a_swift_custom_256
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: auto_pp
+
+- case_name: esaote_2d_source
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: Other.Esaote.Esaote.case0
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: s1
+        tag_update:
+          DeviceSerialNumber: "444"
+          SeriesDescription: esaote_g1_auto_sot_a_swift_legacy
+
+- case_name: fonar_2d_source
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: Other.Fonar.Other.Fonar
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: s1
+        tag_update:
+          DeviceSerialNumber: "444"
+          SeriesDescription: fonar_g1_auto_sot_a_swift_original
+
+- case_name: fujifilm_2d_source
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: Other.Fujifilm.Other.Fujifilm
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: s1
+        tag_update:
+          DeviceSerialNumber: "444"
+          SeriesDescription: fujifilm_g1_auto_sot_a_swift_default
+
+- case_name: hitachi_2d_source
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: Other.Hitachi.Other.Hitachi
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: s1
+        tag_update:
+          DeviceSerialNumber: "444"
+          SeriesDescription: hitachi_g1_auto_sot_a_swift_128

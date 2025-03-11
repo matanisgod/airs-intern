@@ -1,0 +1,1062 @@
+# dcs_setup_data: smoke/smoke_setting.yml
+
+- case_name: si_2d_sourcemip_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.2d_minip.siemens_xa_2d_pp.2d_source
+          mip1: Siemens.2d_minip.siemens_xa_2d_pp.mip_radial
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_sm
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sof_a_sm
+          SeriesDescription: auto_mip
+
+- case_name: si_2d_sourcempr_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.multiecho.DIXON.C-T-L_SAG_T2_TSE_DFS_3STEP_OPP_0005
+          mpr1: Siemens.multiecho.DIXON._MPR_RANGE__0100
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_sm
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sof_a_sm
+          SeriesDescription: auto_mpr
+
+- case_name: si_2d_sourceminip_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.2d_minip.siemens_xa_2d_pp.2d_source
+          minip1: Siemens.2d_minip.siemens_xa_2d_pp.minip
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_sm
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: minip1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sof_a_sm
+          SeriesDescription: auto_minip
+
+- case_name: si_3d_sourcemip_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.3d_mip.general1.Source_General_TOF3Dmultislabneckswift_3
+          mip1: Siemens.3d_mip.general1.MIP_auto_General_MIP Range_100_1
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_sm
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sof_a_sm
+          SeriesDescription: auto_mip
+
+- case_name: si_3d_sourcempr_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.3d_mpr.2MPR.9_T1 VIBE AX FS_Multi artery 352
+          mpr1: Siemens.3d_mpr.2MPR.104_MPR Range
+          mpr2: Siemens.3d_mpr.2MPR.105_MPR Range[1]
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_sm
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sof_a_sm
+          SeriesDescription: auto_mpr
+    - action: dicom_send
+      arguments:
+        dicom: mpr2
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sof_a_sm
+          SeriesDescription: auto_mpr
+
+- case_name: si_3d_sourceminip_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.3d_source.Siemens_XA_PARALLELpp.Source
+          minip1: Siemens.3d_source.Siemens_XA_PARALLELpp.minIP
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_sm
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: minip1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sof_a_sm
+          SeriesDescription: auto_minip
+
+- case_name: si_dwi_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b50: Siemens.dwi.1ADC.55001_DWI AX b50 400 800 Free breath P2
+          b400: Siemens.dwi.1ADC.55002_DWI AX b50 400 800 Free breath P2
+          b800: Siemens.dwi.1ADC.55003_DWI AX b50 400 800 Free breath P2
+          adc: Siemens.dwi.1ADC.56001_DWI AX b50 400 800 Free breath P2_ADC # adc from source b50, b800
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b50
+        tag_update:
+          SeriesDescription: siemens_auto_dwi_combined1_sof_a_sm
+          DeviceSerialNumber: "111"
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b400
+        tag_update:
+          SeriesDescription: siemens_auto_dwi_combined2_sof_a_sm
+          DeviceSerialNumber: "111"
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b800
+        tag_update:
+          SeriesDescription: siemens_auto_dwi_combined3_sof_a_sm
+          DeviceSerialNumber: "111"
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_update:
+          SeriesDescription: siemens_auto_combined_adc_sm
+          DeviceSerialNumber: "111"
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm
+
+- case_name: si_swi_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          swi: Siemens.swi.fast.11001_AXL_SWI_smbr_SWI_3c85
+          mag: Siemens.swi.fast.9001_AXL_SWI_smbr_Mag_efc4
+          pha: Siemens.swi.fast.10001_AXL_SWI_smbr_Pha_45d6
+          minip: Siemens.swi.fast.12001_AXL_SWI_smbr_SWI_mIP_cb4d # minip from swi
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: swi
+        tag_update:
+          SeriesDescription: siemens_3d_swi_sof_a_auto_sm
+          DeviceSerialNumber: "111"
+        tag_transform:
+          SiemensSeriesName: siemens_3d_swi_sof_a_auto_sm
+    - action: dicom_send
+      arguments:
+        dicom: mag
+        tag_update:
+          SeriesDescription: siemens_3d_mag_sof_a_auto_sm
+          DeviceSerialNumber: "111"
+        tag_transform:
+          SiemensSeriesName: siemens_3d_swi_sof_a_auto_sm
+    - action: dicom_send
+      arguments:
+        dicom: pha
+        tag_update:
+          SeriesDescription: siemens_3d_pha_sof_a_auto_sm
+          DeviceSerialNumber: "111"
+        tag_transform:
+          SiemensSeriesName: siemens_3d_swi_sof_a_auto_sm
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: minip
+        tag_update:
+          SeriesDescription: autopp
+          DeviceSerialNumber: "111"
+        tag_transform:
+          SiemensSeriesName: siemens_3d_swi_sof_a_auto_sm
+
+- case_name: si_angio_holding # 3 source (s1,s2,s3) + 3 mip → expected result: composed MIP + 3 source + 3 source recon + 3 mip + 3mip recon
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.angio.angio.3D TOF Brain_smft_5001
+          source2: Siemens.angio.angio.3D TOF Brain_smft_9001
+          source3: Siemens.angio.angio.3D TOF Brain_smft_13001
+          mip1: Siemens.angio.angio.MIP Range_1015001
+          mip2: Siemens.angio.angio.MIP Range[2]_1025001
+          mip3: Siemens.angio.angio.MIP Range[3]_1031001
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          SeriesDescription: siemens_angio_3D_TOF_Brain_smft_1
+          DeviceSerialNumber: "111"
+          ProtocolName: angio
+        tag_transform:
+          SiemensSeriesName: siemens_angio_3D_TOF_Brain_smft_1
+    - action: dicom_send
+      arguments:
+        dicom: source2
+        tag_update:
+          SeriesDescription: siemens_angio_3D_TOF_Brain_smft_2
+          DeviceSerialNumber: "111"
+          ProtocolName: angio
+        tag_transform:
+          SiemensSeriesName: siemens_angio_3D_TOF_Brain_smft_2
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: source3
+        tag_update:
+          SeriesDescription: siemens_angio_3D_TOF_Brain_smft_3
+          DeviceSerialNumber: "111"
+          ProtocolName: angio
+        tag_transform:
+          SiemensSeriesName: siemens_angio_3D_TOF_Brain_smft_3
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          SeriesDescription: auto_mip
+          DeviceSerialNumber: "111"
+        tag_transform:
+          SiemensSeriesName: siemens_angio_3D_TOF_Brain_smft_1
+    - action: dicom_send
+      arguments:
+        dicom: mip2
+        tag_update:
+          SeriesDescription: auto_mip
+          DeviceSerialNumber: "111"
+        tag_transform:
+          SiemensSeriesName: siemens_angio_3D_TOF_Brain_smft_2
+    - action: dicom_send
+      arguments:
+        dicom: mip3
+        tag_update:
+          SeriesDescription: auto_mip
+          DeviceSerialNumber: "111"
+        tag_transform:
+          SiemensSeriesName: siemens_angio_3D_TOF_Brain_smft_3
+
+########################### GE ###########################
+
+- case_name: ge_2d_sourcemip_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.2d_source.2dpp1.source
+          mip1: GE.2d_source.2dpp1.mip_radial
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_sm
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: auto_mip
+
+- case_name: ge_2d_sourcempr_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.2d_source.2dpp1.source
+          mpr1: GE.2d_source.2dpp1.mpr
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_sm
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "222"
+          ProtocolName: ge_g1_auto_sof_a_sm
+          SeriesDescription: auto_mpr
+
+- case_name: ge_2d_sourceminip_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.2d_source.2dpp2.source
+          minip1: GE.2d_source.2dpp2.minIP
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_sm
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: minip1
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: auto_minip
+
+- case_name: ge_3d_sourcemip_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.3d_with_mip.9a53ba32-98c1-4fa9-832c-bc7b31632676_input.source
+          mip1: GE.3d_with_mip.9a53ba32-98c1-4fa9-832c-bc7b31632676_input.mip1
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_sm
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "222"
+          ProtocolName: ge_g1_auto_sof_a_sm
+          SeriesDescription: auto_mip
+
+- case_name: ge_3d_sourcempr_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.3d_with_mpr.general1.Source_Navigate_3D T1 SAG fSPGRAswift_4_151950
+          mpr1: GE.3d_with_mpr.general1.MPR_General_Processed Images_452_151950
+          mpr2: GE.3d_with_mpr.general1.MPR_General_Processed Images_453_151950
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_sm
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: auto_mpr
+    - action: dicom_send
+      arguments:
+        dicom: mpr2
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: auto_mpr
+
+- case_name: ge_3d_sourceminip_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.3d_with_minip.auto_parallel_minip.5_SWAN_2_0_1e21
+          minip1: GE.3d_with_minip.auto_parallel_minip.501_IS_22_1_3_ab1b
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_sm
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: minip1
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: auto_minip
+
+- case_name: ge_dwi_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b0: GE.dwi.MIPs1ADC.3_DWI_AX b1000  32Ch DL # combined
+          b1: GE.dwi.MIPs1ADC.301_DWI_AX b-0 # b0
+          b2: GE.dwi.MIPs1ADC.302_DWI_AX b-1000 # b1000
+          adc: GE.dwi.MIPs1ADC.350_ADC (10^-6 mmSLASHs)[No-Q] # adc
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b0
+        tag_update:
+          SeriesDescription: ge_auto_dwi_combined1_sof_a_sm
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_auto_dwi_combined_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b1
+        tag_update:
+          SeriesDescription: ge_auto_dwi_combined2_sof_a_sm
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_auto_dwi_combined_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b2
+        tag_update:
+          SeriesDescription: ge_auto_dwi_combined3_sof_a_sm
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_auto_dwi_combined_sof_a_sm
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_auto_combined_adc_sm
+
+- case_name: ge_dwi_eadc_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source: GE.dwi.eADC.2_diff_b_500_1000_0
+          eadc: GE.dwi.eADC.267_eADC_25_005_1000_500_0
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source
+        tag_update:
+          SeriesDescription: ge_auto_dwi_eadc_combined1_sof_a_sm
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_auto_dwi_eadc_combined_sof_a_sm
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: eadc
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_auto_eadc_combined_adc_sm
+
+- case_name: ge_swi_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          mag: GE.3d_with_minip.auto_parallel_minip.5_SWAN_2_0_1e21
+          pha: GE.3d_with_minip.auto_parallel_minip.500_FILT_PHA__SWAN_2_0_ba18
+          minip: GE.3d_with_minip.auto_parallel_minip.501_IS_22_1_3_ab1b
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: mag
+        tag_update:
+          SeriesDescription: ge_3d_mag_sof_a_auto_sm
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_3d_swi_sof_a_auto_sm
+    - action: dicom_send
+      arguments:
+        dicom: pha
+        tag_update:
+          SeriesDescription: ge_3d_pha_sof_a_auto_sm
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_3d_swi_sof_a_auto_sm
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: minip
+        tag_update:
+          SeriesDescription: ge_3d_minip
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_3d_swi_sof_a_auto_sm
+
+- case_name: ge_subtraction_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          pre: GE.subtraction.case3_splitsource_manusub_mip.pre
+          post: GE.subtraction.case3_splitsource_manusub_mip.post
+          sub: GE.subtraction.case3_splitsource_manusub_mip.manusub
+          mip: GE.subtraction.case3_splitsource_manusub_mip.mip
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: pre
+        tag_update:
+          SeriesDescription: ge_3d_pre_sof_a_auto_sm
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_3d_subtraction_sof_a_auto_sm
+    - action: dicom_send
+      arguments:
+        dicom: post
+        tag_update:
+          SeriesDescription: ge_3d_post_sof_a_auto_sm
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_3d_subtraction_sof_a_auto_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub
+        tag_update:
+          SeriesDescription: ge_3d_post_sub_sof_a_auto_sm
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_3d_subtraction_sof_a_auto_sm # this dicom series does not have PDB header. It should be ignored.
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: mip
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: sub_mip
+
+- case_name: ge_angio_holding # 3 source (s1,s2,s3) + 3 mip → expected result: composed MIP + 3 source + 3 source recon + 3 mip + 3mip recon
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.angio.angio.3D TOF Brain_smft_23
+          source2: GE.angio.angio.3D TOF Neck_smft_24
+          source3: GE.angio.angio.3D TOF Aortic_smft_29
+          mip1: GE.angio.angio.Projection Images_2350
+          mip2: GE.angio.angio.Projection Images_2450
+          mip3: GE.angio.angio.Projection Images_2950
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          SeriesDescription: ge_angio_3D_TOF_Brain_smft_1
+          DeviceSerialNumber: "222"
+          ProtocolName: angio
+        tag_transform:
+          GESeriesName: ge_angio_3D_TOF_Brain_smft_1
+    - action: dicom_send
+      arguments:
+        dicom: source2
+        tag_update:
+          SeriesDescription: ge_angio_3D_TOF_Brain_smft_2
+          DeviceSerialNumber: "222"
+          ProtocolName: angio
+        tag_transform:
+          GESeriesName: ge_angio_3D_TOF_Brain_smft_2
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: source3
+        tag_update:
+          SeriesDescription: ge_angio_3D_TOF_Brain_smft_3
+          DeviceSerialNumber: "222"
+          ProtocolName: angio
+        tag_transform:
+          GESeriesName: ge_angio_3D_TOF_Brain_smft_3
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          SeriesDescription: auto_mip
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_angio_3D_TOF_Brain_smft_1
+    - action: dicom_send
+      arguments:
+        dicom: mip2
+        tag_update:
+          SeriesDescription: auto_mip
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_angio_3D_TOF_Brain_smft_2
+    - action: dicom_send
+      arguments:
+        dicom: mip3
+        tag_update:
+          SeriesDescription: auto_mip
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_angio_3D_TOF_Brain_smft_3
+#
+########################### philips ###########################
+
+- case_name: ph_2d_sourcemip_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.2d_source.philips_2d_pp.2d_source
+          mip1: Philips.2d_source.philips_2d_pp.mip_radial
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: auto_mip
+
+- case_name: ph_2d_sourcempr_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.dixon.philips_2d_dixon.ip
+          mpr1: Philips.dixon.philips_2d_dixon.ip_mpr
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "333"
+          ProtocolName: philips_g1_auto_sof_a_swift
+          SeriesDescription: auto_mpr
+
+- case_name: ph_2d_sourceminip_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.dixon.philips_2d_dixon.ip
+          minip1: Philips.dixon.philips_2d_dixon.ip_mpr
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: minip1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: auto_minip
+
+- case_name: ph_3d_sourcemip_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.3d_mip.MIP.401029_3D TOF MRA
+          mip1: Philips.3d_mip.MIP.404029_Brain TOF RL
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "333"
+          ProtocolName: philips_g1_auto_sof_a_swift
+          SeriesDescription: auto_mip
+
+- case_name: ph_3d_sourcempr_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.3d_mpr.general1.Source_General_Pre 3D T1 FFE SAGswift_401_142433
+          mpr1: Philips.3d_mpr.general1.MPR_General_1mm AXL_403_142433
+          mpr2: Philips.3d_mpr.general1.MPR_General_1mm COR_404_142433
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: auto_mpr
+    - action: dicom_send
+      arguments:
+        dicom: mpr2
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: auto_mpr
+
+- case_name: ph_3d_sourceminip_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.swi.1minIP1MPR.605_sSWIp_Padre M
+          minip1: Philips.swi.1minIP1MPR.606_SW_M-minIP
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: minip1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: auto_minip
+
+- case_name: ph_dixon_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          water: Philips.dixon.philips_2d_dixon.water
+          water_mpr: Philips.dixon.philips_2d_dixon.water_mpr
+          in: Philips.dixon.philips_2d_dixon.ip
+          in_minip: Philips.dixon.philips_2d_dixon.ip_mpr # minip or mpr? not sure
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: water
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_2d_water_sof_a_waterauto_fm_swift
+    - action: dicom_send
+      arguments:
+        dicom: in
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_2d_in_sof_a_waterauto_fm_swift
+    - action: dicom_send
+      arguments:
+        dicom: in_minip
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_2d_in_m_fm_waterauto_swift
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: water_mpr
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: auto_pp
+
+- case_name: ph_vibe_dixon_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          water: Philips.MultiEcho.mDIXON3D.1204_sPost  3D mDIXON W
+          water_mpr: Philips.MultiEcho.mDIXON3D.1208_W_MPR
+          in: Philips.MultiEcho.mDIXON3D.1203_sPost  3D mDIXON IP
+          in_mpr: Philips.MultiEcho.mDIXON3D.1205_IP_MPR
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: water
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_3d_water_sof_a_waterauto_fm_swift
+    - action: dicom_send
+      arguments:
+        dicom: in
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_3d_in_sof_a_waterauto_fm_swift
+    - action: dicom_send
+      arguments:
+        dicom: in_mpr
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_3d_in_m_fm_waterauto_swift
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: water_mpr
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: auto_pp
+
+- case_name: ph_dwi_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b0: Philips.dwi.MIPs1ADC.1001_DWI b0_400_800_1400
+          b1: Philips.dwi.MIPs1ADC.1002_sDWI b0
+          b2: Philips.dwi.MIPs1ADC.1003_sDWI b400
+          b3: Philips.dwi.MIPs1ADC.1004_sDWI b800
+          adc: Philips.dwi.MIPs1ADC.1005_dADC
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b0
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_dwi_combined1_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: b1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_dwi_combined2_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: b2
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_dwi_combined3_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: b3
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_dwi_combined4_sof_a_swift
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_combined_adc1_swift
+
+# WorkerError caused by the lack of worker server resource. Processed successfully after dcs-recon-retry randomly.
+- case_name: ph_dwi_eadc_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source: Philips.dwi.eADC.401_AX SPAIR DWI B 0 800 1200
+          eadc: Philips.dwi.eADC.414_eeadc
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_dwi_eadc_combined_sof_a_swift
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: eadc
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_eadc_combined_adc1_swift
+
+- case_name: ph_swi_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          mag: Philips.swi.philips_swi.sSW-P
+          pha: Philips.swi.philips_swi.sSW-M
+          minip: Philips.swi.philips_swi.minip_sample
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: mag
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_3d_mag_sof_a_auto_swift
+    - action: dicom_send
+      arguments:
+        dicom: pha
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_3d_swi_sof_a_auto_swift
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: minip
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: minip_from_swi #?
+
+- case_name: ph_subtraction_holding
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          pre: Philips.subtraction.PrePost.1104_sPre 3D mDIXON W
+          post: Philips.subtraction.PrePost.1404_sPost  3D mDIXON W
+          sub: Philips.subtraction.PrePost.1405_ssub
+          sub_mip: Philips.subtraction.PrePost.1407_sub_MPR
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: pre
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_3d_pre_sof_a_auto_swift
+    - action: dicom_send
+      arguments:
+        dicom: post
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_3d_post_sof_a_auto_swift
+    - action: dicom_send
+      arguments:
+        dicom: sub
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_3d_post_sub_sof_a_auto_swift
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: sub_mip
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: sub_mip
+
+- case_name: ph_angio_holding # 3 source (s1,s2,s3) + 3 mip → expected result: composed MIP + 3 source + 3 source recon + 3 mip + 3mip recon
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.angio.angio.3D TOF Brain_smfba_301
+          source2: Philips.angio.angio.3D TOF Neck_smfba_302
+          source3: Philips.angio.angio.3D TOF Aorta_smfba_303
+          mip1: Philips.angio.angio.V3D TOF Brain_smfba_307
+          mip2: Philips.angio.angio.V3D TOF Neck_smfba_308
+          mip3: Philips.angio.angio.V3D TOF Aorta_smfba_309
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_3D_TOF_Brain_smfba_1
+          ProtocolName: angio
+    - action: dicom_send
+      arguments:
+        dicom: source2
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_3D_TOF_Brain_smfba_2
+          ProtocolName: angio
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: source3
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_3D_TOF_Brain_smfba_3
+          ProtocolName: angio
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: auto_mip
+    - action: dicom_send
+      arguments:
+        dicom: mip2
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: auto_mip
+    - action: dicom_send
+      arguments:
+        dicom: mip3
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: auto_mip

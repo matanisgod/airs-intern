@@ -1,0 +1,1061 @@
+# dcs_setup_data: regression/dispatch_priority.yml
+
+# test the priority of 'wildcard' 'skip' 'enforced' 'regular' matching
+# https://www.notion.so/airsmedical/BasicCase-wildcard-12100244011b4a329ad8a9759a017391?pvs=4 (for more descriptions)
+
+#wildcard in source series name
+- case_name: wildcard_seriesname_si
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.2d_minip.siemens_xa_2d_pp.2d_source
+          mip1: Siemens.2d_minip.siemens_xa_2d_pp.mip_radial
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_g1_auto_sof_a_sm_wildcard_auto
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_sm_wildcard_auto
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sof_a_sm_wildcard_auto
+          SeriesDescription: mip_wildcard
+
+- case_name: wildcard_seriesname_si_portion
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.2d_minip.siemens_xa_2d_pp.2d_source
+          mip1: Siemens.2d_minip.siemens_xa_2d_pp.mip_radial
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_g1_auto_sof_a_sm_wildcard_auto_ilbu
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_sm_wildcard_auto_ilbu
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sof_a_sm_wildcard_auto_ilbu
+          SeriesDescription: mip_wildcard_ilbu
+
+#wildcard only in source series description
+- case_name: wildcard_seriesdescription_si
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.2d_minip.siemens_xa_2d_pp.2d_source
+          mip1: Siemens.2d_minip.siemens_xa_2d_pp.mip_radial
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_g1_auto_sof_a_sm_wildcard_mip
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_sm_wildcard_mip
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sof_a_sm_wildcard_mip
+          SeriesDescription: mip_wildcard
+
+- case_name: wildcard_seriesdescription_si_portion
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.2d_minip.siemens_xa_2d_pp.2d_source
+          mip1: Siemens.2d_minip.siemens_xa_2d_pp.mip_radial
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_g1_auto_sof_a_sm_wildcard_mip_ilbu
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_sm_wildcard_mip_ilbu
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sof_a_sm_wildcard_mip_ilbu
+          SeriesDescription: mip_wildcard_ilbu
+
+#wildcard only in pp card series description
+- case_name: wildcard_pp_seriesdescription_si
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.2d_minip.siemens_xa_2d_pp.2d_source
+          mip1: Siemens.2d_minip.siemens_xa_2d_pp.mip_radial
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_g1_auto_sof_a_sm_pp_wildcard_mip
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_sm_pp_wildcard_mip
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sof_a_sm_pp_wildcard_mip
+          SeriesDescription: mip_wildcard
+
+- case_name: wildcard_pp_seriesdescription_si_portion
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.2d_minip.siemens_xa_2d_pp.2d_source
+          mip1: Siemens.2d_minip.siemens_xa_2d_pp.mip_radial
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_g1_auto_sof_a_sm_pp_wildcard_mip_ilbu
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_sm_pp_wildcard_mip_ilbu
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sof_a_sm_pp_wildcard_mip_ilbu
+          SeriesDescription: mip_wildcard_ilbu
+
+- case_name: skip_pp_vs_enforced_match_si # skip vs enforced match -> skip comes first
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.3d_mip.general1.Source_General_TOF3Dmultislabneckswift_3
+          mip1: Siemens.3d_mip.general1.MIP_auto_General_MIP Range_100_1
+          mip2: Siemens.3d_mip.general1.MIP_auto_General_MIP Range_100_1
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_auto_sof_a_mip_sm_skip # for enforced matching
+        tag_transform:
+          SiemensSeriesName: siemens_auto_sof_a_mip_sm_skip
+    - action: dicom_send  # this series should be skipped
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_auto_sof_a_mip_sm_skip
+          SeriesDescription: siemens_mip1
+    - action: dicom_send
+      arguments:
+        dicom: mip2
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_auto_sof_a_mip_sm_skip
+          SeriesDescription: siemens_mip2
+
+#sn, sd enforced wildcard matched -> skip comes first, skip b50 source, b800 & adc as one reconinput
+- case_name: skip_pp_vs_regular_match_si
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b50: Siemens.dwi.1ADC.55001_DWI AX b50 400 800 Free breath P2
+          b400: Siemens.dwi.1ADC.55002_DWI AX b50 400 800 Free breath P2
+          b800: Siemens.dwi.1ADC.55003_DWI AX b50 400 800 Free breath P2
+          adc: Siemens.dwi.1ADC.56001_DWI AX b50 400 800 Free breath P2_ADC # adc from source b50, b800
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b50
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_auto_dwi_combined1_sof_a_sm_case5
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm_case5
+    - action: dicom_send
+      arguments:
+        dicom: b400
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_auto_dwi_combined2_sof_a_sm_case5
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm_case5
+    - action: dicom_send
+      arguments:
+        dicom: b800
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_auto_dwi_combined3_sof_a_sm_case5
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm_case5
+    - action: dicom_send
+      arguments:
+        dicom: adc #want to skip this adc
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_11auto_combined_adc_sm_case5
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm_case5
+
+- case_name: regular_match_vs_pp_enforced_si # regular_match && pp enforced -> expected result:  pp enforced matching
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.multiecho.DIXON.C-T-L_SAG_T2_TSE_DFS_3STEP_OPP_0005
+          mpr1: Siemens.multiecho.DIXON._MPR_RANGE__0100
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sot_a_swift_case2
+          SeriesDescription: case2_source
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sot_a_swift_case2
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sot_a_swift_case2
+          SeriesDescription: case2_pp
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sot_a_swift_case2
+
+- case_name: adc_source_match_vs_regular_match_si # adc source matching & regular match -> expected result: regular match
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b50: Siemens.dwi.1ADC.55001_DWI AX b50 400 800 Free breath P2
+          b400: Siemens.dwi.1ADC.55002_DWI AX b50 400 800 Free breath P2
+          b800: Siemens.dwi.1ADC.55003_DWI AX b50 400 800 Free breath P2
+          adc: Siemens.dwi.1ADC.56001_DWI AX b50 400 800 Free breath P2_ADC # adc from source b50, b800
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b50
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_auto_dwi_combined1_sot_a_swift
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sot_a_swift_case1
+    - action: dicom_send
+      arguments:
+        dicom: b400
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_auto_dwi_combined2_sot_a_swift
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sot_a_swift_case1
+    - action: dicom_send
+      arguments:
+        dicom: b800
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_auto_dwi_combined3_sot_a_swift
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sot_a_swift_case1
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_source_in_adc_swift
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sot_a_swift_case1
+
+# adc source dicoms ars saving to wrong dicomae. waiting for the 3.0.10.1 hotfix
+- case_name: adc_source_match_strict_vs_wildcard_si # adc source matching -> expected result: adc source matching
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b50: Siemens.dwi.1ADC.55001_DWI AX b50 400 800 Free breath P2
+          b400: Siemens.dwi.1ADC.55002_DWI AX b50 400 800 Free breath P2
+          b800: Siemens.dwi.1ADC.55003_DWI AX b50 400 800 Free breath P2
+          adc: Siemens.dwi.1ADC.56001_DWI AX b50 400 800 Free breath P2_ADC # adc from source b50, b800
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b50
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_auto_dwi_combined1_sot_a_swift
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sot_a_swift_case4
+    - action: dicom_send
+      arguments:
+        dicom: b400
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_auto_dwi_combined2_sot_a_swift
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sot_a_swift_case4
+    - action: dicom_send
+      arguments:
+        dicom: b800
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_auto_dwi_combined3_sot_a_swift
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sot_a_swift_case4
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_source_in_adc_swift_4
+        tag_transform:
+          SiemensSeriesName: siemens_source_in_adc_swift_case4
+
+########################### GE ###########################
+
+#wildcard in source series name
+- case_name: wildcard_seriesname_ge
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.2d_source.2dpp1.source
+          mpr1: GE.2d_source.2dpp1.mpr
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_g1_auto_sof_a_sm_wildcard_auto
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_sm_wildcard_auto
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "222"
+          ProtocolName: ge_g1_auto_sof_a_sm_wildcard_auto
+          SeriesDescription: mpr_wildcard
+
+- case_name: wildcard_seriesname_ge_portion
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.2d_source.2dpp1.source
+          mpr1: GE.2d_source.2dpp1.mpr
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_g1_auto_sof_a_sm_wildcard_auto_ilbu
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_sm_wildcard_auto_ilbu
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "222"
+          ProtocolName: ge_g1_auto_sof_a_sm_wildcard_auto_ilbu
+          SeriesDescription: mpr_wildcard_ilbu
+
+#wildcard only in series description
+- case_name: wildcard_seriesdescription_ge
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.2d_source.2dpp1.source
+          mpr1: GE.2d_source.2dpp1.mpr
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_g1_auto_sof_a_sm_wildcard_mpr
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_sm_wildcard_mpr
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "222"
+          ProtocolName: ge_g1_auto_sof_a_sm_wildcard_mpr
+          SeriesDescription: mpr_wildcard
+
+- case_name: wildcard_seriesdescription_ge_portion
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.2d_source.2dpp1.source
+          mpr1: GE.2d_source.2dpp1.mpr
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_g1_auto_sof_a_sm_wildcard_mpr_ilbu
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_sm_wildcard_mpr_ilbu
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "222"
+          ProtocolName: ge_g1_auto_sof_a_sm_wildcard_mpr_ilbu
+          SeriesDescription: mpr_wildcard_ilbu
+
+#wildcard only in pp card series description
+- case_name: wildcard_pp_seriesdescription_ge
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.2d_source.2dpp1.source
+          mpr1: GE.2d_source.2dpp1.mpr
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_g1_auto_sof_a_sm_pp_wildcard_mpr
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_sm_pp_wildcard_mpr
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "222"
+          ProtocolName: ge_g1_auto_sof_a_sm_pp_wildcard_mpr
+          SeriesDescription: mpr_wildcard
+
+- case_name: wildcard_pp_seriesdescription_ge_portion
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.2d_source.2dpp1.source
+          mpr1: GE.2d_source.2dpp1.mpr
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_g1_auto_sof_a_sm_pp_wildcard_mpr_ilbu
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_sm_pp_wildcard_mpr_ilbu
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "222"
+          ProtocolName: ge_g1_auto_sof_a_sm_pp_wildcard_mpr_ilbu
+          SeriesDescription: mpr_wildcard
+
+- case_name: skip_pp_vs_enforced_match_ge # skip vs enforced match -> skip comes first
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.3d_with_mip.9a53ba32-98c1-4fa9-832c-bc7b31632676_input.source
+          mip1: GE.3d_with_mip.9a53ba32-98c1-4fa9-832c-bc7b31632676_input.mip1
+          mip2: GE.3d_with_mip.9a53ba32-98c1-4fa9-832c-bc7b31632676_input.mip1
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_auto_sof_a_mip_sm_skip # for enforced matching
+        tag_transform:
+          GESeriesName: ge_auto_sof_a_mip_sm_skip
+    - action: dicom_send  # this series should be skipped
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_mip1
+    - action: dicom_send
+      arguments:
+        dicom: mip2
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_mip2
+
+#expected result: skip adc, recon all source
+- case_name: skip_pp_vs_regular_match_ge
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b0: GE.dwi.MIPs1ADC.3_DWI_AX b1000  32Ch DL # combined
+          b1: GE.dwi.MIPs1ADC.301_DWI_AX b-0 # b0
+          b2: GE.dwi.MIPs1ADC.302_DWI_AX b-1000 # b1000
+          adc: GE.dwi.MIPs1ADC.350_ADC (10^-6 mmSLASHs)[No-Q] # adc
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b0
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_auto_dwi_combined1_sof_a_sm_case4
+        tag_transform:
+          GESeriesName: ge_auto_dwi_combined_sof_a_sm_case4
+    - action: dicom_send
+      arguments:
+        dicom: b1
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_auto_dwi_combined2_sof_a_sm_case4
+        tag_transform:
+          GESeriesName: ge_auto_dwi_combined_sof_a_sm_case4
+    - action: dicom_send
+      arguments:
+        dicom: b2
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_auto_dwi_combined3_sof_a_sm_case4
+        tag_transform:
+          GESeriesName: ge_auto_dwi_combined_sof_a_sm_case4
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_auto_combined_adc_sm_case4
+
+- case_name: regular_match_vs_pp_enforced_ge # regular_match && pp enforced -> expected result: pp enforced matching
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.3d_with_minip.auto_parallel_minip.5_SWAN_2_0_1e21
+          minip1: GE.3d_with_minip.auto_parallel_minip.501_IS_22_1_3_ab1b
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: case13_source
+        tag_transform:
+          GESeriesName: ge_g1_auto_sot_a_swift_case13
+    - action: dicom_send
+      arguments:
+        dicom: minip1
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: case13_pp
+
+- case_name: adc_source_match_vs_regular_match_ge # adc source matching & regular match -> expected result: regular match
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b0: GE.dwi.MIPs1ADC.3_DWI_AX b1000  32Ch DL # combined
+          b1: GE.dwi.MIPs1ADC.301_DWI_AX b-0 # b0
+          b2: GE.dwi.MIPs1ADC.302_DWI_AX b-1000 # b1000
+          adc: GE.dwi.MIPs1ADC.350_ADC (10^-6 mmSLASHs)[No-Q] # adc
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b0
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_auto_dwi_combined1_sot_a_swift
+        tag_transform:
+          GESeriesName: ge_auto_dwi_combined_sot_a_swift_case5
+    - action: dicom_send
+      arguments:
+        dicom: b1
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_auto_dwi_combined2_sot_a_swift
+        tag_transform:
+          GESeriesName: ge_auto_dwi_combined_sot_a_swift_case5
+    - action: dicom_send
+      arguments:
+        dicom: b2
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_auto_dwi_combined3_sot_a_swift
+        tag_transform:
+          GESeriesName: ge_auto_dwi_combined_sot_a_swift_case5
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_auto_combined_adc_swift
+
+# adc source dicoms ars saving to wrong dicomae. waiting for the 3.0.10.1 hotfix
+- case_name: adc_source_match_strict_vs_wildcard_ge # adc source matching -> expected result: adc source matching to strict match card
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b0: GE.dwi.MIPs1ADC.3_DWI_AX b1000  32Ch DL # combined
+          b1: GE.dwi.MIPs1ADC.301_DWI_AX b-0 # b0
+          b2: GE.dwi.MIPs1ADC.302_DWI_AX b-1000 # b1000
+          adc: GE.dwi.MIPs1ADC.350_ADC (10^-6 mmSLASHs)[No-Q] # adc
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b0
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_auto_dwi_combined1_sot_a_swift
+        tag_transform:
+          GESeriesName: ge_auto_dwi_combined_sot_a_swift_case8
+    - action: dicom_send
+      arguments:
+        dicom: b1
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_auto_dwi_combined2_sot_a_swift
+        tag_transform:
+          GESeriesName: ge_auto_dwi_combined_sot_a_swift_case8
+    - action: dicom_send
+      arguments:
+        dicom: b2
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_auto_dwi_combined3_sot_a_swift
+        tag_transform:
+          GESeriesName: ge_auto_dwi_combined_sot_a_swift_case8
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_auto_combined_adc_swift_8
+
+#wildcard in series description in substraction source
+- case_name: ge_subtraction_sd_wildcard
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          pre: GE.subtraction.case3_splitsource_manusub_mip.pre
+          post: GE.subtraction.case3_splitsource_manusub_mip.post
+          sub: GE.subtraction.case3_splitsource_manusub_mip.manusub
+          mip: GE.subtraction.case3_splitsource_manusub_mip.mip
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: pre
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_3d_pre_sof_a_auto_sm_wc
+        tag_transform:
+          GESeriesName: ge_3d_subtraction_sof_a_auto_sm_wc
+    - action: dicom_send
+      arguments:
+        dicom: post
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_3d_post_sof_a_auto_sm_wc
+        tag_transform:
+          GESeriesName: ge_3d_subtraction_sof_a_auto_sm_wc
+    - action: dicom_send
+      arguments:
+        dicom: sub
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_3d_post_sub_sof_a_auto_sm_wc
+        tag_transform:
+          GESeriesName: ge_3d_subtraction_sof_a_auto_sm_wc # this dicom series does not have PDB header. It should be ignored.
+    - action: dicom_send
+      arguments:
+        dicom: mip
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: sub_mip
+
+#wildcard in series name in substraction source
+- case_name: ge_subtraction_sn_wildcard
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          pre: GE.subtraction.case3_splitsource_manusub_mip.pre
+          post: GE.subtraction.case3_splitsource_manusub_mip.post
+          sub: GE.subtraction.case3_splitsource_manusub_mip.manusub
+          mip: GE.subtraction.case3_splitsource_manusub_mip.mip
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: pre
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_3d_pre_sof_a_auto_sm_wc2
+        tag_transform:
+          GESeriesName: ge_3d_subtraction_sof_a_auto_sm_wc2
+    - action: dicom_send
+      arguments:
+        dicom: post
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_3d_post_sof_a_auto_sm_wc2
+        tag_transform:
+          GESeriesName: ge_3d_subtraction_sof_a_auto_sm_wc2
+    - action: dicom_send
+      arguments:
+        dicom: sub
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_3d_post_sub_sof_a_auto_sm_wc2
+        tag_transform:
+          GESeriesName: ge_3d_subtraction_sof_a_auto_sm_wc2 # this dicom series does not have PDB header. It should be ignored.
+    - action: dicom_send
+      arguments:
+        dicom: mip
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: sub_mip
+########################### philips ###########################
+- case_name: wildcard_seriesname_philips
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.dixon.philips_2d_dixon.ip
+          minip1: Philips.dixon.philips_2d_dixon.ip_mpr
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift_wildcard_auto
+    - action: dicom_send
+      arguments:
+        dicom: minip1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: minip_wildcard
+
+- case_name: wildcard_seriesname_philips_portion
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.dixon.philips_2d_dixon.ip
+          minip1: Philips.dixon.philips_2d_dixon.ip_mpr
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift_wildcard_auto_ilbu1
+    - action: dicom_send
+      arguments:
+        dicom: minip1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: minip_wildcard
+
+- case_name: wildcard_seriesname_philips_portion2
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.dixon.philips_2d_dixon.ip
+          minip1: Philips.dixon.philips_2d_dixon.ip_mpr
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift_wildcard_auto_ilbu2
+    - action: dicom_send
+      arguments:
+        dicom: minip1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: minip_wildcard
+
+- case_name: wildcard_pp_seriesdescription_philips
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.dixon.philips_2d_dixon.ip
+          minip1: Philips.dixon.philips_2d_dixon.ip_mpr
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift_wildcard_minip
+    - action: dicom_send
+      arguments:
+        dicom: minip1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: minip_wildcard
+
+- case_name: wildcard_pp_seriesdescription_philips_portion
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.dixon.philips_2d_dixon.ip
+          minip1: Philips.dixon.philips_2d_dixon.ip_mpr
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift_wildcard_minip_ilbu
+    - action: dicom_send
+      arguments:
+        dicom: minip1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: minip_wildcard
+
+- case_name: wildcard_pp_seriesdescription_philips_portion2
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.dixon.philips_2d_dixon.ip
+          minip1: Philips.dixon.philips_2d_dixon.ip_mpr
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift_wildcard_minip_ilbu2
+    - action: dicom_send
+      arguments:
+        dicom: minip1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: minip_wildcard
+
+- case_name: wildcard_pp_seriesdescription_philips_portion3
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.dixon.philips_2d_dixon.ip
+          minip1: Philips.dixon.philips_2d_dixon.ip_mpr
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift_wildcard_minip_ilbu3
+    - action: dicom_send
+      arguments:
+        dicom: minip1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: minip_wildcard
+
+- case_name: skip_pp_vs_enforced_match_philips # skip vs enforced match -> skip comes first
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.3d_mip.MIP.401029_3D TOF MRA
+          mip1: Philips.3d_mip.MIP.404029_Brain TOF RL
+          mip2: Philips.3d_mip.MIP.404029_Brain TOF RL
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_sof_a_mip_swift_skip
+    - action: dicom_send  # this series should be skipped
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_mip1
+    - action: dicom_send
+      arguments:
+        dicom: mip2
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_mip2
+
+- case_name: skip_pp_vs_regular_match_philips #expected result: skip adc. recon all source
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b0: Philips.dwi.MIPs1ADC.1001_DWI b0_400_800_1400
+          b1: Philips.dwi.MIPs1ADC.1002_sDWI b0
+          b2: Philips.dwi.MIPs1ADC.1003_sDWI b400
+          b3: Philips.dwi.MIPs1ADC.1004_sDWI b800
+          adc: Philips.dwi.MIPs1ADC.1005_dADC
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b0
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_dwi_combined1_sof_a_swift_case4
+    - action: dicom_send
+      arguments:
+        dicom: b1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_dwi_combined2_sof_a_swift_case4
+    - action: dicom_send
+      arguments:
+        dicom: b2
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_dwi_combined3_sof_a_swift_case4
+    - action: dicom_send
+      arguments:
+        dicom: b3
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_dwi_combined4_sof_a_swift_case4
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_combined_adc2_swift_case4
+
+- case_name: regular_match_vs_pp_enforced_philips # regular_match && pp enforced -> expected result:  pp enforced matching
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.dixon.philips_2d_dixon.ip
+          minip1: Philips.dixon.philips_2d_dixon.ip_mpr
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sot_a_swift_case14
+    - action: dicom_send
+      arguments:
+        dicom: minip1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: auto_pp_case14
+
+- case_name: adc_source_match_vs_regular_match_philips # adc source matching & regular_match -> expected result: regular_match
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b0: Philips.dwi.MIPs1ADC.1001_DWI b0_400_800_1400
+          b1: Philips.dwi.MIPs1ADC.1002_sDWI b0
+          b2: Philips.dwi.MIPs1ADC.1003_sDWI b400
+          adc: Philips.dwi.MIPs1ADC.1005_dADC
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b0
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_dwi_combined1_sot_a_swift_case9
+    - action: dicom_send
+      arguments:
+        dicom: b1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_dwi_combined2_sot_a_swift_case9
+    - action: dicom_send
+      arguments:
+        dicom: b2
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_dwi_combined3_sot_a_swift_case9
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto11_combined_adc1_swift_9
+
+# adc source dicoms ars saving to wrong dicomae. waiting for the 3.0.10.1 hotfix
+- case_name: adc_source_match_philips #adc source matching -> expected result: adc source matching
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b0: Philips.dwi.MIPs1ADC.1001_DWI b0_400_800_1400
+          b1: Philips.dwi.MIPs1ADC.1002_sDWI b0
+          b2: Philips.dwi.MIPs1ADC.1003_sDWI b400
+          adc: Philips.dwi.MIPs1ADC.1005_dADC
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b0
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_dwi_combined1_sot_a_swift_case12
+    - action: dicom_send
+      arguments:
+        dicom: b1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_dwi_combined2_sot_a_swift_case12
+    - action: dicom_send
+      arguments:
+        dicom: b2
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_dwi_combined3_sot_a_swift_case12
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_combined_adc1_swift_12

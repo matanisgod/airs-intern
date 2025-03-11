@@ -1,0 +1,655 @@
+# dcs_setup_data: smoke/smoke_setting.yml
+
+# study contains various sequences.
+# 1. (single source 2 + (source+mpr2) + dwi + swi + notsupported 2)
+# 2. ((source+mpr1) + single source 2 + dixon + dwi + not supported 1 + angio)
+
+- case_name: siemens_1
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          singlesource1: Siemens.2d_minip.siemens_xa_2d_pp.2d_source
+          singlesource2: Siemens.3d_mip.2MIP.TOF_3D_multi-slab_WillisMRA_b3b8
+          sourcempr_source1: Siemens.3d_mpr.2MPR.9_T1 VIBE AX FS_Multi artery 352
+          sourcempr_mpr1: Siemens.3d_mpr.2MPR.104_MPR Range
+          sourcempr_mpr2: Siemens.3d_mpr.2MPR.105_MPR Range[1]
+          b50: Siemens.dwi.1ADC.55001_DWI AX b50 400 800 Free breath P2
+          b400: Siemens.dwi.1ADC.55002_DWI AX b50 400 800 Free breath P2
+          b800: Siemens.dwi.1ADC.55003_DWI AX b50 400 800 Free breath P2
+          adc: Siemens.dwi.1ADC.56001_DWI AX b50 400 800 Free breath P2_ADC # adc from source b50, b800
+          swi_source1: Siemens.swi.auto_parallel_minip2.19001_SWI_Images_e112
+          swi_source2: Siemens.swi.auto_parallel_minip2.17001_Mag_Images_192b
+          swi_source3: Siemens.swi.auto_parallel_minip2.18001_Pha_Images_d10c
+          swi_minip1: Siemens.swi.auto_parallel_minip2.20001_mIP_Images_SW__1e1e # from swi
+          ns_source1: Siemens.vibe_dixon.siemens_VE_3d_dixon.fat
+          ns_source2: Siemens.vibe_dixon.siemens_VE_3d_dixon.fat_mpr
+        tag_update:
+          DeviceSerialNumber: "111"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: singlesource1
+        tag_update:
+          ProtocolName: singlesource
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: singlesource2
+        tag_update:
+          ProtocolName: singlesource
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: sourcempr_source1
+        tag_update:
+          ProtocolName: sourcempr
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: sourcempr_mpr1
+        tag_transform:
+          SiemensSeriesName: mpr
+    - action: dicom_send
+      arguments:
+        dicom: sourcempr_mpr2
+        tag_transform:
+          SiemensSeriesName: mpr
+    - action: dicom_send
+      arguments:
+        dicom: b50
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm
+        tag_update:
+          SeriesDescription: siemens_auto_dwi_combined1_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b400
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm
+        tag_update:
+          SeriesDescription: siemens_auto_dwi_combined2_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b800
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm
+        tag_update:
+          SeriesDescription: siemens_auto_dwi_combined3_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm
+        tag_update:
+          SeriesDescription: siemens_auto_combined_adc_sm
+    - action: dicom_send
+      arguments:
+        dicom: swi_source1
+        tag_update:
+          SeriesDescription: swi
+        tag_transform:
+          SiemensSeriesName: siemens_swi2
+    - action: dicom_send
+      arguments:
+        dicom: swi_source2
+        tag_update:
+          SeriesDescription: mag
+        tag_transform:
+          SiemensSeriesName: siemens_swi2
+    - action: dicom_send
+      arguments:
+        dicom: swi_source3
+        tag_update:
+          SeriesDescription: pha
+        tag_transform:
+          SiemensSeriesName: siemens_swi2
+    - action: dicom_send
+      arguments:
+        dicom: swi_minip1
+        tag_update:
+          SeriesDescription: minip # minip from swi - auto pp matching
+        tag_transform:
+          SiemensSeriesName: siemens_swi2
+    - action: dicom_send
+      arguments:
+        dicom: ns_source1
+        tag_transform:
+          SiemensSeriesName: ns_sm
+    - action: dicom_send
+      arguments:
+        dicom: ns_source2
+        tag_transform:
+          SiemensSeriesName: nsns_sm
+
+- case_name: siemens_2
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          sourcempr_source: Siemens.3d_mpr.auto_parallal_mpr1.source
+          sourcempr_mpr: Siemens.3d_mpr.auto_parallal_mpr1.mpr
+          singlesource1: Siemens.3d_source.3d_source.Source_General
+          singlesource2: Siemens.3d_source.Siemens_XA_PARALLELpp.Source
+          dixon_source1: Siemens.dixon.0pp.7_SAG T2 TSE DFS_W
+          dixon_source2: Siemens.dixon.0pp.6_SAG T2 TSE DFS_F
+          dixon_source3: Siemens.dixon.0pp.5_SAG T2 TSE DFS_in
+          dixon_source4: Siemens.dixon.0pp.4_SAG T2 TSE DFS_opp
+          b50: Siemens.dwi.eADC.19001_diff_b_50_500_1000_1500_TRACEW_d6b4
+          b500: Siemens.dwi.eADC.19002_diff_b_50_500_1000_1500_TRACEW_1e75
+          b1000: Siemens.dwi.eADC.19003_diff_b_50_500_1000_1500_TRACEW_14f0
+          b1500: Siemens.dwi.eADC.19004_diff_b_50_500_1000_1500_TRACEW_42ce
+          eadc: Siemens.dwi.eADC.21001_diff_b_50_500_1000_1500_EXP_8bc3 # eadc from b50, 500, 1000, 1500
+          ns_source1: Siemens.what.what.Source_General_MagImages_22_
+          angio_source1: Siemens.angio.angio.3D TOF Brain_smft_5001
+          angio_source2: Siemens.angio.angio.3D TOF Brain_smft_9001
+          angio_source3: Siemens.angio.angio.3D TOF Brain_smft_13001
+          angio_mip1: Siemens.angio.angio.MIP Range_1015001
+        tag_update:
+          DeviceSerialNumber: "111"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: sourcempr_source
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: sourcempr_mpr
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: singlesource1
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: singlesource2
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: dixon_source1
+        tag_transform:
+          SiemensSeriesName: siemens_dixon2
+    - action: dicom_send
+      arguments:
+        dicom: dixon_source2
+        tag_transform:
+          SiemensSeriesName: siemens_dixon2
+    - action: dicom_send
+      arguments:
+        dicom: dixon_source3
+        tag_transform:
+          SiemensSeriesName: siemens_dixon2
+    - action: dicom_send
+      arguments:
+        dicom: dixon_source4
+        tag_transform:
+          SiemensSeriesName: siemens_dixon2
+    - action: dicom_send
+      arguments:
+        dicom: b50
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_eadc_sof_a_sm
+        tag_update:
+          SeriesDescription: siemens_auto_dwi1_eadc_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b500
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_eadc_sof_a_sm
+        tag_update:
+          SeriesDescription: siemens_auto_dwi2_eadc_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b1000
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_eadc_sof_a_sm
+        tag_update:
+          SeriesDescription: siemens_auto_dwi3_eadc_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b1500
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_eadc_sof_a_sm
+        tag_update:
+          SeriesDescription: siemens_auto_dwi4_eadc_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: eadc
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_eadc_sof_a_sm
+        tag_update:
+          SeriesDescription: siemens_auto_eadc_sm
+    - action: dicom_send
+      arguments:
+        dicom: ns_source1
+        tag_transform:
+          SiemensSeriesName: ns_sm
+    - action: dicom_send
+      arguments:
+        dicom: angio_source1
+        tag_transform:
+          SiemensSeriesName: siemens_angio2
+        tag_update:
+          SeriesDescription: angio
+    - action: dicom_send
+      arguments:
+        dicom: angio_source2
+        tag_transform:
+          SiemensSeriesName: siemens_angio2
+        tag_update:
+          SeriesDescription: angio
+    - action: dicom_send
+      arguments:
+        dicom: angio_source3
+        tag_transform:
+          SiemensSeriesName: siemens_angio2
+        tag_update:
+          SeriesDescription: angio
+    - action: dicom_send
+      arguments:
+        dicom: angio_mip1
+        tag_transform:
+          SiemensSeriesName: angio_mip_randmatching
+
+- case_name: ge_1
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          singlesource1: GE.2d_source.2d_source.source1
+          singlesource2: GE.3d_with_mip.0pp.6_Ax T2 FLAIR FS DL High
+          sourcempr_source1: GE.3d_with_mpr.auto_parallel_mpr.2_Sag_CUBE_FLAIR_FS_b0f0
+          sourcempr_mpr1: GE.3d_with_mpr.auto_parallel_mpr.200_AX_CUBE_FLAIR_d0c3
+          sourcempr_mpr2: GE.3d_with_mpr.auto_parallel_mpr.201_COR_CUBE_FLAIR_18a2
+          dwi_source1: GE.dwi.combined.9_RTr Ax DWI b-50,1500 synB600
+          dwi_adc1: GE.dwi.combined.950_ADC
+          swi_source1: GE.swi.1minIP.4_SWAN
+          swi_source2: GE.swi.1minIP.400_FILT_PHA- SWAN
+          swi_minip1: GE.swi.1minIP.450_minIP
+          ns_source1: GE.vibe_dixon.GE_3D_dixon.300_FAT_ 3D Ax LAVA Flex InSLASHOut BH
+          ns_source2: GE.what.what.Source_General_3D T1 SAG fSPGRAswift_4_151950
+        tag_update:
+          DeviceSerialNumber: "222"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: singlesource1
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: singlesource2
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: sourcempr_source1
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: sourcempr_mpr1
+        tag_transform:
+          GESeriesName: mpr
+    - action: dicom_send
+      arguments:
+        dicom: sourcempr_mpr2
+        tag_transform:
+          GESeriesName: mpr
+    - action: dicom_send
+      arguments:
+        dicom: dwi_source1
+        tag_transform:
+          GESeriesName: ge_auto_dwi2
+    - action: dicom_send
+      arguments:
+        dicom: dwi_adc1
+        tag_update:
+          SeriesDescription: ge_auto_adc2
+    - action: dicom_send
+      arguments:
+        dicom: swi_source1
+        tag_transform:
+          GESeriesName: ge_swi2
+    - action: dicom_send
+      arguments:
+        dicom: swi_source2
+        tag_transform:
+          GESeriesName: ge_swi2
+    - action: dicom_send
+      arguments:
+        dicom: swi_minip1
+        tag_update:
+          SeriesDescription: minip # auto pp matching
+    - action: dicom_send
+      arguments:
+        dicom: ns_source1
+        tag_transform:
+          GESeriesName: ns_sm
+    - action: dicom_send
+      arguments:
+        dicom: ns_source2
+        tag_transform:
+          GESeriesName: ns_sm
+
+- case_name: ge_2
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          sourcempr_source: GE.dixon.GE_2d_dixon.water
+          sourcempr_mpr: GE.dixon.GE_2d_dixon.water_mpr
+          singlesource1: GE.3d_with_mip.general5.Source_General_Brain TOFfasths1p2_5
+          singlesource2: GE.2d_source.2d_source.source9
+          dixon_source1: GE.dixon.GE_2d_dixon.fat
+          dixon_pp1: GE.dixon.GE_2d_dixon.fat_mpr
+          dixon_source2: GE.dixon.GE_2d_dixon.ip
+          dixon_pp2: GE.dixon.GE_2d_dixon.ip_mpr
+          dixon_source3: GE.dixon.GE_2d_dixon.water
+          dixon_pp3: GE.dixon.GE_2d_dixon.water_mpr
+          dwi_source1: GE.dwi.split.1101_diff_50_500_1000_syn1500_b-50_c7ef
+          dwi_source2: GE.dwi.split.1102_diff_50_500_1000_syn1500_b-500_81cd
+          dwi_source3: GE.dwi.split.1103_diff_50_500_1000_syn1500_b-1000_5d80
+          dwi_adc: GE.dwi.split.1150_ADC__10_-6_mm짼_s__No-Q__e03a
+          ns_source1: GE.multiphase.TRICKS.901_ph1-SUB-3D Cor TRICKS
+          angio_source1: GE.angio.angio.3D TOF Brain_smft_23
+          angio_source2: GE.angio.angio.3D TOF Neck_smft_24
+          angio_source3: GE.angio.angio.3D TOF Aortic_smft_29
+          angio_mip1: GE.angio.angio.Projection Images_2350
+        tag_update:
+          DeviceSerialNumber: "222"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: sourcempr_source
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: sourcempr_mpr
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: singlesource1
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: singlesource2
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: dixon_source1
+        tag_update:
+          SeriesDescription: source1
+        tag_transform:
+          GESeriesName: ge_dixon2
+    - action: dicom_send
+      arguments:
+        dicom: dixon_pp1
+        tag_update:
+          SeriesDescription: pp1
+    - action: dicom_send
+      arguments:
+        dicom: dixon_source2
+        tag_update:
+          SeriesDescription: source2
+        tag_transform:
+          GESeriesName: ge_dixon2
+    - action: dicom_send
+      arguments:
+        dicom: dixon_pp2
+        tag_update:
+          SeriesDescription: pp2
+    - action: dicom_send
+      arguments:
+        dicom: dixon_source3
+        tag_update:
+          SeriesDescription: source3
+        tag_transform:
+          GESeriesName: ge_dixon2
+    - action: dicom_send
+      arguments:
+        dicom: dixon_pp3
+        tag_update:
+          SeriesDescription: pp3
+    - action: dicom_send
+      arguments:
+        dicom: dwi_source1
+        tag_transform:
+          GESeriesName: ge_auto_dwi3
+    - action: dicom_send
+      arguments:
+        dicom: dwi_source2
+        tag_transform:
+          GESeriesName: ge_auto_dwi3
+    - action: dicom_send
+      arguments:
+        dicom: dwi_source3
+        tag_transform:
+          GESeriesName: ge_auto_dwi3
+    - action: dicom_send
+      arguments:
+        dicom: dwi_adc
+        tag_update:
+          SeriesDescription: ge_auto_adc3
+    - action: dicom_send
+      arguments:
+        dicom: ns_source1
+        tag_transform:
+          GESeriesName: ns_sm
+    - action: dicom_send
+      arguments:
+        dicom: angio_source1
+        tag_update:
+          SeriesDescription: angio
+        tag_transform:
+          GESeriesName: ge_angio2
+    - action: dicom_send
+      arguments:
+        dicom: angio_source2
+        tag_update:
+          SeriesDescription: angio
+        tag_transform:
+          GESeriesName: ge_angio2
+    - action: dicom_send
+      arguments:
+        dicom: angio_source3
+        tag_update:
+          SeriesDescription: angio
+        tag_transform:
+          GESeriesName: ge_angio2
+    - action: dicom_send
+      arguments:
+        dicom: angio_mip1
+        tag_update:
+          SeriesDescription: angio_mip_randmatching
+
+- case_name: philips_1
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          singlesource1: Philips.2d_source.2d_source.Source_General_T2 TSE AXswift_601
+          singlesource2: Philips.3d_mip.PPs.401_3D TOF 580 x 322
+          sourcempr_source1: Philips.3d_mpr.general1.Source_General_Pre 3D T1 FFE SAGswift_401_142433
+          sourcempr_mpr1: Philips.3d_mpr.general1.MPR_General_1mm COR_404_142433
+          dwi_source1: Philips.dwi.1ADC.1004001_sDWI b0
+          dwi_source2: Philips.dwi.1ADC.1005002_sDWI b50
+          dwi_source3: Philips.dwi.1ADC.1006003_sDWI b800
+          dwi_adc1: Philips.dwi.1ADC.1007001_dADC
+          swi_source1: Philips.severance.SWI.SWIp_M_smbr
+          swi_source2: Philips.severance.SWI.SWIp_P_smbr
+          swi_source3: Philips.severance.SWI.SWIp_smbr
+          ns_source1: Philips.swi.1minIP1MPR.601_SWIp_Padre
+          ns_source2: Philips.ulsan_univ.tof_mra.403_eHR 3D TOF MRA
+        tag_update:
+          DeviceSerialNumber: "333"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: singlesource1
+        tag_update:
+          SeriesDescription: philips_g1_auto_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: singlesource2
+        tag_update:
+          SeriesDescription: philips_g1_auto_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: sourcempr_source1
+        tag_update:
+          SeriesDescription: philips_g1_auto_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: sourcempr_mpr1
+        tag_update:
+          SeriesDescription: mpr
+    - action: dicom_send
+      arguments:
+        dicom: dwi_source1
+        tag_update:
+          SeriesDescription: philips_auto_dwi2
+    - action: dicom_send
+      arguments:
+        dicom: dwi_source2
+        tag_update:
+          SeriesDescription: philips_auto_dwi2
+    - action: dicom_send
+      arguments:
+        dicom: dwi_source3
+        tag_update:
+          SeriesDescription: philips_auto_dwi2
+    - action: dicom_send
+      arguments:
+        dicom: dwi_adc1
+        tag_update:
+          SeriesDescription: philips_adc2
+    - action: dicom_send
+      arguments:
+        dicom: swi_source1
+        tag_update:
+          SeriesDescription: philips_swi2
+    - action: dicom_send
+      arguments:
+        dicom: swi_source2
+        tag_update:
+          SeriesDescription: philips_swi2
+    - action: dicom_send
+      arguments:
+        dicom: swi_source3
+        tag_update:
+          SeriesDescription: philips_swi2
+    - action: dicom_send
+      arguments:
+        dicom: ns_source1
+        tag_update:
+          SeriesDescription: ns_sm
+    - action: dicom_send
+      arguments:
+        dicom: ns_source2
+        tag_update:
+          SeriesDescription: ns_sm
+
+- case_name: philips_2
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          sourcempr_source: Philips.3d_mpr.general1.Source_General_Pre 3D T1 FFE SAGswift_401_142433
+          sourcempr_mpr: Philips.3d_mpr.general1.MPR_General_1mm COR_404_142433
+          singlesource1: Philips.MultiEcho.mDIXON2D.701_T2 mDIXON AX
+          singlesource2: Philips.2d_source.0pp.301_T2 TSE SAG
+          dixon_source1: Philips.dixon.philips_2d_dixon.ip
+          dixon_pp1: Philips.dixon.philips_2d_dixon.ip_mpr
+          dixon_source2: Philips.dixon.philips_2d_dixon.water
+          dixon_pp2: Philips.dixon.philips_2d_dixon.water_mpr
+          dwi_source1: Philips.dwi.philips_MIPs1ADC.1001_DWI b0_400_800_1400 # combined?
+          dwi_adc: Philips.dwi.philips_MIPs1ADC.1005_dADC
+          ns_source1: Philips.dwi.philips_MIPs1ADC.1003_sDWI b400
+          angio_source1: Philips.angio.angio.3D TOF Brain_smfba_301
+          angio_source2: Philips.angio.angio.3D TOF Neck_smfba_302
+          angio_source3: Philips.angio.angio.3D TOF Aorta_smfba_303
+        tag_update:
+          DeviceSerialNumber: "333"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: sourcempr_source
+        tag_update:
+          SeriesDescription: philips_g1_auto_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: sourcempr_mpr
+        tag_update:
+          SeriesDescription: philips_g1_auto_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: singlesource1
+        tag_update:
+          SeriesDescription: philips_g1_auto_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: singlesource2
+        tag_update:
+          SeriesDescription: philips_g1_auto_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: dixon_source1
+        tag_update:
+          SeriesDescription: philips_dixon2_source1
+    - action: dicom_send
+      arguments:
+        dicom: dixon_pp1
+        tag_update:
+          SeriesDescription: pp1
+    - action: dicom_send
+      arguments:
+        dicom: dixon_source2
+        tag_update:
+          SeriesDescription: philips_dixon2_source2
+    - action: dicom_send
+      arguments:
+        dicom: dixon_pp2
+        tag_update:
+          SeriesDescription: pp2
+    - action: dicom_send
+      arguments:
+        dicom: dwi_source1
+        tag_update:
+          SeriesDescription: philips_auto_dwi3
+    - action: dicom_send
+      arguments:
+        dicom: dwi_adc
+        tag_update:
+          SeriesDescription: philips_adc3
+    - action: dicom_send
+      arguments:
+        dicom: ns_source1
+        tag_update:
+          SeriesDescription: ns_sm
+    - action: dicom_send
+      arguments:
+        dicom: angio_source1
+        tag_update:
+          SeriesDescription: philips_angio2
+    - action: dicom_send
+      arguments:
+        dicom: angio_source2
+        tag_update:
+          SeriesDescription: philips_angio2
+    - action: dicom_send
+      arguments:
+        dicom: angio_source3
+        tag_update:
+          SeriesDescription: philips_angio2

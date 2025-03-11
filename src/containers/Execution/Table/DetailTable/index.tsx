@@ -12,13 +12,14 @@ import {
 } from '@/recoil/status';
 import { TableHeaderBox, TableDataBox, DataTable } from '@components';
 
+//TODO: result log 예쁘게 보이도록 하기
 export const DetailsTable = () => {
   const details = useRecoilValue(detailsAtom);
   const setActualResultJson = useSetRecoilState(actualResultJsonAtom);
   const setDetailsExpectedResultJson = useSetRecoilState(detailsExpectedResultJsonAtom);
   return (
     <DetailsTableBox>
-      <TableHeaderBox>Details</TableHeaderBox>
+      <TableHeaderBox>Detail</TableHeaderBox>
       <TableDataBox>
         <DataTable
           rows={details}

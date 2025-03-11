@@ -4,7 +4,7 @@ export const detailColumns: GridColDef[] = [
   {
     field: 'result',
     headerName: 'Result',
-    flex: 1,
+    flex: 0.2,
     sortable: false,
     headerAlign: 'center',
     align: 'center',

@@ -1,0 +1,2136 @@
+- case_name: si_2d_source_empty_pixel_data
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - defaultPACS
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - NoImageType
+      protocolName: AX T2 TSE
+      scanItemNames:
+      - siemens_g1_auto_sof_a_sm
+      seriesDescription: AX T2 TSE
+      seriesName: siemens_g1_auto_sof_a_sm
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_2d_source_empty_pixel_data
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: si_2d_source_empty_pixel_data
+    created_at: '2024-12-02 18:38:54'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: AX T2 TSE_recon
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+- case_name: si_2d_source_pixel_data_null
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - defaultPACS
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - NoImageType
+      protocolName: AX T2 TSE
+      scanItemNames:
+      - siemens_g1_auto_sof_a_sm
+      seriesDescription: AX T2 TSE
+      seriesName: siemens_g1_auto_sof_a_sm
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_2d_source_pixel_data_null
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: si_2d_source_pixel_data_null
+    created_at: '2024-12-02 18:39:53'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: AX T2 TSE_recon
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+- case_name: si_2d_source_no_pixel_data_tag
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - defaultPACS
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - NoImageType
+      protocolName: AX T2 TSE
+      scanItemNames:
+      - siemens_g1_auto_sof_a_sm
+      seriesDescription: AX T2 TSE
+      seriesName: siemens_g1_auto_sof_a_sm
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_2d_source_no_pixel_data_tag
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: si_2d_source_no_pixel_data_tag
+    created_at: '2024-12-02 18:40:48'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: AX T2 TSE_recon
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+- case_name: si_2d_source_empty_image_type
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - defaultPACS
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - NoImageType
+      protocolName: AX T2 TSE
+      scanItemNames:
+      - siemens_g1_auto_sof_a_sm
+      seriesDescription: AX T2 TSE
+      seriesName: siemens_g1_auto_sof_a_sm
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_2d_source_empty_image_type
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: si_2d_source_empty_image_type
+    created_at: '2024-12-02 18:41:59'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: AX T2 TSE_recon
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+- case_name: si_2d_source_no_image_type
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - defaultPACS
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - NoImageType
+      protocolName: AX T2 TSE
+      scanItemNames:
+      - siemens_g1_auto_sof_a_sm
+      seriesDescription: AX T2 TSE
+      seriesName: siemens_g1_auto_sof_a_sm
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_2d_source_no_image_type
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: si_2d_source_no_image_type
+    created_at: '2024-12-02 18:43:01'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: AX T2 TSE_recon
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+- case_name: si_2d_source_empty_pixel_data_all
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - NoImageType
+      protocolName: AX T2 TSE
+      scanItemNames: []
+      seriesDescription: AX T2 TSE
+      seriesName: siemens_g1_auto_sof_a_sm
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_2d_source_empty_pixel_data_all
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: si_2d_source_empty_pixel_data_all
+    created_at: '2024-12-02 18:43:47'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: AX T2 TSE
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+- case_name: si_2d_source_no_pixel_data_all
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - NoImageType
+      protocolName: AX T2 TSE
+      scanItemNames: []
+      seriesDescription: AX T2 TSE
+      seriesName: siemens_g1_auto_sof_a_sm
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_2d_source_no_pixel_data_all
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: si_2d_source_no_pixel_data_all
+    created_at: '2024-12-02 18:44:38'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: AX T2 TSE
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+- case_name: si_2d_source_empty_image_type_all
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - NoImageType
+      protocolName: AX T2 TSE
+      scanItemNames: []
+      seriesDescription: AX T2 TSE
+      seriesName: siemens_g1_auto_sof_a_sm
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_2d_source_empty_image_type_all
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: si_2d_source_empty_image_type_all
+    created_at: '2024-12-02 18:45:35'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: AX T2 TSE
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+- case_name: si_2d_source_no_image_type_all
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - NoImageType
+      protocolName: AX T2 TSE
+      scanItemNames: []
+      seriesDescription: AX T2 TSE
+      seriesName: siemens_g1_auto_sof_a_sm
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_2d_source_no_image_type_all
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: si_2d_source_no_image_type_all
+    created_at: '2024-12-02 18:46:35'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: AX T2 TSE
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+- case_name: ge_2d_source_empty_pixel_data
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High_recon
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High_recon
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - NoImageType
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames:
+      - ge_g1_auto_sof_a_sm
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesName: ge_g1_auto_sof_a_sm
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_2d_source_empty_pixel_data
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: ge_2d_source_empty_pixel_data
+    created_at: '2024-12-02 18:47:33'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: Ax T2 FLAIR FS DL High_recon
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+- case_name: ge_2d_source_pixel_data_null
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High_recon
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High_recon
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - NoImageType
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames:
+      - ge_g1_auto_sof_a_sm
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesName: ge_g1_auto_sof_a_sm
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_2d_source_pixel_data_null
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: ge_2d_source_pixel_data_null
+    created_at: '2024-12-02 18:48:28'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: Ax T2 FLAIR FS DL High_recon
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+- case_name: ge_2d_source_no_pixel_data_tag
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High_recon
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High_recon
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - NoImageType
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames:
+      - ge_g1_auto_sof_a_sm
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesName: ge_g1_auto_sof_a_sm
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_2d_source_no_pixel_data_tag
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: ge_2d_source_no_pixel_data_tag
+    created_at: '2024-12-02 18:49:20'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: Ax T2 FLAIR FS DL High_recon
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+- case_name: ge_2d_source_empty_image_type
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High_recon
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High_recon
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - NoImageType
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames:
+      - ge_g1_auto_sof_a_sm
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesName: ge_g1_auto_sof_a_sm
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_2d_source_empty_image_type
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: ge_2d_source_empty_image_type
+    created_at: '2024-12-02 18:50:19'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: Ax T2 FLAIR FS DL High_recon
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+- case_name: ge_2d_source_no_image_type
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High_recon
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High_recon
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 20
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - NoImageType
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames:
+      - ge_g1_auto_sof_a_sm
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesName: ge_g1_auto_sof_a_sm
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_2d_source_no_image_type
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: ge_2d_source_no_image_type
+    created_at: '2024-12-02 18:51:15'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: Ax T2 FLAIR FS DL High_recon
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+- case_name: ge_2d_source_empty_pixel_data_all
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - NoImageType
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames: []
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesName: ge_g1_auto_sof_a_sm
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_2d_source_empty_pixel_data_all
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: ge_2d_source_empty_pixel_data_all
+    created_at: '2024-12-02 18:51:54'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: Ax T2 FLAIR FS DL High
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+- case_name: ge_2d_source_no_pixel_data_all
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - NoImageType
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames: []
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesName: ge_g1_auto_sof_a_sm
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_2d_source_no_pixel_data_all
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: ge_2d_source_no_pixel_data_all
+    created_at: '2024-12-02 18:52:38'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: Ax T2 FLAIR FS DL High
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+- case_name: ge_2d_source_empty_image_type_all
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - NoImageType
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames: []
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesName: ge_g1_auto_sof_a_sm
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_2d_source_empty_image_type_all
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: ge_2d_source_empty_image_type_all
+    created_at: '2024-12-02 18:53:28'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: Ax T2 FLAIR FS DL High
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+- case_name: ge_2d_source_no_image_type_all
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - NoImageType
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames: []
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesName: ge_g1_auto_sof_a_sm
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_2d_source_no_image_type_all
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: ge_2d_source_no_image_type_all
+    created_at: '2024-12-02 18:54:18'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: Ax T2 FLAIR FS DL High
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+- case_name: ph_2d_source_empty_pixel_data
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 15
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP T2 FLAIR AX FS
+      seriesDescription: philips_g1_auto_sof_a_swift_recon
+      seriesNumber: 501
+    - deviceId: 3
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: WIP T2 FLAIR AX FS
+      seriesDescription: philips_g1_auto_sof_a_swift_recon
+      seriesNumber: 501
+    - deviceId: 3
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: WIP T2 FLAIR AX FS
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesNumber: 501
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 15
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP T2 FLAIR AX FS
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesNumber: 501
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      - defaultPACS
+      isSupported: true
+      numberOfInstances: 25
+      numberOfInstancesAfterReconstruction: 25
+      postProcessingTypes:
+      - NoImageType
+      protocolName: WIP T2 FLAIR AX FS
+      scanItemNames:
+      - philips_g1_auto_sof_a_swift
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesName: philips_g1_auto_sof_a_swift
+      seriesNumber: 501
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 333name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 25
+      numberOfSeries: 1
+      patientAge: 057Y
+      patientSex: M
+      status: Complete
+      studyDescription: ph_2d_source_empty_pixel_data
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: ph_2d_source_empty_pixel_data
+    created_at: '2024-12-02 18:55:12'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 25
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_g1_auto_sof_a_swift_recon
+    SeriesNumber: 501
+    SeriesStorageOrderIndex: 0
+- case_name: ph_2d_source_pixel_data_null
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 15
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP T2 FLAIR AX FS
+      seriesDescription: philips_g1_auto_sof_a_swift_recon
+      seriesNumber: 501
+    - deviceId: 3
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: WIP T2 FLAIR AX FS
+      seriesDescription: philips_g1_auto_sof_a_swift_recon
+      seriesNumber: 501
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 15
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP T2 FLAIR AX FS
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesNumber: 501
+    - deviceId: 3
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: WIP T2 FLAIR AX FS
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesNumber: 501
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      - defaultPACS
+      isSupported: true
+      numberOfInstances: 25
+      numberOfInstancesAfterReconstruction: 25
+      postProcessingTypes:
+      - NoImageType
+      protocolName: WIP T2 FLAIR AX FS
+      scanItemNames:
+      - philips_g1_auto_sof_a_swift
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesName: philips_g1_auto_sof_a_swift
+      seriesNumber: 501
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 333name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 25
+      numberOfSeries: 1
+      patientAge: 057Y
+      patientSex: M
+      status: Complete
+      studyDescription: ph_2d_source_pixel_data_null
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: ph_2d_source_pixel_data_null
+    created_at: '2024-12-02 18:56:05'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 25
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_g1_auto_sof_a_swift_recon
+    SeriesNumber: 501
+    SeriesStorageOrderIndex: 0
+- case_name: ph_2d_source_no_pixel_data_tag
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 15
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP T2 FLAIR AX FS
+      seriesDescription: philips_g1_auto_sof_a_swift_recon
+      seriesNumber: 501
+    - deviceId: 3
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: WIP T2 FLAIR AX FS
+      seriesDescription: philips_g1_auto_sof_a_swift_recon
+      seriesNumber: 501
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 15
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP T2 FLAIR AX FS
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesNumber: 501
+    - deviceId: 3
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: WIP T2 FLAIR AX FS
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesNumber: 501
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - defaultPACS
+      - orthanc
+      isSupported: true
+      numberOfInstances: 25
+      numberOfInstancesAfterReconstruction: 25
+      postProcessingTypes:
+      - NoImageType
+      protocolName: WIP T2 FLAIR AX FS
+      scanItemNames:
+      - philips_g1_auto_sof_a_swift
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesName: philips_g1_auto_sof_a_swift
+      seriesNumber: 501
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 333name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 25
+      numberOfSeries: 1
+      patientAge: 057Y
+      patientSex: M
+      status: Complete
+      studyDescription: ph_2d_source_no_pixel_data_tag
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: ph_2d_source_no_pixel_data_tag
+    created_at: '2024-12-02 18:56:54'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 25
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_g1_auto_sof_a_swift_recon
+    SeriesNumber: 501
+    SeriesStorageOrderIndex: 0
+- case_name: ph_2d_source_empty_image_type
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 15
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP T2 FLAIR AX FS
+      seriesDescription: philips_g1_auto_sof_a_swift_recon
+      seriesNumber: 501
+    - deviceId: 3
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: WIP T2 FLAIR AX FS
+      seriesDescription: philips_g1_auto_sof_a_swift_recon
+      seriesNumber: 501
+    - deviceId: 3
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: WIP T2 FLAIR AX FS
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesNumber: 501
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 15
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP T2 FLAIR AX FS
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesNumber: 501
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - defaultPACS
+      - orthanc
+      isSupported: true
+      numberOfInstances: 25
+      numberOfInstancesAfterReconstruction: 25
+      postProcessingTypes:
+      - NoImageType
+      protocolName: WIP T2 FLAIR AX FS
+      scanItemNames:
+      - philips_g1_auto_sof_a_swift
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesName: philips_g1_auto_sof_a_swift
+      seriesNumber: 501
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 333name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 25
+      numberOfSeries: 1
+      patientAge: 057Y
+      patientSex: M
+      status: Complete
+      studyDescription: ph_2d_source_empty_image_type
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: ph_2d_source_empty_image_type
+    created_at: '2024-12-02 18:57:42'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 25
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_g1_auto_sof_a_swift_recon
+    SeriesNumber: 501
+    SeriesStorageOrderIndex: 0
+- case_name: ph_2d_source_no_image_type
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 15
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP T2 FLAIR AX FS
+      seriesDescription: philips_g1_auto_sof_a_swift_recon
+      seriesNumber: 501
+    - deviceId: 3
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: WIP T2 FLAIR AX FS
+      seriesDescription: philips_g1_auto_sof_a_swift_recon
+      seriesNumber: 501
+    - deviceId: 3
+      dispatchType: MarkOnly
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: WIP T2 FLAIR AX FS
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesNumber: 501
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 15
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP T2 FLAIR AX FS
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesNumber: 501
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      - defaultPACS
+      isSupported: true
+      numberOfInstances: 25
+      numberOfInstancesAfterReconstruction: 25
+      postProcessingTypes:
+      - NoImageType
+      protocolName: WIP T2 FLAIR AX FS
+      scanItemNames:
+      - philips_g1_auto_sof_a_swift
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesName: philips_g1_auto_sof_a_swift
+      seriesNumber: 501
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 333name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 25
+      numberOfSeries: 1
+      patientAge: 057Y
+      patientSex: M
+      status: Complete
+      studyDescription: ph_2d_source_no_image_type
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: ph_2d_source_no_image_type
+    created_at: '2024-12-02 18:58:29'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 25
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_g1_auto_sof_a_swift_recon
+    SeriesNumber: 501
+    SeriesStorageOrderIndex: 0
+- case_name: ph_2d_source_empty_pixel_data_all
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: NotMatched
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: WIP T2 FLAIR AX FS
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesNumber: 501
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 25
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - NoImageType
+      protocolName: WIP T2 FLAIR AX FS
+      scanItemNames: []
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesName: philips_g1_auto_sof_a_swift
+      seriesNumber: 501
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 333name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 25
+      numberOfSeries: 1
+      patientAge: 057Y
+      patientSex: M
+      status: Complete
+      studyDescription: ph_2d_source_empty_pixel_data_all
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: ph_2d_source_empty_pixel_data_all
+    created_at: '2024-12-02 18:59:27'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 25
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_g1_auto_sof_a_swift
+    SeriesNumber: 501
+    SeriesStorageOrderIndex: 0
+- case_name: ph_2d_source_no_pixel_data_all
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: NotMatched
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: WIP T2 FLAIR AX FS
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesNumber: 501
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 25
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - NoImageType
+      protocolName: WIP T2 FLAIR AX FS
+      scanItemNames: []
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesName: philips_g1_auto_sof_a_swift
+      seriesNumber: 501
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 333name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 25
+      numberOfSeries: 1
+      patientAge: 057Y
+      patientSex: M
+      status: Complete
+      studyDescription: ph_2d_source_no_pixel_data_all
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: ph_2d_source_no_pixel_data_all
+    created_at: '2024-12-02 19:00:14'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 25
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_g1_auto_sof_a_swift
+    SeriesNumber: 501
+    SeriesStorageOrderIndex: 0
+- case_name: ph_2d_source_empty_image_type_all
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: NotMatched
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: WIP T2 FLAIR AX FS
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesNumber: 501
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 25
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - NoImageType
+      protocolName: WIP T2 FLAIR AX FS
+      scanItemNames: []
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesName: philips_g1_auto_sof_a_swift
+      seriesNumber: 501
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 333name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 25
+      numberOfSeries: 1
+      patientAge: 057Y
+      patientSex: M
+      status: Complete
+      studyDescription: ph_2d_source_empty_image_type_all
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: ph_2d_source_empty_image_type_all
+    created_at: '2024-12-02 19:01:07'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 25
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_g1_auto_sof_a_swift
+    SeriesNumber: 501
+    SeriesStorageOrderIndex: 0
+- case_name: ph_2d_source_no_image_type_all
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: NotMatched
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: NoImageType
+      protocolName: WIP T2 FLAIR AX FS
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesNumber: 501
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 25
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - NoImageType
+      protocolName: WIP T2 FLAIR AX FS
+      scanItemNames: []
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesName: philips_g1_auto_sof_a_swift
+      seriesNumber: 501
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 333name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 25
+      numberOfSeries: 1
+      patientAge: 057Y
+      patientSex: M
+      status: Complete
+      studyDescription: ph_2d_source_no_image_type_all
+  metadata:
+    case_data_file: regression\pixeldata_imagetype.yml
+    case_name: ph_2d_source_no_image_type_all
+    created_at: '2024-12-02 19:02:09'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 25
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_g1_auto_sof_a_swift
+    SeriesNumber: 501
+    SeriesStorageOrderIndex: 0

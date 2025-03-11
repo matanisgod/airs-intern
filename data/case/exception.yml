@@ -1,0 +1,645 @@
+# dcs_setup_data: smoke/smoke_setting.yml
+
+## Siemens contains
+# 1. more than one PosDisp
+# 2. Series contains PosDisp
+# 3. Series contains Navigator
+# 4. Collection(1 series instance)
+# 5. Collapse -> pacs result is wrong(v3.0.10.0). wating for fixing 2024-12-05
+
+## GE contains
+# 1. more than one PosDisp
+# 2. Series contains PosDisp
+# 3. Series contains Navigator
+# 4. Collection(1 series instance)
+# 5. Collapse -> pacs result is wrong(v3.0.10.0). wating for fixing 2024-12-05
+
+## Philips contains (no navigator in Philips)
+# 1. more than one PosDisp
+# 2. Series contains PosDisp
+# 3. Collection(1 series instance)
+# 5. Collapse -> pacs result is wrong(v3.0.10.0). wating for fixing 2024-12-05
+# 5. MIP Collapse
+
+## Not supported
+# Siemens
+# GE
+# Philips
+
+- case_name: siemens_posdisp # not supported. all mark only # TODO: du not mark only
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: Siemens.2d_source.2d_source.Source_PosDisp_PosDisp 3 pd tse fs AXIknswift
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: s1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sof_a_swift
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_swift
+
+- case_name: siemens_series_contains_posdisp # supported. 1 mark only
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: Siemens.2d_minip.siemens_xa_2d_pp.2d_source
+  step:
+    - action: dicom_send # mark only
+      arguments:
+        dicom: s1[0:1]
+        tag_update:
+          DeviceSerialNumber: "111"
+          ImageType: "POSDISP"
+          ProtocolName: siemens_g1_auto_sof_a_swift
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_swift
+    - action: dicom_send # supported
+      arguments:
+        dicom: s1[1:10]
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: pp
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_swift
+
+- case_name: siemens_series_contains_navigator # supported. 1 mark only
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: Siemens.what.what.Source_Navigate_HEAD TOF3Daneurysm40swift_1_101159
+          s2: Siemens.3d_mip.general3_navigate.MIP_auto_Navigate_MIP Thin Range1_6_101159
+  step:
+    - action: dicom_send # supported
+      arguments:
+        dicom: s1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sof_a_swift
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_swift
+    - action: dicom_send # supported. 1 mark only
+      arguments:
+        dicom: s2
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: pp
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_swift_pp
+
+- case_name: siemens_collection # not supported. 1 instance series
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: Siemens.3d_mpr.2MPR.103_MPR Collection
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: s1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sof_a_swift
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_swift
+
+### pacs result is wrong(v3.0.10.0). wating for fixing 2024-12-05
+- case_name: siemens_collapse # collapse image is not supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: Siemens.3d_mip.siemens_tof_collapse_MIP.5001_TOF_seg1
+          s2: Siemens.3d_mip.2MIP.MIPThinRange_2933
+          s3: Siemens.3d_mip.2MIP._MIPThinRange__FIL_1_4939
+          s4: Siemens.3d_mip.2MIP.TOF_3D_multi-slab_WillisMRA_b3b8
+  step:
+    - action: dicom_send # supported
+      arguments:
+        dicom: s1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_auto_sof_a_mipcol_swift
+          SeriesDescription: siemens_auto_sof_a_mipcol_swift
+        tag_transform:
+          SiemensSeriesName: siemens_auto_sof_a_mipcol_swift
+    - action: dicom_send # not supported
+      arguments:
+        dicom: s2[0:1]
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_auto_sof_a_mipcol_swift
+          SeriesDescription: mipcol1_swift
+          ImageType: "MIP_TRA"
+        tag_transform:
+          SiemensSeriesName: siemens_auto_sof_a_mipcol_swift
+    - action: dicom_send # supported
+      arguments:
+        dicom: s2[1:10]
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_auto_sof_a_mipcol_swift
+          SeriesDescription: mipcol1_swift
+        tag_transform:
+          SiemensSeriesName: siemens_auto_sof_a_mipcol_swift
+    - action: dicom_send # not supported
+      arguments:
+        dicom: s3[0:1]
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: mipcol2_swift
+          ProtocolName: siemens_auto_sof_a_mipcol_swift
+          ImageType: "MIP_COR"
+        tag_transform:
+          SiemensSeriesName: siemens_auto_sof_a_mipcol_swift
+    - action: dicom_send # supported
+      arguments:
+        dicom: s3[1:10]
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: mipcol2_swift
+          ProtocolName: siemens_auto_sof_a_mipcol_swift
+        tag_transform:
+          SiemensSeriesName: siemens_auto_sof_a_mipcol_swift
+    - action: dicom_send # not supported
+      arguments:
+        dicom: s4[0:1]
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_auto_sof_a_mipcol_swift
+          SeriesDescription: mipcol3_swift
+          ImageType: "MIP_SAG"
+        tag_transform:
+          SiemensSeriesName: siemens_auto_sof_a_mipcol_swift
+    - action: dicom_send # supported
+      arguments:
+        dicom: s4[1:10]
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: mipcol3_swift
+          ProtocolName: siemens_auto_sof_a_mipcol_swift
+        tag_transform:
+          SiemensSeriesName: siemens_auto_sof_a_mipcol_swift
+
+#####################################################################
+
+- case_name: ge_posdisp # not supported. all mark only # TODO: du not supported. not mark only
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: GE.2d_source.2dpp1.source
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: s1
+        tag_update:
+          ImageType: "POSDISP"
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_swift
+
+- case_name: ge_series_contains_posdisp # supported. 1 mark only
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: GE.2d_source.2dpp1.source
+  step:
+    - action: dicom_send # mark only
+      arguments:
+        dicom: s1[0:1]
+        tag_update:
+          ImageType: "POSDISP"
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_swift
+    - action: dicom_send # supported
+      arguments:
+        dicom: s1[1:10]
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_swift
+
+- case_name: ge_series_contains_navigator # supported. 1 mark only
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: GE.what.what.Source_General_3D T1 SAG fSPGRAswift_4_151950
+          s2: GE.3d_with_mpr.general1.MPR_Navigate_Processed Images_452_151950
+  step:
+    - action: dicom_send # supported
+      arguments:
+        dicom: s1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_swift
+    - action: dicom_send # supported. 1 mark only
+      arguments:
+        dicom: s2
+        tag_update:
+          SeriesDescription: pp
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_swift
+
+- case_name: ge_collection # not supported. 1 instance series
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: GE.2d_source.2dpp1.source
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: s1[0:1]
+        tag_update:
+          DeviceSerialNumber: "222"
+
+### pacs result is wrong(v3.0.10.0). wating for fixing 2024-12-05
+- case_name: ge_collapse # collapse image is not supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: GE.3d_with_mip.general5.Source_General_Brain TOFfasths1p2_5
+          s2: GE.3d_with_mip.general5.MIP_auto_General_MIP SI_502
+  step:
+    - action: dicom_send # supported
+      arguments:
+        dicom: s1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_auto_sof_a_mipcol_swift
+    - action: dicom_send # not supported
+      arguments:
+        dicom: s2[0:1]
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: col
+          ImageType: "COLLAPSE"
+        tag_transform:
+          GESeriesName: ge_auto_sof_a_mipcol_swift
+    - action: dicom_send # supported
+      arguments:
+        dicom: s2[1:10]
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: col
+        tag_transform:
+          GESeriesName: ge_auto_sof_a_mipcol_swift
+
+#####################################################################
+
+- case_name: philips_posdisp # not supported. all mark only
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: Philips.3d_mip.MIP.401029_3D TOF MRA
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: s1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift
+          ImageType: "POSDISP"
+
+- case_name: philips_series_contains_posdisp # supported. 1 mark only
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: Philips.3d_mip.MIP.401029_3D TOF MRA
+  step:
+    - action: dicom_send # mark only
+      arguments:
+        dicom: s1[0:1]
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift
+          ImageType: "POSDISP"
+    - action: dicom_send # supported
+      arguments:
+        dicom: s1[1:10]
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift
+
+- case_name: philips_collection # not supported. 1 instance series
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: Philips.2d_source.0pp.301_T2 TSE SAG
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: s1[0:1]
+        tag_update:
+          DeviceSerialNumber: "333"
+
+### pacs result is wrong(v3.0.10.0). wating for fixing 2024-12-05
+- case_name: philips_collapse # collapse image is not supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: Philips.3d_mpr.general1.Source_General_Pre 3D T1 FFE SAGswift_401_142433
+          s2: Philips.3d_mpr.general1.MPR_General_1mm AXL_403_142433
+  step:
+    - action: dicom_send # supported
+      arguments:
+        dicom: s1[0:50]
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_sof_a_mipcol_swift
+    - action: dicom_send # not supported
+      arguments:
+        dicom: s2[0:2]
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: mpr
+          (0x2005,0x1084)[0](0x2005,0x1068): "STANDARD_MIP"
+    - action: dicom_send # supported
+      arguments:
+        dicom: s2[2:10]
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: mpr
+
+- case_name: philips_mip_collapse # supported but 3 mip_collapse images are not supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: Philips.3d_mip.philips_tof_collapse_MIP.201_3D_TOF_MRA
+          s2: Philips.3d_mip.philips_tof_collapse_MIP.202_MIP_-_3D_TOF_MRA
+  step:
+    - action: dicom_send # supported
+      arguments:
+        dicom: s1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_sof_a_mipcol_swift
+    - action: dicom_send # not supported
+      arguments:
+        dicom: s2
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: mipcol1_swift
+
+#####################################################################
+# All cases below are not supported. no mark only
+
+- case_name: siemens_contains_navigator_ns
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: Siemens.what.what.Source_Navigate_HEAD TOF3Daneurysm40swift_1_101159
+          s2: Siemens.3d_mip.general3_navigate.MIP_auto_Navigate_MIP Thin Range1_6_101159
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: s1
+        tag_update:
+          DeviceSerialNumber: "111"
+    - action: dicom_send
+      arguments:
+        dicom: s2
+        tag_update:
+          DeviceSerialNumber: "111"
+
+- case_name: siemens_posdisp_all_ns
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: Siemens.2d_source.2d_source.Source_PosDisp_PosDisp 3 pd tse fs AXIknswift
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: s1
+        tag_update:
+          DeviceSerialNumber: "111"
+
+- case_name: siemens_contains_posdisp_ns
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: Siemens.2d_minip.siemens_xa_2d_pp.2d_source
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: s1[0:1]
+        tag_update:
+          DeviceSerialNumber: "111"
+          ImageType: "POSDISP"
+    - action: dicom_send
+      arguments:
+        dicom: s1[1:10]
+        tag_update:
+          DeviceSerialNumber: "111"
+
+- case_name: siemens_collection_ns
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: Siemens.3d_mpr.2MPR.103_MPR Collection
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: s1
+        tag_update:
+          DeviceSerialNumber: "111"
+
+- case_name: siemens_collapse_ns
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: Siemens.3d_mip.siemens_tof_collapse_MIP.5001_TOF_seg1
+          s2: Siemens.3d_mip.2MIP.MIPThinRange_2933
+          s3: Siemens.3d_mip.2MIP._MIPThinRange__FIL_1_4939
+          s4: Siemens.3d_mip.2MIP.TOF_3D_multi-slab_WillisMRA_b3b8
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: s1
+        tag_update:
+          DeviceSerialNumber: "111"
+    - action: dicom_send
+      arguments:
+        dicom: s2[0:1]
+        tag_update:
+          DeviceSerialNumber: "111"
+          ImageType: "MIP_TRA"
+    - action: dicom_send
+      arguments:
+        dicom: s2[1:10]
+        tag_update:
+          DeviceSerialNumber: "111"
+    - action: dicom_send
+      arguments:
+        dicom: s3[0:1]
+        tag_update:
+          DeviceSerialNumber: "111"
+          ImageType: "MIP_COR"
+    - action: dicom_send
+      arguments:
+        dicom: s3[1:10]
+        tag_update:
+          DeviceSerialNumber: "111"
+    - action: dicom_send
+      arguments:
+        dicom: s4[0:1]
+        tag_update:
+          DeviceSerialNumber: "111"
+          ImageType: "MIP_SAG"
+    - action: dicom_send
+      arguments:
+        dicom: s4[1:10]
+        tag_update:
+          DeviceSerialNumber: "111"
+
+- case_name: ge_posdisp_all_ns
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: GE.2d_source.2dpp1.source
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: s1
+        tag_update:
+          DeviceSerialNumber: "222"
+          ImageType: "POSDISP"
+
+- case_name: ge_contains_posdisp_ns
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: GE.2d_source.2dpp1.source
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: s1[0:1]
+        tag_update:
+          DeviceSerialNumber: "222"
+          ImageType: "POSDISP"
+    - action: dicom_send
+      arguments:
+        dicom: s1[1:10]
+        tag_update:
+          DeviceSerialNumber: "222"
+
+- case_name: ge_contains_navigator_ns
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: GE.what.what.Source_General_3D T1 SAG fSPGRAswift_4_151950
+          s2: GE.3d_with_mpr.general1.MPR_Navigate_Processed Images_452_151950
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: s1
+        tag_update:
+          DeviceSerialNumber: "222"
+    - action: dicom_send
+      arguments:
+        dicom: s2
+        tag_update:
+          DeviceSerialNumber: "222"
+
+- case_name: ge_collapse_ns
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: GE.3d_with_mip.ge_tof_collapse_MIP.4_Brain_TOF_MID_85d5
+          s2: GE.3d_with_mpr.general1.MPR_General_Processed Images_452_151950
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: s1
+        tag_update:
+          DeviceSerialNumber: "222"
+    - action: dicom_send
+      arguments:
+        dicom: s2[0:1]
+        tag_update:
+          DeviceSerialNumber: "222"
+          ImageType: "COLLAPSE"
+    - action: dicom_send
+      arguments:
+        dicom: s2[1:10]
+        tag_update:
+          DeviceSerialNumber: "222"
+
+- case_name: philips_posdisp_all_ns
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: Philips.3d_mip.MIP.401029_3D TOF MRA
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: s1
+        tag_update:
+          DeviceSerialNumber: "333"
+          ImageType: "POSDISP"
+
+- case_name: philips_contains_posdisp_ns
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: Philips.3d_mip.MIP.401029_3D TOF MRA
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: s1[0:1]
+        tag_update:
+          DeviceSerialNumber: "333"
+          ImageType: "POSDISP"
+    - action: dicom_send
+      arguments:
+        dicom: s1[1:10]
+        tag_update:
+          DeviceSerialNumber: "333"
+
+- case_name: philips_collapse_ns
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          s1: Philips.3d_mip.philips_tof_collapse_MIP.201_3D_TOF_MRA
+          s2: Philips.3d_mip.philips_tof_collapse_MIP.202_MIP_-_3D_TOF_MRA
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: s1
+        tag_update:
+          DeviceSerialNumber: "333"
+    - action: dicom_send
+      arguments:
+        dicom: s2
+        tag_update:
+          DeviceSerialNumber: "333"

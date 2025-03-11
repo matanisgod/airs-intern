@@ -1,0 +1,2148 @@
+- case_name: si_scanitem_matching_SWIFTMR
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc1_default
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - Source
+      protocolName: AX T2 TSE
+      scanItemNames:
+      - siemens_1_swiftmr
+      seriesDescription: AX T2 TSE
+      seriesName: siemens_1_swiftmr
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_scanitem_matching_SWIFTMR
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: si_scanitem_matching_SWIFTMR
+    created_at: '2024-12-02 18:53:39'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: AX T2 TSE
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: AX T2 TSE_recon
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 1
+- case_name: si_scanitem_matching_deviceaet
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc2_deviceaet
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - Source
+      protocolName: AX T2 TSE
+      scanItemNames:
+      - siemens_2_deviceaet
+      seriesDescription: AX T2 TSE
+      seriesName: siemens_2_deviceaet
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_scanitem_matching_deviceaet
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: si_scanitem_matching_deviceaet
+    created_at: '2024-12-02 18:54:50'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 2
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: 111aet
+    SeriesDescription: AX T2 TSE
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 2
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: 111aet
+    SeriesDescription: AX T2 TSE_recon
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 1
+- case_name: si_scanitem_matching_devicename
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc3_devicename
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - Source
+      protocolName: AX T2 TSE
+      scanItemNames:
+      - siemens_3_devicename
+      seriesDescription: AX T2 TSE
+      seriesName: siemens_3_devicename
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_scanitem_matching_devicename
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: si_scanitem_matching_devicename
+    created_at: '2024-12-02 18:56:15'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 3
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: 111name
+    SeriesDescription: AX T2 TSE
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 3
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: 111name
+    SeriesDescription: AX T2 TSE_recon
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 1
+- case_name: si_device_matching_SWIFTMR
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 5
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    series:
+    - deviceId: 5
+      deviceName: 1111name
+      dicomAeNames:
+      - orthanc1_default
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: AX T2 TSE
+      scanItemNames: []
+      seriesDescription: AX T2 TSE
+      seriesName: AX T2 TSE
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 1111name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_device_matching_SWIFTMR
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: si_device_matching_SWIFTMR
+    created_at: '2024-12-02 18:56:52'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: AX T2 TSE
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+- case_name: si_device_matching_deviceaet
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 6
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    series:
+    - deviceId: 6
+      deviceName: 1112name
+      dicomAeNames:
+      - orthanc2_deviceaet
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: AX T2 TSE
+      scanItemNames: []
+      seriesDescription: AX T2 TSE
+      seriesName: AX T2 TSE
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 1112name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_device_matching_deviceaet
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: si_device_matching_deviceaet
+    created_at: '2024-12-02 18:57:25'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 2
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: 1112aet
+    SeriesDescription: AX T2 TSE
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+- case_name: si_device_matching_devicename
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 7
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    series:
+    - deviceId: 7
+      deviceName: 1113name
+      dicomAeNames:
+      - orthanc3_devicename
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: AX T2 TSE
+      scanItemNames: []
+      seriesDescription: AX T2 TSE
+      seriesName: AX T2 TSE
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 1113name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: si_device_matching_devicename
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: si_device_matching_devicename
+    created_at: '2024-12-02 18:58:04'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 3
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: 1113name
+    SeriesDescription: AX T2 TSE
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+- case_name: ge_scanitem_matching_SWIFTMR
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High_recon
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc1_default
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - Source
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames:
+      - ge_1_swiftmr
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesName: ge_1_swiftmr
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_scanitem_matching_SWIFTMR
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: ge_scanitem_matching_SWIFTMR
+    created_at: '2024-12-02 18:59:05'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: Ax T2 FLAIR FS DL High
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: Ax T2 FLAIR FS DL High_recon
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 1
+- case_name: ge_scanitem_matching_deviceaet
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High_recon
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc2_deviceaet
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - Source
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames:
+      - ge_2_deviceaet
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesName: ge_2_deviceaet
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_scanitem_matching_deviceaet
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: ge_scanitem_matching_deviceaet
+    created_at: '2024-12-02 19:00:08'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 2
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: 222aet
+    SeriesDescription: Ax T2 FLAIR FS DL High
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 2
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: 222aet
+    SeriesDescription: Ax T2 FLAIR FS DL High_recon
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 1
+- case_name: ge_scanitem_matching_devicename
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High_recon
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc3_devicename
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - Source
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames:
+      - ge_3_devicename
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesName: ge_3_devicename
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_scanitem_matching_devicename
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: ge_scanitem_matching_devicename
+    created_at: '2024-12-02 19:01:21'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 3
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: 222name
+    SeriesDescription: Ax T2 FLAIR FS DL High
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 3
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: 222name
+    SeriesDescription: Ax T2 FLAIR FS DL High_recon
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 1
+- case_name: ge_device_matching_SWIFTMR
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 8
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+    series:
+    - deviceId: 8
+      deviceName: 2221name
+      dicomAeNames:
+      - orthanc1_default
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames: []
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesName: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 2221name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_device_matching_SWIFTMR
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: ge_device_matching_SWIFTMR
+    created_at: '2024-12-02 19:01:51'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: Ax T2 FLAIR FS DL High
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+- case_name: ge_device_matching_deviceaet
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 9
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+    series:
+    - deviceId: 9
+      deviceName: 2222name
+      dicomAeNames:
+      - orthanc2_deviceaet
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames: []
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesName: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 2222name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_device_matching_deviceaet
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: ge_device_matching_deviceaet
+    created_at: '2024-12-02 19:02:20'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 2
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: 2222aet
+    SeriesDescription: Ax T2 FLAIR FS DL High
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+- case_name: ge_device_matching_devicename
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 10
+      dispatchType: NotMatched
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+    series:
+    - deviceId: 10
+      deviceName: 2223name
+      dicomAeNames:
+      - orthanc3_devicename
+      isSupported: false
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames: []
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesName: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 2223name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_device_matching_devicename
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: ge_device_matching_devicename
+    created_at: '2024-12-02 19:02:53'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 3
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: 2223name
+    SeriesDescription: Ax T2 FLAIR FS DL High
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 0
+- case_name: ph_scanitem_matching_SWIFTMR
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 29
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP T2 TSE SAG
+      seriesDescription: philips_1_swiftmr_recon
+      seriesNumber: 301
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 29
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP T2 TSE SAG
+      seriesDescription: philips_1_swiftmr
+      seriesNumber: 301
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc1_default
+      isSupported: true
+      numberOfInstances: 29
+      numberOfInstancesAfterReconstruction: 29
+      postProcessingTypes:
+      - Source
+      protocolName: WIP T2 TSE SAG
+      scanItemNames:
+      - philips_1_swiftmr
+      seriesDescription: philips_1_swiftmr
+      seriesName: philips_1_swiftmr
+      seriesNumber: 301
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: PROSTATE
+      deviceNames: 333name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 29
+      numberOfSeries: 1
+      patientAge: 021Y
+      patientSex: F
+      status: Complete
+      studyDescription: ph_scanitem_matching_SWIFTMR
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: ph_scanitem_matching_SWIFTMR
+    created_at: '2024-12-02 19:03:56'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 29
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_1_swiftmr
+    SeriesNumber: 301
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 29
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_1_swiftmr_recon
+    SeriesNumber: 301
+    SeriesStorageOrderIndex: 1
+- case_name: ph_scanitem_matching_deviceaet
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 29
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP T2 TSE SAG
+      seriesDescription: philips_2_deviceaet_recon
+      seriesNumber: 301
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 29
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP T2 TSE SAG
+      seriesDescription: philips_2_deviceaet
+      seriesNumber: 301
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc2_deviceaet
+      isSupported: true
+      numberOfInstances: 29
+      numberOfInstancesAfterReconstruction: 29
+      postProcessingTypes:
+      - Source
+      protocolName: WIP T2 TSE SAG
+      scanItemNames:
+      - philips_2_deviceaet
+      seriesDescription: philips_2_deviceaet
+      seriesName: philips_2_deviceaet
+      seriesNumber: 301
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: PROSTATE
+      deviceNames: 333name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 29
+      numberOfSeries: 1
+      patientAge: 021Y
+      patientSex: F
+      status: Complete
+      studyDescription: ph_scanitem_matching_deviceaet
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: ph_scanitem_matching_deviceaet
+    created_at: '2024-12-02 19:04:58'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 2
+    InstanceStorageOrderList: false
+    NumberOfInstance: 29
+    RemoteAET: 333aet
+    SeriesDescription: philips_2_deviceaet
+    SeriesNumber: 301
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 2
+    InstanceStorageOrderList: false
+    NumberOfInstance: 29
+    RemoteAET: 333aet
+    SeriesDescription: philips_2_deviceaet_recon
+    SeriesNumber: 301
+    SeriesStorageOrderIndex: 1
+- case_name: ph_scanitem_matching_devicename
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 29
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP T2 TSE SAG
+      seriesDescription: philips_3_devicename_recon
+      seriesNumber: 301
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 29
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP T2 TSE SAG
+      seriesDescription: philips_3_devicename
+      seriesNumber: 301
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc3_devicename
+      isSupported: true
+      numberOfInstances: 29
+      numberOfInstancesAfterReconstruction: 29
+      postProcessingTypes:
+      - Source
+      protocolName: WIP T2 TSE SAG
+      scanItemNames:
+      - philips_3_devicename
+      seriesDescription: philips_3_devicename
+      seriesName: philips_3_devicename
+      seriesNumber: 301
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: PROSTATE
+      deviceNames: 333name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 29
+      numberOfSeries: 1
+      patientAge: 021Y
+      patientSex: F
+      status: Complete
+      studyDescription: ph_scanitem_matching_devicename
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: ph_scanitem_matching_devicename
+    created_at: '2024-12-02 19:06:10'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 3
+    InstanceStorageOrderList: false
+    NumberOfInstance: 29
+    RemoteAET: 333name
+    SeriesDescription: philips_3_devicename
+    SeriesNumber: 301
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 3
+    InstanceStorageOrderList: false
+    NumberOfInstance: 29
+    RemoteAET: 333name
+    SeriesDescription: philips_3_devicename_recon
+    SeriesNumber: 301
+    SeriesStorageOrderIndex: 1
+- case_name: ph_device_matching_SWIFTMR
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 11
+      dispatchType: NotMatched
+      fileCount: 29
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP T2 TSE SAG
+      seriesDescription: T2 TSE SAG
+      seriesNumber: 301
+    series:
+    - deviceId: 11
+      deviceName: 3331name
+      dicomAeNames:
+      - orthanc1_default
+      isSupported: false
+      numberOfInstances: 29
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: WIP T2 TSE SAG
+      scanItemNames: []
+      seriesDescription: T2 TSE SAG
+      seriesName: T2 TSE SAG
+      seriesNumber: 301
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: PROSTATE
+      deviceNames: 3331name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 29
+      numberOfSeries: 1
+      patientAge: 021Y
+      patientSex: F
+      status: Complete
+      studyDescription: ph_device_matching_SWIFTMR
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: ph_device_matching_SWIFTMR
+    created_at: '2024-12-02 19:06:40'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 29
+    RemoteAET: SWIFTMR
+    SeriesDescription: T2 TSE SAG
+    SeriesNumber: 301
+    SeriesStorageOrderIndex: 0
+- case_name: ph_device_matching_deviceaet
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 12
+      dispatchType: NotMatched
+      fileCount: 29
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP T2 TSE SAG
+      seriesDescription: T2 TSE SAG
+      seriesNumber: 301
+    series:
+    - deviceId: 12
+      deviceName: 3332name
+      dicomAeNames:
+      - orthanc2_deviceaet
+      isSupported: false
+      numberOfInstances: 29
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: WIP T2 TSE SAG
+      scanItemNames: []
+      seriesDescription: T2 TSE SAG
+      seriesName: T2 TSE SAG
+      seriesNumber: 301
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: PROSTATE
+      deviceNames: 3332name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 29
+      numberOfSeries: 1
+      patientAge: 021Y
+      patientSex: F
+      status: Complete
+      studyDescription: ph_device_matching_deviceaet
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: ph_device_matching_deviceaet
+    created_at: '2024-12-02 19:07:11'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 2
+    InstanceStorageOrderList: false
+    NumberOfInstance: 29
+    RemoteAET: 3332aet
+    SeriesDescription: T2 TSE SAG
+    SeriesNumber: 301
+    SeriesStorageOrderIndex: 0
+- case_name: ph_device_matching_devicename
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 13
+      dispatchType: NotMatched
+      fileCount: 29
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: WIP T2 TSE SAG
+      seriesDescription: T2 TSE SAG
+      seriesNumber: 301
+    series:
+    - deviceId: 13
+      deviceName: 3333name
+      dicomAeNames:
+      - orthanc3_devicename
+      isSupported: false
+      numberOfInstances: 29
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: WIP T2 TSE SAG
+      scanItemNames: []
+      seriesDescription: T2 TSE SAG
+      seriesName: T2 TSE SAG
+      seriesNumber: 301
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: PROSTATE
+      deviceNames: 3333name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 29
+      numberOfSeries: 1
+      patientAge: 021Y
+      patientSex: F
+      status: Complete
+      studyDescription: ph_device_matching_devicename
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: ph_device_matching_devicename
+    created_at: '2024-12-02 19:07:45'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 3
+    InstanceStorageOrderList: false
+    NumberOfInstance: 29
+    RemoteAET: 3333name
+    SeriesDescription: T2 TSE SAG
+    SeriesNumber: 301
+    SeriesStorageOrderIndex: 0
+- case_name: other_scanitem_matching_SWIFTMR
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 4
+      dispatchType: ToRecon
+      fileCount: 18
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: GINOCCHIO MESSORI
+      seriesDescription: other_1_swiftmr_recon
+      seriesNumber: 4
+    - deviceId: 4
+      dispatchType: ToRecon
+      fileCount: 18
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: GINOCCHIO MESSORI
+      seriesDescription: other_1_swiftmr
+      seriesNumber: 4
+    series:
+    - deviceId: 4
+      deviceName: 444name
+      dicomAeNames:
+      - orthanc1_default
+      isSupported: true
+      numberOfInstances: 18
+      numberOfInstancesAfterReconstruction: 18
+      postProcessingTypes:
+      - Source
+      protocolName: GINOCCHIO MESSORI
+      scanItemNames:
+      - other_1_swiftmr
+      seriesDescription: other_1_swiftmr
+      seriesName: other_1_swiftmr
+      seriesNumber: 4
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: KNEE
+      deviceNames: 444name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 18
+      numberOfSeries: 1
+      patientAge: ''
+      patientSex: M
+      status: Complete
+      studyDescription: other_scanitem_matching_SWIFTMR
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: other_scanitem_matching_SWIFTMR
+    created_at: '2024-12-02 19:08:35'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 18
+    RemoteAET: SWIFTMR
+    SeriesDescription: other_1_swiftmr
+    SeriesNumber: 4
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 18
+    RemoteAET: SWIFTMR
+    SeriesDescription: other_1_swiftmr_recon
+    SeriesNumber: 4
+    SeriesStorageOrderIndex: 1
+- case_name: other_scanitem_matching_deviceaet
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 4
+      dispatchType: ToRecon
+      fileCount: 18
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: GINOCCHIO MESSORI
+      seriesDescription: other_2_deviceaet_recon
+      seriesNumber: 4
+    - deviceId: 4
+      dispatchType: ToRecon
+      fileCount: 18
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: GINOCCHIO MESSORI
+      seriesDescription: other_2_deviceaet
+      seriesNumber: 4
+    series:
+    - deviceId: 4
+      deviceName: 444name
+      dicomAeNames:
+      - orthanc2_deviceaet
+      isSupported: true
+      numberOfInstances: 18
+      numberOfInstancesAfterReconstruction: 18
+      postProcessingTypes:
+      - Source
+      protocolName: GINOCCHIO MESSORI
+      scanItemNames:
+      - other_2_deviceaet
+      seriesDescription: other_2_deviceaet
+      seriesName: other_2_deviceaet
+      seriesNumber: 4
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: KNEE
+      deviceNames: 444name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 18
+      numberOfSeries: 1
+      patientAge: ''
+      patientSex: M
+      status: Complete
+      studyDescription: other_scanitem_matching_deviceaet
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: other_scanitem_matching_deviceaet
+    created_at: '2024-12-02 19:09:29'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 2
+    InstanceStorageOrderList: false
+    NumberOfInstance: 18
+    RemoteAET: 444aet
+    SeriesDescription: other_2_deviceaet
+    SeriesNumber: 4
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 2
+    InstanceStorageOrderList: false
+    NumberOfInstance: 18
+    RemoteAET: 444aet
+    SeriesDescription: other_2_deviceaet_recon
+    SeriesNumber: 4
+    SeriesStorageOrderIndex: 1
+- case_name: other_scanitem_matching_devicename
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 4
+      dispatchType: ToRecon
+      fileCount: 18
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: GINOCCHIO MESSORI
+      seriesDescription: other_3_devicename_recon
+      seriesNumber: 4
+    - deviceId: 4
+      dispatchType: ToRecon
+      fileCount: 18
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: GINOCCHIO MESSORI
+      seriesDescription: other_3_devicename
+      seriesNumber: 4
+    series:
+    - deviceId: 4
+      deviceName: 444name
+      dicomAeNames:
+      - orthanc3_devicename
+      isSupported: true
+      numberOfInstances: 18
+      numberOfInstancesAfterReconstruction: 18
+      postProcessingTypes:
+      - Source
+      protocolName: GINOCCHIO MESSORI
+      scanItemNames:
+      - other_3_devicename
+      seriesDescription: other_3_devicename
+      seriesName: other_3_devicename
+      seriesNumber: 4
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: KNEE
+      deviceNames: 444name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 18
+      numberOfSeries: 1
+      patientAge: ''
+      patientSex: M
+      status: Complete
+      studyDescription: other_scanitem_matching_devicename
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: other_scanitem_matching_devicename
+    created_at: '2024-12-02 19:10:28'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 3
+    InstanceStorageOrderList: false
+    NumberOfInstance: 18
+    RemoteAET: 444name
+    SeriesDescription: other_3_devicename
+    SeriesNumber: 4
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 3
+    InstanceStorageOrderList: false
+    NumberOfInstance: 18
+    RemoteAET: 444name
+    SeriesDescription: other_3_devicename_recon
+    SeriesNumber: 4
+    SeriesStorageOrderIndex: 1
+- case_name: other_device_matching_SWIFTMR
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 14
+      dispatchType: NotMatched
+      fileCount: 18
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: GINOCCHIO MESSORI
+      seriesDescription: Ax FSE T2 REL
+      seriesNumber: 4
+    series:
+    - deviceId: 14
+      deviceName: 4441name
+      dicomAeNames:
+      - orthanc1_default
+      isSupported: false
+      numberOfInstances: 18
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: GINOCCHIO MESSORI
+      scanItemNames: []
+      seriesDescription: Ax FSE T2 REL
+      seriesName: Ax FSE T2 REL
+      seriesNumber: 4
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: KNEE
+      deviceNames: 4441name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 18
+      numberOfSeries: 1
+      patientAge: ''
+      patientSex: M
+      status: Complete
+      studyDescription: other_device_matching_SWIFTMR
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: other_device_matching_SWIFTMR
+    created_at: '2024-12-02 19:10:51'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 18
+    RemoteAET: SWIFTMR
+    SeriesDescription: Ax FSE T2 REL
+    SeriesNumber: 4
+    SeriesStorageOrderIndex: 0
+- case_name: other_device_matching_deviceaet
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 15
+      dispatchType: NotMatched
+      fileCount: 18
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: GINOCCHIO MESSORI
+      seriesDescription: Ax FSE T2 REL
+      seriesNumber: 4
+    series:
+    - deviceId: 15
+      deviceName: 4442name
+      dicomAeNames:
+      - orthanc2_deviceaet
+      isSupported: false
+      numberOfInstances: 18
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: GINOCCHIO MESSORI
+      scanItemNames: []
+      seriesDescription: Ax FSE T2 REL
+      seriesName: Ax FSE T2 REL
+      seriesNumber: 4
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: KNEE
+      deviceNames: 4442name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 18
+      numberOfSeries: 1
+      patientAge: ''
+      patientSex: M
+      status: Complete
+      studyDescription: other_device_matching_deviceaet
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: other_device_matching_deviceaet
+    created_at: '2024-12-02 19:11:22'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 2
+    InstanceStorageOrderList: false
+    NumberOfInstance: 18
+    RemoteAET: 4442aet
+    SeriesDescription: Ax FSE T2 REL
+    SeriesNumber: 4
+    SeriesStorageOrderIndex: 0
+- case_name: other_device_matching_devicename
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 16
+      dispatchType: NotMatched
+      fileCount: 18
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: GINOCCHIO MESSORI
+      seriesDescription: Ax FSE T2 REL
+      seriesNumber: 4
+    series:
+    - deviceId: 16
+      deviceName: 4443name
+      dicomAeNames:
+      - orthanc3_devicename
+      isSupported: false
+      numberOfInstances: 18
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: GINOCCHIO MESSORI
+      scanItemNames: []
+      seriesDescription: Ax FSE T2 REL
+      seriesName: Ax FSE T2 REL
+      seriesNumber: 4
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: KNEE
+      deviceNames: 4443name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 18
+      numberOfSeries: 1
+      patientAge: ''
+      patientSex: M
+      status: Complete
+      studyDescription: other_device_matching_devicename
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: other_device_matching_devicename
+    created_at: '2024-12-02 19:11:49'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 3
+    InstanceStorageOrderList: false
+    NumberOfInstance: 18
+    RemoteAET: 4443name
+    SeriesDescription: Ax FSE T2 REL
+    SeriesNumber: 4
+    SeriesStorageOrderIndex: 0
+- case_name: stored_multi_dicomae
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: AX T2 TSE
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc2_deviceaet
+      - orthanc3_devicename
+      - orthanc1_default
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30
+      postProcessingTypes:
+      - Source
+      protocolName: AX T2 TSE
+      scanItemNames:
+      - siemens_4_multidicomae
+      seriesDescription: AX T2 TSE
+      seriesName: siemens_4_multidicomae
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 30
+      numberOfSeries: 1
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: stored_multi_dicomae
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: stored_multi_dicomae
+    created_at: '2024-12-02 19:13:39'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: AX T2 TSE
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 2
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: 111aet
+    SeriesDescription: AX T2 TSE
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 3
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: 111name
+    SeriesDescription: AX T2 TSE
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: AX T2 TSE_recon
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 1
+  - DestinationDicomAeId: 2
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: 111aet
+    SeriesDescription: AX T2 TSE_recon
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 1
+  - DestinationDicomAeId: 3
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: 111name
+    SeriesDescription: AX T2 TSE_recon
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 1
+- case_name: series_store_retry_multidicomae
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: NotMatched
+      fileCount: 29
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: philips_1_swiftmr
+      seriesDescription: T2 TSE SAG
+      seriesNumber: 301
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 29
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: philips_1_swiftmr
+      scanItemNames: []
+      seriesDescription: T2 TSE SAG
+      seriesName: T2 TSE SAG
+      seriesNumber: 301
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: PROSTATE
+      deviceNames: 333name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 29
+      numberOfSeries: 1
+      patientAge: 021Y
+      patientSex: F
+      status: Complete
+      studyDescription: series_store_retry_multidicomae
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: series_store_retry_multidicomae
+    created_at: '2024-12-02 19:14:37'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 29
+    RemoteAET: SWIFTMR
+    SeriesDescription: T2 TSE SAG
+    SeriesNumber: 301
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 29
+    RemoteAET: SWIFTMR
+    SeriesDescription: T2 TSE SAG
+    SeriesNumber: 301
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 2
+    InstanceStorageOrderList: false
+    NumberOfInstance: 29
+    RemoteAET: 333aet
+    SeriesDescription: T2 TSE SAG
+    SeriesNumber: 301
+    SeriesStorageOrderIndex: 0
+- case_name: job_store_retry_multidicomae
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: NotMatched
+      fileCount: 29
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: philips_1_swiftmr
+      seriesDescription: T2 TSE SAG
+      seriesNumber: 301
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 29
+      numberOfInstancesAfterReconstruction: null
+      postProcessingTypes:
+      - Source
+      protocolName: philips_1_swiftmr
+      scanItemNames: []
+      seriesDescription: T2 TSE SAG
+      seriesName: T2 TSE SAG
+      seriesNumber: 301
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: PROSTATE
+      deviceNames: 333name
+      isSupported: false
+      modality: MR
+      numberOfInstances: 29
+      numberOfSeries: 1
+      patientAge: 021Y
+      patientSex: F
+      status: Complete
+      studyDescription: job_store_retry_multidicomae
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: job_store_retry_multidicomae
+    created_at: '2024-12-02 19:15:35'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 29
+    RemoteAET: SWIFTMR
+    SeriesDescription: T2 TSE SAG
+    SeriesNumber: 301
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 29
+    RemoteAET: SWIFTMR
+    SeriesDescription: T2 TSE SAG
+    SeriesNumber: 301
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 2
+    InstanceStorageOrderList: false
+    NumberOfInstance: 29
+    RemoteAET: 333aet
+    SeriesDescription: T2 TSE SAG
+    SeriesNumber: 301
+    SeriesStorageOrderIndex: 0
+- case_name: series_entire_retry
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 144
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: Swift Full TOF1
+      seriesDescription: 3D TOF Brain_smft_recon
+      seriesNumber: 23
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 144
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: Swift Full TOF1
+      seriesDescription: 3D TOF Brain_smft
+      seriesNumber: 23
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 144
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: Swift Full TOF1
+      seriesDescription: 3D TOF Brain_smft_recon
+      seriesNumber: 23
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 144
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: Swift Full TOF1
+      seriesDescription: 3D TOF Brain_smft
+      seriesNumber: 23
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc2_deviceaet
+      - orthanc3_devicename
+      - orthanc1_default
+      isSupported: true
+      numberOfInstances: 144
+      numberOfInstancesAfterReconstruction: 144
+      postProcessingTypes:
+      - Source
+      protocolName: Swift Full TOF1
+      scanItemNames:
+      - ge_4_multidicomae
+      seriesDescription: 3D TOF Brain_smft
+      seriesName: ge_4_multidicomae
+      seriesNumber: 23
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 144
+      numberOfSeries: 1
+      patientAge: 030Y
+      patientSex: M
+      status: Complete
+      studyDescription: series_entire_retry
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: series_entire_retry
+    created_at: '2024-12-02 19:25:44'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 144
+    RemoteAET: SWIFTMR
+    SeriesDescription: 3D TOF Brain_smft
+    SeriesNumber: 23
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 2
+    InstanceStorageOrderList: false
+    NumberOfInstance: 144
+    RemoteAET: 222aet
+    SeriesDescription: 3D TOF Brain_smft
+    SeriesNumber: 23
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 3
+    InstanceStorageOrderList: false
+    NumberOfInstance: 144
+    RemoteAET: 222name
+    SeriesDescription: 3D TOF Brain_smft
+    SeriesNumber: 23
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 144
+    RemoteAET: SWIFTMR
+    SeriesDescription: 3D TOF Brain_smft_recon
+    SeriesNumber: 23
+    SeriesStorageOrderIndex: 1
+  - DestinationDicomAeId: 2
+    InstanceStorageOrderList: false
+    NumberOfInstance: 144
+    RemoteAET: 222aet
+    SeriesDescription: 3D TOF Brain_smft_recon
+    SeriesNumber: 23
+    SeriesStorageOrderIndex: 1
+  - DestinationDicomAeId: 3
+    InstanceStorageOrderList: false
+    NumberOfInstance: 144
+    RemoteAET: 222name
+    SeriesDescription: 3D TOF Brain_smft_recon
+    SeriesNumber: 23
+    SeriesStorageOrderIndex: 1
+- case_name: job_entire_retry
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 144
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: Swift Full TOF1
+      seriesDescription: 3D TOF Brain_smft_recon
+      seriesNumber: 23
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 144
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: Swift Full TOF1
+      seriesDescription: 3D TOF Brain_smft
+      seriesNumber: 23
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 144
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: Swift Full TOF1
+      seriesDescription: 3D TOF Brain_smft_recon
+      seriesNumber: 23
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 144
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: Swift Full TOF1
+      seriesDescription: 3D TOF Brain_smft
+      seriesNumber: 23
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc2_deviceaet
+      - orthanc3_devicename
+      - orthanc1_default
+      isSupported: true
+      numberOfInstances: 144
+      numberOfInstancesAfterReconstruction: 144
+      postProcessingTypes:
+      - Source
+      protocolName: Swift Full TOF1
+      scanItemNames:
+      - ge_4_multidicomae
+      seriesDescription: 3D TOF Brain_smft
+      seriesName: ge_4_multidicomae
+      seriesNumber: 23
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 144
+      numberOfSeries: 1
+      patientAge: 030Y
+      patientSex: M
+      status: Complete
+      studyDescription: job_entire_retry
+  metadata:
+    case_data_file: regression\remote_aetitle.yml
+    case_name: job_entire_retry
+    created_at: '2024-12-02 19:35:51'
+    dcs_setup_file: regression\remote_aetitle.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 144
+    RemoteAET: SWIFTMR
+    SeriesDescription: 3D TOF Brain_smft
+    SeriesNumber: 23
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 2
+    InstanceStorageOrderList: false
+    NumberOfInstance: 144
+    RemoteAET: 222aet
+    SeriesDescription: 3D TOF Brain_smft
+    SeriesNumber: 23
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 3
+    InstanceStorageOrderList: false
+    NumberOfInstance: 144
+    RemoteAET: 222name
+    SeriesDescription: 3D TOF Brain_smft
+    SeriesNumber: 23
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 144
+    RemoteAET: SWIFTMR
+    SeriesDescription: 3D TOF Brain_smft_recon
+    SeriesNumber: 23
+    SeriesStorageOrderIndex: 1
+  - DestinationDicomAeId: 2
+    InstanceStorageOrderList: false
+    NumberOfInstance: 144
+    RemoteAET: 222aet
+    SeriesDescription: 3D TOF Brain_smft_recon
+    SeriesNumber: 23
+    SeriesStorageOrderIndex: 1
+  - DestinationDicomAeId: 3
+    InstanceStorageOrderList: false
+    NumberOfInstance: 144
+    RemoteAET: 222name
+    SeriesDescription: 3D TOF Brain_smft_recon
+    SeriesNumber: 23
+    SeriesStorageOrderIndex: 1

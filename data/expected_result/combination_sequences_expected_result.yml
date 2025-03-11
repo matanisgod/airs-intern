@@ -1,0 +1,4031 @@
+- case_name: siemens_1
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 113
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: MinIP
+      protocolName: AX SWI_br512_thk2_off
+      seriesDescription: minip_recon
+      seriesNumber: 20001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 120
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: AX SWI_br512_thk2_off
+      seriesDescription: swi_recon
+      seriesNumber: 19001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 120
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: AX SWI_br512_thk2_off
+      seriesDescription: pha_recon
+      seriesNumber: 18001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 225
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: singlesource
+      seriesDescription: TOF_3D_multi-slab_Willis MRA_recon
+      seriesNumber: 2
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 19
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: MPR
+      protocolName: mpr
+      seriesDescription: <MPR Range[1]>_recon
+      seriesNumber: 105
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 19
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: MPR
+      protocolName: mpr
+      seriesDescription: <MPR Range>_recon
+      seriesNumber: 104
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 64
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: sourcempr
+      seriesDescription: T1 VIBE AX FS_Multi artery 352_recon
+      seriesNumber: 9
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 45
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      seriesDescription: siemens_auto_dwi_combined2_sof_a_sm_recon
+      seriesNumber: 55002
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 45
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: ADC
+      protocolName: DWI AX b50 400 800 Free breath P2
+      seriesDescription: siemens_auto_combined_adc_sm_recon
+      seriesNumber: 56001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 45
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      seriesDescription: siemens_auto_dwi_combined3_sof_a_sm_recon
+      seriesNumber: 55003
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 45
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      seriesDescription: siemens_auto_dwi_combined1_sof_a_sm_recon
+      seriesNumber: 55001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 120
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: AX SWI_br512_thk2_off
+      seriesDescription: mag_recon
+      seriesNumber: 17001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: singlesource
+      seriesDescription: AX T2 TSE_recon
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 45
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      seriesDescription: siemens_auto_dwi_combined1_sof_a_sm
+      seriesNumber: 55001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 19
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: MPR
+      protocolName: mpr
+      seriesDescription: <MPR Range>
+      seriesNumber: 104
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 19
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: MPR
+      protocolName: mpr
+      seriesDescription: <MPR Range[1]>
+      seriesNumber: 105
+    - deviceId: 1
+      dispatchType: NotMatched
+      fileCount: 19
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: MPR
+      protocolName: nsns_sm
+      seriesDescription: <MPR Range>
+      seriesNumber: 107
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 45
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      seriesDescription: siemens_auto_dwi_combined3_sof_a_sm
+      seriesNumber: 55003
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 45
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: ADC
+      protocolName: DWI AX b50 400 800 Free breath P2
+      seriesDescription: siemens_auto_combined_adc_sm
+      seriesNumber: 56001
+    - deviceId: 1
+      dispatchType: NotMatched
+      fileCount: 120
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: AX_T1_fl3d_DFS(AXILLARY)_ISO
+      seriesDescription: AX_T1_fl3d_DFS(AXILLARY)_ISO_F
+      seriesNumber: 8
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 45
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      seriesDescription: siemens_auto_dwi_combined2_sof_a_sm
+      seriesNumber: 55002
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 64
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: sourcempr
+      seriesDescription: T1 VIBE AX FS_Multi artery 352
+      seriesNumber: 9
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 120
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: AX SWI_br512_thk2_off
+      seriesDescription: mag
+      seriesNumber: 17001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: singlesource
+      seriesDescription: AX T2 TSE
+      seriesNumber: 10001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 120
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: AX SWI_br512_thk2_off
+      seriesDescription: pha
+      seriesNumber: 18001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 113
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: MinIP
+      protocolName: AX SWI_br512_thk2_off
+      seriesDescription: minip
+      seriesNumber: 20001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 120
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: AX SWI_br512_thk2_off
+      seriesDescription: swi
+      seriesNumber: 19001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 225
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: singlesource
+      seriesDescription: TOF_3D_multi-slab_Willis MRA
+      seriesNumber: 2
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 225
+      numberOfInstancesAfterReconstruction: 225.0
+      postProcessingTypes:
+      - Source
+      protocolName: singlesource
+      scanItemNames:
+      - siemens_g1_auto_sof_a_swift
+      seriesDescription: TOF_3D_multi-slab_Willis MRA
+      seriesName: siemens_g1_auto_sof_a_swift
+      seriesNumber: 2
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 120
+      numberOfInstancesAfterReconstruction: .nan
+      postProcessingTypes:
+      - Source
+      protocolName: AX_T1_fl3d_DFS(AXILLARY)_ISO
+      scanItemNames: []
+      seriesDescription: AX_T1_fl3d_DFS(AXILLARY)_ISO_F
+      seriesName: ns_sm
+      seriesNumber: 8
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 64
+      numberOfInstancesAfterReconstruction: 64.0
+      postProcessingTypes:
+      - Source
+      protocolName: sourcempr
+      scanItemNames:
+      - siemens_g1_auto_sof_a_swift
+      seriesDescription: T1 VIBE AX FS_Multi artery 352
+      seriesName: siemens_g1_auto_sof_a_swift
+      seriesNumber: 9
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 19
+      numberOfInstancesAfterReconstruction: 19.0
+      postProcessingTypes:
+      - MPR
+      protocolName: mpr
+      scanItemNames:
+      - siemens_g1_auto_sof_a_swift
+      seriesDescription: <MPR Range>
+      seriesName: mpr
+      seriesNumber: 104
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 19
+      numberOfInstancesAfterReconstruction: 19.0
+      postProcessingTypes:
+      - MPR
+      protocolName: mpr
+      scanItemNames:
+      - siemens_g1_auto_sof_a_swift
+      seriesDescription: <MPR Range[1]>
+      seriesName: mpr
+      seriesNumber: 105
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 19
+      numberOfInstancesAfterReconstruction: .nan
+      postProcessingTypes:
+      - MPR
+      protocolName: nsns_sm
+      scanItemNames: []
+      seriesDescription: <MPR Range>
+      seriesName: nsns_sm
+      seriesNumber: 107
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30.0
+      postProcessingTypes:
+      - Source
+      protocolName: singlesource
+      scanItemNames:
+      - siemens_g1_auto_sof_a_swift
+      seriesDescription: AX T2 TSE
+      seriesName: siemens_g1_auto_sof_a_swift
+      seriesNumber: 10001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 120
+      numberOfInstancesAfterReconstruction: 120.0
+      postProcessingTypes:
+      - Source
+      protocolName: AX SWI_br512_thk2_off
+      scanItemNames:
+      - siemens_swi2
+      seriesDescription: mag
+      seriesName: siemens_swi2
+      seriesNumber: 17001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 120
+      numberOfInstancesAfterReconstruction: 120.0
+      postProcessingTypes:
+      - Source
+      protocolName: AX SWI_br512_thk2_off
+      scanItemNames:
+      - siemens_swi2
+      seriesDescription: pha
+      seriesName: siemens_swi2
+      seriesNumber: 18001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 120
+      numberOfInstancesAfterReconstruction: 120.0
+      postProcessingTypes:
+      - Source
+      protocolName: AX SWI_br512_thk2_off
+      scanItemNames:
+      - siemens_swi2
+      seriesDescription: swi
+      seriesName: siemens_swi2
+      seriesNumber: 19001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 113
+      numberOfInstancesAfterReconstruction: 113.0
+      postProcessingTypes:
+      - MinIP
+      protocolName: AX SWI_br512_thk2_off
+      scanItemNames:
+      - siemens_swi2
+      seriesDescription: minip
+      seriesName: siemens_swi2
+      seriesNumber: 20001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 45
+      numberOfInstancesAfterReconstruction: 45.0
+      postProcessingTypes:
+      - Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      scanItemNames:
+      - siemens_auto_dwi_combined_sof_a_sm
+      seriesDescription: siemens_auto_dwi_combined1_sof_a_sm
+      seriesName: siemens_auto_dwi_combined_sof_a_sm
+      seriesNumber: 55001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 45
+      numberOfInstancesAfterReconstruction: 45.0
+      postProcessingTypes:
+      - Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      scanItemNames:
+      - siemens_auto_dwi_combined_sof_a_sm
+      seriesDescription: siemens_auto_dwi_combined2_sof_a_sm
+      seriesName: siemens_auto_dwi_combined_sof_a_sm
+      seriesNumber: 55002
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 45
+      numberOfInstancesAfterReconstruction: 45.0
+      postProcessingTypes:
+      - Source
+      protocolName: DWI AX b50 400 800 Free breath P2
+      scanItemNames:
+      - siemens_auto_dwi_combined_sof_a_sm
+      seriesDescription: siemens_auto_dwi_combined3_sof_a_sm
+      seriesName: siemens_auto_dwi_combined_sof_a_sm
+      seriesNumber: 55003
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 45
+      numberOfInstancesAfterReconstruction: 45.0
+      postProcessingTypes:
+      - ADC
+      protocolName: DWI AX b50 400 800 Free breath P2
+      scanItemNames:
+      - siemens_auto_dwi_combined_sof_a_sm
+      seriesDescription: siemens_auto_combined_adc_sm
+      seriesName: siemens_auto_dwi_combined_sof_a_sm
+      seriesNumber: 56001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: HEAD
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 1149
+      numberOfSeries: 15
+      patientAge: 070Y
+      patientSex: F
+      status: Complete
+      studyDescription: siemens_1
+  metadata:
+    case_data_file: regression\combination_sequences.yml
+    case_name: siemens_1
+    created_at: '2024-11-28 16:39:45'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 225
+    RemoteAET: SWIFTMR
+    SeriesDescription: TOF_3D_multi-slab_Willis MRA_recon
+    SeriesNumber: 2
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 120
+    RemoteAET: SWIFTMR
+    SeriesDescription: AX_T1_fl3d_DFS(AXILLARY)_ISO_F
+    SeriesNumber: 8
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 64
+    RemoteAET: SWIFTMR
+    SeriesDescription: T1 VIBE AX FS_Multi artery 352_recon
+    SeriesNumber: 9
+    SeriesStorageOrderIndex: 1
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 19
+    RemoteAET: SWIFTMR
+    SeriesDescription: <MPR Range>_recon
+    SeriesNumber: 104
+    SeriesStorageOrderIndex: 2
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 19
+    RemoteAET: SWIFTMR
+    SeriesDescription: <MPR Range[1]>_recon
+    SeriesNumber: 105
+    SeriesStorageOrderIndex: 3
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 19
+    RemoteAET: SWIFTMR
+    SeriesDescription: <MPR Range>
+    SeriesNumber: 107
+    SeriesStorageOrderIndex: 1
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: AX T2 TSE_recon
+    SeriesNumber: 10001
+    SeriesStorageOrderIndex: 4
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 120
+    RemoteAET: SWIFTMR
+    SeriesDescription: mag_recon
+    SeriesNumber: 17001
+    SeriesStorageOrderIndex: 5
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 120
+    RemoteAET: SWIFTMR
+    SeriesDescription: pha_recon
+    SeriesNumber: 18001
+    SeriesStorageOrderIndex: 6
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 120
+    RemoteAET: SWIFTMR
+    SeriesDescription: swi_recon
+    SeriesNumber: 19001
+    SeriesStorageOrderIndex: 7
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 113
+    RemoteAET: SWIFTMR
+    SeriesDescription: minip_recon
+    SeriesNumber: 20001
+    SeriesStorageOrderIndex: 8
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 45
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_auto_dwi_combined1_sof_a_sm_recon
+    SeriesNumber: 55001
+    SeriesStorageOrderIndex: 9
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 45
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_auto_dwi_combined2_sof_a_sm_recon
+    SeriesNumber: 55002
+    SeriesStorageOrderIndex: 10
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 45
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_auto_dwi_combined3_sof_a_sm_recon
+    SeriesNumber: 55003
+    SeriesStorageOrderIndex: 11
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 45
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_auto_combined_adc_sm_recon
+    SeriesNumber: 56001
+    SeriesStorageOrderIndex: 12
+- case_name: siemens_2
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 37
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: MIP
+      protocolName: angio_mip_randmatching
+      seriesDescription: MIP Range_recon
+      seriesNumber: 1015001
+    - deviceId: 1
+      dispatchType: Generated
+      fileCount: 18
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: Auto
+      postProcessingType: SwiftAngio
+      protocolName: 3D TOF Brain_smft_2
+      seriesDescription: Swift Angio_recon
+      seriesNumber: 10000
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 175
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: 3D TOF Brain_smft_1
+      seriesDescription: angio_recon
+      seriesNumber: 9001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 136
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: 3D TOF Brain_smft_0
+      seriesDescription: angio_recon
+      seriesNumber: 5001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 134
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: 3D TOF Brain_smft_2
+      seriesDescription: angio_recon
+      seriesNumber: 13001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 224
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: TOF_3D_multi-slab_Carotid MRA
+      seriesDescription: TOF_3D_multi-slab_Carotid MRA_recon
+      seriesNumber: 21
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 192
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: Post SAG T1 MPRAGE
+      seriesDescription: Post SAG T1 MPRAGE_recon
+      seriesNumber: 20001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 140
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: MPR
+      protocolName: ''
+      seriesDescription: AXL 3D dess (lower cranial nerve)_MPR_lower cranial nerve_recon
+      seriesNumber: 5
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 208
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: AXL 3D dess (lower cranial nerve)
+      seriesDescription: AXL 3D dess (lower cranial nerve)_recon
+      seriesNumber: 4
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 17
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: SAG T2 TSE DFS
+      seriesDescription: SAG T2 TSE DFS_F_recon
+      seriesNumber: 6
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: EXP_ADC
+      protocolName: diff b 50 500 1000 1500
+      seriesDescription: siemens_auto_eadc_sm_recon
+      seriesNumber: 21001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: diff b 50 500 1000 1500
+      seriesDescription: siemens_auto_dwi2_eadc_sof_a_sm_recon
+      seriesNumber: 19002
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: diff b 50 500 1000 1500
+      seriesDescription: siemens_auto_dwi4_eadc_sof_a_sm_recon
+      seriesNumber: 19004
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: diff b 50 500 1000 1500
+      seriesDescription: siemens_auto_dwi3_eadc_sof_a_sm_recon
+      seriesNumber: 19003
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: diff b 50 500 1000 1500
+      seriesDescription: siemens_auto_dwi1_eadc_sof_a_sm_recon
+      seriesNumber: 19001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 17
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: SAG T2 TSE DFS
+      seriesDescription: SAG T2 TSE DFS_in_recon
+      seriesNumber: 5
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 17
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: SAG T2 TSE DFS
+      seriesDescription: SAG T2 TSE DFS_opp_recon
+      seriesNumber: 4
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 17
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: SAG T2 TSE DFS
+      seriesDescription: SAG T2 TSE DFS_W_recon
+      seriesNumber: 7
+    - deviceId: 1
+      dispatchType: Generated
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: Auto
+      postProcessingType: SwiftAngio
+      protocolName: 3D TOF Brain_smft_2
+      seriesDescription: Swift Angio
+      seriesNumber: 10000
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 17
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: SAG T2 TSE DFS
+      seriesDescription: SAG T2 TSE DFS_opp
+      seriesNumber: 4
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 37
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: MIP
+      protocolName: angio_mip_randmatching
+      seriesDescription: MIP Range
+      seriesNumber: 1015001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 17
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: SAG T2 TSE DFS
+      seriesDescription: SAG T2 TSE DFS_F
+      seriesNumber: 6
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: diff b 50 500 1000 1500
+      seriesDescription: siemens_auto_dwi1_eadc_sof_a_sm
+      seriesNumber: 19001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 17
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: SAG T2 TSE DFS
+      seriesDescription: SAG T2 TSE DFS_W
+      seriesNumber: 7
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: diff b 50 500 1000 1500
+      seriesDescription: siemens_auto_dwi4_eadc_sof_a_sm
+      seriesNumber: 19004
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: diff b 50 500 1000 1500
+      seriesDescription: siemens_auto_dwi3_eadc_sof_a_sm
+      seriesNumber: 19003
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 140
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: MPR
+      protocolName: ''
+      seriesDescription: AXL 3D dess (lower cranial nerve)_MPR_lower cranial nerve
+      seriesNumber: 5
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 17
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: SAG T2 TSE DFS
+      seriesDescription: SAG T2 TSE DFS_in
+      seriesNumber: 5
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: EXP_ADC
+      protocolName: diff b 50 500 1000 1500
+      seriesDescription: siemens_auto_eadc_sm
+      seriesNumber: 21001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 136
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: 3D TOF Brain_smft_0
+      seriesDescription: angio
+      seriesNumber: 5001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 224
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: TOF_3D_multi-slab_Carotid MRA
+      seriesDescription: TOF_3D_multi-slab_Carotid MRA
+      seriesNumber: 21
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: diff b 50 500 1000 1500
+      seriesDescription: siemens_auto_dwi2_eadc_sof_a_sm
+      seriesNumber: 19002
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 208
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: AXL 3D dess (lower cranial nerve)
+      seriesDescription: AXL 3D dess (lower cranial nerve)
+      seriesNumber: 4
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 175
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: 3D TOF Brain_smft_1
+      seriesDescription: angio
+      seriesNumber: 9001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 192
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: Post SAG T1 MPRAGE
+      seriesDescription: Post SAG T1 MPRAGE
+      seriesNumber: 20001
+    - deviceId: 1
+      dispatchType: ToRecon
+      fileCount: 134
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: 3D TOF Brain_smft_2
+      seriesDescription: angio
+      seriesNumber: 13001
+    - deviceId: 1
+      dispatchType: NotMatched
+      fileCount: 60
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: AX SWI
+      seriesDescription: Mag_Images
+      seriesNumber: 22
+    series:
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 17
+      numberOfInstancesAfterReconstruction: 17.0
+      postProcessingTypes:
+      - Source
+      protocolName: SAG T2 TSE DFS
+      scanItemNames:
+      - siemens_dixon2
+      seriesDescription: SAG T2 TSE DFS_opp
+      seriesName: siemens_dixon2
+      seriesNumber: 4
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 208
+      numberOfInstancesAfterReconstruction: 208.0
+      postProcessingTypes:
+      - Source
+      protocolName: AXL 3D dess (lower cranial nerve)
+      scanItemNames:
+      - siemens_g1_auto_sof_a_swift
+      seriesDescription: AXL 3D dess (lower cranial nerve)
+      seriesName: siemens_g1_auto_sof_a_swift
+      seriesNumber: 4
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 17
+      numberOfInstancesAfterReconstruction: 17.0
+      postProcessingTypes:
+      - Source
+      protocolName: SAG T2 TSE DFS
+      scanItemNames:
+      - siemens_dixon2
+      seriesDescription: SAG T2 TSE DFS_in
+      seriesName: siemens_dixon2
+      seriesNumber: 5
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 140
+      numberOfInstancesAfterReconstruction: 140.0
+      postProcessingTypes:
+      - MPR
+      protocolName: ''
+      scanItemNames:
+      - siemens_g1_auto_sof_a_swift
+      seriesDescription: AXL 3D dess (lower cranial nerve)_MPR_lower cranial nerve
+      seriesName: siemens_g1_auto_sof_a_swift
+      seriesNumber: 5
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 17
+      numberOfInstancesAfterReconstruction: 17.0
+      postProcessingTypes:
+      - Source
+      protocolName: SAG T2 TSE DFS
+      scanItemNames:
+      - siemens_dixon2
+      seriesDescription: SAG T2 TSE DFS_F
+      seriesName: siemens_dixon2
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 17
+      numberOfInstancesAfterReconstruction: 17.0
+      postProcessingTypes:
+      - Source
+      protocolName: SAG T2 TSE DFS
+      scanItemNames:
+      - siemens_dixon2
+      seriesDescription: SAG T2 TSE DFS_W
+      seriesName: siemens_dixon2
+      seriesNumber: 7
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 224
+      numberOfInstancesAfterReconstruction: 224.0
+      postProcessingTypes:
+      - Source
+      protocolName: TOF_3D_multi-slab_Carotid MRA
+      scanItemNames:
+      - siemens_g1_auto_sof_a_swift
+      seriesDescription: TOF_3D_multi-slab_Carotid MRA
+      seriesName: siemens_g1_auto_sof_a_swift
+      seriesNumber: 21
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 60
+      numberOfInstancesAfterReconstruction: .nan
+      postProcessingTypes:
+      - Source
+      protocolName: AX SWI
+      scanItemNames: []
+      seriesDescription: Mag_Images
+      seriesName: ns_sm
+      seriesNumber: 22
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 136
+      numberOfInstancesAfterReconstruction: 136.0
+      postProcessingTypes:
+      - Source
+      protocolName: 3D TOF Brain_smft_0
+      scanItemNames:
+      - siemens_angio2
+      seriesDescription: angio
+      seriesName: siemens_angio2
+      seriesNumber: 5001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 175
+      numberOfInstancesAfterReconstruction: 175.0
+      postProcessingTypes:
+      - Source
+      protocolName: 3D TOF Brain_smft_1
+      scanItemNames:
+      - siemens_angio2
+      seriesDescription: angio
+      seriesName: siemens_angio2
+      seriesNumber: 9001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 1
+      numberOfInstancesAfterReconstruction: 18.0
+      postProcessingTypes:
+      - SwiftAngio
+      protocolName: 3D TOF Brain_smft_2
+      scanItemNames:
+      - siemens_angio2
+      seriesDescription: Swift Angio
+      seriesName: Swift Angio
+      seriesNumber: 10000
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 134
+      numberOfInstancesAfterReconstruction: 134.0
+      postProcessingTypes:
+      - Source
+      protocolName: 3D TOF Brain_smft_2
+      scanItemNames:
+      - siemens_angio2
+      seriesDescription: angio
+      seriesName: siemens_angio2
+      seriesNumber: 13001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 40
+      numberOfInstancesAfterReconstruction: 40.0
+      postProcessingTypes:
+      - Source
+      protocolName: diff b 50 500 1000 1500
+      scanItemNames:
+      - siemens_auto_dwi_eadc_sof_a_sm
+      seriesDescription: siemens_auto_dwi1_eadc_sof_a_sm
+      seriesName: siemens_auto_dwi_eadc_sof_a_sm
+      seriesNumber: 19001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 40
+      numberOfInstancesAfterReconstruction: 40.0
+      postProcessingTypes:
+      - Source
+      protocolName: diff b 50 500 1000 1500
+      scanItemNames:
+      - siemens_auto_dwi_eadc_sof_a_sm
+      seriesDescription: siemens_auto_dwi2_eadc_sof_a_sm
+      seriesName: siemens_auto_dwi_eadc_sof_a_sm
+      seriesNumber: 19002
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 40
+      numberOfInstancesAfterReconstruction: 40.0
+      postProcessingTypes:
+      - Source
+      protocolName: diff b 50 500 1000 1500
+      scanItemNames:
+      - siemens_auto_dwi_eadc_sof_a_sm
+      seriesDescription: siemens_auto_dwi3_eadc_sof_a_sm
+      seriesName: siemens_auto_dwi_eadc_sof_a_sm
+      seriesNumber: 19003
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 40
+      numberOfInstancesAfterReconstruction: 40.0
+      postProcessingTypes:
+      - Source
+      protocolName: diff b 50 500 1000 1500
+      scanItemNames:
+      - siemens_auto_dwi_eadc_sof_a_sm
+      seriesDescription: siemens_auto_dwi4_eadc_sof_a_sm
+      seriesName: siemens_auto_dwi_eadc_sof_a_sm
+      seriesNumber: 19004
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 192
+      numberOfInstancesAfterReconstruction: 192.0
+      postProcessingTypes:
+      - Source
+      protocolName: Post SAG T1 MPRAGE
+      scanItemNames:
+      - siemens_g1_auto_sof_a_swift
+      seriesDescription: Post SAG T1 MPRAGE
+      seriesName: siemens_g1_auto_sof_a_swift
+      seriesNumber: 20001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 40
+      numberOfInstancesAfterReconstruction: 40.0
+      postProcessingTypes:
+      - EXP_ADC
+      protocolName: diff b 50 500 1000 1500
+      scanItemNames:
+      - siemens_auto_dwi_eadc_sof_a_sm
+      seriesDescription: siemens_auto_eadc_sm
+      seriesName: siemens_auto_dwi_eadc_sof_a_sm
+      seriesNumber: 21001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 1
+      deviceName: 111name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 37
+      numberOfInstancesAfterReconstruction: 37.0
+      postProcessingTypes:
+      - MIP
+      protocolName: angio_mip_randmatching
+      scanItemNames:
+      - siemens_angio2
+      seriesDescription: MIP Range
+      seriesName: angio_mip_randmatching
+      seriesNumber: 1015001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 111name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 1575
+      numberOfSeries: 19
+      patientAge: 067Y
+      patientSex: M
+      status: Complete
+      studyDescription: siemens_2
+  metadata:
+    case_data_file: regression\combination_sequences.yml
+    case_name: siemens_2
+    created_at: '2024-11-28 16:54:28'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 208
+    RemoteAET: SWIFTMR
+    SeriesDescription: AXL 3D dess (lower cranial nerve)_recon
+    SeriesNumber: 4
+    SeriesStorageOrderIndex: 1
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 17
+    RemoteAET: SWIFTMR
+    SeriesDescription: SAG T2 TSE DFS_opp_recon
+    SeriesNumber: 4
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 140
+    RemoteAET: SWIFTMR
+    SeriesDescription: AXL 3D dess (lower cranial nerve)_MPR_lower cranial nerve_recon
+    SeriesNumber: 5
+    SeriesStorageOrderIndex: 2
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 17
+    RemoteAET: SWIFTMR
+    SeriesDescription: SAG T2 TSE DFS_in_recon
+    SeriesNumber: 5
+    SeriesStorageOrderIndex: 3
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 17
+    RemoteAET: SWIFTMR
+    SeriesDescription: SAG T2 TSE DFS_F_recon
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 4
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 17
+    RemoteAET: SWIFTMR
+    SeriesDescription: SAG T2 TSE DFS_W_recon
+    SeriesNumber: 7
+    SeriesStorageOrderIndex: 5
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 224
+    RemoteAET: SWIFTMR
+    SeriesDescription: TOF_3D_multi-slab_Carotid MRA_recon
+    SeriesNumber: 21
+    SeriesStorageOrderIndex: 6
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 60
+    RemoteAET: SWIFTMR
+    SeriesDescription: Mag_Images
+    SeriesNumber: 22
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 136
+    RemoteAET: SWIFTMR
+    SeriesDescription: angio_recon
+    SeriesNumber: 5001
+    SeriesStorageOrderIndex: 7
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 175
+    RemoteAET: SWIFTMR
+    SeriesDescription: angio_recon
+    SeriesNumber: 9001
+    SeriesStorageOrderIndex: 8
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 18
+    RemoteAET: SWIFTMR
+    SeriesDescription: Swift Angio_recon
+    SeriesNumber: 10000
+    SeriesStorageOrderIndex: 9
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 134
+    RemoteAET: SWIFTMR
+    SeriesDescription: angio_recon
+    SeriesNumber: 13001
+    SeriesStorageOrderIndex: 10
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 40
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_auto_dwi1_eadc_sof_a_sm_recon
+    SeriesNumber: 19001
+    SeriesStorageOrderIndex: 11
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 40
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_auto_dwi2_eadc_sof_a_sm_recon
+    SeriesNumber: 19002
+    SeriesStorageOrderIndex: 12
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 40
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_auto_dwi3_eadc_sof_a_sm_recon
+    SeriesNumber: 19003
+    SeriesStorageOrderIndex: 13
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 40
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_auto_dwi4_eadc_sof_a_sm_recon
+    SeriesNumber: 19004
+    SeriesStorageOrderIndex: 14
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 192
+    RemoteAET: SWIFTMR
+    SeriesDescription: Post SAG T1 MPRAGE_recon
+    SeriesNumber: 20001
+    SeriesStorageOrderIndex: 15
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 40
+    RemoteAET: SWIFTMR
+    SeriesDescription: siemens_auto_eadc_sm_recon
+    SeriesNumber: 21001
+    SeriesStorageOrderIndex: 16
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 37
+    RemoteAET: SWIFTMR
+    SeriesDescription: MIP Range_recon
+    SeriesNumber: 1015001
+    SeriesStorageOrderIndex: 17
+- case_name: ge_1
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 121
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: MPR
+      protocolName: AIRS_SF_METS Brain_3d
+      seriesDescription: COR CUBE FLAIR_recon
+      seriesNumber: 201
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 121
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: MPR
+      protocolName: AIRS_SF_METS Brain_3d
+      seriesDescription: AX CUBE FLAIR_recon
+      seriesNumber: 200
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 320
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: AIRS_SF_METS Brain_3d
+      seriesDescription: Sag CUBE FLAIR FS_recon
+      seriesNumber: 2
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 122
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: MinIP
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: minip_recon
+      seriesNumber: 450
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 118
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: 'FILT_PHA: SWAN_recon'
+      seriesNumber: 400
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 118
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: SWAN_recon
+      seriesNumber: 4
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: ADC
+      protocolName: Liver Mass FOV38 (BH)
+      seriesDescription: ge_auto_adc2_recon
+      seriesNumber: 950
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: Liver Mass FOV38 (BH)
+      seriesDescription: RTr Ax DWI b-50,1500 synB600_recon
+      seriesNumber: 9
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: Liver Mass FOV38 (BH)
+      seriesDescription: RTr Ax DWI b-50,1500 synB600_recon
+      seriesNumber: 9
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High_recon
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High_recon
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Navigator
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: minip_recon
+      seriesNumber: 450
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: ADC
+      protocolName: Liver Mass FOV38 (BH)
+      seriesDescription: ge_auto_adc2
+      seriesNumber: 950
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 30
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesNumber: 6
+    - deviceId: 2
+      dispatchType: NotMatched
+      fileCount: 110
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: Liver Mass FOV38 (BH)
+      seriesDescription: 'FAT: 3D Ax LAVA Flex In/Out BH'
+      seriesNumber: 300
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 118
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: SWAN
+      seriesNumber: 4
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: Liver Mass FOV38 (BH)
+      seriesDescription: RTr Ax DWI b-50,1500 synB600
+      seriesNumber: 9
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: Liver Mass FOV38 (BH)
+      seriesDescription: RTr Ax DWI b-50,1500 synB600
+      seriesNumber: 9
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 122
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: MinIP
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: minip
+      seriesNumber: 450
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Navigator
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: minip
+      seriesNumber: 450
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 121
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: MPR
+      protocolName: AIRS_SF_METS Brain_3d
+      seriesDescription: COR CUBE FLAIR
+      seriesNumber: 201
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 121
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: MPR
+      protocolName: AIRS_SF_METS Brain_3d
+      seriesDescription: AX CUBE FLAIR
+      seriesNumber: 200
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 320
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: AIRS_SF_METS Brain_3d
+      seriesDescription: Sag CUBE FLAIR FS
+      seriesNumber: 2
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 118
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: '**Glioma study P.M(+)'
+      seriesDescription: 'FILT_PHA: SWAN'
+      seriesNumber: 400
+    - deviceId: 2
+      dispatchType: NotMatched
+      fileCount: 160
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: 1)SWIFT_Br MRI+MRA(+) Ca
+      seriesDescription: 3D T1 SAG fSPGR_A_swift
+      seriesNumber: 4
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 320
+      numberOfInstancesAfterReconstruction: 320.0
+      postProcessingTypes:
+      - Source
+      protocolName: AIRS_SF_METS Brain_3d
+      scanItemNames:
+      - ge_g1_auto_sof_a_swift
+      seriesDescription: Sag CUBE FLAIR FS
+      seriesName: ge_g1_auto_sof_a_swift
+      seriesNumber: 2
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 160
+      numberOfInstancesAfterReconstruction: .nan
+      postProcessingTypes:
+      - Source
+      protocolName: 1)SWIFT_Br MRI+MRA(+) Ca
+      scanItemNames: []
+      seriesDescription: 3D T1 SAG fSPGR_A_swift
+      seriesName: ns_sm
+      seriesNumber: 4
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 118
+      numberOfInstancesAfterReconstruction: 118.0
+      postProcessingTypes:
+      - Source
+      protocolName: '**Glioma study P.M(+)'
+      scanItemNames:
+      - ge_swi2
+      seriesDescription: SWAN
+      seriesName: ge_swi2
+      seriesNumber: 4
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30.0
+      postProcessingTypes:
+      - Source
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames:
+      - ge_g1_auto_sof_a_swift
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesName: ge_g1_auto_sof_a_swift
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 30
+      numberOfInstancesAfterReconstruction: 30.0
+      postProcessingTypes:
+      - Source
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames:
+      - ge_g1_auto_sof_a_swift
+      seriesDescription: Ax T2 FLAIR FS DL High
+      seriesName: ge_g1_auto_sof_a_swift
+      seriesNumber: 6
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 80
+      numberOfInstancesAfterReconstruction: 80.0
+      postProcessingTypes:
+      - Source
+      protocolName: Liver Mass FOV38 (BH)
+      scanItemNames:
+      - ge_auto_dwi2
+      seriesDescription: RTr Ax DWI b-50,1500 synB600
+      seriesName: ge_auto_dwi2
+      seriesNumber: 9
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 121
+      numberOfInstancesAfterReconstruction: 121.0
+      postProcessingTypes:
+      - MPR
+      protocolName: AIRS_SF_METS Brain_3d
+      scanItemNames:
+      - ge_g1_auto_sof_a_swift
+      seriesDescription: AX CUBE FLAIR
+      seriesName: mpr
+      seriesNumber: 200
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 121
+      numberOfInstancesAfterReconstruction: 121.0
+      postProcessingTypes:
+      - MPR
+      protocolName: AIRS_SF_METS Brain_3d
+      scanItemNames:
+      - ge_g1_auto_sof_a_swift
+      seriesDescription: COR CUBE FLAIR
+      seriesName: mpr
+      seriesNumber: 201
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 110
+      numberOfInstancesAfterReconstruction: .nan
+      postProcessingTypes:
+      - Source
+      protocolName: Liver Mass FOV38 (BH)
+      scanItemNames: []
+      seriesDescription: 'FAT: 3D Ax LAVA Flex In/Out BH'
+      seriesName: ns_sm
+      seriesNumber: 300
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 118
+      numberOfInstancesAfterReconstruction: 118.0
+      postProcessingTypes:
+      - Source
+      protocolName: '**Glioma study P.M(+)'
+      scanItemNames:
+      - ge_swi2
+      seriesDescription: 'FILT_PHA: SWAN'
+      seriesName: ge_swi2
+      seriesNumber: 400
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      - orthanc
+      isSupported: true
+      numberOfInstances: 123
+      numberOfInstancesAfterReconstruction: 123.0
+      postProcessingTypes:
+      - Navigator
+      - MinIP
+      protocolName: '**Glioma study P.M(+)'
+      scanItemNames:
+      - ge_swi2
+      seriesDescription: minip
+      seriesName: minip
+      seriesNumber: 450
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 40
+      numberOfInstancesAfterReconstruction: 40.0
+      postProcessingTypes:
+      - ADC
+      protocolName: Liver Mass FOV38 (BH)
+      scanItemNames:
+      - ge_auto_dwi2
+      seriesDescription: ge_auto_adc2
+      seriesName: ge_auto_adc2
+      seriesNumber: 950
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 1371
+      numberOfSeries: 12
+      patientAge: 076Y
+      patientSex: F
+      status: Complete
+      studyDescription: ge_1
+  metadata:
+    case_data_file: regression\combination_sequences.yml
+    case_name: ge_1
+    created_at: '2024-11-28 17:05:07'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 320
+    RemoteAET: SWIFTMR
+    SeriesDescription: Sag CUBE FLAIR FS_recon
+    SeriesNumber: 2
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 160
+    RemoteAET: SWIFTMR
+    SeriesDescription: 3D T1 SAG fSPGR_A_swift
+    SeriesNumber: 4
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 118
+    RemoteAET: SWIFTMR
+    SeriesDescription: SWAN_recon
+    SeriesNumber: 4
+    SeriesStorageOrderIndex: 1
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: Ax T2 FLAIR FS DL High_recon
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 3
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 30
+    RemoteAET: SWIFTMR
+    SeriesDescription: Ax T2 FLAIR FS DL High_recon
+    SeriesNumber: 6
+    SeriesStorageOrderIndex: 2
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 80
+    RemoteAET: SWIFTMR
+    SeriesDescription: RTr Ax DWI b-50,1500 synB600_recon
+    SeriesNumber: 9
+    SeriesStorageOrderIndex: 4
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 121
+    RemoteAET: SWIFTMR
+    SeriesDescription: AX CUBE FLAIR_recon
+    SeriesNumber: 200
+    SeriesStorageOrderIndex: 5
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 121
+    RemoteAET: SWIFTMR
+    SeriesDescription: COR CUBE FLAIR_recon
+    SeriesNumber: 201
+    SeriesStorageOrderIndex: 6
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 110
+    RemoteAET: SWIFTMR
+    SeriesDescription: 'FAT: 3D Ax LAVA Flex In/Out BH'
+    SeriesNumber: 300
+    SeriesStorageOrderIndex: 1
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 118
+    RemoteAET: SWIFTMR
+    SeriesDescription: 'FILT_PHA: SWAN_recon'
+    SeriesNumber: 400
+    SeriesStorageOrderIndex: 7
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 123
+    RemoteAET: SWIFTMR
+    SeriesDescription: minip_recon
+    SeriesNumber: 450
+    SeriesStorageOrderIndex: 8
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 40
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_auto_adc2_recon
+    SeriesNumber: 950
+    SeriesStorageOrderIndex: 9
+- case_name: ge_2
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 36
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: MIP
+      protocolName: Swift Full TOF1
+      seriesDescription: angio_mip_randmatching_recon
+      seriesNumber: 2350
+    - deviceId: 2
+      dispatchType: Generated
+      fileCount: 18
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: Auto
+      postProcessingType: SwiftAngio
+      protocolName: Swift Full TOF1
+      seriesDescription: Swift Angio_recon
+      seriesNumber: 10000
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 144
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: Swift Full TOF1
+      seriesDescription: angio_recon
+      seriesNumber: 23
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 155
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: Swift Full TOF1
+      seriesDescription: angio_recon
+      seriesNumber: 24
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 144
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: Swift Full TOF1
+      seriesDescription: angio_recon
+      seriesNumber: 29
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 92
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: MPR
+      protocolName: Neck
+      seriesDescription: ge_g1_auto_sof_a_swift_recon
+      seriesNumber: 350
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: Neck
+      seriesDescription: 'WATER: Ax T2 FSE Flex_recon'
+      seriesNumber: 3
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 75
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: MPR
+      protocolName: Neck
+      seriesDescription: pp1_recon
+      seriesNumber: 303
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: Neck
+      seriesDescription: source1_recon
+      seriesNumber: 300
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 124
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: 1) IAC (con)
+      seriesDescription: Brain TOF_fast_hs1p2_recon
+      seriesNumber: 5
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 75
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: MPR
+      protocolName: Neck
+      seriesDescription: pp2_recon
+      seriesNumber: 302
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: Neck
+      seriesDescription: source2_recon
+      seriesNumber: 301
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 92
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: MPR
+      protocolName: Neck
+      seriesDescription: pp3_recon
+      seriesNumber: 350
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: Neck
+      seriesDescription: source3_recon
+      seriesNumber: 3
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 17
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: ANKLE/7
+      seriesDescription: SAG FSE T2_recon
+      seriesNumber: 7
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: ADC
+      protocolName: '*1)MRI Liver (+) ALL 202'
+      seriesDescription: ge_auto_adc3_recon
+      seriesNumber: 1150
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: '*1)MRI Liver (+) ALL 202'
+      seriesDescription: diff_50_500_1000_syn1500 b-50_recon
+      seriesNumber: 1101
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: '*1)MRI Liver (+) ALL 202'
+      seriesDescription: diff_50_500_1000_syn1500 b-1000_recon
+      seriesNumber: 1103
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: '*1)MRI Liver (+) ALL 202'
+      seriesDescription: diff_50_500_1000_syn1500 b-500_recon
+      seriesNumber: 1102
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Navigator
+      protocolName: Neck
+      seriesDescription: pp3_recon
+      seriesNumber: 350
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Navigator
+      protocolName: Neck
+      seriesDescription: pp2_recon
+      seriesNumber: 302
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Navigator
+      protocolName: Neck
+      seriesDescription: pp1_recon
+      seriesNumber: 303
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Navigator
+      protocolName: Neck
+      seriesDescription: ge_g1_auto_sof_a_swift_recon
+      seriesNumber: 350
+    - deviceId: 2
+      dispatchType: Generated
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: Auto
+      postProcessingType: SwiftAngio
+      protocolName: Swift Full TOF1
+      seriesDescription: Swift Angio
+      seriesNumber: 10000
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 36
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: MIP
+      protocolName: Swift Full TOF1
+      seriesDescription: angio_mip_randmatching
+      seriesNumber: 2350
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 144
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: Swift Full TOF1
+      seriesDescription: angio
+      seriesNumber: 29
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 155
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: Swift Full TOF1
+      seriesDescription: angio
+      seriesNumber: 24
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 144
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: Swift Full TOF1
+      seriesDescription: angio
+      seriesNumber: 23
+    - deviceId: 2
+      dispatchType: NotMatched
+      fileCount: 76
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: 1) Brain + MRA (con)
+      seriesDescription: ph1:SUB:3D Cor TRICKS
+      seriesNumber: 901
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 10
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: ADC
+      protocolName: '*1)MRI Liver (+) ALL 202'
+      seriesDescription: ge_auto_adc3
+      seriesNumber: 1150
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 10
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: '*1)MRI Liver (+) ALL 202'
+      seriesDescription: diff_50_500_1000_syn1500 b-1000
+      seriesNumber: 1103
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 10
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: '*1)MRI Liver (+) ALL 202'
+      seriesDescription: diff_50_500_1000_syn1500 b-500
+      seriesNumber: 1102
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 10
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: '*1)MRI Liver (+) ALL 202'
+      seriesDescription: diff_50_500_1000_syn1500 b-50
+      seriesNumber: 1101
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 92
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: MPR
+      protocolName: Neck
+      seriesDescription: pp3
+      seriesNumber: 350
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Navigator
+      protocolName: Neck
+      seriesDescription: pp3
+      seriesNumber: 350
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: Neck
+      seriesDescription: source3
+      seriesNumber: 3
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 75
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: MPR
+      protocolName: Neck
+      seriesDescription: pp2
+      seriesNumber: 302
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Navigator
+      protocolName: Neck
+      seriesDescription: pp2
+      seriesNumber: 302
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: Neck
+      seriesDescription: source2
+      seriesNumber: 301
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 75
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: MPR
+      protocolName: Neck
+      seriesDescription: pp1
+      seriesNumber: 303
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Navigator
+      protocolName: Neck
+      seriesDescription: pp1
+      seriesNumber: 303
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: Neck
+      seriesDescription: source1
+      seriesNumber: 300
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 17
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: ANKLE/7
+      seriesDescription: SAG FSE T2
+      seriesNumber: 7
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 124
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: 1) IAC (con)
+      seriesDescription: Brain TOF_fast_hs1p2
+      seriesNumber: 5
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: Neck
+      seriesDescription: 'WATER: Ax T2 FSE Flex'
+      seriesNumber: 3
+    - deviceId: 2
+      dispatchType: ToRecon
+      fileCount: 92
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: MPR
+      protocolName: Neck
+      seriesDescription: ge_g1_auto_sof_a_swift
+      seriesNumber: 350
+    - deviceId: 2
+      dispatchType: MarkOnly
+      fileCount: 1
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Navigator
+      protocolName: Neck
+      seriesDescription: ge_g1_auto_sof_a_swift
+      seriesNumber: 350
+    series:
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 40
+      numberOfInstancesAfterReconstruction: 40.0
+      postProcessingTypes:
+      - Source
+      protocolName: Neck
+      scanItemNames:
+      - ge_dixon2
+      seriesDescription: source3
+      seriesName: ge_dixon2
+      seriesNumber: 3
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 40
+      numberOfInstancesAfterReconstruction: 40.0
+      postProcessingTypes:
+      - Source
+      protocolName: Neck
+      scanItemNames:
+      - ge_g1_auto_sof_a_swift
+      seriesDescription: 'WATER: Ax T2 FSE Flex'
+      seriesName: ge_g1_auto_sof_a_swift
+      seriesNumber: 3
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 124
+      numberOfInstancesAfterReconstruction: 124.0
+      postProcessingTypes:
+      - Source
+      protocolName: 1) IAC (con)
+      scanItemNames:
+      - ge_g1_auto_sof_a_swift
+      seriesDescription: Brain TOF_fast_hs1p2
+      seriesName: ge_g1_auto_sof_a_swift
+      seriesNumber: 5
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 17
+      numberOfInstancesAfterReconstruction: 17.0
+      postProcessingTypes:
+      - Source
+      protocolName: ANKLE/7
+      scanItemNames:
+      - ge_g1_auto_sof_a_swift
+      seriesDescription: SAG FSE T2
+      seriesName: ge_g1_auto_sof_a_swift
+      seriesNumber: 7
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 144
+      numberOfInstancesAfterReconstruction: 144.0
+      postProcessingTypes:
+      - Source
+      protocolName: Swift Full TOF1
+      scanItemNames:
+      - ge_angio2
+      seriesDescription: angio
+      seriesName: ge_angio2
+      seriesNumber: 23
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 155
+      numberOfInstancesAfterReconstruction: 155.0
+      postProcessingTypes:
+      - Source
+      protocolName: Swift Full TOF1
+      scanItemNames:
+      - ge_angio2
+      seriesDescription: angio
+      seriesName: ge_angio2
+      seriesNumber: 24
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 144
+      numberOfInstancesAfterReconstruction: 144.0
+      postProcessingTypes:
+      - Source
+      protocolName: Swift Full TOF1
+      scanItemNames:
+      - ge_angio2
+      seriesDescription: angio
+      seriesName: ge_angio2
+      seriesNumber: 29
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 40
+      numberOfInstancesAfterReconstruction: 40.0
+      postProcessingTypes:
+      - Source
+      protocolName: Neck
+      scanItemNames:
+      - ge_dixon2
+      seriesDescription: source1
+      seriesName: ge_dixon2
+      seriesNumber: 300
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 40
+      numberOfInstancesAfterReconstruction: 40.0
+      postProcessingTypes:
+      - Source
+      protocolName: Neck
+      scanItemNames:
+      - ge_dixon2
+      seriesDescription: source2
+      seriesName: ge_dixon2
+      seriesNumber: 301
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      - orthanc
+      isSupported: true
+      numberOfInstances: 76
+      numberOfInstancesAfterReconstruction: 76.0
+      postProcessingTypes:
+      - Navigator
+      - MPR
+      protocolName: Neck
+      scanItemNames:
+      - ge_dixon2
+      seriesDescription: pp2
+      seriesName: pp2
+      seriesNumber: 302
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      - orthanc
+      isSupported: true
+      numberOfInstances: 76
+      numberOfInstancesAfterReconstruction: 76.0
+      postProcessingTypes:
+      - Navigator
+      - MPR
+      protocolName: Neck
+      scanItemNames:
+      - ge_dixon2
+      seriesDescription: pp1
+      seriesName: pp1
+      seriesNumber: 303
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      - orthanc
+      isSupported: true
+      numberOfInstances: 93
+      numberOfInstancesAfterReconstruction: 93.0
+      postProcessingTypes:
+      - Navigator
+      - MPR
+      protocolName: Neck
+      scanItemNames:
+      - ge_dixon2
+      seriesDescription: pp3
+      seriesName: pp3
+      seriesNumber: 350
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      - orthanc
+      isSupported: true
+      numberOfInstances: 93
+      numberOfInstancesAfterReconstruction: 93.0
+      postProcessingTypes:
+      - Navigator
+      - MPR
+      protocolName: Neck
+      scanItemNames:
+      - ge_g1_auto_sof_a_swift
+      seriesDescription: ge_g1_auto_sof_a_swift
+      seriesName: ge_g1_auto_sof_a_swift
+      seriesNumber: 350
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 76
+      numberOfInstancesAfterReconstruction: .nan
+      postProcessingTypes:
+      - Source
+      protocolName: 1) Brain + MRA (con)
+      scanItemNames: []
+      seriesDescription: ph1:SUB:3D Cor TRICKS
+      seriesName: ns_sm
+      seriesNumber: 901
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 10
+      numberOfInstancesAfterReconstruction: 10.0
+      postProcessingTypes:
+      - Source
+      protocolName: '*1)MRI Liver (+) ALL 202'
+      scanItemNames:
+      - ge_auto_dwi3
+      seriesDescription: diff_50_500_1000_syn1500 b-50
+      seriesName: ge_auto_dwi3
+      seriesNumber: 1101
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 10
+      numberOfInstancesAfterReconstruction: 10.0
+      postProcessingTypes:
+      - Source
+      protocolName: '*1)MRI Liver (+) ALL 202'
+      scanItemNames:
+      - ge_auto_dwi3
+      seriesDescription: diff_50_500_1000_syn1500 b-500
+      seriesName: ge_auto_dwi3
+      seriesNumber: 1102
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 10
+      numberOfInstancesAfterReconstruction: 10.0
+      postProcessingTypes:
+      - Source
+      protocolName: '*1)MRI Liver (+) ALL 202'
+      scanItemNames:
+      - ge_auto_dwi3
+      seriesDescription: diff_50_500_1000_syn1500 b-1000
+      seriesName: ge_auto_dwi3
+      seriesNumber: 1103
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 10
+      numberOfInstancesAfterReconstruction: 10.0
+      postProcessingTypes:
+      - ADC
+      protocolName: '*1)MRI Liver (+) ALL 202'
+      scanItemNames:
+      - ge_auto_dwi3
+      seriesDescription: ge_auto_adc3
+      seriesName: ge_auto_adc3
+      seriesNumber: 1150
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 36
+      numberOfInstancesAfterReconstruction: 36.0
+      postProcessingTypes:
+      - MIP
+      protocolName: Swift Full TOF1
+      scanItemNames:
+      - ge_angio2
+      seriesDescription: angio_mip_randmatching
+      seriesName: angio_mip_randmatching
+      seriesNumber: 2350
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 2
+      deviceName: 222name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 1
+      numberOfInstancesAfterReconstruction: 18.0
+      postProcessingTypes:
+      - SwiftAngio
+      protocolName: Swift Full TOF1
+      scanItemNames:
+      - ge_angio2
+      seriesDescription: Swift Angio
+      seriesName: Swift Angio
+      seriesNumber: 10000
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: NECK
+      deviceNames: 222name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 1235
+      numberOfSeries: 20
+      patientAge: 065Y
+      patientSex: M
+      status: Complete
+      studyDescription: ge_2
+  metadata:
+    case_data_file: regression\combination_sequences.yml
+    case_name: ge_2
+    created_at: '2024-11-28 17:21:13'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 40
+    RemoteAET: SWIFTMR
+    SeriesDescription: 'WATER: Ax T2 FSE Flex_recon'
+    SeriesNumber: 3
+    SeriesStorageOrderIndex: 1
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 40
+    RemoteAET: SWIFTMR
+    SeriesDescription: source3_recon
+    SeriesNumber: 3
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 124
+    RemoteAET: SWIFTMR
+    SeriesDescription: Brain TOF_fast_hs1p2_recon
+    SeriesNumber: 5
+    SeriesStorageOrderIndex: 2
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 17
+    RemoteAET: SWIFTMR
+    SeriesDescription: SAG FSE T2_recon
+    SeriesNumber: 7
+    SeriesStorageOrderIndex: 3
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 144
+    RemoteAET: SWIFTMR
+    SeriesDescription: angio_recon
+    SeriesNumber: 23
+    SeriesStorageOrderIndex: 4
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 155
+    RemoteAET: SWIFTMR
+    SeriesDescription: angio_recon
+    SeriesNumber: 24
+    SeriesStorageOrderIndex: 5
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 144
+    RemoteAET: SWIFTMR
+    SeriesDescription: angio_recon
+    SeriesNumber: 29
+    SeriesStorageOrderIndex: 6
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 40
+    RemoteAET: SWIFTMR
+    SeriesDescription: source1_recon
+    SeriesNumber: 300
+    SeriesStorageOrderIndex: 7
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 40
+    RemoteAET: SWIFTMR
+    SeriesDescription: source2_recon
+    SeriesNumber: 301
+    SeriesStorageOrderIndex: 8
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 76
+    RemoteAET: SWIFTMR
+    SeriesDescription: pp2_recon
+    SeriesNumber: 302
+    SeriesStorageOrderIndex: 9
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 76
+    RemoteAET: SWIFTMR
+    SeriesDescription: pp1_recon
+    SeriesNumber: 303
+    SeriesStorageOrderIndex: 10
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 93
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_g1_auto_sof_a_swift_recon
+    SeriesNumber: 350
+    SeriesStorageOrderIndex: 11
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 93
+    RemoteAET: SWIFTMR
+    SeriesDescription: pp3_recon
+    SeriesNumber: 350
+    SeriesStorageOrderIndex: 12
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 76
+    RemoteAET: SWIFTMR
+    SeriesDescription: ph1:SUB:3D Cor TRICKS
+    SeriesNumber: 901
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 10
+    RemoteAET: SWIFTMR
+    SeriesDescription: diff_50_500_1000_syn1500 b-50_recon
+    SeriesNumber: 1101
+    SeriesStorageOrderIndex: 13
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 10
+    RemoteAET: SWIFTMR
+    SeriesDescription: diff_50_500_1000_syn1500 b-500_recon
+    SeriesNumber: 1102
+    SeriesStorageOrderIndex: 14
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 10
+    RemoteAET: SWIFTMR
+    SeriesDescription: diff_50_500_1000_syn1500 b-1000_recon
+    SeriesNumber: 1103
+    SeriesStorageOrderIndex: 15
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 10
+    RemoteAET: SWIFTMR
+    SeriesDescription: ge_auto_adc3_recon
+    SeriesNumber: 1150
+    SeriesStorageOrderIndex: 16
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 36
+    RemoteAET: SWIFTMR
+    SeriesDescription: angio_mip_randmatching_recon
+    SeriesNumber: 2350
+    SeriesStorageOrderIndex: 17
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 18
+    RemoteAET: SWIFTMR
+    SeriesDescription: Swift Angio_recon
+    SeriesNumber: 10000
+    SeriesStorageOrderIndex: 18
+- case_name: philips_1
+  dcs_api:
+    dispatch_unit:
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 160
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: MPR
+      protocolName: 1mm COR
+      seriesDescription: mpr_recon
+      seriesNumber: 404
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 180
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: WIP Pre 3D T1 FFE SAG_swift
+      seriesDescription: philips_g1_auto_sof_a_swift_recon
+      seriesNumber: 401
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 150
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: WIP 3D TOF 580 x 322
+      seriesDescription: philips_g1_auto_sof_a_swift_recon
+      seriesNumber: 401
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 254
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: WIP SWIp_smbr
+      seriesDescription: philips_swi2_recon
+      seriesNumber: 801
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 127
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: sSWIp_P_smbr
+      seriesDescription: philips_swi2_recon
+      seriesNumber: 804
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: T2 TSE AX_swift
+      seriesDescription: philips_g1_auto_sof_a_swift_recon
+      seriesNumber: 601
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sDWI b50
+      seriesDescription: philips_auto_dwi2_recon
+      seriesNumber: 1005002
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: ADC
+      protocolName: dADC
+      seriesDescription: philips_adc2_recon
+      seriesNumber: 1007001
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sDWI b0
+      seriesDescription: philips_auto_dwi2_recon
+      seriesNumber: 1004001
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sDWI b800
+      seriesDescription: philips_auto_dwi2_recon
+      seriesNumber: 1006003
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 127
+      imageType: null
+      isHolding: false
+      isOriginal: false
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: sSWIp_M_smbr
+      seriesDescription: philips_swi2_recon
+      seriesNumber: 803
+    - deviceId: 3
+      dispatchType: NotMatched
+      fileCount: 148
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: eHR 3D TOF MRA
+      seriesDescription: ns_sm
+      seriesNumber: 403
+    - deviceId: 3
+      dispatchType: NotMatched
+      fileCount: 148
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: true
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: WIP SWIp_Padre
+      seriesDescription: ns_sm
+      seriesNumber: 601
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 127
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: sSWIp_M_smbr
+      seriesDescription: philips_swi2
+      seriesNumber: 803
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: ADC
+      protocolName: dADC
+      seriesDescription: philips_adc2
+      seriesNumber: 1007001
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sDWI b800
+      seriesDescription: philips_auto_dwi2
+      seriesNumber: 1006003
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sDWI b50
+      seriesDescription: philips_auto_dwi2
+      seriesNumber: 1005002
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 40
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: sDWI b0
+      seriesDescription: philips_auto_dwi2
+      seriesNumber: 1004001
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 160
+      imageType: null
+      isHolding: false
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: MPR
+      protocolName: 1mm COR
+      seriesDescription: mpr
+      seriesNumber: 404
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 180
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: WIP Pre 3D T1 FFE SAG_swift
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesNumber: 401
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 150
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: WIP 3D TOF 580 x 322
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesNumber: 401
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 25
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: TwoDimension
+      postProcessingType: Source
+      protocolName: T2 TSE AX_swift
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesNumber: 601
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 254
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: WIP SWIp_smbr
+      seriesDescription: philips_swi2
+      seriesNumber: 801
+    - deviceId: 3
+      dispatchType: ToRecon
+      fileCount: 127
+      imageType: null
+      isHolding: true
+      isOriginal: true
+      isStore: false
+      model: ThreeDimension
+      postProcessingType: Source
+      protocolName: sSWIp_P_smbr
+      seriesDescription: philips_swi2
+      seriesNumber: 804
+    series:
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 180
+      numberOfInstancesAfterReconstruction: 180.0
+      postProcessingTypes:
+      - Source
+      protocolName: WIP Pre 3D T1 FFE SAG_swift
+      scanItemNames:
+      - philips_g1_auto_sof_a_swift
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesName: philips_g1_auto_sof_a_swift
+      seriesNumber: 401
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 150
+      numberOfInstancesAfterReconstruction: 150.0
+      postProcessingTypes:
+      - Source
+      protocolName: WIP 3D TOF 580 x 322
+      scanItemNames:
+      - philips_g1_auto_sof_a_swift
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesName: philips_g1_auto_sof_a_swift
+      seriesNumber: 401
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 148
+      numberOfInstancesAfterReconstruction: .nan
+      postProcessingTypes:
+      - Source
+      protocolName: eHR 3D TOF MRA
+      scanItemNames: []
+      seriesDescription: ns_sm
+      seriesName: ns_sm
+      seriesNumber: 403
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 160
+      numberOfInstancesAfterReconstruction: 160.0
+      postProcessingTypes:
+      - MPR
+      protocolName: 1mm COR
+      scanItemNames:
+      - philips_g1_auto_sof_a_swift
+      seriesDescription: mpr
+      seriesName: mpr
+      seriesNumber: 404
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - defaultPACS
+      isSupported: false
+      numberOfInstances: 148
+      numberOfInstancesAfterReconstruction: .nan
+      postProcessingTypes:
+      - Source
+      protocolName: WIP SWIp_Padre
+      scanItemNames: []
+      seriesDescription: ns_sm
+      seriesName: ns_sm
+      seriesNumber: 601
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 25
+      numberOfInstancesAfterReconstruction: 25.0
+      postProcessingTypes:
+      - Source
+      protocolName: T2 TSE AX_swift
+      scanItemNames:
+      - philips_g1_auto_sof_a_swift
+      seriesDescription: philips_g1_auto_sof_a_swift
+      seriesName: philips_g1_auto_sof_a_swift
+      seriesNumber: 601
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 254
+      numberOfInstancesAfterReconstruction: 254.0
+      postProcessingTypes:
+      - Source
+      protocolName: WIP SWIp_smbr
+      scanItemNames:
+      - philips_swi2
+      seriesDescription: philips_swi2
+      seriesName: philips_swi2
+      seriesNumber: 801
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 127
+      numberOfInstancesAfterReconstruction: 127.0
+      postProcessingTypes:
+      - Source
+      protocolName: sSWIp_M_smbr
+      scanItemNames:
+      - philips_swi2
+      seriesDescription: philips_swi2
+      seriesName: philips_swi2
+      seriesNumber: 803
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 127
+      numberOfInstancesAfterReconstruction: 127.0
+      postProcessingTypes:
+      - Source
+      protocolName: sSWIp_P_smbr
+      scanItemNames:
+      - philips_swi2
+      seriesDescription: philips_swi2
+      seriesName: philips_swi2
+      seriesNumber: 804
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 40
+      numberOfInstancesAfterReconstruction: 40.0
+      postProcessingTypes:
+      - Source
+      protocolName: sDWI b0
+      scanItemNames:
+      - philips_auto_dwi2
+      seriesDescription: philips_auto_dwi2
+      seriesName: philips_auto_dwi2
+      seriesNumber: 1004001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 40
+      numberOfInstancesAfterReconstruction: 40.0
+      postProcessingTypes:
+      - Source
+      protocolName: sDWI b50
+      scanItemNames:
+      - philips_auto_dwi2
+      seriesDescription: philips_auto_dwi2
+      seriesName: philips_auto_dwi2
+      seriesNumber: 1005002
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 40
+      numberOfInstancesAfterReconstruction: 40.0
+      postProcessingTypes:
+      - Source
+      protocolName: sDWI b800
+      scanItemNames:
+      - philips_auto_dwi2
+      seriesDescription: philips_auto_dwi2
+      seriesName: philips_auto_dwi2
+      seriesNumber: 1006003
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    - deviceId: 3
+      deviceName: 333name
+      dicomAeNames:
+      - orthanc
+      isSupported: true
+      numberOfInstances: 40
+      numberOfInstancesAfterReconstruction: 40.0
+      postProcessingTypes:
+      - ADC
+      protocolName: dADC
+      scanItemNames:
+      - philips_auto_dwi2
+      seriesDescription: philips_adc2
+      seriesName: philips_adc2
+      seriesNumber: 1007001
+      sliceInterpolFactor: null
+      status: Complete
+      storeOrder: 0
+    study:
+    - bodyPart: BRAIN
+      deviceNames: 333name
+      isSupported: true
+      modality: MR
+      numberOfInstances: 1479
+      numberOfSeries: 13
+      patientAge: 029Y
+      patientSex: F
+      status: Complete
+      studyDescription: philips_1
+  metadata:
+    case_data_file: regression\combination_sequences.yml
+    case_name: philips_1
+    created_at: '2024-11-28 17:36:04'
+    dcs_setup_file: smoke\smoke_setting.yml
+    dcs_version: 2.11.0
+  pacs:
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 180
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_g1_auto_sof_a_swift_recon
+    SeriesNumber: 401
+    SeriesStorageOrderIndex: 1
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 150
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_g1_auto_sof_a_swift_recon
+    SeriesNumber: 401
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 148
+    RemoteAET: SWIFTMR
+    SeriesDescription: ns_sm
+    SeriesNumber: 403
+    SeriesStorageOrderIndex: 0
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 160
+    RemoteAET: SWIFTMR
+    SeriesDescription: mpr_recon
+    SeriesNumber: 404
+    SeriesStorageOrderIndex: 2
+  - DestinationDicomAeId: 0
+    InstanceStorageOrderList: false
+    NumberOfInstance: 148
+    RemoteAET: SWIFTMR
+    SeriesDescription: ns_sm
+    SeriesNumber: 601
+    SeriesStorageOrderIndex: 1
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 25
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_g1_auto_sof_a_swift_recon
+    SeriesNumber: 601
+    SeriesStorageOrderIndex: 3
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 254
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_swi2_recon
+    SeriesNumber: 801
+    SeriesStorageOrderIndex: 4
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 127
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_swi2_recon
+    SeriesNumber: 803
+    SeriesStorageOrderIndex: 5
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 127
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_swi2_recon
+    SeriesNumber: 804
+    SeriesStorageOrderIndex: 6
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 40
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_auto_dwi2_recon
+    SeriesNumber: 1004001
+    SeriesStorageOrderIndex: 7
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 40
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_auto_dwi2_recon
+    SeriesNumber: 1005002
+    SeriesStorageOrderIndex: 8
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 40
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_auto_dwi2_recon
+    SeriesNumber: 1006003
+    SeriesStorageOrderIndex: 9
+  - DestinationDicomAeId: 1
+    InstanceStorageOrderList: false
+    NumberOfInstance: 40
+    RemoteAET: SWIFTMR
+    SeriesDescription: philips_adc2_recon
+    SeriesNumber: 1007001
+    SeriesStorageOrderIndex: 10

@@ -4,7 +4,13 @@ import _ from 'lodash';
 import ReactJson from 'react-json-view';
 import { useRecoilValue } from 'recoil';
 
-import { JSONDataBoxTop, TableDataBox, TableHeaderBox, customTheme } from '@components';
+import {
+  JSONDataBoxTop,
+  TableDataBox,
+  TableHeaderBox,
+  customTheme,
+  JSONDefaultBox,
+} from '@components';
 import { caseJsonAtom } from '@recoil/status';
 
 export const CaseJsonLoader = () => {
@@ -14,6 +20,8 @@ export const CaseJsonLoader = () => {
     <JSONDataBoxTop>
       <TableHeaderBox>Case data</TableHeaderBox>
       <TableDataBox>
+        {_.isEmpty(caseJson) && <JSONDefaultBox>Select case</JSONDefaultBox>}
+
         {!_.isEmpty(caseJson) && (
           <ReactJson
             src={caseJson}

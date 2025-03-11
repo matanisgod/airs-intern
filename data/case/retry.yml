@@ -1,0 +1,1069 @@
+# dcs_setup_data: smoke/smoke_setting.yml
+
+############ series retry - siemens ############
+- case_name: siemens_series_retry_offset_0
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.2d_minip.siemens_xa_2d_pp.2d_source
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_sm
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: series_retry
+        payload:
+          series_index_ids: [0]
+          series_number_offset: 0
+
+- case_name: siemens_series_retry_source_offset_0
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.2d_minip.siemens_xa_2d_pp.2d_source
+          mip1: Siemens.2d_minip.siemens_xa_2d_pp.mip_radial
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sof_a_sm
+          SeriesDescription: auto_mip
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: series_retry
+        payload:
+          series_index_ids: [0]
+          series_number_offset: 0
+
+- case_name: siemens_series_retry_pp_offset_0
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.2d_minip.siemens_xa_2d_pp.2d_source
+          mip1: Siemens.2d_minip.siemens_xa_2d_pp.mip_radial
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sof_a_sm
+          SeriesDescription: auto_mip
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: series_retry
+        payload:
+          series_index_ids: [1]
+          series_number_offset: 0
+
+- case_name: siemens_series_retry_holding_source_offset_0
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.2d_minip.siemens_xa_2d_pp.2d_source
+          mip1: Siemens.2d_minip.siemens_xa_2d_pp.mip_radial
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_sm
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sof_a_sm
+          SeriesDescription: auto_mip
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: series_retry
+        payload:
+          series_index_ids: [0]
+          series_number_offset: 0
+
+- case_name: siemens_series_retry_holding_pp_offset_0
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.2d_minip.siemens_xa_2d_pp.2d_source
+          mip1: Siemens.2d_minip.siemens_xa_2d_pp.mip_radial
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_sm
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sof_a_sm
+          SeriesDescription: auto_mip
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: series_retry
+        payload:
+          series_index_ids: [1]
+          series_number_offset: 0
+
+- case_name: siemens_series_retry_ns_offset_10000
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          water: Siemens.multiecho.DIXON.C-T-L_SAG_T2_TSE_DFS_3STEP_W_0008
+          in: Siemens.multiecho.DIXON.C-T-L_SAG_T2_TSE_DFS_3STEP_F_0007
+          fat: Siemens.multiecho.DIXON.C-T-L_SAG_T2_TSE_DFS_3STEP_IN_0006
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: water
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_2d_water_sof_a_waterauto_fm_dsc_sm
+        tag_transform:
+          SiemensSeriesName: siemens_2d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: fat # not supported
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: asdf
+        tag_transform:
+          SiemensSeriesName: asdf
+    - action: dicom_send
+      arguments:
+        dicom: in
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_2d_in_sof_a_waterauto_fm_dsc_sm
+        tag_transform:
+          SiemensSeriesName: siemens_2d_dixon_sof_a_waterauto_fm_sm
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: series_retry
+        payload:
+          series_index_ids: [1, 2]
+          series_number_offset: 10000
+
+- case_name: siemens_series_retry_adc_offset_1
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b50: Siemens.dwi.1ADC.55001_DWI AX b50 400 800 Free breath P2
+          b400: Siemens.dwi.1ADC.55002_DWI AX b50 400 800 Free breath P2
+          b800: Siemens.dwi.1ADC.55003_DWI AX b50 400 800 Free breath P2
+          adc: Siemens.dwi.1ADC.56001_DWI AX b50 400 800 Free breath P2_ADC # adc from source b50, b800
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b50
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_auto_dwi_combined1_sof_a_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b400
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_auto_dwi_combined2_sof_a_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b800
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_auto_dwi_combined3_sof_a_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_auto_combined_adc_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: series_retry
+        payload:
+          series_index_ids: [3]
+          series_number_offset: 1
+
+- case_name: siemens_series_retry_subtraction_offset_1234
+  config:
+    - action: dicom_send
+      data:
+        dicom_source: # different dicom source from basic legacy.
+          pre: Siemens.siemens_XA.real_source.pre
+          post: Siemens.siemens_XA.real_source.post
+          sub: Siemens.siemens_XA.case1_autosub_mip.autosub
+          sub_mip: Siemens.siemens_XA.case1_autosub_mip.mip
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: pre
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_3d_pre_sof_a_auto_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_sub_pre_sof_a_auto_sm
+    - action: dicom_send
+      arguments:
+        dicom: post
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_3d_post_sof_a_auto_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_sub_post_sof_a_auto_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_3d_post_sub_sof_a_auto_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_sub_post_sub_sof_a_auto_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub_mip
+        tag_update:
+          DeviceSerialNumber: "111"
+          SeriesDescription: siemens_sub_mip_sm
+        tag_transform:
+          SiemensSeriesName: siemens_sub_mip_sm
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: series_retry
+        payload:
+          series_index_ids: [2]
+          series_number_offset: 1234
+
+############ job retry - siemens ############
+- case_name: siemens_job_retry_offset_0
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.2d_minip.siemens_xa_2d_pp.2d_source
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_sm
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: job_retry
+        payload:
+          job_index_id: 0
+          series_number_offset: 0
+
+- case_name: siemens_job_retry_holding_source_offset_100
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.2d_minip.siemens_xa_2d_pp.2d_source
+          mip1: Siemens.2d_minip.siemens_xa_2d_pp.mip_radial
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_sm
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sof_a_sm
+          SeriesDescription: auto_mip
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: job_retry
+        payload:
+          job_index_id: 0
+          series_number_offset: 100
+
+- case_name: siemens_job_retry_holding_pp_offset_0
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.2d_minip.siemens_xa_2d_pp.2d_source
+          mip1: Siemens.2d_minip.siemens_xa_2d_pp.mip_radial
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "111"
+        tag_transform:
+          SiemensSeriesName: siemens_g1_auto_sof_a_sm
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "111"
+          ProtocolName: siemens_g1_auto_sof_a_sm
+          SeriesDescription: auto_mip
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: job_retry
+        payload:
+          job_index_id: 1
+          series_number_offset: 0
+
+############ series retry - ge ############
+- case_name: ge_series_retry_offset_0
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.2d_source.2d_source.source1
+          source2: GE.2d_source.2d_source.source2
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: source2
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_sm
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: series_retry
+        payload:
+          series_index_ids: [0, 1]
+          series_number_offset: 0
+
+- case_name: ge_series_retry_source_offset_0
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.3d_with_mip.9a53ba32-98c1-4fa9-832c-bc7b31632676_input.source
+          mip1: GE.3d_with_mip.9a53ba32-98c1-4fa9-832c-bc7b31632676_input.mip1
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "222"
+          ProtocolName: ge_g1_auto_sof_a_sm
+          SeriesDescription: auto_mip
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: series_retry
+        payload:
+          series_index_ids: [0]
+          series_number_offset: 0
+
+- case_name: ge_series_retry_pp_offset_0
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.3d_with_mip.9a53ba32-98c1-4fa9-832c-bc7b31632676_input.source
+          mip1: GE.3d_with_mip.9a53ba32-98c1-4fa9-832c-bc7b31632676_input.mip1
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "222"
+          ProtocolName: ge_g1_auto_sof_a_sm
+          SeriesDescription: auto_mip
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: series_retry
+        payload:
+          series_index_ids: [1]
+          series_number_offset: 0
+
+- case_name: ge_series_retry_holding_source_offset_0
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.3d_with_mip.9a53ba32-98c1-4fa9-832c-bc7b31632676_input.source
+          mip1: GE.3d_with_mip.9a53ba32-98c1-4fa9-832c-bc7b31632676_input.mip1
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_sm
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "222"
+          ProtocolName: ge_g1_auto_sof_a_sm
+          SeriesDescription: auto_mip
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: series_retry
+        payload:
+          series_index_ids: [0]
+          series_number_offset: 0
+
+- case_name: ge_series_retry_holding_pp_offset_0
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.3d_with_mip.9a53ba32-98c1-4fa9-832c-bc7b31632676_input.source
+          mip1: GE.3d_with_mip.9a53ba32-98c1-4fa9-832c-bc7b31632676_input.mip1
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_sm
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "222"
+          ProtocolName: ge_g1_auto_sof_a_sm
+          SeriesDescription: auto_mip
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: series_retry
+        payload:
+          series_index_ids: [1]
+          series_number_offset: 0
+
+- case_name: ge_series_retry_ns_offset_000
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          water: GE.dixon.GE_2d_dixon.water
+          fat: GE.dixon.GE_2d_dixon.fat
+          in: GE.dixon.GE_2d_dixon.ip
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: water
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_2d_water_sof_a_waterauto_fm_dsc_sm
+        tag_transform:
+          GESeriesName: ge_2d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send # not supporte
+      arguments:
+        dicom: fat
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: asdf
+        tag_transform:
+          GESeriesName: asdf
+    - action: dicom_send
+      arguments:
+        dicom: in
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_2d_in_sof_a_waterauto_fm_dsc_sm
+        tag_transform:
+          GESeriesName: ge_2d_dixon_sof_a_waterauto_fm_sm
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: series_retry
+        payload:
+          series_index_ids: [1, 2]
+          series_number_offset: 1000
+
+- case_name: ge_series_retry_eadc_offset_10000
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source: GE.dwi.eADC.2_diff_b_500_1000_0
+          eadc: GE.dwi.eADC.267_eADC_25_005_1000_500_0
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_auto_dwi_eadc_combined1_sof_a_sm
+        tag_transform:
+          GESeriesName: ge_auto_dwi_eadc_combined_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: eadc
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_auto_eadc_combined_adc_sm
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: series_retry
+        payload:
+          series_index_ids: [1]
+          series_number_offset: 10000
+
+- case_name: ge_series_retry_subtraction_offset_1234
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          pre: GE.subtraction.case3_splitsource_manusub_mip.pre
+          post: GE.subtraction.case3_splitsource_manusub_mip.post
+          sub: GE.subtraction.case3_splitsource_manusub_mip.manusub
+          mip: GE.subtraction.case3_splitsource_manusub_mip.mip
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: pre
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_3d_pre_sof_a_auto_sm
+        tag_transform:
+          GESeriesName: ge_3d_subtraction_sof_a_auto_sm
+    - action: dicom_send
+      arguments:
+        dicom: post
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_3d_post_sof_a_auto_sm
+        tag_transform:
+          GESeriesName: ge_3d_subtraction_sof_a_auto_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: ge_3d_post_sub_sof_a_auto_sm
+    - action: dicom_send
+      arguments:
+        dicom: mip
+        tag_update:
+          DeviceSerialNumber: "222"
+          SeriesDescription: sub_mip
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: series_retry
+        payload:
+          series_index_ids: [2]
+          series_number_offset: 1234
+
+############ job retry - ge ############
+- case_name: ge_job_retry_offset_0
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.2d_source.2d_source.source1
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_sm
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: job_retry
+        payload:
+          job_index_id: 0
+          series_number_offset: 0
+
+- case_name: ge_job_retry_holding_source_offset_0
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.3d_with_mip.9a53ba32-98c1-4fa9-832c-bc7b31632676_input.source
+          mip1: GE.3d_with_mip.9a53ba32-98c1-4fa9-832c-bc7b31632676_input.mip1
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_sm
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "222"
+          ProtocolName: ge_g1_auto_sof_a_sm
+          SeriesDescription: auto_mip
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: job_retry
+        payload:
+          job_index_id: 0
+          series_number_offset: 0
+
+- case_name: ge_job_retry_holding_pp_offset_0
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.3d_with_mip.9a53ba32-98c1-4fa9-832c-bc7b31632676_input.source
+          mip1: GE.3d_with_mip.9a53ba32-98c1-4fa9-832c-bc7b31632676_input.mip1
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "222"
+        tag_transform:
+          GESeriesName: ge_g1_auto_sof_a_sm
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          DeviceSerialNumber: "222"
+          ProtocolName: ge_g1_auto_sof_a_sm
+          SeriesDescription: auto_mip
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: job_retry
+        payload:
+          job_index_id: 1
+          series_number_offset: 0
+
+############ series retry - philips ############
+- case_name: philips_series_retry_offset_0
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.2d_source.0pp.301_T2 TSE SAG
+          source2: Philips.2d_source.philips_2d_pp.2d_source
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: source2
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: series_retry
+        payload:
+          series_index_ids: [0, 1]
+          series_number_offset: 0
+
+- case_name: philips_series_retry_source_offset_0
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.dixon.philips_2d_dixon.ip
+          mpr1: Philips.dixon.philips_2d_dixon.ip_mpr
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "333"
+          ProtocolName: philips_g1_auto_sof_a_swift
+          SeriesDescription: auto_mpr
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: series_retry
+        payload:
+          series_index_ids: [0]
+          series_number_offset: 0
+
+- case_name: philips_series_retry_pp_offset_0
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.dixon.philips_2d_dixon.ip
+          mpr1: Philips.dixon.philips_2d_dixon.ip_mpr
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "333"
+          ProtocolName: philips_g1_auto_sof_a_swift
+          SeriesDescription: auto_mpr
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: series_retry
+        payload:
+          series_index_ids: [1]
+          series_number_offset: 0
+
+- case_name: philips_series_retry_holding_source_offset_0
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.dixon.philips_2d_dixon.ip
+          mpr1: Philips.dixon.philips_2d_dixon.ip_mpr
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "333"
+          ProtocolName: philips_g1_auto_sof_a_swift
+          SeriesDescription: auto_mpr
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: series_retry
+        payload:
+          series_index_ids: [0]
+          series_number_offset: 0
+
+- case_name: philips_series_retry_holding_pp_offset_0
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.dixon.philips_2d_dixon.ip
+          mpr1: Philips.dixon.philips_2d_dixon.ip_mpr
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "333"
+          ProtocolName: philips_g1_auto_sof_a_swift
+          SeriesDescription: auto_mpr
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: series_retry
+        payload:
+          series_index_ids: [1]
+          series_number_offset: 0
+
+- case_name: philips_series_retry_ns_offset_0
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b1: Philips.dwi.MIPs1ADC.1002_sDWI b0
+          b2: Philips.dwi.MIPs1ADC.1003_sDWI b400
+          b3: Philips.dwi.MIPs1ADC.1004_sDWI b800
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_dwi_combined2_sof_a_swift
+    - action: dicom_send # not supporte
+      arguments:
+        dicom: b2
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: asdf
+    - action: dicom_send
+      arguments:
+        dicom: b3
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_dwi_combined4_sof_a_swift
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: series_retry
+        payload:
+          series_index_ids: [1, 2]
+          series_number_offset: 0
+
+- case_name: philips_series_retry_adc_offset_1
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source: Philips.dwi.eADC.401_AX SPAIR DWI B 0 800 1200
+          eadc: Philips.dwi.eADC.414_eeadc
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_dwi_eadc_combined_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: eadc
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_auto_eadc_combined_adc1_swift
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: series_retry
+        payload:
+          series_index_ids: [1]
+          series_number_offset: 1
+
+- case_name: philips_series_retry_subtraction_offset_1234
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          pre: Philips.subtraction.PrePost.1104_sPre 3D mDIXON W
+          post: Philips.subtraction.PrePost.1404_sPost  3D mDIXON W
+          sub: Philips.subtraction.PrePost.1405_ssub
+          sub_mip: Philips.subtraction.PrePost.1407_sub_MPR
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: pre
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_3d_pre_sof_a_auto_swift
+    - action: dicom_send
+      arguments:
+        dicom: post
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_3d_post_sof_a_auto_swift
+    - action: dicom_send
+      arguments:
+        dicom: sub
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_3d_post_sub_sof_a_auto_swift
+    - action: dicom_send
+      arguments:
+        dicom: sub_mip
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: sub_mip
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: series_retry
+        payload:
+          series_index_ids: [2]
+          series_number_offset: 1234
+
+############ job retry - philips ############
+
+- case_name: philips_job_retry_offset_0
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.2d_source.0pp.301_T2 TSE SAG
+          source2: Philips.2d_source.philips_2d_pp.2d_source
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift
+    - action: dicom_send
+      arguments:
+        dicom: source2
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: job_retry
+        payload:
+          job_index_id: 0
+          series_number_offset: 0
+
+- case_name: philips_job_retry_holding_source_offset_0
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.dixon.philips_2d_dixon.ip
+          mpr1: Philips.dixon.philips_2d_dixon.ip_mpr
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "333"
+          ProtocolName: philips_g1_auto_sof_a_swift
+          SeriesDescription: auto_mpr
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: job_retry
+        payload:
+          job_index_id: 0
+          series_number_offset: 0
+
+- case_name: philips_job_retry_holding_pp_offset_0
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.dixon.philips_2d_dixon.ip
+          mpr1: Philips.dixon.philips_2d_dixon.ip_mpr
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          DeviceSerialNumber: "333"
+          SeriesDescription: philips_g1_auto_sof_a_swift
+    - action: wait_process_done
+    - action: dicom_send
+      arguments:
+        dicom: mpr1
+        tag_update:
+          DeviceSerialNumber: "333"
+          ProtocolName: philips_g1_auto_sof_a_swift
+          SeriesDescription: auto_mpr
+    - action: wait_process_done
+    - action: dcs_api
+      arguments:
+        api: job_retry
+        payload:
+          job_index_id: 1
+          series_number_offset: 0

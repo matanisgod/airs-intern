@@ -1,6 +1,8 @@
 export interface ExecutionForm {
-  testPerformer: string;
   testSets: Array<string>;
+  version: string;
+  description: string;
+  testPerformer: string;
   gatePcIp: string;
   dcsApiPort: number;
   dcsDicomPort: number;
@@ -17,6 +19,8 @@ interface formFieldInterface {
 }
 
 export const formField: formFieldInterface[] = [
+  { label: 'Version', name: 'version', type: 'text' },
+  { label: 'Description', name: 'description', type: 'text' },
   { label: 'Test performer', name: 'testPerformer', type: 'text' },
   { label: 'Gate pc ip', name: 'gatePcIp', type: 'text' },
   { label: 'DCS api port', name: 'dcsApiPort', type: 'number' },

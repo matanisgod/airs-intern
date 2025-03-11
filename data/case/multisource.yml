@@ -1,0 +1,1851 @@
+# setting -> regression/multisource.yaml
+
+############################# Siemens #############################
+
+- case_name: si_dixon_basic_fm # water, fat, in, out, water_mpr, fat_mpr, in_mpr, out_mpr -> all supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          water: Siemens.multiecho.DIXON.C-T-L_SAG_T2_TSE_DFS_3STEP_W_0008
+          water_mpr: Siemens.multiecho.DIXON._MPR_RANGE[3]__0106
+          fat: Siemens.multiecho.DIXON.C-T-L_SAG_T2_TSE_DFS_3STEP_F_0007
+          fat_mpr: Siemens.multiecho.DIXON._MPR_RANGE[2]__0104
+          in: Siemens.multiecho.DIXON.C-T-L_SAG_T2_TSE_DFS_3STEP_IN_0006
+          in_mpr: Siemens.multiecho.DIXON._MPR_RANGE[1]__0102
+          out: Siemens.multiecho.DIXON.C-T-L_SAG_T2_TSE_DFS_3STEP_OPP_0005
+          out_mpr: Siemens.multiecho.DIXON._MPR_RANGE__0100
+        tag_update:
+          DeviceSerialNumber: "111"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: water
+        tag_update:
+          SeriesDescription: siemens_2d_water_sof_a_waterauto_fm_dsc_sm
+        tag_transform:
+          SiemensSeriesName: siemens_2d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: water_mpr
+        tag_update:
+          SeriesDescription: siemens_2d_water_m_fm_waterauto_sm
+        tag_transform:
+          SiemensSeriesName: siemens_2d_dixon_sag_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: fat
+        tag_update:
+          SeriesDescription: siemens_2d_fat_sof_a_waterauto_fm_dsc_sm
+        tag_transform:
+          SiemensSeriesName: siemens_2d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: fat_mpr
+        tag_update:
+          SeriesDescription: siemens_2d_fat_m_fm_waterauto_sm
+        tag_transform:
+          SiemensSeriesName: siemens_2d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: in
+        tag_update:
+          SeriesDescription: siemens_2d_in_sof_a_waterauto_fm_dsc_sm
+        tag_transform:
+          SiemensSeriesName: siemens_2d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: in_mpr
+        tag_update:
+          SeriesDescription: siemens_2d_in_m_fm_waterauto_sm
+        tag_transform:
+          SiemensSeriesName: siemens_2d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: out
+        tag_update:
+          SeriesDescription: siemens_2d_out_sof_a_waterauto_fm_dsc_sm
+        tag_transform:
+          SiemensSeriesName: siemens_2d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: out_mpr
+        tag_update:
+          SeriesDescription: siemens_2d_out_m_fm_waterauto_sm
+        tag_transform:
+          SiemensSeriesName: siemens_2d_dixon_sof_a_waterauto_fm_sm
+
+- case_name: si_dixon_source_fm_ns # water, fat, in, water_mpr -> water, water_mpr not supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          water: Siemens.multiecho.DIXON.C-T-L_SAG_T2_TSE_DFS_3STEP_W_0008
+          water_mpr: Siemens.multiecho.DIXON._MPR_RANGE[3]__0106
+          fat: Siemens.multiecho.DIXON.C-T-L_SAG_T2_TSE_DFS_3STEP_F_0007
+          in: Siemens.multiecho.DIXON.C-T-L_SAG_T2_TSE_DFS_3STEP_IN_0006
+        tag_update:
+          DeviceSerialNumber: "111"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: water
+        tag_update:
+          SeriesDescription: siemens_2d_water_sof_a_waterauto_fm_dsc_sm_NS
+        tag_transform:
+          SiemensSeriesName: siemens_2d_dixon_sof_a_waterauto_fm_sm_NS
+    - action: dicom_send
+      arguments:
+        dicom: water_mpr
+        tag_update:
+          SeriesDescription: siemens_2d_water_m_fm_waterauto_sm
+        tag_transform:
+          SiemensSeriesName: siemens_2d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: fat
+        tag_update:
+          SeriesDescription: siemens_2d_fat_sof_a_waterauto_fm_dsc_sm
+        tag_transform:
+          SiemensSeriesName: siemens_2d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: in
+        tag_update:
+          SeriesDescription: siemens_2d_in_sof_a_waterauto_fm_dsc_sm
+        tag_transform:
+          SiemensSeriesName: siemens_2d_dixon_sof_a_waterauto_fm_sm
+
+- case_name: si_vibe_dixon_fm # water, water_mpr, fat, fat_mpr -> all supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          water: Siemens.vibe_dixon.siemens_VE_3d_dixon.water
+          water_mpr: Siemens.vibe_dixon.siemens_VE_3d_dixon.water_mpr
+          fat: Siemens.vibe_dixon.siemens_VE_3d_dixon.fat
+          fat_mpr: Siemens.vibe_dixon.siemens_VE_3d_dixon.fat_mpr
+        tag_update:
+          DeviceSerialNumber: "111"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: water
+        tag_update:
+          SeriesDescription: siemens_3d_water_sof_a_waterauto_fm_dsc_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: water_mpr
+        tag_update:
+          SeriesDescription: siemens_3d_water_m_fm_waterauto_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: fat
+        tag_update:
+          SeriesDescription: siemens_3d_fat_sof_a_waterauto_fm_dsc_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: fat_mpr
+        tag_update:
+          SeriesDescription: siemens_3d_fat_m_fm_waterauto_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_dixon_sof_a_waterauto_fm_sm
+
+- case_name: si_vibe_dixon_fm_ns # water, water_mpr, fat, fat_mpr -> water, water_mpr not supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          water: Siemens.vibe_dixon.siemens_VE_3d_dixon.water
+          water_mpr: Siemens.vibe_dixon.siemens_VE_3d_dixon.water_mpr
+          fat: Siemens.vibe_dixon.siemens_VE_3d_dixon.fat
+          fat_mpr: Siemens.vibe_dixon.siemens_VE_3d_dixon.fat_mpr
+        tag_update:
+          DeviceSerialNumber: "111"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: water
+        tag_update:
+          SeriesDescription: siemens_3d_water_sof_a_waterauto_fm_dsc_sm_NS
+        tag_transform:
+          SiemensSeriesName: siemens_3d_dixon_sof_a_waterauto_fm_sm_NS
+    - action: dicom_send
+      arguments:
+        dicom: water_mpr
+        tag_update:
+          SeriesDescription: siemens_3d_water_m_fm_waterauto_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: fat
+        tag_update:
+          SeriesDescription: siemens_3d_fat_sof_a_waterauto_fm_dsc_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: fat_mpr
+        tag_update:
+          SeriesDescription: siemens_3d_fat_m_fm_waterauto_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_dixon_sof_a_waterauto_fm_sm
+
+- case_name: si_dwi # b50, b400, b800, calc1500, adc -> all supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b50: Siemens.dwi.1ADC.55001_DWI AX b50 400 800 Free breath P2
+          b400: Siemens.dwi.1ADC.55002_DWI AX b50 400 800 Free breath P2
+          b800: Siemens.dwi.1ADC.55003_DWI AX b50 400 800 Free breath P2
+          calc1500: Siemens.dwi.1ADC.57001_DWI AX b50 400 800 Free breath P2_CALC_BVAL
+          adc: Siemens.dwi.1ADC.56001_DWI AX b50 400 800 Free breath P2_ADC # adc from source b50, b800
+        tag_update:
+          DeviceSerialNumber: "111"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b50
+        tag_update:
+          SeriesDescription: siemens_auto_dwi_combined1_sof_a_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b400
+        tag_update:
+          SeriesDescription: siemens_auto_dwi_combined2_sof_a_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b800
+        tag_update:
+          SeriesDescription: siemens_auto_dwi_combined3_sof_a_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: calc1500
+        tag_update:
+          SeriesDescription: siemens_auto_dwi_calc_sof_a_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_update:
+          SeriesDescription: siemens_auto_combined_adc_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm
+
+- case_name: si_dwi_imgcount_not_matched # dwi image count not matched -> adc not supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b50: Siemens.dwi.1ADC.55001_DWI AX b50 400 800 Free breath P2
+          b400: Siemens.dwi.1ADC.55002_DWI AX b50 400 800 Free breath P2
+          b800: Siemens.dwi.1ADC.55003_DWI AX b50 400 800 Free breath P2
+          adc: Siemens.dwi.1ADC.56001_DWI AX b50 400 800 Free breath P2_ADC # adc from source b50, b800
+        tag_update:
+          DeviceSerialNumber: "111"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b50[1:14]
+        tag_update:
+          SeriesDescription: siemens_auto_dwi_combined1_sof_a_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b400
+        tag_update:
+          SeriesDescription: siemens_auto_dwi_combined2_sof_a_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b800
+        tag_update:
+          SeriesDescription: siemens_auto_dwi_combined3_sof_a_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_update:
+          SeriesDescription: siemens_auto_combined_adc_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm
+
+- case_name: si_dwi_cannot_find_bval # missing one source bvalue -> adc not supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b400: Siemens.dwi.1ADC.55002_DWI AX b50 400 800 Free breath P2
+          b800: Siemens.dwi.1ADC.55003_DWI AX b50 400 800 Free breath P2
+          adc: Siemens.dwi.1ADC.56001_DWI AX b50 400 800 Free breath P2_ADC # adc from source b50, b800
+        tag_update:
+          DeviceSerialNumber: "111"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b400
+        tag_update:
+          SeriesDescription: siemens_auto_dwi_combined2_sof_a_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b800
+        tag_update:
+          SeriesDescription: siemens_auto_dwi_combined3_sof_a_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_update:
+          SeriesDescription: siemens_auto_combined_adc_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_sm
+
+- case_name: si_dwi_edit_adc_options # b50, b400, b800, calc1500, adc -> all supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b50: Siemens.dwi.1ADC.55001_DWI AX b50 400 800 Free breath P2
+          b400: Siemens.dwi.1ADC.55002_DWI AX b50 400 800 Free breath P2
+          b800: Siemens.dwi.1ADC.55003_DWI AX b50 400 800 Free breath P2
+          calc1500: Siemens.dwi.1ADC.57001_DWI AX b50 400 800 Free breath P2_CALC_BVAL
+          adc: Siemens.dwi.1ADC.56001_DWI AX b50 400 800 Free breath P2_ADC # adc from source b50, b800
+        tag_update:
+          DeviceSerialNumber: "111"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b50
+        tag_update:
+          SeriesDescription: siemens_auto_dwi_combined1_sof_a_edit_adc_options_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_edit_adc_options_sm
+    - action: dicom_send
+      arguments:
+        dicom: b400
+        tag_update:
+          SeriesDescription: siemens_auto_dwi_combined2_sof_a_edit_adc_options_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_edit_adc_options_sm
+    - action: dicom_send
+      arguments:
+        dicom: b800
+        tag_update:
+          SeriesDescription: siemens_auto_dwi_combined3_sof_a_edit_adc_options_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_edit_adc_options_sm
+    - action: dicom_send
+      arguments:
+        dicom: calc1500
+        tag_update:
+          SeriesDescription: siemens_auto_dwi_calc_sof_a_edit_adc_options_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_edit_adc_options_sm
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_update:
+          SeriesDescription: siemens_auto_combined_adc_edit_adc_options_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_combined_sof_a_edit_adc_options_sm
+
+- case_name: si_dwi_eadc # b50, b500, b1000, b1500, adc, eadc -> all supported. all of them are in the same recon input
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b50: Siemens.dwi.eADC.19001_diff_b_50_500_1000_1500_TRACEW_d6b4
+          b500: Siemens.dwi.eADC.19002_diff_b_50_500_1000_1500_TRACEW_1e75
+          b1000: Siemens.dwi.eADC.19003_diff_b_50_500_1000_1500_TRACEW_14f0
+          b1500: Siemens.dwi.eADC.19004_diff_b_50_500_1000_1500_TRACEW_42ce
+          adc: Siemens.dwi.eADC.20001_diff_b_50_500_1000_1500_ADC_84b2 # adc from b50, b1500
+          eadc: Siemens.dwi.eADC.21001_diff_b_50_500_1000_1500_EXP_8bc3 # eadc from b50, 500, 1000, 1500
+        tag_update:
+          DeviceSerialNumber: "111"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b50
+        tag_update:
+          SeriesDescription: siemens_auto_dwi1_eadc_sof_a_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_eadc_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b500
+        tag_update:
+          SeriesDescription: siemens_auto_dwi2_eadc_sof_a_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_eadc_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b1000
+        tag_update:
+          SeriesDescription: siemens_auto_dwi3_eadc_sof_a_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_eadc_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b1500
+        tag_update:
+          SeriesDescription: siemens_auto_dwi4_eadc_sof_a_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_eadc_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_update:
+          SeriesDescription: siemens_auto_adc_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_eadc_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: eadc
+        tag_update:
+          SeriesDescription: siemens_auto_eadc_sm
+        tag_transform:
+          SiemensSeriesName: siemens_auto_dwi_eadc_sof_a_sm
+
+- case_name: si_swi_basic # swi, mag, pha, minip -> all supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          swi: Siemens.swi.fast.11001_AXL_SWI_smbr_SWI_3c85
+          mag: Siemens.swi.fast.9001_AXL_SWI_smbr_Mag_efc4
+          pha: Siemens.swi.fast.10001_AXL_SWI_smbr_Pha_45d6
+          minip: Siemens.swi.fast.12001_AXL_SWI_smbr_SWI_mIP_cb4d
+        tag_update:
+          DeviceSerialNumber: "111"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: swi
+        tag_update:
+          SeriesDescription: siemens_3d_swi_sof_a_auto_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_swi_sof_a_auto_sm
+    - action: dicom_send
+      arguments:
+        dicom: mag
+        tag_update:
+          SeriesDescription: siemens_3d_mag_sof_a_auto_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_swi_sof_a_auto_sm
+    - action: dicom_send
+      arguments:
+        dicom: pha
+        tag_update:
+          SeriesDescription: siemens_3d_pha_sof_a_auto_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_swi_sof_a_auto_sm
+    - action: dicom_send
+      arguments:
+        dicom: minip
+        tag_update:
+          SeriesDescription: auto_pp
+        tag_transform:
+          SiemensSeriesName: siemens_3d_swi_sof_a_auto_sm
+
+- case_name: si_subtraction_basic # pre, post, sub, sub_mip -> all supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          pre: Siemens.siemens_XA.real_source.pre
+          post: Siemens.siemens_XA.real_source.post
+          sub: Siemens.siemens_XA.case1_autosub_mip.autosub
+          sub_mip: Siemens.siemens_XA.case1_autosub_mip.mip
+        tag_update:
+          DeviceSerialNumber: "111"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: pre
+        tag_update:
+          SeriesDescription: siemens_3d_pre_sof_a_sub_false_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_pre_sof_a_sub_false_sm
+    - action: dicom_send
+      arguments:
+        dicom: post
+        tag_update:
+          SeriesDescription: siemens_3d_post_sof_a_sub_false_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_post_sof_a_sub_false_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub
+        tag_update:
+          SeriesDescription: siemens_3d_sub_post_sof_a_sub_false_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_sub_post_sof_a_sub_false_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub_mip
+        tag_update:
+          SeriesDescription: siemens_sub_mip
+        tag_transform:
+          SiemensSeriesName: siemens_sub_mip
+
+- case_name: si_subtraction_isSub_true # pre, post, sub, sub_mip -> all supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          pre: Siemens.siemens_XA.real_source.pre
+          post: Siemens.siemens_XA.real_source.post
+          sub: Siemens.siemens_XA.case1_autosub_mip.autosub
+          sub_mip: Siemens.siemens_XA.case1_autosub_mip.mip
+        tag_update:
+          DeviceSerialNumber: "111"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: pre
+        tag_update:
+          SeriesDescription: siemens_3d_pre_sof_a_sub_true_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_pre_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: post
+        tag_update:
+          SeriesDescription: siemens_3d_post_sof_a_sub_true_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_post_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub
+        tag_update:
+          SeriesDescription: siemens_3d_sub_post_sof_a_sub_true_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_sub_post_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub_mip
+        tag_update:
+          SeriesDescription: siemens_sub_mip_t_sm
+        tag_transform:
+          SiemensSeriesName: siemens_sub_mip_t_sm
+
+- case_name: si_subtraction_isSub_true_fm # pre, post, sub, sub_mip -> all supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          pre: Siemens.siemens_XA.real_source.pre
+          post: Siemens.siemens_XA.real_source.post
+          sub: Siemens.siemens_XA.case1_autosub_mip.autosub
+          sub_mip: Siemens.siemens_XA.case1_autosub_mip.mip
+        tag_update:
+          DeviceSerialNumber: "111"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: pre
+        tag_update:
+          SeriesDescription: siemens_3d_pre_sof_a_sub_true_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_pre_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: post
+        tag_update:
+          SeriesDescription: siemens_3d_post_sof_a_sub_true_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_post_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub
+        tag_update:
+          SeriesDescription: siemens_3d_sub_post_sof_a_sub_true_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_sub_post_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub_mip
+        tag_update:
+          SeriesDescription: siemens_sub_mip_t_fm_sm
+        tag_transform:
+          SiemensSeriesName: siemens_sub_mip_t_fm_sm
+
+- case_name: si_subtraction_isSub_true_no_sub_parent # pre, sub, sub_mip -> sub, sub_mip not supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          pre: Siemens.siemens_XA.real_source.pre
+          sub: Siemens.siemens_XA.case1_autosub_mip.autosub
+          sub_mip: Siemens.siemens_XA.case1_autosub_mip.mip
+        tag_update:
+          DeviceSerialNumber: "111"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: pre
+        tag_update:
+          SeriesDescription: siemens_3d_pre_sof_a_sub_true_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_pre_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub
+        tag_update:
+          SeriesDescription: siemens_3d_sub_post_sof_a_sub_true_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_sub_post_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub_mip
+        tag_update:
+          SeriesDescription: siemens_sub_mip_t_sm
+        tag_transform:
+          SiemensSeriesName: siemens_sub_mip_t_sm
+
+- case_name: si_subtraction_isSub_true_no_sub_parent_fm # pre, sub, sub_mip -> sub, sub_mip not supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          pre: Siemens.siemens_XA.real_source.pre
+          sub: Siemens.siemens_XA.case1_autosub_mip.autosub
+          sub_mip: Siemens.siemens_XA.case1_autosub_mip.mip
+        tag_update:
+          DeviceSerialNumber: "111"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: pre
+        tag_update:
+          SeriesDescription: siemens_3d_pre_sof_a_sub_true_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_pre_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub
+        tag_update:
+          SeriesDescription: siemens_3d_sub_post_sof_a_sub_true_sm
+        tag_transform:
+          SiemensSeriesName: siemens_3d_sub_post_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub_mip
+        tag_update:
+          SeriesDescription: siemens_sub_mip_t_fm_sm
+        tag_transform:
+          SiemensSeriesName: siemens_sub_mip_t_fm_sm
+
+- case_name: si_angio # 3 source + 3 mip → all supported. 3 source, 3 mip, 1 angio. all of them are in the same recon input
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Siemens.angio.angio.3D TOF Brain_smft_5001
+          source2: Siemens.angio.angio.3D TOF Brain_smft_9001
+          source3: Siemens.angio.angio.3D TOF Brain_smft_13001
+          mip1: Siemens.angio.angio.MIP Range_1015001
+          mip2: Siemens.angio.angio.MIP Range[2]_1025001
+          mip3: Siemens.angio.angio.MIP Range[3]_1031001
+        tag_update:
+          DeviceSerialNumber: "111"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          SeriesDescription: siemens_angio_3D_TOF_Brain_smft_1
+        tag_transform:
+          SiemensSeriesName: siemens_angio_3D_TOF_Brain_smft_1
+    - action: dicom_send
+      arguments:
+        dicom: source2
+        tag_update:
+          SeriesDescription: siemens_angio_3D_TOF_Brain_smft_2
+        tag_transform:
+          SiemensSeriesName: siemens_angio_3D_TOF_Brain_smft_2
+    - action: dicom_send
+      arguments:
+        dicom: source3
+        tag_update:
+          SeriesDescription: siemens_angio_3D_TOF_Brain_smft_3
+        tag_transform:
+          SiemensSeriesName: siemens_angio_3D_TOF_Brain_smft_3
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          SeriesDescription: auto_mip
+        tag_transform:
+          SiemensSeriesName: siemens_angio_3D_TOF_Brain_smft_1
+    - action: dicom_send
+      arguments:
+        dicom: mip2
+        tag_update:
+          SeriesDescription: auto_mip
+        tag_transform:
+          SiemensSeriesName: siemens_angio_3D_TOF_Brain_smft_2
+    - action: dicom_send
+      arguments:
+        dicom: mip3
+        tag_update:
+          SeriesDescription: auto_mip
+        tag_transform:
+          SiemensSeriesName: siemens_angio_3D_TOF_Brain_smft_3
+
+############################# GE #############################
+
+- case_name: ge_dixon # water, fat, fat_mpr, in -> all supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          water: GE.dixon.GE_2d_dixon.water
+          fat: GE.dixon.GE_2d_dixon.fat
+          fat_mpr: GE.dixon.GE_2d_dixon.fat_mpr
+          in: GE.dixon.GE_2d_dixon.ip
+        tag_update:
+          DeviceSerialNumber: "222"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: water
+        tag_update:
+          SeriesDescription: ge_2d_water_sof_a_waterauto_fm_dsc_sm
+        tag_transform:
+          GESeriesName: ge_2d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: fat
+        tag_update:
+          SeriesDescription: ge_2d_fat_sof_a_waterauto_fm_dsc_sm
+        tag_transform:
+          GESeriesName: ge_2d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: fat_mpr
+        tag_update:
+          SeriesDescription: ge_2d_fat_m_fm_waterauto_sm
+        tag_transform:
+          GESeriesName: ge_2d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: in
+        tag_update:
+          SeriesDescription: ge_2d_in_sof_a_waterauto_fm_dsc_sm
+        tag_transform:
+          GESeriesName: ge_2d_dixon_sof_a_waterauto_fm_sm
+
+- case_name: ge_dixon_source_ns # water, water_mpr(include 1 navigator), fat -> water, water_mpr not supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          water: GE.dixon.GE_2d_dixon.water
+          water_mpr: GE.dixon.GE_2d_dixon.water_mpr
+          fat: GE.dixon.GE_2d_dixon.fat
+        tag_update:
+          DeviceSerialNumber: "222"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: water
+        tag_update:
+          SeriesDescription: ge_2d_water_sof_a_waterauto_fm_dsc_sm_NS
+        tag_transform:
+          GESeriesName: ge_2d_dixon_sof_a_waterauto_fm_sm_NS
+    - action: dicom_send
+      arguments:
+        dicom: water_mpr
+        tag_update:
+          SeriesDescription: ge_2d_water_m_fm_waterauto_sm
+        tag_transform:
+          GESeriesName: ge_2d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: fat
+        tag_update:
+          SeriesDescription: ge_2d_fat_sof_a_waterauto_fm_dsc_sm
+        tag_transform:
+          GESeriesName: ge_2d_dixon_sof_a_waterauto_fm_sm
+
+- case_name: ge_vibe_dixon # water, water_mpr, fat, fat_mpr, in, in_mpr, out, out_mpr -> all supported. all mpr include 1 navigator
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          water: GE.vibe_dixon.GE_3D_dixon.3_WATER_ 3D Ax LAVA Flex InSLASHOut BH
+          water_mpr: GE.vibe_dixon.GE_3D_dixon.350_Water_MPR
+          fat: GE.vibe_dixon.GE_3D_dixon.300_FAT_ 3D Ax LAVA Flex InSLASHOut BH
+          fat_mpr: GE.vibe_dixon.GE_3D_dixon.303_FAT_MPR
+          in: GE.vibe_dixon.GE_3D_dixon.301_InPhase_ 3D Ax LAVA Flex InSLASHOut BH
+          in_mpr: GE.vibe_dixon.GE_3D_dixon.304_IP_MPR
+          out: GE.vibe_dixon.GE_3D_dixon.302_OutPhase_ 3D Ax LAVA Flex InSLASHOut BH
+          out_mpr: GE.vibe_dixon.GE_3D_dixon.305_OOP_MPR
+        tag_update:
+          DeviceSerialNumber: "222"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: water
+        tag_update:
+          SeriesDescription: ge_3d_water_sof_a_waterauto_fm_sm
+        tag_transform:
+          GESeriesName: ge_3d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: water_mpr
+        tag_update:
+          SeriesDescription: ge_3d_water_m_fm_waterauto_sm
+        tag_transform:
+          GESeriesName: ge_3d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: fat
+        tag_update:
+          SeriesDescription: ge_3d_fat_sof_a_waterauto_fm_sm
+        tag_transform:
+          GESeriesName: ge_3d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: fat_mpr
+        tag_update:
+          SeriesDescription: ge_3d_fat_m_fm_waterauto_sm
+        tag_transform:
+          GESeriesName: ge_3d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: in
+        tag_update:
+          SeriesDescription: ge_3d_in_sof_a_waterauto_fm_sm
+        tag_transform:
+          GESeriesName: ge_3d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: in_mpr
+        tag_update:
+          SeriesDescription: ge_3d_in_m_fm_waterauto_sm
+        tag_transform:
+          GESeriesName: ge_3d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: out
+        tag_update:
+          SeriesDescription: ge_3d_out_sof_a_waterauto_fm_sm
+        tag_transform:
+          GESeriesName: ge_3d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: out_mpr
+        tag_update:
+          SeriesDescription: ge_3d_out_m_fm_waterauto_sm
+        tag_transform:
+          GESeriesName: ge_3d_dixon_sof_a_waterauto_fm_sm
+
+- case_name: ge_vibe_dixon_source_ns # water, water_mpr(1 navigator), fat, fat_mpr(1 navigator) -> fat, fat_mpr not supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          water: GE.vibe_dixon.GE_3D_dixon.3_WATER_ 3D Ax LAVA Flex InSLASHOut BH
+          water_mpr: GE.vibe_dixon.GE_3D_dixon.350_Water_MPR
+          fat: GE.vibe_dixon.GE_3D_dixon.300_FAT_ 3D Ax LAVA Flex InSLASHOut BH
+          fat_mpr: GE.vibe_dixon.GE_3D_dixon.303_FAT_MPR
+        tag_update:
+          DeviceSerialNumber: "222"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: water
+        tag_update:
+          SeriesDescription: ge_3d_water_sof_a_waterauto_fm_sm
+        tag_transform:
+          GESeriesName: ge_3d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: water_mpr
+        tag_update:
+          SeriesDescription: ge_3d_water_m_fm_waterauto_sm
+        tag_transform:
+          GESeriesName: ge_3d_dixon_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: fat
+        tag_update:
+          SeriesDescription: ge_3d_fat_sof_a_waterauto_fm_sm_NS
+        tag_transform:
+          GESeriesName: ge_3d_dixon_sof_a_waterauto_fm_sm_NS
+    - action: dicom_send
+      arguments:
+        dicom: fat_mpr
+        tag_update:
+          SeriesDescription: ge_3d_fat_m_fm_waterauto_sm
+        tag_transform:
+          GESeriesName: ge_3d_dixon_sof_a_waterauto_fm_sm
+
+- case_name: ge_dwi # all supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b50: GE.dwi.split.1101_diff_50_500_1000_syn1500_b-50_c7ef
+          b500: GE.dwi.split.1102_diff_50_500_1000_syn1500_b-500_81cd
+          b1000: GE.dwi.split.1103_diff_50_500_1000_syn1500_b-1000_5d80
+          adc: "GE.dwi.split.1150_ADC__10_-6_mm\uC9FC_s__No-Q__e03a" # b value 50, 1000 adc
+        tag_update:
+          DeviceSerialNumber: "222"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b50
+        tag_update:
+          SeriesDescription: ge_auto_dwi_b50_sof_a_sm
+        tag_transform:
+          GESeriesName: ge_auto_dwi_b50_1000_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b500
+        tag_update:
+          SeriesDescription: ge_auto_dwi_b500_sof_a_sm
+        tag_transform:
+          GESeriesName: ge_auto_dwi_b50_1000_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b1000
+        tag_update:
+          SeriesDescription: ge_auto_dwi_b1000_sof_a_sm
+        tag_transform:
+          GESeriesName: ge_auto_dwi_b50_1000_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_update:
+          SeriesDescription: ge_adc_50_1000_sm
+
+- case_name: ge_dwi_imgcount_not_matched # dwi image count not matched -> adc not supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b50: GE.dwi.split.1101_diff_50_500_1000_syn1500_b-50_c7ef
+          b500: GE.dwi.split.1102_diff_50_500_1000_syn1500_b-500_81cd
+          b1000: GE.dwi.split.1103_diff_50_500_1000_syn1500_b-1000_5d80
+          adc: "GE.dwi.split.1150_ADC__10_-6_mm\uC9FC_s__No-Q__e03a" # b value 50, 1000 adc
+        tag_update:
+          DeviceSerialNumber: "222"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b50[0:9]
+        tag_update:
+          SeriesDescription: ge_auto_dwi_b50_sof_a_sm
+        tag_transform:
+          GESeriesName: ge_auto_dwi_b50_1000_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b500
+        tag_update:
+          SeriesDescription: ge_auto_dwi_b500_sof_a_sm
+        tag_transform:
+          GESeriesName: ge_auto_dwi_b50_1000_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b1000
+        tag_update:
+          SeriesDescription: ge_auto_dwi_b1000_sof_a_sm
+        tag_transform:
+          GESeriesName: ge_auto_dwi_b50_1000_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_update:
+          SeriesDescription: ge_adc_50_1000_sm
+
+- case_name: ge_dwi_cannot_find_bval # missing one source bvalue -> adc not supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b500: GE.dwi.split.1102_diff_50_500_1000_syn1500_b-500_81cd
+          b1000: GE.dwi.split.1103_diff_50_500_1000_syn1500_b-1000_5d80
+          adc: "GE.dwi.split.1150_ADC__10_-6_mm\uC9FC_s__No-Q__e03a" # b value 50, 1000 adc
+        tag_update:
+          DeviceSerialNumber: "222"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b500
+        tag_update:
+          SeriesDescription: ge_auto_dwi_b500_sof_a_sm
+        tag_transform:
+          GESeriesName: ge_auto_dwi_b50_1000_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b1000
+        tag_update:
+          SeriesDescription: ge_auto_dwi_b1000_sof_a_sm
+        tag_transform:
+          GESeriesName: ge_auto_dwi_b50_1000_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_update:
+          SeriesDescription: ge_adc_50_1000_sm
+
+- case_name: ge_dwi_edit_adc_options # all supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b50: GE.dwi.split.1101_diff_50_500_1000_syn1500_b-50_c7ef
+          b500: GE.dwi.split.1102_diff_50_500_1000_syn1500_b-500_81cd
+          b1000: GE.dwi.split.1103_diff_50_500_1000_syn1500_b-1000_5d80
+          adc: "GE.dwi.split.1150_ADC__10_-6_mm\uC9FC_s__No-Q__e03a" # b value 50, 1000 adc
+        tag_update:
+          DeviceSerialNumber: "222"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b50
+        tag_update:
+          SeriesDescription: ge_auto_dwi_b50_sof_a_edit_adc_options_sm
+        tag_transform:
+          GESeriesName: ge_auto_dwi_b50_1000_sof_a_edit_adc_options_sm
+    - action: dicom_send
+      arguments:
+        dicom: b500
+        tag_update:
+          SeriesDescription: ge_auto_dwi_b500_sof_a_edit_adc_options_sm
+        tag_transform:
+          GESeriesName: ge_auto_dwi_b50_1000_sof_a_edit_adc_options_sm
+    - action: dicom_send
+      arguments:
+        dicom: b1000
+        tag_update:
+          SeriesDescription: ge_auto_dwi_b1000_sof_a_edit_adc_options_sm
+        tag_transform:
+          GESeriesName: ge_auto_dwi_b50_1000_sof_a_edit_adc_options_sm
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_update:
+          SeriesDescription: ge_adc_50_1000_edit_adc_options_sm
+
+- case_name: ge_dwi_eadc # all supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source: GE.dwi.eADC.2_diff_b_500_1000_0
+          eadc: GE.dwi.eADC.267_eADC_25_005_1000_500_0
+        tag_update:
+          DeviceSerialNumber: "222"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source
+        tag_update:
+          SeriesDescription: ge_auto_dwi_eadc_combined1_sof_a_sm
+        tag_transform:
+          GESeriesName: ge_auto_dwi_eadc_combined_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: eadc
+        tag_update:
+          SeriesDescription: ge_auto_eadc_combined_adc_sm
+
+- case_name: ge_swi_basic # mag, pha, minip -> all supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          pha: GE.3d_with_minip.auto_parallel_minip.500_FILT_PHA__SWAN_2_0_ba18
+          mag: GE.3d_with_minip.auto_parallel_minip.5_SWAN_2_0_1e21
+          minip: GE.3d_with_minip.auto_parallel_minip.501_IS_22_1_3_ab1b
+        tag_update:
+          DeviceSerialNumber: "222"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: mag
+        tag_update:
+          SeriesDescription: ge_3d_mag_sof_a_auto_sm
+        tag_transform:
+          GESeriesName: ge_3d_swi_sof_a_auto_sm
+    - action: dicom_send
+      arguments:
+        dicom: pha
+        tag_update:
+          SeriesDescription: ge_3d_pha_sof_a_auto_sm
+        tag_transform:
+          GESeriesName: ge_3d_swi_sof_a_auto_sm
+    - action: dicom_send
+      arguments:
+        dicom: minip
+        tag_update:
+          SeriesDescription: ge_3d_minip
+        tag_transform:
+          GESeriesName: ge_3d_swi_sof_a_auto_sm
+
+- case_name: ge_subtraction_basic # pre, post, sub, sub_mip(1 navigator) -> all supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          pre: GE.subtraction.case3_splitsource_manusub_mip.pre
+          post: GE.subtraction.case3_splitsource_manusub_mip.post
+          sub: GE.subtraction.case3_splitsource_manusub_mip.manusub
+          sub_mip: GE.subtraction.case3_splitsource_manusub_mip.mip
+        tag_update:
+          DeviceSerialNumber: "222"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: pre
+        tag_update:
+          SeriesDescription: ge_3d_pre_sof_a_fm_sm
+        tag_transform:
+          GESeriesName: ge_3d_subtraction_sub_false_sm
+    - action: dicom_send
+      arguments:
+        dicom: post
+        tag_update:
+          SeriesDescription: ge_3d_post_sof_a_fm_sm
+        tag_transform:
+          GESeriesName: ge_3d_subtraction_sub_false_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub
+        tag_update:
+          SeriesDescription: ge_3d_post_sub_sof_a_sub_false_sm
+        tag_transform:
+          GESeriesName: ge_3d_post_sub_sof_a_sub_false_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub_mip
+        tag_update:
+          SeriesDescription: ge_sub_f_mip_sm
+
+- case_name: ge_subtraction_isSub_true # pre, post, sub, sub_mip(1 navigator) -> all supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          pre: GE.subtraction.case3_splitsource_manusub_mip.pre
+          post: GE.subtraction.case3_splitsource_manusub_mip.post
+          sub: GE.subtraction.case3_splitsource_manusub_mip.manusub
+          sub_mip: GE.subtraction.case3_splitsource_manusub_mip.mip
+        tag_update:
+          DeviceSerialNumber: "222"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: pre
+        tag_update:
+          SeriesDescription: ge_3d_pre_sof_a_sub_true_sm
+        tag_transform:
+          GESeriesName: ge_3d_subtraction_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: post
+        tag_update:
+          SeriesDescription: ge_3d_post_sof_a_sub_true_sm
+        tag_transform:
+          GESeriesName: ge_3d_subtraction_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub
+        tag_update:
+          SeriesDescription: ge_3d_post_sub_sof_a_sub_true_sm
+        tag_transform:
+          GESeriesName: ge_3d_post_sub_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub_mip
+        tag_update:
+          SeriesDescription: ge_sub_t_mip_sm
+
+- case_name: ge_subtraction_isSub_true_fm # pre, post, sub, sub_mip(1 navigator) -> all supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          pre: GE.subtraction.case3_splitsource_manusub_mip.pre
+          post: GE.subtraction.case3_splitsource_manusub_mip.post
+          sub: GE.subtraction.case3_splitsource_manusub_mip.manusub
+          sub_mip: GE.subtraction.case3_splitsource_manusub_mip.mip
+        tag_update:
+          DeviceSerialNumber: "222"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: pre
+        tag_update:
+          SeriesDescription: ge_3d_pre_sof_a_sub_true_sm
+        tag_transform:
+          GESeriesName: ge_3d_subtraction_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: post
+        tag_update:
+          SeriesDescription: ge_3d_post_sof_a_sub_true_sm
+        tag_transform:
+          GESeriesName: ge_3d_subtraction_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub
+        tag_update:
+          SeriesDescription: ge_3d_post_sub_sof_a_sub_true_sm
+        tag_transform:
+          GESeriesName: ge_3d_post_sub_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub_mip
+        tag_update:
+          SeriesDescription: ge_sub_t_mip_fm_sm
+
+- case_name: ge_subtraction_isSub_true_no_sub_parent # pre, sub, sub_mip(1 navigator) -> sub, sub_mip not supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          pre: GE.subtraction.case3_splitsource_manusub_mip.pre
+          sub: GE.subtraction.case3_splitsource_manusub_mip.manusub
+          sub_mip: GE.subtraction.case3_splitsource_manusub_mip.mip
+        tag_update:
+          DeviceSerialNumber: "222"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: pre
+        tag_update:
+          SeriesDescription: ge_3d_pre_sof_a_sub_true_sm
+        tag_transform:
+          GESeriesName: ge_3d_subtraction_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub
+        tag_update:
+          SeriesDescription: ge_3d_post_sub_sof_a_sub_true_sm
+        tag_transform:
+          GESeriesName: ge_3d_post_sub_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub_mip
+        tag_update:
+          SeriesDescription: ge_sub_t_mip_sm
+
+- case_name: ge_subtraction_isSub_true_no_sub_parent_fm # pre, sub, sub_mip(1 navigator) -> sub, sub_mip not supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          pre: GE.subtraction.case3_splitsource_manusub_mip.pre
+          sub: GE.subtraction.case3_splitsource_manusub_mip.manusub
+          mip: GE.subtraction.case3_splitsource_manusub_mip.mip
+        tag_update:
+          DeviceSerialNumber: "222"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: pre
+        tag_update:
+          SeriesDescription: ge_3d_pre_sof_a_sub_true_sm
+        tag_transform:
+          GESeriesName: ge_3d_subtraction_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub
+        tag_update:
+          SeriesDescription: ge_3d_post_sub_sof_a_sub_true_sm
+        tag_transform:
+          GESeriesName: ge_3d_post_sub_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: mip
+        tag_update:
+          SeriesDescription: ge_sub_t_mip_fm_sm
+
+- case_name: ge_angio # 3 source + 3 mip → all supported. 3 source, 3 mip, 1 angio. all of them are in the same recon input
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: GE.angio.angio.3D TOF Brain_smft_23
+          source2: GE.angio.angio.3D TOF Neck_smft_24
+          source3: GE.angio.angio.3D TOF Aortic_smft_29
+          mip1: GE.angio.angio.Projection Images_2350
+          mip2: GE.angio.angio.Projection Images_2450
+          mip3: GE.angio.angio.Projection Images_2950
+        tag_update:
+          DeviceSerialNumber: "222"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          SeriesDescription: ge_angio_3D_TOF_Brain_smft_1
+        tag_transform:
+          GESeriesName: ge_angio_3D_TOF_Brain_smft_1
+    - action: dicom_send
+      arguments:
+        dicom: source2
+        tag_update:
+          SeriesDescription: ge_angio_3D_TOF_Brain_smft_2
+        tag_transform:
+          GESeriesName: ge_angio_3D_TOF_Brain_smft_2
+    - action: dicom_send
+      arguments:
+        dicom: source3
+        tag_update:
+          SeriesDescription: ge_angio_3D_TOF_Brain_smft_3
+        tag_transform:
+          GESeriesName: ge_angio_3D_TOF_Brain_smft_3
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          SeriesDescription: auto_mip
+        tag_transform:
+          GESeriesName: ge_angio_3D_TOF_Brain_smft_1
+    - action: dicom_send
+      arguments:
+        dicom: mip2
+        tag_update:
+          SeriesDescription: auto_mip
+        tag_transform:
+          GESeriesName: ge_angio_3D_TOF_Brain_smft_2
+    - action: dicom_send
+      arguments:
+        dicom: mip3
+        tag_update:
+          SeriesDescription: auto_mip
+        tag_transform:
+          GESeriesName: ge_angio_3D_TOF_Brain_smft_3
+
+############################# Philips #############################
+
+- case_name: ph_dixon # water, water_mpr, in, in_mpr -> all supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          water: Philips.dixon.philips_2d_dixon.water
+          water_mpr: Philips.dixon.philips_2d_dixon.water_mpr
+          in: Philips.dixon.philips_2d_dixon.ip
+          in_mpr: Philips.dixon.philips_2d_dixon.ip_mpr
+        tag_update:
+          DeviceSerialNumber: "333"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: water
+        tag_update:
+          SeriesDescription: philips_2d_water_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: water_mpr
+        tag_update:
+          SeriesDescription: philips_2d_water_m_fm_waterauto_sm
+    - action: dicom_send
+      arguments:
+        dicom: in
+        tag_update:
+          SeriesDescription: philips_2d_in_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: in_mpr
+        tag_update:
+          SeriesDescription: philips_2d_in_m_fm_waterauto_sm
+
+- case_name: ph_dixon_source_ns # water, water_mpr, in, in_mpr -> water, water_mpr not supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          water: Philips.dixon.philips_2d_dixon.water
+          water_mpr: Philips.dixon.philips_2d_dixon.water_mpr
+          in: Philips.dixon.philips_2d_dixon.ip
+          in_mpr: Philips.dixon.philips_2d_dixon.ip_mpr
+        tag_update:
+          DeviceSerialNumber: "333"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: water
+        tag_update:
+          SeriesDescription: philips_2d_water_sof_a_waterauto_fm_sm_NS
+    - action: dicom_send
+      arguments:
+        dicom: water_mpr
+        tag_update:
+          SeriesDescription: philips_2d_water_m_fm_waterauto_sm
+    - action: dicom_send
+      arguments:
+        dicom: in
+        tag_update:
+          SeriesDescription: philips_2d_in_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: in_mpr
+        tag_update:
+          SeriesDescription: philips_2d_in_m_fm_waterauto_sm
+
+- case_name: ph_vibe_dixon # water, water_mpr, in, in_mpr -> all supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          water: Philips.MultiEcho.mDIXON3D.1204_sPost  3D mDIXON W
+          water_mpr: Philips.MultiEcho.mDIXON3D.1208_W_MPR
+          in: Philips.MultiEcho.mDIXON3D.1203_sPost  3D mDIXON IP
+          in_mpr: Philips.MultiEcho.mDIXON3D.1205_IP_MPR
+        tag_update:
+          DeviceSerialNumber: "333"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: water
+        tag_update:
+          SeriesDescription: philips_3d_water_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: water_mpr
+        tag_update:
+          SeriesDescription: philips_3d_water_m_fm_waterauto_sm
+    - action: dicom_send
+      arguments:
+        dicom: in
+        tag_update:
+          SeriesDescription: philips_3d_in_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: in_mpr
+        tag_update:
+          SeriesDescription: philips_3d_in_m_fm_waterauto_sm
+
+- case_name: ph_vibe_dixon_source_ns # water, water_mpr, in, in_mpr -> in, in_mpr not supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          water: Philips.MultiEcho.mDIXON3D.1204_sPost  3D mDIXON W
+          water_mpr: Philips.MultiEcho.mDIXON3D.1208_W_MPR
+          in: Philips.MultiEcho.mDIXON3D.1203_sPost  3D mDIXON IP
+          in_mpr: Philips.MultiEcho.mDIXON3D.1205_IP_MPR
+        tag_update:
+          DeviceSerialNumber: "333"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: water
+        tag_update:
+          SeriesDescription: philips_3d_water_sof_a_waterauto_fm_sm
+    - action: dicom_send
+      arguments:
+        dicom: water_mpr
+        tag_update:
+          SeriesDescription: philips_3d_water_m_fm_waterauto_sm
+    - action: dicom_send
+      arguments:
+        dicom: in
+        tag_update:
+          SeriesDescription: philips_3d_in_sof_a_waterauto_fm_sm_NS
+    - action: dicom_send
+      arguments:
+        dicom: in_mpr
+        tag_update:
+          SeriesDescription: philips_3d_in_m_fm_waterauto_sm
+
+- case_name: ph_dwi # all supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b0: Philips.dwi.1ADC.1004001_sDWI b0
+          b50: Philips.dwi.1ADC.1005002_sDWI b50
+          b800: Philips.dwi.1ADC.1006003_sDWI b800
+          adc: Philips.dwi.1ADC.1007001_dADC
+        tag_update:
+          DeviceSerialNumber: "333"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b0
+        tag_update:
+          SeriesDescription: philips_auto_dwi_bvalue_0_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b50
+        tag_update:
+          SeriesDescription: philips_auto_dwi_bvalue_50_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b800
+        tag_update:
+          SeriesDescription: philips_auto_dwi_bvalue_800_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_update:
+          SeriesDescription: philips_auto_dwi_0_800_adc_sm
+
+- case_name: ph_dwi_imgcount_not_matched # dwi image count not matched -> adc not supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b0: Philips.dwi.1ADC.1004001_sDWI b0
+          b50: Philips.dwi.1ADC.1005002_sDWI b50
+          b800: Philips.dwi.1ADC.1006003_sDWI b800
+          adc: Philips.dwi.1ADC.1007001_dADC
+        tag_update:
+          DeviceSerialNumber: "333"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b0[0:9]
+        tag_update:
+          SeriesDescription: philips_auto_dwi_bvalue_0_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b50
+        tag_update:
+          SeriesDescription: philips_auto_dwi_bvalue_50_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b800
+        tag_update:
+          SeriesDescription: philips_auto_dwi_bvalue_800_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_update:
+          SeriesDescription: philips_auto_dwi_0_800_adc_sm
+
+- case_name: ph_dwi_cannot_find_bval # missing one source bvalue -> adc not supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b50: Philips.dwi.1ADC.1005002_sDWI b50
+          b800: Philips.dwi.1ADC.1006003_sDWI b800
+          adc: Philips.dwi.1ADC.1007001_dADC
+        tag_update:
+          DeviceSerialNumber: "333"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b50
+        tag_update:
+          SeriesDescription: philips_auto_dwi_bvalue_50_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: b800
+        tag_update:
+          SeriesDescription: philips_auto_dwi_bvalue_800_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_update:
+          SeriesDescription: philips_auto_dwi_0_800_adc_sm
+
+- case_name: ph_dwi_edit_adc_options # all supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          b0: Philips.dwi.1ADC.1004001_sDWI b0
+          b50: Philips.dwi.1ADC.1005002_sDWI b50
+          b800: Philips.dwi.1ADC.1006003_sDWI b800
+          adc: Philips.dwi.1ADC.1007001_dADC
+        tag_update:
+          DeviceSerialNumber: "333"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: b0
+        tag_update:
+          SeriesDescription: philips_auto_dwi_bvalue_0_sof_a_edit_adc_options_sm
+    - action: dicom_send
+      arguments:
+        dicom: b50
+        tag_update:
+          SeriesDescription: philips_auto_dwi_bvalue_50_sof_a_edit_adc_options_sm
+    - action: dicom_send
+      arguments:
+        dicom: b800
+        tag_update:
+          SeriesDescription: philips_auto_dwi_bvalue_800_sof_a_edit_adc_options_sm
+    - action: dicom_send
+      arguments:
+        dicom: adc
+        tag_update:
+          SeriesDescription: philips_auto_dwi_0_800_adc_edit_adc_options_sm
+
+- case_name: ph_dwi_eadc # all supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source: Philips.dwi.eADC.401_AX SPAIR DWI B 0 800 1200
+          eadc: Philips.dwi.eADC.414_eeadc
+        tag_update:
+          DeviceSerialNumber: "333"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source
+        tag_update:
+          SeriesDescription: philips_auto_dwi_eadc_combined_sof_a_sm
+    - action: dicom_send
+      arguments:
+        dicom: eadc
+        tag_update:
+          SeriesDescription: philips_auto_eadc_combined_adc_sm
+
+- case_name: ph_swi # swi, pha, minip -> all supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          swi: Philips.swi.philips_swi.sSW-M
+          pha: Philips.swi.philips_swi.sSW-P
+          minip: Philips.swi.philips_swi.minip_sample
+        tag_update:
+          DeviceSerialNumber: "333"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: swi
+        tag_update:
+          SeriesDescription: philips_3d_swi_sof_a_auto_sm
+    - action: dicom_send
+      arguments:
+        dicom: pha
+        tag_update:
+          SeriesDescription: philips_3d_pha_sof_a_auto_sm
+    - action: dicom_send
+      arguments:
+        dicom: minip
+        tag_update:
+          SeriesDescription: philips_3d_minip
+
+- case_name: ph_subtraction_basic # pre, post, sub, sub_mip -> all supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          pre: Philips.subtraction.PrePost.1104_sPre 3D mDIXON W
+          post: Philips.subtraction.PrePost.1404_sPost  3D mDIXON W
+          sub: Philips.subtraction.PrePost.1405_ssub
+          sub_mip: Philips.subtraction.PrePost.1407_sub_MPR
+        tag_update:
+          DeviceSerialNumber: "333"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: pre
+        tag_update:
+          SeriesDescription: philips_3d_pre_sof_a_sub_false_sm
+    - action: dicom_send
+      arguments:
+        dicom: post
+        tag_update:
+          SeriesDescription: philips_3d_post_sof_a_sub_false_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub
+        tag_update:
+          SeriesDescription: philips_3d_post_sub_sof_a_sub_false_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub_mip
+        tag_update:
+          SeriesDescription: philips_sub_f_mip_sm
+
+- case_name: ph_subtraction_isSub_true # pre, post, sub, sub_mip -> all supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          pre: Philips.subtraction.PrePost.1104_sPre 3D mDIXON W
+          post: Philips.subtraction.PrePost.1404_sPost  3D mDIXON W
+          sub: Philips.subtraction.PrePost.1405_ssub
+          sub_mip: Philips.subtraction.PrePost.1407_sub_MPR
+        tag_update:
+          DeviceSerialNumber: "333"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: pre
+        tag_update:
+          SeriesDescription: philips_3d_pre_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: post
+        tag_update:
+          SeriesDescription: philips_3d_post_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub
+        tag_update:
+          SeriesDescription: philips_3d_post_sub_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub_mip
+        tag_update:
+          SeriesDescription: philips_sub_t_mip_sm
+
+- case_name: ph_subtraction_isSub_true_fm # pre, post, sub, sub_mip -> all supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          pre: Philips.subtraction.PrePost.1104_sPre 3D mDIXON W
+          post: Philips.subtraction.PrePost.1404_sPost  3D mDIXON W
+          sub: Philips.subtraction.PrePost.1405_ssub
+          sub_mip: Philips.subtraction.PrePost.1407_sub_MPR
+        tag_update:
+          DeviceSerialNumber: "333"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: pre
+        tag_update:
+          SeriesDescription: philips_3d_pre_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: post
+        tag_update:
+          SeriesDescription: philips_3d_post_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub
+        tag_update:
+          SeriesDescription: philips_3d_post_sub_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub_mip
+        tag_update:
+          SeriesDescription: philips_sub_t_mip_fm_sm
+
+- case_name: ph_subtraction_isSub_true_no_sub_parent # pre, sub, sub_mip -> sub, sub_mip not supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          pre: Philips.subtraction.PrePost.1104_sPre 3D mDIXON W
+          sub: Philips.subtraction.PrePost.1405_ssub
+          sub_mip: Philips.subtraction.PrePost.1407_sub_MPR
+        tag_update:
+          DeviceSerialNumber: "333"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: pre
+        tag_update:
+          SeriesDescription: philips_3d_pre_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub
+        tag_update:
+          SeriesDescription: philips_3d_post_sub_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub_mip
+        tag_update:
+          SeriesDescription: philips_sub_t_mip_sm
+
+- case_name: ph_subtraction_isSub_true_no_sub_parent_fm # pre, sub, sub_mip -> sub, sub_mip not supported
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          pre: Philips.subtraction.PrePost.1104_sPre 3D mDIXON W
+          sub: Philips.subtraction.PrePost.1405_ssub
+          sub_mip: Philips.subtraction.PrePost.1407_sub_MPR
+        tag_update:
+          DeviceSerialNumber: "333"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: pre
+        tag_update:
+          SeriesDescription: philips_3d_pre_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub
+        tag_update:
+          SeriesDescription: philips_3d_post_sub_sof_a_sub_true_sm
+    - action: dicom_send
+      arguments:
+        dicom: sub_mip
+        tag_update:
+          SeriesDescription: philips_sub_t_mip_fm_sm
+
+- case_name: ph_angio # 3 source + 3 mip → all supported. 3 source, 3 mip, 1 angio. all of them are in the same recon input
+  config:
+    - action: dicom_send
+      data:
+        dicom_source:
+          source1: Philips.angio.angio.3D TOF Brain_smfba_301
+          source2: Philips.angio.angio.3D TOF Neck_smfba_302
+          source3: Philips.angio.angio.3D TOF Aorta_smfba_303
+          mip1: Philips.angio.angio.V3D TOF Brain_smfba_307
+          mip2: Philips.angio.angio.V3D TOF Neck_smfba_308
+          mip3: Philips.angio.angio.V3D TOF Aorta_smfba_309
+        tag_update:
+          DeviceSerialNumber: "333"
+  step:
+    - action: dicom_send
+      arguments:
+        dicom: source1
+        tag_update:
+          SeriesDescription: philips_3D_TOF_Brain_smfba_1
+    - action: dicom_send
+      arguments:
+        dicom: source2
+        tag_update:
+          SeriesDescription: philips_3D_TOF_Brain_smfba_2
+    - action: dicom_send
+      arguments:
+        dicom: source3
+        tag_update:
+          SeriesDescription: philips_3D_TOF_Brain_smfba_3
+    - action: dicom_send
+      arguments:
+        dicom: mip1
+        tag_update:
+          SeriesDescription: auto_mip
+    - action: dicom_send
+      arguments:
+        dicom: mip2
+        tag_update:
+          SeriesDescription: auto_mip
+    - action: dicom_send
+      arguments:
+        dicom: mip3
+        tag_update:
+          SeriesDescription: auto_mip

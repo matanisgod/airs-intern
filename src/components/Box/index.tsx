@@ -101,3 +101,12 @@ export const ModalDataBox = styled(Box)(() => ({
   overflow: 'auto',
   padding: '10px',
 }));
+
+export const JSONDefaultBox = styled(Box)(() => ({
+  width: '100%',
+  height: '100%',
+  fontSize: '20px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+}));
