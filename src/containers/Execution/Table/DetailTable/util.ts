@@ -1,6 +1,6 @@
 import { GridColDef } from '@mui/x-data-grid';
 
-export const detailColumns: GridColDef[] = [
+export const detailColumns: Array<GridColDef> = [
   {
     field: 'result',
     headerName: 'Result',
@@ -18,3 +18,10 @@ export const detailColumns: GridColDef[] = [
     align: 'center',
   },
 ];
+
+// export interface JoinedDetail {
+//   result: boolean;
+//   resultLog: string;
+//   actualResult: object;
+//   expectedResult: { data: object };
+// }

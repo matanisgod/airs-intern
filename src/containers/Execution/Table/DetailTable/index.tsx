@@ -10,13 +10,16 @@ import {
   detailsAtom,
   detailsExpectedResultJsonAtom,
 } from '@/recoil/status';
-import { TableHeaderBox, TableDataBox, DataTable } from '@components';
+import { TableHeaderBox, TableDataBox, DataTable, DatagridDefaultBox } from '@components';
 
-//TODO: result log 예쁘게 보이도록 하기
 export const DetailsTable = () => {
   const details = useRecoilValue(detailsAtom);
+
   const setActualResultJson = useSetRecoilState(actualResultJsonAtom);
   const setDetailsExpectedResultJson = useSetRecoilState(detailsExpectedResultJsonAtom);
+
+  const Overlay = () => <DatagridDefaultBox>Select case log</DatagridDefaultBox>;
+
   return (
     <DetailsTableBox>
       <TableHeaderBox>Detail</TableHeaderBox>
@@ -36,8 +39,8 @@ export const DetailsTable = () => {
               JSON.parse(params.row.expectedResult.data.replace(/\bNaN\b/g, 'null')),
             );
           }}
-          localeText={{
-            noRowsLabel: 'Select case log',
+          slots={{
+            noRowsOverlay: Overlay,
           }}
         />
       </TableDataBox>

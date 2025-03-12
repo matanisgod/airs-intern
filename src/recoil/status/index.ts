@@ -4,4 +4,4 @@ export * from './execution';
 export * from './expectedResult';
 export * from './caseLog';
 export * from './detail';
-export * from './errorMessage';
+export * from './error';

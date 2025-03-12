@@ -12,11 +12,10 @@ export const useExpectedResultApi = (): UseExpectedResultApi => {
   const setErrorMessage = useSetRecoilState(errorMessageAtom);
 
   const instance = useMemo(() => {
-    const Errorsetter = (param) => {
+    const ErrorSetter = (param) => {
       setErrorMessage({
-        errorStatus: param.response?.status,
-        errorStatusText: param.response?.statusText,
-        errorData: param.response?.data,
+        status: param.response?.status,
+        statusText: param.response?.statusText,
       });
     };
     if (api) {
@@ -28,7 +27,7 @@ export const useExpectedResultApi = (): UseExpectedResultApi => {
             return expectedResult;
           } catch (e) {
             logAxiosError(e);
-            Errorsetter(e);
+            ErrorSetter(e);
           }
         },
       };

@@ -5,10 +5,10 @@ import clsx from 'clsx';
 import { useSetRecoilState } from 'recoil';
 
 import { useExecutionApi } from '@/common/api';
-import { isErrorModalOpenAtom } from '@/recoil/status';
+import { isErrorModalOpenAtom, executionLogsAtom } from '@/recoil/status';
 import { StopAllButton, StopButton } from '@components';
 
-export const executionLogColumns: GridColDef[] = [
+export const executionLogColumns: Array<GridColDef> = [
   {
     field: 'performer',
     headerName: 'Performer',
@@ -53,11 +53,18 @@ export const executionLogColumns: GridColDef[] = [
     renderHeader: function CancelExecution() {
       const executionApi = useExecutionApi();
       const setErrorModalOpen = useSetRecoilState(isErrorModalOpenAtom);
+      const setExecutionLogsAtom = useSetRecoilState(executionLogsAtom);
 
       const fetchExecution = async () => {
         if (!executionApi) return;
         const response = await executionApi.cancelExecution();
         if (response) {
+          setExecutionLogsAtom((prev) =>
+            prev.map((row) => ({
+              ...row,
+              status: 'cancelled',
+            })),
+          );
           console.log('ok');
         } else {
           setErrorModalOpen(true);
@@ -69,11 +76,22 @@ export const executionLogColumns: GridColDef[] = [
     renderCell: function CancelExecutionById(params) {
       const executionApi = useExecutionApi();
       const setErrorModalOpen = useSetRecoilState(isErrorModalOpenAtom);
+      const setExecutionLogsAtom = useSetRecoilState(executionLogsAtom);
 
       const fetchExecutionById = async (params) => {
         if (!executionApi) return;
         const response = await executionApi.cancelExecutionById(params.row.id);
         if (response) {
+          setExecutionLogsAtom((prev) =>
+            prev.map((row) =>
+              row.id === params.row.id
+                ? {
+                    ...row,
+                    status: 'cancelled',
+                  }
+                : row,
+            ),
+          );
           console.log('ok');
         } else {
           setErrorModalOpen(true);

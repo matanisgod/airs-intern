@@ -6,7 +6,7 @@ interface Case {
 
 export type Cases = Array<Case>;
 
-interface CaseSet {
+export interface CaseSet {
   type: string;
   title: string;
   id: string;

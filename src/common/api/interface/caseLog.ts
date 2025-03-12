@@ -1,13 +1,17 @@
 import type { CaseLogs, Details } from '@recoil/status';
 
 export type UseCaseLogApi = {
-  getDistinctCaseLogsById: (body: object) => Promise<CaseLogs | undefined>;
-  getDetailsById: (body: object) => Promise<Details | undefined>;
+  getDistinctCaseLogsById: (
+    body: GetDistinctCaseLogsByIdReqBody,
+  ) => Promise<CaseLogs | undefined>;
+  getDetailsById: (body: GetDetailsByIdReqBody) => Promise<Details | undefined>;
 } | null;
 
 export interface AxiosCaseLogReturn {
-  getDistinctCaseLogsById: (body: object) => Promise<GetDistinctCaseLogsByIdResBody>;
-  getDetailsById: (body: object) => Promise<GetDetailsByIdResBody>;
+  getDistinctCaseLogsById: (
+    body: GetDistinctCaseLogsByIdReqBody,
+  ) => Promise<GetDistinctCaseLogsByIdResBody>;
+  getDetailsById: (body: GetDetailsByIdReqBody) => Promise<GetDetailsByIdResBody>;
 }
 export interface GetDistinctCaseLogsByIdResBody {
   message: string;
@@ -16,4 +20,12 @@ export interface GetDistinctCaseLogsByIdResBody {
 export interface GetDetailsByIdResBody {
   message: string;
   data: Details;
+}
+export interface GetDistinctCaseLogsByIdReqBody {
+  executionId: string;
+}
+export interface GetDetailsByIdReqBody {
+  executionLogId: string;
+  caseId: string;
+  expectedResultId: string;
 }

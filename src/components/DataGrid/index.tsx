@@ -50,8 +50,4 @@ export const DataTable = styled(DataGrid)(() => ({
   '& .MuiDataGrid-cell:focus-within, & .MuiDataGrid-columnHeader:focus-within': {
     outline: 'none',
   },
-  '& .MuiDataGrid-overlay': {
-    backgroundColor: '#222222',
-    fontSize: '20px',
-  },
 }));

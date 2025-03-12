@@ -4,30 +4,31 @@ import { useSetRecoilState } from 'recoil';
 
 import { UseCaseSetApi } from '../interface';
 
-import { errorMessageAtom } from '@/recoil/status';
 import { logAxiosError } from '@/utils/logAxiosError';
 import api from '@common/api';
+import type { caseSetForm } from '@containers';
+import { errorMessageAtom } from '@recoil/status';
 
 export const useCaseSetApi = (): UseCaseSetApi => {
   const setErrorMessage = useSetRecoilState(errorMessageAtom);
 
   const instance = useMemo(() => {
-    const Errorsetter = (param) => {
+    const ErrorSetter = (param) => {
       setErrorMessage({
-        errorStatus: param.response?.status,
-        errorStatusText: param.response?.statusText,
-        errorData: param.response?.data,
+        status: param.response?.status,
+        statusText: param.response?.statusText,
       });
     };
     if (api) {
       return {
-        importCaseSet: async (body: object) => {
+        importCaseSet: async (body: caseSetForm) => {
           try {
             const response = await api().caseSet.importCaseSet(body);
-            return response.message;
+            const CaseSet = response.data;
+            return CaseSet;
           } catch (e) {
             logAxiosError(e);
-            Errorsetter(e);
+            ErrorSetter(e);
           }
         },
         getCaseSets: async () => {
@@ -37,7 +38,7 @@ export const useCaseSetApi = (): UseCaseSetApi => {
             return caseSets;
           } catch (e) {
             logAxiosError(e);
-            Errorsetter(e);
+            ErrorSetter(e);
           }
         },
       };

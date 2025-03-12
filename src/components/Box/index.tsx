@@ -80,28 +80,15 @@ export const TableDataBox = styled(Box)(() => ({
   },
 }));
 
-export const ModalHeaderBox = styled(Box)(() => ({
+export const DatagridDefaultBox = styled(Box)(() => ({
   width: '100%',
-  height: '20%',
+  height: '100%',
+  fontSize: '20px',
   display: 'flex',
-  fontSize: '60px',
   justifyContent: 'center',
-  padding: '10px',
-  borderBottom: '1px solid white !important',
   alignItems: 'center',
+  backgroundColor: '#222222',
 }));
-
-export const ModalDataBox = styled(Box)(() => ({
-  width: '100%',
-  height: '80%',
-  display: 'flex',
-  whiteSpace: 'pre-wrap',
-  fontSize: '40px',
-  alignItems: 'flex-start',
-  overflow: 'auto',
-  padding: '10px',
-}));
-
 export const JSONDefaultBox = styled(Box)(() => ({
   width: '100%',
   height: '100%',

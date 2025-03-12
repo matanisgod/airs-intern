@@ -1,6 +1,6 @@
 interface Detail {
   result: boolean;
-  resultLog: Array<string>;
+  resultLog: string;
   actualResult: object;
   expectedResult: detailExpectedResult;
 }

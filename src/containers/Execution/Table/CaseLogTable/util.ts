@@ -1,6 +1,6 @@
 import { GridColDef } from '@mui/x-data-grid';
 
-export const caseLogColumns: GridColDef[] = [
+export const caseLogColumns: Array<GridColDef> = [
   {
     field: 'name',
     headerName: 'Name',

@@ -1,15 +1,16 @@
+import type { ExecutionForm } from '@containers';
 import type { ExecutionLogs, ExecutionLog } from '@recoil/status';
 
 export type UseExecutionApi = {
   getExecutionLogs: () => Promise<ExecutionLogs | undefined>;
-  createExecution: (body: object) => Promise<ExecutionLog | undefined>;
+  createExecution: (body: ExecutionForm) => Promise<ExecutionLog | undefined>;
   cancelExecution: () => Promise<ExecutionLog | undefined>;
   cancelExecutionById: (params: string) => Promise<ExecutionLog | undefined>;
 } | null;
 
 export interface AxiosExecutionReturn {
   getExecutionLogs: () => Promise<ExecutionLogsResBody>;
-  createExecution: (body: object) => Promise<PostExecutionLogsResBody>;
+  createExecution: (body: ExecutionForm) => Promise<PostExecutionLogsResBody>;
   cancelExecution: () => Promise<PostExecutionLogsResBody>;
   cancelExecutionById: (params: string) => Promise<PostExecutionLogsResBody>;
 }

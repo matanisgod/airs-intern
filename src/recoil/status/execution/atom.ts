@@ -11,8 +11,3 @@ export const isExecutionDialogOpenAtom = atom<boolean>({
   key: 'isExecutionDialogOpenAtom',
   default: false,
 });
-
-export const isErrorModalOpenAtom = atom<boolean>({
-  key: 'isErrorModalOpenAtom',
-  default: false,
-});

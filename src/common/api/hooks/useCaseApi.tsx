@@ -4,19 +4,18 @@ import { useSetRecoilState } from 'recoil';
 
 import { UseCaseApi } from '../interface';
 
-import { errorMessageAtom } from '@/recoil/status';
 import { logAxiosError } from '@/utils/logAxiosError';
 import api from '@common/api';
+import { errorMessageAtom } from '@recoil/status';
 
 export const useCaseApi = (): UseCaseApi => {
   const setErrorMessage = useSetRecoilState(errorMessageAtom);
 
   const instance = useMemo(() => {
-    const Errorsetter = (param) => {
+    const ErrorSetter = (param) => {
       setErrorMessage({
-        errorStatus: param.response?.status,
-        errorStatusText: param.response?.statusText,
-        errorData: param.response?.data,
+        status: param.response?.status,
+        statusText: param.response?.statusText,
       });
     };
     if (api) {
@@ -28,7 +27,7 @@ export const useCaseApi = (): UseCaseApi => {
             return cases;
           } catch (e) {
             logAxiosError(e);
-            Errorsetter(e);
+            ErrorSetter(e);
           }
         },
       };

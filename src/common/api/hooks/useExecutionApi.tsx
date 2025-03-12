@@ -4,19 +4,19 @@ import { useSetRecoilState } from 'recoil';
 
 import { UseExecutionApi } from '../interface';
 
-import { errorMessageAtom } from '@/recoil/status';
 import { logAxiosError } from '@/utils/logAxiosError';
 import api from '@common/api';
+import type { ExecutionForm } from '@containers';
+import { errorMessageAtom } from '@recoil/status';
 
 export const useExecutionApi = (): UseExecutionApi => {
   const setErrorMessage = useSetRecoilState(errorMessageAtom);
 
   const instance = useMemo(() => {
-    const Errorsetter = (param) => {
+    const ErrorSetter = (param) => {
       setErrorMessage({
-        errorStatus: param.response?.status,
-        errorStatusText: param.response?.statusText,
-        errorData: param.response?.data,
+        status: param.response?.status,
+        statusText: param.response?.statusText,
       });
     };
     if (api) {
@@ -28,17 +28,17 @@ export const useExecutionApi = (): UseExecutionApi => {
             return executionLogs;
           } catch (e) {
             logAxiosError(e);
-            Errorsetter(e);
+            ErrorSetter(e);
           }
         },
-        createExecution: async (body: object) => {
+        createExecution: async (body: ExecutionForm) => {
           try {
             const response = await api().execution.createExecution(body);
             const executionId = response.data;
             return executionId;
           } catch (e) {
             logAxiosError(e);
-            Errorsetter(e);
+            ErrorSetter(e);
           }
         },
         cancelExecution: async () => {
@@ -48,7 +48,7 @@ export const useExecutionApi = (): UseExecutionApi => {
             return executionLog;
           } catch (e) {
             logAxiosError(e);
-            Errorsetter(e);
+            ErrorSetter(e);
           }
         },
         cancelExecutionById: async (params: string) => {
@@ -58,7 +58,7 @@ export const useExecutionApi = (): UseExecutionApi => {
             return executionLog;
           } catch (e) {
             logAxiosError(e);
-            Errorsetter(e);
+            ErrorSetter(e);
           }
         },
       };

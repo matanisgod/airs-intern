@@ -6,7 +6,7 @@ import { CaseLogTableBox } from './style';
 import { caseLogColumns } from './util';
 
 import { useCaseLogApi } from '@/common/api';
-import { TableHeaderBox, TableDataBox, DataTable } from '@components';
+import { TableHeaderBox, TableDataBox, DataTable, DatagridDefaultBox } from '@components';
 import {
   actualResultJsonAtom,
   caseLogsAtom,
@@ -34,10 +34,13 @@ export const CaseLogTable = () => {
       setDetails(response);
     }
   };
-  const thanos = () => {
+  const executionPageCleaner = () => {
     resetActualResultJson();
     resetDetailsExpectedResultJson();
   };
+
+  const Overlay = () => <DatagridDefaultBox>Select execution log</DatagridDefaultBox>;
+
   return (
     <CaseLogTableBox>
       <TableHeaderBox>Case log</TableHeaderBox>
@@ -55,10 +58,10 @@ export const CaseLogTable = () => {
               params.row.caseId,
               params.row.expectedResultId,
             );
-            thanos();
+            executionPageCleaner();
           }}
-          localeText={{
-            noRowsLabel: 'Select execution log',
+          slots={{
+            noRowsOverlay: Overlay,
           }}
         />
       </TableDataBox>

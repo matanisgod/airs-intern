@@ -5,12 +5,14 @@ import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { ExpectedResultTableBox } from './style';
 import { expectedResultColumns } from './util';
 
-import { TableHeaderBox, TableDataBox, DataTable } from '@components';
+import { TableHeaderBox, TableDataBox, DataTable, DatagridDefaultBox } from '@components';
 import { expectedResultsAtom, caseExpectedResultJsonAtom } from '@recoil/status';
 
 export const ExpectedResultTable = () => {
   const expectedResults = useRecoilValue(expectedResultsAtom);
   const setcaseExpectedResultJson = useSetRecoilState(caseExpectedResultJsonAtom);
+
+  const Overlay = () => <DatagridDefaultBox>Select case</DatagridDefaultBox>;
 
   return (
     <ExpectedResultTableBox>
@@ -28,8 +30,8 @@ export const ExpectedResultTable = () => {
               JSON.parse(params.row.data.replace(/\bNaN\b/g, 'null')),
             );
           }}
-          localeText={{
-            noRowsLabel: 'Select case',
+          slots={{
+            noRowsOverlay: Overlay,
           }}
         />
       </TableDataBox>

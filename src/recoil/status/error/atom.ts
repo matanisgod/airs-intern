@@ -4,5 +4,9 @@ import type { ErrorMessage } from './interface';
 
 export const errorMessageAtom = atom<ErrorMessage>({
   key: 'errorMessageAtom',
-  default: { errorStatus: '', errorStatusText: '', errorData: { detail: '' } },
+  default: { status: undefined, statusText: '' },
+});
+export const isErrorModalOpenAtom = atom<boolean>({
+  key: 'isErrorModalOpenAtom',
+  default: false,
 });

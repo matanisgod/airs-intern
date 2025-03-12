@@ -6,7 +6,7 @@ import { CaseTableBox } from './style';
 import { caseColumns } from './util';
 
 import { useExpectedResultApi } from '@common/api';
-import { TableHeaderBox, TableDataBox, DataTable } from '@components';
+import { TableHeaderBox, TableDataBox, DataTable, DatagridDefaultBox } from '@components';
 import {
   casesAtom,
   caseJsonAtom,
@@ -29,7 +29,7 @@ export const CaseTable = () => {
       setExpectedResults(response);
     }
   };
-
+  const Overlay = () => <DatagridDefaultBox>Select case set</DatagridDefaultBox>;
   return (
     <CaseTableBox>
       <TableHeaderBox>Case</TableHeaderBox>
@@ -46,8 +46,8 @@ export const CaseTable = () => {
             setCaseJson(JSON.parse(params.row.data.replace(/\bNaN\b/g, 'null')));
             resetCaseExpectedResultJson();
           }}
-          localeText={{
-            noRowsLabel: 'Select case set',
+          slots={{
+            noRowsOverlay: Overlay,
           }}
         />
       </TableDataBox>

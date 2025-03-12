@@ -13,7 +13,6 @@ import {
 } from '@components';
 import { actualResultJsonAtom } from '@recoil/status';
 
-//TODO: JSON data 비어있으면 보이는 텍스트 스타일 만들기
 export const ActualResultJsonLoader = () => {
   const actualResultJson = useRecoilValue(actualResultJsonAtom);
   return (

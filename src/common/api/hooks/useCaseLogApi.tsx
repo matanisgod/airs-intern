@@ -2,43 +2,46 @@ import { useMemo } from 'react';
 
 import { useSetRecoilState } from 'recoil';
 
-import { UseCaseLogApi } from '../interface';
+import {
+  UseCaseLogApi,
+  GetDetailsByIdReqBody,
+  GetDistinctCaseLogsByIdReqBody,
+} from '../interface';
 
-import { errorMessageAtom } from '@/recoil/status';
 import { logAxiosError } from '@/utils/logAxiosError';
 import api from '@common/api';
+import { errorMessageAtom } from '@recoil/status';
 
 export const useCaseLogApi = (): UseCaseLogApi => {
   const setErrorMessage = useSetRecoilState(errorMessageAtom);
 
   const instance = useMemo(() => {
-    const Errorsetter = (param) => {
+    const ErrorSetter = (param) => {
       setErrorMessage({
-        errorStatus: param.response?.status,
-        errorStatusText: param.response?.statusText,
-        errorData: param.response?.data,
+        status: param.response?.status,
+        statusText: param.response?.statusText,
       });
     };
     if (api) {
       return {
-        getDistinctCaseLogsById: async (body: object) => {
+        getDistinctCaseLogsById: async (body: GetDistinctCaseLogsByIdReqBody) => {
           try {
             const response = await api().caseLog.getDistinctCaseLogsById(body);
             const distinctCaseLogs = response.data;
             return distinctCaseLogs;
           } catch (e) {
             logAxiosError(e);
-            Errorsetter(e);
+            ErrorSetter(e);
           }
         },
-        getDetailsById: async (body: object) => {
+        getDetailsById: async (body: GetDetailsByIdReqBody) => {
           try {
             const response = await api().caseLog.getDetailsById(body);
             const details = response.data;
             return details;
           } catch (e) {
             logAxiosError(e);
-            Errorsetter(e);
+            ErrorSetter(e);
           }
         },
       };

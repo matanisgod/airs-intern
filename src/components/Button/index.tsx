@@ -4,11 +4,11 @@ export const CreateButton = styled(Button)(() => ({
   width: '200px',
   height: '50px',
   color: 'black',
-  backgroundColor: 'white',
+  backgroundColor: '#f2f2f2',
   textTransform: 'none',
   fontSize: '20px',
   '&:hover': {
-    background: 'gray',
+    background: '#888888',
   },
   marginLeft: 'auto',
   marginRight: '10px',
@@ -17,7 +17,7 @@ export const StopAllButton = styled(Button)(() => ({
   width: '100%',
   height: '100%',
   color: 'black',
-  backgroundColor: '#ffffff ',
+  backgroundColor: '#f2f2f2 ',
   textTransform: 'none',
   fontSize: '20px',
   '&:hover': {
@@ -28,7 +28,7 @@ export const StopButton = styled(Button)(() => ({
   width: '100%',
   height: '100%',
   color: 'black',
-  backgroundColor: '#ffffff ',
+  backgroundColor: '#f2f2f2 ',
   textTransform: 'none',
   fontSize: '14px',
   '&:hover': {
@@ -38,9 +38,9 @@ export const StopButton = styled(Button)(() => ({
 
 export const CancelSubmitButton = styled(Button)(() => ({
   color: 'black',
-  backgroundColor: 'white',
+  backgroundColor: '#f2f2f2',
   textTransform: 'none',
   '&:hover': {
-    background: 'gray',
+    background: '#888888',
   },
 }));
