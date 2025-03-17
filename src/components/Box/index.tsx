@@ -1,13 +1,16 @@
 import { styled, Box } from '@mui/material';
 
-export const TablesBox = styled(Box)(() => ({
+export const PageBox = styled(Box)(() => ({
   width: '100%',
-  height: '90%',
+  minWidth: '1920px',
+  height: 'calc(100% - 108px)',
+  minHeight: '972px',
   display: 'flex',
-  fontSize: '30px',
+  alignItems: 'flex-start',
   justifyContent: 'center',
-  marginTop: 'auto',
+  fontSize: '30px',
 }));
+
 export const SubTablesBox = styled(Box)(() => ({
   width: '30%',
   height: '95%',

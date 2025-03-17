@@ -54,27 +54,29 @@ export const Header = () => {
 
   return (
     <React.Fragment>
-      <HeaderBox>PQ Automation Test</HeaderBox>
-      {currentPage.pathname === '/execution' && (
-        <PageButton
-          onClick={() => {
-            executionPageCleaner();
-            nextPage('/caseset');
-          }}
-        >
-          Move to caseset
-        </PageButton>
-      )}
-      {currentPage.pathname === '/caseset' && (
-        <PageButton
-          onClick={() => {
-            caseSetPageCleaner();
-            nextPage('/execution');
-          }}
-        >
-          Move to execution
-        </PageButton>
-      )}
+      <HeaderBox>
+        PQ Automation Test
+        {currentPage.pathname === '/execution' && (
+          <PageButton
+            onClick={() => {
+              executionPageCleaner();
+              nextPage('/caseset');
+            }}
+          >
+            Move to caseset
+          </PageButton>
+        )}
+        {currentPage.pathname === '/caseset' && (
+          <PageButton
+            onClick={() => {
+              caseSetPageCleaner();
+              nextPage('/execution');
+            }}
+          >
+            Move to execution
+          </PageButton>
+        )}
+      </HeaderBox>
       <Outlet />
     </React.Fragment>
   );
