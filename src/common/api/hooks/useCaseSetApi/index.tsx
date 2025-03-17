@@ -16,7 +16,7 @@ export const useCaseSetApi = (): UseCaseSetApi => {
         importCaseSet: async (body: caseSetForm) => {
           try {
             const response = await api().caseSet.importCaseSet(body);
-            const CaseSet = response.data;
+            const CaseSet = response.data; //TODO: 소문자로 변경
             return CaseSet;
           } catch (e) {
             logAxiosError(e);

@@ -15,10 +15,10 @@ import { caseSetForm, caseSetFormField } from './util';
 import { useCaseSetApi } from '@/common/api';
 import {
   CreateDialogContentText,
-  CancelSubmitButton,
-  CreateButton,
   CreateDialog,
   CreateDialogTitle,
+  CancelButton,
+  SubmitButton,
 } from '@components';
 import {
   caseSetsAtom,
@@ -28,21 +28,22 @@ import {
 
 export const CreateCaseSetDialog = () => {
   const caseSetApi = useCaseSetApi();
-  const { control, handleSubmit } = useForm<caseSetForm>();
+
   const [isOpen, setIsOpen] = useRecoilState(isCaseSetDialogOpenAtom);
 
   const setErrorModalOpen = useSetRecoilState(isErrorModalOpenAtom);
   const setCaseSets = useSetRecoilState(caseSetsAtom);
 
-  const handleOpen = () => {
-    setIsOpen(true);
-  };
+  const { control, handleSubmit } = useForm<caseSetForm>();
+
   const handleClose = () => {
     setIsOpen(false);
   };
-  const fetchCaseSet = async (body: caseSetForm) => {
+
+  const onSubmit: SubmitHandler<caseSetForm> = async (data) => {
     if (!caseSetApi) return;
-    const response = await caseSetApi.importCaseSet(body);
+
+    const response = await caseSetApi.importCaseSet(data);
     if (response) {
       setCaseSets((caseSets) => [...caseSets, response]);
       handleClose();
@@ -50,14 +51,10 @@ export const CreateCaseSetDialog = () => {
       setErrorModalOpen(true);
     }
   };
-  const onSubmit: SubmitHandler<caseSetForm> = (data) => {
-    fetchCaseSet(data);
-  };
 
   //TODO: YAML data 2가지 어떻게 입력받을지
   return (
     <React.Fragment>
-      <CreateButton onClick={handleOpen}>Create case set</CreateButton>
       <CreateDialog
         open={isOpen}
         onClose={(_, reason) => {
@@ -91,14 +88,8 @@ export const CreateCaseSetDialog = () => {
               </Box>
             ))}
             <DialogActions>
-              <CancelSubmitButton
-                onClick={() => {
-                  handleClose();
-                }}
-              >
-                Cancel
-              </CancelSubmitButton>
-              <CancelSubmitButton type="submit">Submit</CancelSubmitButton>
+              <CancelButton onClick={() => handleClose}>Cancel</CancelButton>
+              <SubmitButton type="submit">Submit</SubmitButton>
             </DialogActions>
           </form>
         </DialogContent>

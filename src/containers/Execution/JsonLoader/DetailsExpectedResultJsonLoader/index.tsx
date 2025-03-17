@@ -15,6 +15,7 @@ import { detailsExpectedResultJsonAtom } from '@recoil/status';
 
 export const DetailsExpectedResultJsonLoader = () => {
   const detailsExpectedResultJson = useRecoilValue(detailsExpectedResultJsonAtom);
+
   return (
     <JSONDataBoxBot>
       <TableHeaderBox>Expected result data</TableHeaderBox>

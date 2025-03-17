@@ -18,6 +18,7 @@ export const SubTablesBox = styled(Box)(() => ({
   flexDirection: 'column',
   alignSelf: 'center',
 }));
+
 export const JSONDataBox = styled(Box)(() => ({
   width: '30%',
   height: '95%',
@@ -92,6 +93,7 @@ export const DatagridDefaultBox = styled(Box)(() => ({
   alignItems: 'center',
   backgroundColor: '#222222',
 }));
+
 export const JSONDefaultBox = styled(Box)(() => ({
   width: '100%',
   height: '100%',

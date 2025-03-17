@@ -3,6 +3,7 @@ import { useSetRecoilState } from 'recoil';
 
 import { errorMessageAtom } from '@recoil/status';
 
+//TODO: 파일 위치 변경
 export const useErrorSetter = () => {
   const setErrorMessage = useSetRecoilState(errorMessageAtom);
 

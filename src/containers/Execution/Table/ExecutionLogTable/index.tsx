@@ -6,7 +6,7 @@ import { ExecutionLogTableBox } from './style';
 import { executionLogColumns } from './util';
 
 import { useCaseLogApi, useExecutionApi } from '@common/api';
-import { TableHeaderBox, TableDataBox, DataTable, ErrorModal } from '@components';
+import { TableHeaderBox, TableDataBox, DataTable, CreateButton } from '@components';
 import { CreateExecutionDialog } from '@containers';
 import {
   executionLogsAtom,
@@ -14,14 +14,20 @@ import {
   detailsAtom,
   actualResultJsonAtom,
   detailsExpectedResultJsonAtom,
-  isErrorModalOpenAtom,
+  isExecutionDialogOpenAtom,
+  // isErrorModalOpenAtom,
 } from '@recoil/status';
 
 export const ExecutionLogTable = () => {
   const caseLogApi = useCaseLogApi();
   const executionApi = useExecutionApi();
+
   const [executionLogs, setExecutionLogs] = useRecoilState(executionLogsAtom);
-  const setErrorModalOpen = useSetRecoilState(isErrorModalOpenAtom);
+  const [isExecutionDialogOpen, setIsExecutionDialogOpen] = useRecoilState(
+    isExecutionDialogOpenAtom,
+  );
+
+  // const setErrorModalOpen = useSetRecoilState(isErrorModalOpenAtom);
   const setCaseLogs = useSetRecoilState(caseLogsAtom);
   const resetCaseLogs = useResetRecoilState(caseLogsAtom);
   const resetDetails = useResetRecoilState(detailsAtom);
@@ -37,15 +43,17 @@ export const ExecutionLogTable = () => {
       setCaseLogs(response);
     } else {
       resetCaseLogs();
-      setErrorModalOpen(true);
+      // setErrorModalOpen(true); //TODO: error modal 여는 위치 변경 || try-catch로 변경
     }
   };
 
   const executionPageCleaner = () => {
+    //TODO: 이름 변경, clearExecutionPage
     resetDetails();
     resetActualResultJson();
     resetDetailsExpectedResultJson();
   };
+
   useEffect(() => {
     if (!executionApi) return;
     const fetchExecutionLog = async () => {
@@ -59,12 +67,17 @@ export const ExecutionLogTable = () => {
 
   //TODO: Error 만들어지면 running으로 보이지만 refresh하면 error로 바뀌고 있음 소원님과 논의
 
+  const onCreateExecutionLogButtonClick = () => {
+    setIsExecutionDialogOpen(true);
+  };
+
   return (
     <ExecutionLogTableBox>
-      <ErrorModal />
       <TableHeaderBox>
         Execution log
-        <CreateExecutionDialog />
+        <CreateButton onClick={onCreateExecutionLogButtonClick}>
+          Create Execution
+        </CreateButton>
       </TableHeaderBox>
       <TableDataBox>
         <DataTable
@@ -80,6 +93,7 @@ export const ExecutionLogTable = () => {
           }}
         />
       </TableDataBox>
+      {isExecutionDialogOpen && <CreateExecutionDialog />}
     </ExecutionLogTableBox>
   );
 };

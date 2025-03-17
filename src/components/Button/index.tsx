@@ -36,7 +36,7 @@ export const StopButton = styled(Button)(() => ({
   },
 }));
 
-export const CancelSubmitButton = styled(Button)(() => ({
+export const CancelButton = styled(Button)(() => ({
   color: 'black',
   backgroundColor: '#f2f2f2',
   textTransform: 'none',
@@ -44,3 +44,5 @@ export const CancelSubmitButton = styled(Button)(() => ({
     background: '#888888',
   },
 }));
+
+export const SubmitButton = CancelButton;
