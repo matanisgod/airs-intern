@@ -12,13 +12,13 @@ export interface ExecutionForm {
   keycloakLoginPw: string;
 }
 
-interface formFieldInterface {
+interface executionFormFieldInterface {
   label: string;
   name: keyof ExecutionForm;
   type: 'text' | 'number';
 }
 
-export const formField: formFieldInterface[] = [
+export const executionFormField: executionFormFieldInterface[] = [
   { label: 'Version', name: 'version', type: 'text' },
   { label: 'Description', name: 'description', type: 'text' },
   { label: 'Test performer', name: 'testPerformer', type: 'text' },

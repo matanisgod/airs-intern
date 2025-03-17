@@ -1,10 +1,10 @@
 import {
-  AxiosCaseReturn,
   AxiosCaseSetReturn,
-  AxiosExecutionReturn,
   AxiosExpectedResultReturn,
+  AxiosExecutionReturn,
+  AxiosCaseReturn,
   AxiosCaseLogReturn,
-} from './interface';
+} from './routes';
 
 import {
   CaseApi,
@@ -15,7 +15,6 @@ import {
 } from '@common/api';
 
 export * from './hooks';
-export * from './interface';
 export * from './routes';
 
 type ApiObject = {

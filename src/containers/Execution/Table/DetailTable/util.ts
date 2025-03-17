@@ -18,10 +18,3 @@ export const detailColumns: Array<GridColDef> = [
     align: 'center',
   },
 ];
-
-// export interface JoinedDetail {
-//   result: boolean;
-//   resultLog: string;
-//   actualResult: object;
-//   expectedResult: { data: object };
-// }

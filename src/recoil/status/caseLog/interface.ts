@@ -1,11 +1,11 @@
-interface caseLog {
+interface CaseLog {
   name: string;
   caseId: string;
   createdAt: string;
   result: boolean;
-  resultLog: Array<string>;
+  resultLog: string;
   executionLogId: string;
   expectedResultId: string;
 }
 
-export type CaseLogs = Array<caseLog>;
+export type CaseLogs = Array<CaseLog>;

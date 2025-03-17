@@ -15,7 +15,7 @@ import {
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import { useSetRecoilState, useRecoilValue, useRecoilState } from 'recoil';
 
-import { ExecutionForm, formField } from './util';
+import { ExecutionForm, executionFormField } from './util';
 
 import { useExecutionApi, useCaseSetApi } from '@common/api';
 import {
@@ -38,6 +38,7 @@ export const CreateExecutionDialog = () => {
   const caseSetApi = useCaseSetApi();
 
   const { control, handleSubmit } = useForm<ExecutionForm>({
+    //나중에 지우기
     defaultValues: {
       testSets: [],
       version: '1',
@@ -149,7 +150,7 @@ export const CreateExecutionDialog = () => {
                 </FormControl>
               )}
             />
-            {formField.map(({ label, name, type }) => (
+            {executionFormField.map(({ label, name, type }) => (
               <Box key={name}>
                 <CreateDialogContentText>{label}: </CreateDialogContentText>
                 <Controller

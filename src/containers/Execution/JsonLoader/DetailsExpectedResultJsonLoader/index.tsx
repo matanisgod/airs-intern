@@ -1,7 +1,6 @@
 import React from 'react';
 
 import _ from 'lodash';
-import ReactJson from 'react-json-view';
 import { useRecoilValue } from 'recoil';
 
 import {
@@ -11,6 +10,7 @@ import {
   TableHeaderBox,
   JSONDefaultBox,
 } from '@components';
+import { CustomReactJson } from '@containers';
 import { detailsExpectedResultJsonAtom } from '@recoil/status';
 
 export const DetailsExpectedResultJsonLoader = () => {
@@ -19,12 +19,10 @@ export const DetailsExpectedResultJsonLoader = () => {
     <JSONDataBoxBot>
       <TableHeaderBox>Expected result data</TableHeaderBox>
       <TableDataBox>
-        {_.isEmpty(detailsExpectedResultJson) && (
+        {_.isEmpty(detailsExpectedResultJson) ? (
           <JSONDefaultBox>Select detail</JSONDefaultBox>
-        )}
-
-        {!_.isEmpty(detailsExpectedResultJson) && (
-          <ReactJson
+        ) : (
+          <CustomReactJson
             src={detailsExpectedResultJson}
             theme={customTheme}
             name={false}

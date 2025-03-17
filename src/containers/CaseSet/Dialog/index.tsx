@@ -10,7 +10,7 @@ import {
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import { useSetRecoilState, useRecoilState } from 'recoil';
 
-import { caseSetForm, formField } from './util';
+import { caseSetForm, caseSetFormField } from './util';
 
 import { useCaseSetApi } from '@/common/api';
 import {
@@ -69,7 +69,7 @@ export const CreateCaseSetDialog = () => {
         <CreateDialogTitle>Create case set</CreateDialogTitle>
         <DialogContent>
           <form onSubmit={handleSubmit(onSubmit)}>
-            {formField.map(({ label, name, type }) => (
+            {caseSetFormField.map(({ label, name, type }) => (
               <Box key={name}>
                 <CreateDialogContentText>{label}: </CreateDialogContentText>
                 <Controller
