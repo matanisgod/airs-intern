@@ -18,13 +18,16 @@ export const CaseLogTable = () => {
   const caseLogApi = useCaseLogApi();
 
   const caseLogs = useRecoilValue(caseLogsAtom);
+
   const setDetails = useSetRecoilState(detailsAtom);
+
   const resetActualResultJson = useResetRecoilState(actualResultJsonAtom);
   const resetDetailsExpectedResultJson = useResetRecoilState(
     detailsExpectedResultJsonAtom,
   );
   const getDetails = async (body: string, _body: string, body_: string) => {
     if (!caseLogApi) return;
+    //TODO: 변수명 수정
     const response = await caseLogApi.getDetailsById({
       executionLogId: body,
       caseId: _body,
@@ -34,12 +37,13 @@ export const CaseLogTable = () => {
       setDetails(response);
     }
   };
+  //TODO: 함수명 수정
   const executionPageCleaner = () => {
     resetActualResultJson();
     resetDetailsExpectedResultJson();
   };
 
-  const Overlay = () => <DatagridDefaultBox>Select execution log</DatagridDefaultBox>;
+  const Overlay = () => <DatagridDefaultBox>Select execution log</DatagridDefaultBox>; //TODO: 이름 변경
 
   return (
     <CaseLogTableBox>

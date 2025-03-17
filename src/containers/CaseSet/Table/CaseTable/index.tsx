@@ -18,8 +18,10 @@ export const CaseTable = () => {
   const expectedResultApi = useExpectedResultApi();
 
   const cases = useRecoilValue(casesAtom);
+
   const setExpectedResults = useSetRecoilState(expectedResultsAtom);
   const setCaseJson = useSetRecoilState(caseJsonAtom);
+
   const resetCaseExpectedResultJson = useResetRecoilState(caseExpectedResultJsonAtom);
 
   const getExpectedResult = async (params: string) => {
@@ -29,7 +31,9 @@ export const CaseTable = () => {
       setExpectedResults(response);
     }
   };
+
   const Overlay = () => <DatagridDefaultBox>Select case set</DatagridDefaultBox>;
+
   return (
     <CaseTableBox>
       <TableHeaderBox>Case</TableHeaderBox>

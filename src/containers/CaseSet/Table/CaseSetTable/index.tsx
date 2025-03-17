@@ -1,12 +1,17 @@
 import React, { useEffect } from 'react';
 
-import { useRecoilValue, useSetRecoilState, useResetRecoilState } from 'recoil';
+import {
+  useRecoilValue,
+  useSetRecoilState,
+  useResetRecoilState,
+  useRecoilState,
+} from 'recoil';
 
 import { CaseSetTableBox } from './style';
 import { caseSetColumns } from './util';
 
 import { useCaseApi, useCaseSetApi } from '@common/api';
-import { TableHeaderBox, TableDataBox, DataTable, ErrorModal } from '@components';
+import { TableHeaderBox, TableDataBox, DataTable, CreateButton } from '@components';
 import { CreateCaseSetDialog } from '@containers';
 import {
   caseSetsAtom,
@@ -14,16 +19,22 @@ import {
   caseJsonAtom,
   caseExpectedResultJsonAtom,
   expectedResultsAtom,
+  isCaseSetDialogOpenAtom,
 } from '@recoil/status';
 
 export const CaseSetTable = () => {
   const caseApi = useCaseApi();
   const caseSetApi = useCaseSetApi();
 
-  const caseSets = useRecoilValue(caseSetsAtom);
-  const setCaseSets = useSetRecoilState(caseSetsAtom);
+  const [isCaseSetDialogOpen, setIsCaseSetDialogOpen] = useRecoilState(
+    isCaseSetDialogOpenAtom,
+  );
 
+  const caseSets = useRecoilValue(caseSetsAtom);
+
+  const setCaseSets = useSetRecoilState(caseSetsAtom);
   const setCases = useSetRecoilState(casesAtom);
+
   const resetExpectedResults = useResetRecoilState(expectedResultsAtom);
   const resetCaseJson = useResetRecoilState(caseJsonAtom);
   const resetCaseExpectedResultJson = useResetRecoilState(caseExpectedResultJsonAtom);
@@ -35,7 +46,7 @@ export const CaseSetTable = () => {
       setCases(response);
     }
   };
-  const caseSetPageCleaner = () => {
+  const caseSetPageCleaner = () => { //TODO: 함수명 변경
     resetExpectedResults();
     resetCaseJson();
     resetCaseExpectedResultJson();
@@ -51,12 +62,16 @@ export const CaseSetTable = () => {
     };
     fetchCaseSets();
   }, [caseSetApi, setCaseSets]);
+
+  const onCreateCaseSetButtonClick = () => {
+    setIsCaseSetDialogOpen(true);
+  };
+
   return (
     <CaseSetTableBox>
-      <ErrorModal />
       <TableHeaderBox>
         Case set
-        <CreateCaseSetDialog />
+        <CreateButton onClick={onCreateCaseSetButtonClick}>Create case set</CreateButton>
       </TableHeaderBox>
       <TableDataBox>
         <DataTable
@@ -72,6 +87,7 @@ export const CaseSetTable = () => {
           }}
         />
       </TableDataBox>
+      {isCaseSetDialogOpen && <CreateCaseSetDialog />}
     </CaseSetTableBox>
   );
 };

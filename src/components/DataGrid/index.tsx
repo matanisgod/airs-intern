@@ -2,7 +2,7 @@ import { styled } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 
 export const DataTable = styled(DataGrid)(() => ({
-  border: '1px solid black ',
+  border: '1px solid black',
   width: '100%',
   color: 'white',
   backgroundColor: '#222222',

@@ -15,6 +15,7 @@ import { caseExpectedResultJsonAtom } from '@recoil/status';
 
 export const CaseExpectedResultJsonLoader = () => {
   const caseExpectedResultJson = useRecoilValue(caseExpectedResultJsonAtom);
+
   return (
     <JSONDataBoxBot>
       <TableHeaderBox>Expected result data</TableHeaderBox>

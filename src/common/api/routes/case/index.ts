@@ -13,4 +13,4 @@ export const CaseApi = (): AxiosCaseReturn => {
   };
 };
 
-export * from './interface';
+export * from './interface'; //TODO: 이거 지우기

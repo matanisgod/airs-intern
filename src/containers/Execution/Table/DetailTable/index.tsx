@@ -18,7 +18,7 @@ export const DetailsTable = () => {
   const setActualResultJson = useSetRecoilState(actualResultJsonAtom);
   const setDetailsExpectedResultJson = useSetRecoilState(detailsExpectedResultJsonAtom);
 
-  const Overlay = () => <DatagridDefaultBox>Select case log</DatagridDefaultBox>;
+  const Overlay = () => <DatagridDefaultBox>Select case log</DatagridDefaultBox>; //TODO: 이름 변경
 
   return (
     <DetailsTableBox>

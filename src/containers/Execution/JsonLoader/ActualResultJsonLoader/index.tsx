@@ -15,6 +15,7 @@ import { actualResultJsonAtom } from '@recoil/status';
 
 export const ActualResultJsonLoader = () => {
   const actualResultJson = useRecoilValue(actualResultJsonAtom);
+
   return (
     <JSONDataBoxTop>
       <TableHeaderBox>Actual result data</TableHeaderBox>

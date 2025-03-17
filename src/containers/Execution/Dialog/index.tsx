@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import {
   DialogContent,
@@ -20,11 +20,11 @@ import { ExecutionForm, executionFormField } from './util';
 import { useExecutionApi, useCaseSetApi } from '@common/api';
 import {
   CreateDialogContentText,
-  CancelSubmitButton,
   MenuProps,
-  CreateButton,
   CreateDialog,
   CreateDialogTitle,
+  CancelButton,
+  SubmitButton,
 } from '@components';
 import {
   caseSetsAtom,
@@ -63,23 +63,24 @@ export const CreateExecutionDialog = () => {
 
   const testSetsList = caseSet.map((item) => item.title);
 
-  const handleOpen = () => {
+  useEffect(() => {
     if (!caseSetApi) return;
-    const fetchCaseSets = async () => {
-      const response = await caseSetApi.getCaseSets();
+
+    caseSetApi.getCaseSets().then((response) => {
       if (response) {
         setCaseSets(response);
       }
-    };
-    fetchCaseSets();
-    setIsOpen(true);
-  };
+    });
+  }, [caseSetApi]);
+
   const handleClose = () => {
     setIsOpen(false);
   };
-  const fetchExecution = async (body: ExecutionForm) => {
+
+  const onSubmit: SubmitHandler<ExecutionForm> = async (data) => {
     if (!executionApi) return;
-    const response = await executionApi.createExecution(body);
+    const response = await executionApi.createExecution(data);
+
     if (response) {
       setExecutionLogs((executionLogs) => [...executionLogs, response]);
       handleClose();
@@ -87,16 +88,12 @@ export const CreateExecutionDialog = () => {
       setErrorModalOpen(true);
     }
   };
-  const onSubmit: SubmitHandler<ExecutionForm> = (data) => {
-    fetchExecution(data);
-  };
 
-  const TestSetsMenu = styled(MenuItem)(() => ({}));
+  const TestSetsMenu = styled(MenuItem)(() => ({})); //TODO: style 옮기기
 
   const TestSetsText = styled(ListItemText)(() => ({}));
   return (
     <React.Fragment>
-      <CreateButton onClick={handleOpen}>Create Execution</CreateButton>
       <CreateDialog
         open={isOpen}
         onClose={(_, reason) => {
@@ -135,7 +132,7 @@ export const CreateExecutionDialog = () => {
                     }}
                     MenuProps={MenuProps}
                   >
-                    {testSetsList?.map((name) => (
+                    {testSetsList.map((name) => (
                       <TestSetsMenu key={name} value={name}>
                         <Checkbox checked={field.value?.includes(name)} />
                         <TestSetsText primary={name} />
@@ -172,14 +169,8 @@ export const CreateExecutionDialog = () => {
               </Box>
             ))}
             <DialogActions>
-              <CancelSubmitButton
-                onClick={() => {
-                  handleClose();
-                }}
-              >
-                Cancel
-              </CancelSubmitButton>
-              <CancelSubmitButton type="submit">Submit</CancelSubmitButton>
+              <CancelButton onClick={handleClose}>Cancel</CancelButton>
+              <SubmitButton type="submit">Submit</SubmitButton>
             </DialogActions>
           </form>
         </DialogContent>

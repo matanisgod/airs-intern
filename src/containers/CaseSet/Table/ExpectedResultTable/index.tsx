@@ -10,6 +10,7 @@ import { expectedResultsAtom, caseExpectedResultJsonAtom } from '@recoil/status'
 
 export const ExpectedResultTable = () => {
   const expectedResults = useRecoilValue(expectedResultsAtom);
+
   const setcaseExpectedResultJson = useSetRecoilState(caseExpectedResultJsonAtom);
 
   const Overlay = () => <DatagridDefaultBox>Select case</DatagridDefaultBox>;

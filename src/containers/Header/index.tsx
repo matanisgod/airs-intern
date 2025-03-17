@@ -2,10 +2,11 @@ import React from 'react';
 
 import { Outlet } from 'react-router-dom';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useResetRecoilState } from 'recoil';
+import { useRecoilValue, useResetRecoilState } from 'recoil';
 
 import { HeaderBox, PageButton } from './style';
 
+import { ErrorModal } from '@components';
 import {
   actualResultJsonAtom,
   caseExpectedResultJsonAtom,
@@ -17,11 +18,14 @@ import {
   detailsExpectedResultJsonAtom,
   executionLogsAtom,
   expectedResultsAtom,
-} from '@/recoil/status';
+  isErrorModalOpenAtom,
+} from '@recoil/status';
 
 export const Header = () => {
   const nextPage = useNavigate();
   const currentPage = useLocation();
+
+  const isErrorModalOpen = useRecoilValue(isErrorModalOpenAtom);
 
   const resetCases = useResetRecoilState(casesAtom);
   const resetCaseSets = useResetRecoilState(caseSetsAtom);
@@ -54,28 +58,31 @@ export const Header = () => {
 
   return (
     <React.Fragment>
-      <HeaderBox>PQ Automation Test</HeaderBox>
-      {currentPage.pathname === '/execution' && (
-        <PageButton
-          onClick={() => {
-            executionPageCleaner();
-            nextPage('/caseset');
-          }}
-        >
-          Move to caseset
-        </PageButton>
-      )}
-      {currentPage.pathname === '/caseset' && (
-        <PageButton
-          onClick={() => {
-            caseSetPageCleaner();
-            nextPage('/execution');
-          }}
-        >
-          Move to execution
-        </PageButton>
-      )}
+      <HeaderBox>
+        PQ Automation Test
+        {currentPage.pathname === '/execution' && (
+          <PageButton
+            onClick={() => {
+              executionPageCleaner();
+              nextPage('/caseset');
+            }}
+          >
+            Move to caseset
+          </PageButton>
+        )}
+        {currentPage.pathname === '/caseset' && (
+          <PageButton
+            onClick={() => {
+              caseSetPageCleaner();
+              nextPage('/execution');
+            }}
+          >
+            Move to execution
+          </PageButton>
+        )}
+      </HeaderBox>
       <Outlet />
+      {isErrorModalOpen && <ErrorModal />}
     </React.Fragment>
   );
 };
