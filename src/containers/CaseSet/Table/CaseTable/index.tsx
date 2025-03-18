@@ -32,7 +32,7 @@ export const CaseTable = () => {
     }
   };
 
-  const Overlay = () => <DatagridDefaultBox>Select case set</DatagridDefaultBox>;
+  const DatagridOverlay = () => <DatagridDefaultBox>Select case set</DatagridDefaultBox>;
 
   return (
     <CaseTableBox>
@@ -51,7 +51,7 @@ export const CaseTable = () => {
             resetCaseExpectedResultJson();
           }}
           slots={{
-            noRowsOverlay: Overlay,
+            noRowsOverlay: DatagridOverlay,
           }}
         />
       </TableDataBox>

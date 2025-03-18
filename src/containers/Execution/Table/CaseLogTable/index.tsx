@@ -31,7 +31,7 @@ export const CaseLogTable = () => {
     expectedResultId: string,
   ) => {
     if (!caseLogApi) return;
-    //TODO: 변수명 수정
+
     const response = await caseLogApi.getDetailsById({
       executionLogId: executionLogId,
       caseId: caseId,
@@ -41,13 +41,14 @@ export const CaseLogTable = () => {
       setDetails(response);
     }
   };
-  //TODO: 함수명 수정
-  const executionPageCleaner = () => {
+  const cleanExecutionPage = () => {
     resetActualResultJson();
     resetDetailsExpectedResultJson();
   };
 
-  const Overlay = () => <DatagridDefaultBox>Select execution log</DatagridDefaultBox>; //TODO: 이름 변경
+  const DatagridOverlay = () => (
+    <DatagridDefaultBox>Select execution log</DatagridDefaultBox>
+  );
 
   return (
     <CaseLogTableBox>
@@ -66,10 +67,10 @@ export const CaseLogTable = () => {
               params.row.caseId,
               params.row.expectedResultId,
             );
-            executionPageCleaner();
+            cleanExecutionPage();
           }}
           slots={{
-            noRowsOverlay: Overlay,
+            noRowsOverlay: DatagridOverlay,
           }}
         />
       </TableDataBox>

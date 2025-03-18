@@ -15,7 +15,6 @@ import {
   actualResultJsonAtom,
   detailsExpectedResultJsonAtom,
   isExecutionDialogOpenAtom,
-  // isErrorModalOpenAtom,
 } from '@recoil/status';
 
 export const ExecutionLogTable = () => {
@@ -27,7 +26,6 @@ export const ExecutionLogTable = () => {
     isExecutionDialogOpenAtom,
   );
 
-  // const setErrorModalOpen = useSetRecoilState(isErrorModalOpenAtom);
   const setCaseLogs = useSetRecoilState(caseLogsAtom);
   const resetCaseLogs = useResetRecoilState(caseLogsAtom);
   const resetDetails = useResetRecoilState(detailsAtom);
@@ -43,12 +41,10 @@ export const ExecutionLogTable = () => {
       setCaseLogs(response);
     } else {
       resetCaseLogs();
-      // setErrorModalOpen(true); //TODO: error modal 여는 위치 변경 || try-catch로 변경
     }
   };
 
-  const executionPageCleaner = () => {
-    //TODO: 이름 변경, clearExecutionPage
+  const clearExecutionPage = () => {
     resetDetails();
     resetActualResultJson();
     resetDetailsExpectedResultJson();
@@ -89,7 +85,7 @@ export const ExecutionLogTable = () => {
           rowHeight={48}
           onRowClick={(params) => {
             getDistinctCaseLogs(params.row.id);
-            executionPageCleaner();
+            clearExecutionPage();
           }}
         />
       </TableDataBox>

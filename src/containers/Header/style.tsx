@@ -1,6 +1,5 @@
 import { Box, styled, Button } from '@mui/material';
 
-//TODO: 스타일 padding, height 변경
 export const HeaderBox = styled(Box)(() => ({
   width: '100%',
   minWidth: '1920px',

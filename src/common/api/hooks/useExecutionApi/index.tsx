@@ -1,10 +1,9 @@
 import { useMemo } from 'react';
 
-import type { UseExecutionApi } from './interface';
+import type { UseExecutionApi, CreateExecutionReqBody } from './interface';
 
 import { useErrorSetter, logAxiosError } from '@/utils';
 import api from '@common/api';
-import type { ExecutionForm } from '@containers';
 
 export const useExecutionApi = (): UseExecutionApi => {
   const errorSetter = useErrorSetter();
@@ -22,8 +21,7 @@ export const useExecutionApi = (): UseExecutionApi => {
             errorSetter(e);
           }
         },
-        createExecution: async (body: ExecutionForm) => {
-          //TODO: 변수명 변경
+        createExecution: async (body: CreateExecutionReqBody) => {
           try {
             const response = await api().execution.createExecution(body);
             const executionId = response.data;

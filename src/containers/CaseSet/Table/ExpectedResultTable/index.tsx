@@ -13,7 +13,7 @@ export const ExpectedResultTable = () => {
 
   const setcaseExpectedResultJson = useSetRecoilState(caseExpectedResultJsonAtom);
 
-  const Overlay = () => <DatagridDefaultBox>Select case</DatagridDefaultBox>;
+  const DatagridOverlay = () => <DatagridDefaultBox>Select case</DatagridDefaultBox>;
 
   return (
     <ExpectedResultTableBox>
@@ -32,7 +32,7 @@ export const ExpectedResultTable = () => {
             );
           }}
           slots={{
-            noRowsOverlay: Overlay,
+            noRowsOverlay: DatagridOverlay,
           }}
         />
       </TableDataBox>

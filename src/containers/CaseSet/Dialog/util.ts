@@ -1,5 +1,4 @@
-export interface caseSetForm {
-  //TODO: 대문자로 변경
+export interface CaseSetForm {
   caseYmlFile: string;
   erYmlFile: string;
   type: string;
@@ -8,7 +7,7 @@ export interface caseSetForm {
 
 interface CaseSetFormFieldProps {
   label: string;
-  name: keyof caseSetForm;
+  name: keyof CaseSetForm;
   type: 'text' | 'number';
 }
 

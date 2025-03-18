@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import { useSetRecoilState } from 'recoil';
 
 import { useExecutionApi } from '@/common/api';
-import { isErrorModalOpenAtom, executionLogsAtom } from '@/recoil/status';
+import { executionLogsAtom } from '@/recoil/status';
 import { StopAllButton, StopButton } from '@components';
 
 export const executionLogColumns: Array<GridColDef> = [
@@ -52,7 +52,6 @@ export const executionLogColumns: Array<GridColDef> = [
     align: 'center',
     renderHeader: function CancelExecution() {
       const executionApi = useExecutionApi();
-      const setErrorModalOpen = useSetRecoilState(isErrorModalOpenAtom);
       const setExecutionLogsAtom = useSetRecoilState(executionLogsAtom);
 
       const fetchExecution = async () => {
@@ -65,9 +64,6 @@ export const executionLogColumns: Array<GridColDef> = [
               status: 'cancelled',
             })),
           );
-          console.log('ok');
-        } else {
-          setErrorModalOpen(true);
         }
       };
 
@@ -75,7 +71,6 @@ export const executionLogColumns: Array<GridColDef> = [
     },
     renderCell: function CancelExecutionById(params) {
       const executionApi = useExecutionApi();
-      const setErrorModalOpen = useSetRecoilState(isErrorModalOpenAtom);
       const setExecutionLogsAtom = useSetRecoilState(executionLogsAtom);
 
       const fetchExecutionById = async (params) => {
@@ -93,8 +88,6 @@ export const executionLogColumns: Array<GridColDef> = [
             ),
           );
           console.log('ok');
-        } else {
-          setErrorModalOpen(true);
         }
       };
 

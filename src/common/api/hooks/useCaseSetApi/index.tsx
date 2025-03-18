@@ -1,10 +1,9 @@
 import { useMemo } from 'react';
 
-import type { UseCaseSetApi } from './interface';
+import type { UseCaseSetApi, ImportCaseSetReqBody } from './interface';
 
 import { useErrorSetter, logAxiosError } from '@/utils';
 import api from '@common/api';
-import type { caseSetForm } from '@containers';
 
 export const useCaseSetApi = (): UseCaseSetApi => {
   const errorSetter = useErrorSetter();
@@ -12,8 +11,7 @@ export const useCaseSetApi = (): UseCaseSetApi => {
   const instance = useMemo(() => {
     if (api) {
       return {
-        //TODO: caseSetForm을 req어쩌구로 수정
-        importCaseSet: async (body: caseSetForm) => {
+        importCaseSet: async (body: ImportCaseSetReqBody) => {
           try {
             const response = await api().caseSet.importCaseSet(body);
             const caseSet = response.data;

@@ -46,7 +46,7 @@ export const CaseSetTable = () => {
       setCases(response);
     }
   };
-  const caseSetPageCleaner = () => { //TODO: 함수명 변경
+  const cleanCaseSetPage = () => {
     resetExpectedResults();
     resetCaseJson();
     resetCaseExpectedResultJson();
@@ -83,7 +83,7 @@ export const CaseSetTable = () => {
           rowHeight={48}
           onRowClick={(params) => {
             getCasesByCaseSet(params.row.id);
-            caseSetPageCleaner();
+            cleanCaseSetPage();
           }}
         />
       </TableDataBox>

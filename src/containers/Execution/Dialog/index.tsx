@@ -10,7 +10,6 @@ import {
   Select,
   ListItemText,
   MenuItem,
-  styled,
 } from '@mui/material';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import { useSetRecoilState, useRecoilValue, useRecoilState } from 'recoil';
@@ -29,7 +28,6 @@ import {
 import {
   caseSetsAtom,
   isExecutionDialogOpenAtom,
-  isErrorModalOpenAtom,
   executionLogsAtom,
 } from '@recoil/status';
 
@@ -58,7 +56,6 @@ export const CreateExecutionDialog = () => {
   const [isOpen, setIsOpen] = useRecoilState(isExecutionDialogOpenAtom);
 
   const setExecutionLogs = useSetRecoilState(executionLogsAtom);
-  const setErrorModalOpen = useSetRecoilState(isErrorModalOpenAtom);
   const setCaseSets = useSetRecoilState(caseSetsAtom);
 
   const testSetsList = caseSet.map((item) => item.title);
@@ -84,14 +81,9 @@ export const CreateExecutionDialog = () => {
     if (response) {
       setExecutionLogs((executionLogs) => [...executionLogs, response]);
       handleClose();
-    } else {
-      setErrorModalOpen(true);
     }
   };
 
-  const TestSetsMenu = styled(MenuItem)(() => ({})); //TODO: style 옮기기
-
-  const TestSetsText = styled(ListItemText)(() => ({}));
   return (
     <React.Fragment>
       <CreateDialog
@@ -133,10 +125,10 @@ export const CreateExecutionDialog = () => {
                     MenuProps={MenuProps}
                   >
                     {testSetsList.map((name) => (
-                      <TestSetsMenu key={name} value={name}>
+                      <MenuItem key={name} value={name}>
                         <Checkbox checked={field.value?.includes(name)} />
-                        <TestSetsText primary={name} />
-                      </TestSetsMenu>
+                        <ListItemText primary={name} />
+                      </MenuItem>
                     ))}
                   </Select>
                   {fieldState.error && (

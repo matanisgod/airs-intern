@@ -10,7 +10,7 @@ import {
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import { useSetRecoilState, useRecoilState } from 'recoil';
 
-import { caseSetForm, caseSetFormField } from './util';
+import { CaseSetForm, caseSetFormField } from './util';
 
 import { useCaseSetApi } from '@/common/api';
 import {
@@ -20,35 +20,28 @@ import {
   CancelButton,
   SubmitButton,
 } from '@components';
-import {
-  caseSetsAtom,
-  isCaseSetDialogOpenAtom,
-  isErrorModalOpenAtom,
-} from '@recoil/status';
+import { caseSetsAtom, isCaseSetDialogOpenAtom } from '@recoil/status';
 
 export const CreateCaseSetDialog = () => {
   const caseSetApi = useCaseSetApi();
 
   const [isOpen, setIsOpen] = useRecoilState(isCaseSetDialogOpenAtom);
 
-  const setErrorModalOpen = useSetRecoilState(isErrorModalOpenAtom);
   const setCaseSets = useSetRecoilState(caseSetsAtom);
 
-  const { control, handleSubmit } = useForm<caseSetForm>();
+  const { control, handleSubmit } = useForm<CaseSetForm>();
 
   const handleClose = () => {
     setIsOpen(false);
   };
 
-  const onSubmit: SubmitHandler<caseSetForm> = async (data) => {
+  const onSubmit: SubmitHandler<CaseSetForm> = async (data) => {
     if (!caseSetApi) return;
 
     const response = await caseSetApi.importCaseSet(data);
     if (response) {
       setCaseSets((caseSets) => [...caseSets, response]);
       handleClose();
-    } else {
-      setErrorModalOpen(true);
     }
   };
 

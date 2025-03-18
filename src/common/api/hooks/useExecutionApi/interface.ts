@@ -7,3 +7,5 @@ export type UseExecutionApi = {
   cancelExecution: () => Promise<ExecutionLog | undefined>;
   cancelExecutionById: (params: string) => Promise<ExecutionLog | undefined>;
 } | null;
+
+export type CreateExecutionReqBody = ExecutionForm;

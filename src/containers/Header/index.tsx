@@ -40,20 +40,20 @@ export const Header = () => {
     detailsExpectedResultJsonAtom,
   );
 
-  const caseSetPageCleaner = () => {
-    resetCases();
-    resetCaseSets();
-    resetExpectedResults();
-    resetCaseJson();
-    resetCaseExpectedResultJson();
-  };
-
-  const executionPageCleaner = () => {
+  const cleanExecutionPage = () => {
     resetExecutionLogs();
     resetCaseLogs();
     resetDetails();
     resetActualResultJson();
     resetDetailsExpectedResultJson();
+  };
+
+  const cleanCaseSetPage = () => {
+    resetCases();
+    resetCaseSets();
+    resetExpectedResults();
+    resetCaseJson();
+    resetCaseExpectedResultJson();
   };
 
   return (
@@ -63,7 +63,7 @@ export const Header = () => {
         {currentPage.pathname === '/execution' && (
           <PageButton
             onClick={() => {
-              executionPageCleaner();
+              cleanExecutionPage();
               nextPage('/caseset');
             }}
           >
@@ -73,7 +73,7 @@ export const Header = () => {
         {currentPage.pathname === '/caseset' && (
           <PageButton
             onClick={() => {
-              caseSetPageCleaner();
+              cleanCaseSetPage();
               nextPage('/execution');
             }}
           >

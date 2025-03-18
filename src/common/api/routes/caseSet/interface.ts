@@ -1,8 +1,8 @@
-import { caseSetForm } from '@containers';
+import { CaseSetForm } from '@containers';
 import type { CaseSets, CaseSet } from '@recoil/status';
 
 export interface AxiosCaseSetReturn {
-  importCaseSet: (body: caseSetForm) => Promise<ImportCaseSetResBody>; //TODO: 변수명 변경
+  importCaseSet: (body: CaseSetForm) => Promise<ImportCaseSetResBody>;
   getCaseSets: () => Promise<GetCaseSetsResBody>;
 }
 interface ImportCaseSetResBody {
