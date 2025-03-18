@@ -12,14 +12,14 @@ export const DataTable = styled(DataGrid)(() => ({
 
   '& .MuiDataGrid-cell': {
     padding: '0px',
-    border: '1px solid black ',
+    border: '1px solid black',
   },
 
   '& .MuiDataGrid-columnHeader': {
     backgroundColor: '#4B5563',
     fontSize: '20px',
     padding: '0px',
-    border: '1px solid black ',
+    border: '1px solid black',
   },
   '& .MuiDataGrid-columnSeparator': {
     display: 'none !important',

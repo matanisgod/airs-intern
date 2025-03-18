@@ -8,7 +8,9 @@ export const HeaderBox = styled(Box)(() => ({
   fontSize: '40px',
   color: 'white',
   fontWeight: 'bolder',
-  padding: '80px',
+  paddingLeft: '70px',
+  paddingRight: '70px',
+  paddingTop: '20px',
   alignItems: 'center',
   display: 'flex',
 }));

@@ -2,6 +2,8 @@ import type { AxiosCaseLogReturn } from './interface';
 
 import axiosDecorator from '@common/axios/axiosDecorator';
 
+export * from './interface';
+
 export const CaseLogApi = (): AxiosCaseLogReturn => {
   const url: string = '/case_log';
   const instance = axiosDecorator.create({ url });
@@ -15,4 +17,3 @@ export const CaseLogApi = (): AxiosCaseLogReturn => {
     },
   };
 };
-export * from './interface';

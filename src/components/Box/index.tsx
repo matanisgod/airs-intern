@@ -60,6 +60,7 @@ export const TableHeaderBox = styled(Box)(() => ({
   alignItems: 'center',
   paddingLeft: '10px',
   backgroundColor: '#232A3E',
+  borderRadius: '12px',
 }));
 
 export const TableDataBox = styled(Box)(() => ({
@@ -71,17 +72,18 @@ export const TableDataBox = styled(Box)(() => ({
   overflow: 'auto',
   backgroundColor: '#222222',
   '& .statusColor.running': {
-    backgroundColor: '#4A90E2 !important',
+    color: '#00ff00',
   },
   '& .statusColor.cancelled': {
-    backgroundColor: '#D0021B !important',
+    color: '#ff0000',
   },
   '& .statusColor.error': {
-    backgroundColor: '#F5A623 !important',
+    color: '#ff8800',
   },
   '& .statusColor.done': {
-    backgroundColor: '#7ED321 !important',
+    color: '#ffffff ',
   },
+  borderRadius: '12px',
 }));
 
 export const DatagridDefaultBox = styled(Box)(() => ({
@@ -101,4 +103,5 @@ export const JSONDefaultBox = styled(Box)(() => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+  border: '1px solid black',
 }));

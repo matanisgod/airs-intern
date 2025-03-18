@@ -2,6 +2,8 @@ import type { AxiosExpectedResultReturn } from './interface';
 
 import axiosDecorator from '@common/axios/axiosDecorator';
 
+export * from './interface';
+
 export const ExpectedResultApi = (): AxiosExpectedResultReturn => {
   const url: string = '/expected_result';
   const instance = axiosDecorator.create({ url });
@@ -12,4 +14,3 @@ export const ExpectedResultApi = (): AxiosExpectedResultReturn => {
     },
   };
 };
-export * from './interface';

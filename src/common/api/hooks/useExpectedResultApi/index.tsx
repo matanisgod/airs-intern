@@ -1,10 +1,8 @@
 import { useMemo } from 'react';
 
-import { useErrorSetter } from '../util';
-
 import type { UseExpectedResultApi } from './interface';
 
-import { logAxiosError } from '@/utils/logAxiosError';
+import { useErrorSetter, logAxiosError } from '@/utils';
 import api from '@common/api';
 
 export const useExpectedResultApi = (): UseExpectedResultApi => {
@@ -31,4 +29,3 @@ export const useExpectedResultApi = (): UseExpectedResultApi => {
 
   return instance;
 };
-export * from './interface';

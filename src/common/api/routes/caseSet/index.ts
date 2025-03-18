@@ -2,6 +2,8 @@ import type { AxiosCaseSetReturn } from './interface';
 
 import axiosDecorator from '@common/axios/axiosDecorator';
 
+export * from './interface';
+
 export const CaseSetApi = (): AxiosCaseSetReturn => {
   const url: string = '/';
   const instance = axiosDecorator.create({ url });
@@ -15,4 +17,3 @@ export const CaseSetApi = (): AxiosCaseSetReturn => {
     },
   };
 };
-export * from './interface';

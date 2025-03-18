@@ -1,10 +1,8 @@
 import { useMemo } from 'react';
 
-import { useErrorSetter } from '../util';
-
 import type { UseCaseApi } from './interface';
 
-import { logAxiosError } from '@/utils/logAxiosError';
+import { useErrorSetter, logAxiosError } from '@/utils';
 import api from '@common/api';
 
 export const useCaseApi = (): UseCaseApi => {
@@ -31,5 +29,3 @@ export const useCaseApi = (): UseCaseApi => {
 
   return instance;
 };
-
-export * from './interface'; //TODO: 이거 지우기

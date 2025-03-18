@@ -2,6 +2,8 @@ import type { AxiosExecutionReturn } from './interface';
 
 import axiosDecorator from '@common/axios/axiosDecorator';
 
+export * from './interface';
+
 export const ExecutionApi = (): AxiosExecutionReturn => {
   const url: string = '/';
   const instance = axiosDecorator.create({ url });
@@ -21,4 +23,3 @@ export const ExecutionApi = (): AxiosExecutionReturn => {
     },
   };
 };
-export * from './interface';

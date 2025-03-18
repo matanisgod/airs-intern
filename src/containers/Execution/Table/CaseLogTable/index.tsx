@@ -25,13 +25,17 @@ export const CaseLogTable = () => {
   const resetDetailsExpectedResultJson = useResetRecoilState(
     detailsExpectedResultJsonAtom,
   );
-  const getDetails = async (body: string, _body: string, body_: string) => {
+  const getDetails = async (
+    executionLogId: string,
+    caseId: string,
+    expectedResultId: string,
+  ) => {
     if (!caseLogApi) return;
     //TODO: 변수명 수정
     const response = await caseLogApi.getDetailsById({
-      executionLogId: body,
-      caseId: _body,
-      expectedResultId: body_,
+      executionLogId: executionLogId,
+      caseId: caseId,
+      expectedResultId: expectedResultId,
     });
     if (response) {
       setDetails(response);

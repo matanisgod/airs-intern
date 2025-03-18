@@ -6,7 +6,7 @@ import { RecoilRoot } from 'recoil';
 
 import Routes from './routes';
 
-import reportWebVitals from '@/utils/reportWebVitals';
+import { reportWebVitals } from '@/utils/reportWebVitals';
 
 const mainElement = document.createElement('div');
 mainElement.id = 'root';

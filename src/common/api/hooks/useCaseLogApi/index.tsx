@@ -1,15 +1,15 @@
 import { useMemo } from 'react';
 
-import { useErrorSetter } from '../util';
-
 import type {
   UseCaseLogApi,
   GetDetailsByIdReqBody,
   GetDistinctCaseLogsByIdReqBody,
 } from './interface';
 
-import { logAxiosError } from '@/utils/logAxiosError';
+import { useErrorSetter, logAxiosError } from '@/utils';
 import api from '@common/api';
+
+export * from './interface';
 
 export const useCaseLogApi = (): UseCaseLogApi => {
   const errorSetter = useErrorSetter();
@@ -45,5 +45,3 @@ export const useCaseLogApi = (): UseCaseLogApi => {
 
   return instance;
 };
-
-export * from './interface';

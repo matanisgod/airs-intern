@@ -2,6 +2,8 @@ import type { AxiosCaseReturn } from './interface';
 
 import axiosDecorator from '@common/axios/axiosDecorator';
 
+export * from './interface';
+
 export const CaseApi = (): AxiosCaseReturn => {
   const url: string = '/case';
   const instance = axiosDecorator.create({ url });
@@ -12,5 +14,3 @@ export const CaseApi = (): AxiosCaseReturn => {
     },
   };
 };
-
-export * from './interface'; //TODO: 이거 지우기
