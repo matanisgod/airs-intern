@@ -1,4 +1,4 @@
-import { PaletteColorOptions, PaletteMode, ThemeOptions } from '@mui/material';
+import { PaletteColorOptions } from '@mui/material';
 
 import NotoBold from '@/assets/fonts/NotoSans-Bold.ttf';
 import NotoBoldItalic from '@/assets/fonts/NotoSans-BoldItalic.ttf';
@@ -19,62 +19,13 @@ declare module '@mui/material/styles' {
 }
 
 // Function That Generate theme Config
-export const themeSelector = (mode: PaletteMode): ThemeOptions => ({
+export const themeSelector = () => ({
   palette: {
-    mode,
-    ...(mode === 'light'
-      ? {
-          primary: {
-            main: '#FFFFFF',
-            light: '#121212',
-          },
-          secondary: {
-            main: '#222228',
-            light: '#0072ce',
-          },
-          header: {
-            main: '#121212',
-            light: '#121212',
-          },
-          sidebar: {
-            main: '#121212',
-            light: '#121212',
-          },
-          background: {
-            default: '#c2ccdd',
-          },
-        }
-      : {
-          primary: {
-            main: '#18181C',
-            dark: '#121212',
-          },
-          secondary: {
-            main: '#222228',
-            dark: '#0072ce',
-          },
-          header: {
-            main: '#121212',
-            light: '#121212',
-          },
-          sidebar: {
-            main: '#121212',
-            light: '#121212',
-          },
-          background: {
-            default: '#12182B', //배경 색
-          },
-        }),
-  },
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 900,
-      md: 1280,
-      lg: 1600,
-      xl: 1920,
+    background: {
+      default: '#12182B', // 배경 색
     },
   },
+
   components: {
     MuiCssBaseline: {
       styleOverrides: {

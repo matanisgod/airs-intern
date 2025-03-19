@@ -4,9 +4,10 @@ import { GridCellParams, GridColDef } from '@mui/x-data-grid';
 import clsx from 'clsx';
 import { useSetRecoilState } from 'recoil';
 
-import { useExecutionApi } from '@/common/api';
-import { executionLogsAtom } from '@/recoil/status';
+import { formatTimeUntilSecond } from '@/utils';
+import { useExecutionApi } from '@common/api';
 import { StopAllButton, StopButton } from '@components';
+import { executionLogsAtom } from '@recoil/status';
 
 export const executionLogColumns: Array<GridColDef> = [
   {
@@ -24,6 +25,7 @@ export const executionLogColumns: Array<GridColDef> = [
     sortable: false,
     headerAlign: 'center',
     align: 'center',
+    valueGetter: (params) => formatTimeUntilSecond(params.value).slice(0, 16),
   },
   {
     field: 'status',

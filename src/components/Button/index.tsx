@@ -16,8 +16,8 @@ export const CreateButton = styled(Button)(() => ({
 export const StopAllButton = styled(Button)(() => ({
   width: '100%',
   height: '100%',
-  color: 'black',
-  backgroundColor: '#f2f2f2 ',
+  color: 'white',
+  backgroundColor: '#6d7785',
   textTransform: 'none',
   fontSize: '20px',
   '&:hover': {
@@ -27,8 +27,8 @@ export const StopAllButton = styled(Button)(() => ({
 export const StopButton = styled(Button)(() => ({
   width: '100%',
   height: '100%',
-  color: 'black',
-  backgroundColor: '#f2f2f2 ',
+  color: 'white',
+  backgroundColor: '#444444',
   textTransform: 'none',
   fontSize: '14px',
   '&:hover': {

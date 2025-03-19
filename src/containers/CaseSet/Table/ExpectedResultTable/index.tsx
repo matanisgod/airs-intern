@@ -34,6 +34,7 @@ export const ExpectedResultTable = () => {
           slots={{
             noRowsOverlay: DatagridOverlay,
           }}
+          scrollbarSize={8}
         />
       </TableDataBox>
     </ExpectedResultTableBox>

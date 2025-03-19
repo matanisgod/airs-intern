@@ -1,5 +1,7 @@
 import { GridColDef } from '@mui/x-data-grid';
 
+import { formatTimeUntilSecond } from '@/utils';
+
 export const caseLogColumns: Array<GridColDef> = [
   {
     field: 'name',
@@ -32,5 +34,6 @@ export const caseLogColumns: Array<GridColDef> = [
     sortable: false,
     headerAlign: 'center',
     align: 'center',
+    valueGetter: (params) => formatTimeUntilSecond(params.value).slice(0, 16),
   },
 ];

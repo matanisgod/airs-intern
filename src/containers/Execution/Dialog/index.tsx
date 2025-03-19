@@ -1,16 +1,6 @@
 import React, { useEffect } from 'react';
 
-import {
-  DialogContent,
-  DialogActions,
-  Box,
-  Checkbox,
-  FormControl,
-  OutlinedInput,
-  Select,
-  ListItemText,
-  MenuItem,
-} from '@mui/material';
+import { DialogActions, Box, OutlinedInput, Select, ListItemText } from '@mui/material';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import { useSetRecoilState, useRecoilValue, useRecoilState } from 'recoil';
 
@@ -24,6 +14,10 @@ import {
   CreateDialogTitle,
   CancelButton,
   SubmitButton,
+  CreateDialogContent,
+  CreateDialogFormControl,
+  CreateDialogCheckbox,
+  CreateDialogMenuItem,
 } from '@components';
 import {
   caseSetsAtom,
@@ -95,7 +89,7 @@ export const CreateExecutionDialog = () => {
         disableRestoreFocus
       >
         <CreateDialogTitle>Create execution</CreateDialogTitle>
-        <DialogContent>
+        <CreateDialogContent>
           <form onSubmit={handleSubmit(onSubmit)}>
             <CreateDialogContentText>Test sets: </CreateDialogContentText>
             <Controller
@@ -104,7 +98,7 @@ export const CreateExecutionDialog = () => {
               defaultValue={[]}
               rules={{ required: '필수 입력' }}
               render={({ field, fieldState }) => (
-                <FormControl fullWidth>
+                <CreateDialogFormControl fullWidth>
                   <Select
                     multiple
                     value={field.value || []}
@@ -123,12 +117,17 @@ export const CreateExecutionDialog = () => {
                       return selected.join(', ');
                     }}
                     MenuProps={MenuProps}
+                    sx={{
+                      '& .MuiSvgIcon-root': {
+                        color: 'white',
+                      },
+                    }}
                   >
                     {testSetsList.map((name) => (
-                      <MenuItem key={name} value={name}>
-                        <Checkbox checked={field.value?.includes(name)} />
+                      <CreateDialogMenuItem key={name} value={name}>
+                        <CreateDialogCheckbox checked={field.value?.includes(name)} />
                         <ListItemText primary={name} />
-                      </MenuItem>
+                      </CreateDialogMenuItem>
                     ))}
                   </Select>
                   {fieldState.error && (
@@ -136,7 +135,7 @@ export const CreateExecutionDialog = () => {
                       {fieldState.error.message}
                     </CreateDialogContentText>
                   )}
-                </FormControl>
+                </CreateDialogFormControl>
               )}
             />
             {executionFormField.map(({ label, name, type }) => (
@@ -148,14 +147,14 @@ export const CreateExecutionDialog = () => {
                   defaultValue={''}
                   rules={{ required: '필수 입력' }}
                   render={({ field, fieldState }) => (
-                    <FormControl fullWidth>
+                    <CreateDialogFormControl fullWidth>
                       <OutlinedInput {...field} type={type} autoComplete="off" />
                       {fieldState.error && (
                         <CreateDialogContentText>
                           {fieldState.error.message}
                         </CreateDialogContentText>
                       )}
-                    </FormControl>
+                    </CreateDialogFormControl>
                   )}
                 />
               </Box>
@@ -165,7 +164,7 @@ export const CreateExecutionDialog = () => {
               <SubmitButton type="submit">Submit</SubmitButton>
             </DialogActions>
           </form>
-        </DialogContent>
+        </CreateDialogContent>
       </CreateDialog>
     </React.Fragment>
   );

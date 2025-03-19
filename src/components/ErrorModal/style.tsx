@@ -7,7 +7,7 @@ export const ErrorModalBox = styled(Box)({
   transform: 'translate(-50%, -50%)',
   width: '50%',
   height: '20%',
-  backgroundColor: '#121212',
+  backgroundColor: '#222222',
   border: '1px solid white !important',
   color: 'white',
   display: 'flex',

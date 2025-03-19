@@ -72,6 +72,7 @@ export const CaseLogTable = () => {
           slots={{
             noRowsOverlay: DatagridOverlay,
           }}
+          scrollbarSize={8}
         />
       </TableDataBox>
     </CaseLogTableBox>

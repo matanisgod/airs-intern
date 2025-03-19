@@ -9,7 +9,7 @@ export const CaseSetApi = (): AxiosCaseSetReturn => {
   const instance = axiosDecorator.create({ url });
 
   return {
-    importCaseSet: async (body) => {
+    importCaseSet: async (body: FormData) => {
       return instance.post('casesets:import', body);
     },
     getCaseSets: async () => {

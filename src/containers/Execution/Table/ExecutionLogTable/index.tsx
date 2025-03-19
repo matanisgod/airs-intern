@@ -87,6 +87,7 @@ export const ExecutionLogTable = () => {
             getDistinctCaseLogs(params.row.id);
             clearExecutionPage();
           }}
+          scrollbarSize={8}
         />
       </TableDataBox>
       {isExecutionDialogOpen && <CreateExecutionDialog />}

@@ -1,6 +1,6 @@
 export interface CaseSetForm {
-  caseYmlFile: string;
-  erYmlFile: string;
+  caseYmlFile: File;
+  erYmlFile: File;
   type: string;
   title: string;
 }
@@ -8,12 +8,12 @@ export interface CaseSetForm {
 interface CaseSetFormFieldProps {
   label: string;
   name: keyof CaseSetForm;
-  type: 'text' | 'number';
+  type: 'text' | 'file';
 }
 
 export const caseSetFormField: Array<CaseSetFormFieldProps> = [
-  { label: 'Case YAML File', name: 'caseYmlFile', type: 'text' },
-  { label: 'Expected result YAML File', name: 'erYmlFile', type: 'text' },
+  { label: 'Case YAML File', name: 'caseYmlFile', type: 'file' },
+  { label: 'Expected result YAML File', name: 'erYmlFile', type: 'file' },
   { label: 'Type', name: 'type', type: 'text' },
   { label: 'Title', name: 'title', type: 'text' },
 ];

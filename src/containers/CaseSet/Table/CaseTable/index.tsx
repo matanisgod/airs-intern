@@ -53,6 +53,7 @@ export const CaseTable = () => {
           slots={{
             noRowsOverlay: DatagridOverlay,
           }}
+          scrollbarSize={8}
         />
       </TableDataBox>
     </CaseTableBox>

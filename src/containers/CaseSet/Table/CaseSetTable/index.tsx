@@ -85,6 +85,7 @@ export const CaseSetTable = () => {
             getCasesByCaseSet(params.row.id);
             cleanCaseSetPage();
           }}
+          scrollbarSize={8}
         />
       </TableDataBox>
       {isCaseSetDialogOpen && <CreateCaseSetDialog />}

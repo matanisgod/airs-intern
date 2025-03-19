@@ -42,6 +42,7 @@ export const DetailsTable = () => {
           slots={{
             noRowsOverlay: DatagridOverlay,
           }}
+          scrollbarSize={8}
         />
       </TableDataBox>
     </DetailsTableBox>

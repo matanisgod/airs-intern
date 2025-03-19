@@ -7,21 +7,16 @@ import {
   ThemeProvider,
 } from '@mui/material';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { useRecoilValue } from 'recoil';
 
 import { CaseSetPage, ExecutionPage } from './pages';
 
 import { themeSelector } from '@/theme';
 import { Header } from '@containers';
 import { RecoilHooks } from '@recoil/hooks';
-import { currentThemeAtom } from '@recoil/status';
 
 const AppRoutes = () => {
-  const currentTheme = useRecoilValue(currentThemeAtom);
-  const themeMode = useMemo(
-    () => createTheme(themeSelector(currentTheme)),
-    [currentTheme],
-  );
+  const darkTheme = createTheme(themeSelector());
+
   const renderRoutes = useMemo(() => {
     return (
       <Routes>
@@ -36,7 +31,7 @@ const AppRoutes = () => {
   return (
     <RecoilHooks>
       <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={themeMode}>
+        <ThemeProvider theme={darkTheme}>
           <CssBaseline />
           <BrowserRouter>{renderRoutes}</BrowserRouter>
         </ThemeProvider>
