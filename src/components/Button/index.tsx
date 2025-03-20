@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Button, styled } from '@mui/material';
 
 export const CreateButton = styled(Button)(() => ({
@@ -46,3 +48,15 @@ export const CancelButton = styled(Button)(() => ({
 }));
 
 export const SubmitButton = CancelButton;
+
+export const SelectButton = styled(Button)<{ component?: React.ElementType }>(() => ({
+  width: '100%',
+  height: '100%',
+  color: 'white',
+  backgroundColor: '#444444',
+  textTransform: 'none',
+  fontSize: '14px',
+  '&:hover': {
+    background: '#888888',
+  },
+}));

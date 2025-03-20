@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { DialogActions, Box, OutlinedInput } from '@mui/material';
+import { DialogActions, Box, OutlinedInput, Typography } from '@mui/material';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import { useSetRecoilState, useRecoilState } from 'recoil';
 
@@ -15,6 +15,7 @@ import {
   SubmitButton,
   CreateDialogFormControl,
   CreateDialogContent,
+  SelectButton,
 } from '@components';
 import { caseSetsAtom, isCaseSetDialogOpenAtom } from '@recoil/status';
 
@@ -27,7 +28,14 @@ export const CreateCaseSetDialog = () => {
 
   const setCaseSets = useSetRecoilState(caseSetsAtom);
 
-  const { control, handleSubmit, setValue } = useForm<CaseSetForm>();
+  const { control, handleSubmit, setValue } = useForm<CaseSetForm>({
+    defaultValues: {
+      caseYmlFile: undefined,
+      erYmlFile: undefined,
+      type: '',
+      title: '',
+    },
+  });
 
   const handleClose = () => {
     setIsOpen(false);
@@ -37,8 +45,8 @@ export const CreateCaseSetDialog = () => {
     if (!caseSetApi) return;
 
     const formData = new FormData();
-    formData.append('caseYmlFile', data.caseYmlFile[0]);
-    formData.append('erYmlFile', data.erYmlFile[0]);
+    formData.append('caseYmlFile', data.caseYmlFile);
+    formData.append('erYmlFile', data.erYmlFile);
     formData.append('type', data.type);
     formData.append('title', data.title);
 
@@ -48,6 +56,9 @@ export const CreateCaseSetDialog = () => {
       handleClose();
     }
   };
+
+  const [caseYmlFile, setCaseYmlFile] = useState<string>('');
+  const [erYmlFile, setErYmlFile] = useState<string>('');
 
   return (
     <React.Fragment>
@@ -72,11 +83,31 @@ export const CreateCaseSetDialog = () => {
                   render={({ field, fieldState }) => (
                     <CreateDialogFormControl fullWidth>
                       {type === 'file' ? (
-                        <input
-                          type="file"
-                          accept=".yml, .yaml"
-                          onChange={(e) => setValue(name, e.target.value)}
-                        />
+                        <>
+                          <input
+                            type="file"
+                            accept=".yml, .yaml"
+                            hidden
+                            id={name}
+                            onChange={(e) => {
+                              if (e.target.files) {
+                                setValue(name, e.target.files[0]);
+                                if (name === 'caseYmlFile')
+                                  setCaseYmlFile(e.target.files[0]?.name);
+                                else setErYmlFile(e.target.files[0]?.name);
+                              }
+                            }}
+                          />
+                          <label htmlFor={name}>
+                            <SelectButton component="span">Select YAML file</SelectButton>
+                          </label>
+                          {name === 'caseYmlFile' && caseYmlFile && (
+                            <Typography>{caseYmlFile}</Typography>
+                          )}
+                          {name === 'erYmlFile' && erYmlFile && (
+                            <Typography>{erYmlFile}</Typography>
+                          )}
+                        </>
                       ) : (
                         <OutlinedInput {...field} type="text" autoComplete="off" />
                       )}
