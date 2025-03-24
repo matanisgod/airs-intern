@@ -1,8 +1,8 @@
 import { styled } from '@mui/material';
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGridPro } from '@mui/x-data-grid-pro';
 
-export const DataTable = styled(DataGrid)(() => ({
-  border: 'none',
+export const DataTable = styled(DataGridPro)(() => ({
+  border: '1px solid white',
   width: '100%',
   color: 'white',
   backgroundColor: '#222222',
@@ -10,6 +10,9 @@ export const DataTable = styled(DataGrid)(() => ({
   fontSize: '14px !important',
   maxHeight: '100%',
 
+  '& .MuiDataGrid-sortIcon': {
+    color: 'white',
+  },
   '& .MuiDataGrid-columnHeaders': {
     backgroundColor: '#4B5563',
     border: 'none',

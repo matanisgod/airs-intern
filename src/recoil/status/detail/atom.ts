@@ -16,3 +16,8 @@ export const detailsExpectedResultJsonAtom = atom<object>({
   key: 'detailsExpectedResultJsonAtom',
   default: {},
 });
+
+export const detailIdAtom = atom<string>({
+  key: 'detailIdAtom',
+  default: '',
+});

@@ -5,12 +5,12 @@ import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { DetailsTableBox } from './style';
 import { detailColumns } from './util';
 
+import { TableDataBox, DataTable, DatagridDefaultBox } from '@components';
 import {
   actualResultJsonAtom,
   detailsAtom,
   detailsExpectedResultJsonAtom,
-} from '@/recoil/status';
-import { TableHeaderBox, TableDataBox, DataTable, DatagridDefaultBox } from '@components';
+} from '@recoil/status';
 
 export const DetailsTable = () => {
   const details = useRecoilValue(detailsAtom);
@@ -22,7 +22,6 @@ export const DetailsTable = () => {
 
   return (
     <DetailsTableBox>
-      <TableHeaderBox>Detail</TableHeaderBox>
       <TableDataBox>
         <DataTable
           rows={details}
@@ -42,7 +41,7 @@ export const DetailsTable = () => {
           slots={{
             noRowsOverlay: DatagridOverlay,
           }}
-          scrollbarSize={8}
+          scrollbarSize={0}
         />
       </TableDataBox>
     </DetailsTableBox>

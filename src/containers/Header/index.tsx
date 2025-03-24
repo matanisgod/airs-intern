@@ -6,7 +6,7 @@ import { useRecoilValue, useResetRecoilState } from 'recoil';
 
 import { HeaderBox, PageButton } from './style';
 
-import { ErrorModal } from '@components';
+import { ErrorModal, StopModal } from '@components';
 import {
   actualResultJsonAtom,
   caseExpectedResultJsonAtom,
@@ -19,6 +19,8 @@ import {
   executionLogsAtom,
   expectedResultsAtom,
   isErrorModalOpenAtom,
+  isExecutionLogRowClickedAtom,
+  isStopModalOpenAtom,
 } from '@recoil/status';
 
 export const Header = () => {
@@ -26,6 +28,7 @@ export const Header = () => {
   const currentPage = useLocation();
 
   const isErrorModalOpen = useRecoilValue(isErrorModalOpenAtom);
+  const isStopModalOpen = useRecoilValue(isStopModalOpenAtom);
 
   const resetCases = useResetRecoilState(casesAtom);
   const resetCaseSets = useResetRecoilState(caseSetsAtom);
@@ -39,6 +42,7 @@ export const Header = () => {
   const resetDetailsExpectedResultJson = useResetRecoilState(
     detailsExpectedResultJsonAtom,
   );
+  const resetIsExecutionLogRowClicked = useResetRecoilState(isExecutionLogRowClickedAtom);
 
   const cleanExecutionPage = () => {
     resetExecutionLogs();
@@ -46,6 +50,7 @@ export const Header = () => {
     resetDetails();
     resetActualResultJson();
     resetDetailsExpectedResultJson();
+    resetIsExecutionLogRowClicked();
   };
 
   const cleanCaseSetPage = () => {
@@ -83,6 +88,7 @@ export const Header = () => {
       </HeaderBox>
       <Outlet />
       {isErrorModalOpen && <ErrorModal />}
+      {isStopModalOpen && <StopModal />}
     </React.Fragment>
   );
 };

@@ -1,14 +1,7 @@
-import { GridColDef } from '@mui/x-data-grid';
+import { GridCellParams, GridColDef } from '@mui/x-data-grid';
+import clsx from 'clsx';
 
 export const detailColumns: Array<GridColDef> = [
-  {
-    field: 'result',
-    headerName: 'Result',
-    flex: 0.2,
-    sortable: false,
-    headerAlign: 'center',
-    align: 'center',
-  },
   {
     field: 'resultLog',
     headerName: 'Result log',
@@ -16,5 +9,22 @@ export const detailColumns: Array<GridColDef> = [
     sortable: false,
     headerAlign: 'center',
     align: 'center',
+  },
+  {
+    field: 'result',
+    headerName: 'Result',
+    flex: 0.15,
+    sortable: false,
+    headerAlign: 'center',
+    align: 'center',
+    cellClassName: (params: GridCellParams) => {
+      if (params.value == null) {
+        return '';
+      }
+      return clsx('resultColor', {
+        true: params.value === 'True',
+        false: params.value === 'False',
+      });
+    },
   },
 ];

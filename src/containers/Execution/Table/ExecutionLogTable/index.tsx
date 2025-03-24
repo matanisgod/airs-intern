@@ -5,8 +5,14 @@ import { useSetRecoilState, useRecoilState, useResetRecoilState } from 'recoil';
 import { ExecutionLogTableBox } from './style';
 import { executionLogColumns } from './util';
 
-import { useCaseLogApi, useExecutionApi } from '@common/api';
-import { TableHeaderBox, TableDataBox, DataTable, CreateButton } from '@components';
+import { useCaseLogApi, useCaseSetApi, useExecutionApi } from '@common/api';
+import {
+  TableHeaderBox,
+  TableDataBox,
+  DataTable,
+  CreateButton,
+  DatagridDefaultBox,
+} from '@components';
 import { CreateExecutionDialog } from '@containers';
 import {
   executionLogsAtom,
@@ -14,19 +20,26 @@ import {
   detailsAtom,
   actualResultJsonAtom,
   detailsExpectedResultJsonAtom,
-  isExecutionDialogOpenAtom,
+  isExecutionLogDialogOpenAtom,
+  caseSetsAtom,
+  isExecutionLogRowClickedAtom,
+  detailIdAtom,
 } from '@recoil/status';
 
 export const ExecutionLogTable = () => {
   const caseLogApi = useCaseLogApi();
   const executionApi = useExecutionApi();
+  const caseSetApi = useCaseSetApi();
 
   const [executionLogs, setExecutionLogs] = useRecoilState(executionLogsAtom);
   const [isExecutionDialogOpen, setIsExecutionDialogOpen] = useRecoilState(
-    isExecutionDialogOpenAtom,
+    isExecutionLogDialogOpenAtom,
   );
-
+  const setCaseSets = useSetRecoilState(caseSetsAtom);
   const setCaseLogs = useSetRecoilState(caseLogsAtom);
+  const setIsExecutionLogRowClicked = useSetRecoilState(isExecutionLogRowClickedAtom);
+
+  const resetDetailId = useResetRecoilState(detailIdAtom);
   const resetCaseLogs = useResetRecoilState(caseLogsAtom);
   const resetDetails = useResetRecoilState(detailsAtom);
   const resetActualResultJson = useResetRecoilState(actualResultJsonAtom);
@@ -60,12 +73,20 @@ export const ExecutionLogTable = () => {
     };
     fetchExecutionLog();
   }, [executionApi, setExecutionLogs]);
+  const fetchCaseSets = async () => {
+    if (!caseSetApi) return;
 
-  //TODO: Error 만들어지면 running으로 보이지만 refresh하면 error로 바뀌고 있음 소원님과 논의
-
+    const response = await caseSetApi.getCaseSets();
+    if (response) {
+      setCaseSets(response);
+    }
+  };
   const onCreateExecutionLogButtonClick = () => {
     setIsExecutionDialogOpen(true);
+    fetchCaseSets();
   };
+
+  const DatagridOverlay = () => <DatagridDefaultBox>Loading...</DatagridDefaultBox>;
 
   return (
     <ExecutionLogTableBox>
@@ -86,6 +107,11 @@ export const ExecutionLogTable = () => {
           onRowClick={(params) => {
             getDistinctCaseLogs(params.row.id);
             clearExecutionPage();
+            setIsExecutionLogRowClicked(true);
+            resetDetailId();
+          }}
+          slots={{
+            noRowsOverlay: DatagridOverlay,
           }}
           scrollbarSize={8}
         />

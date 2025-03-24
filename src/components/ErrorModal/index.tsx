@@ -8,7 +8,7 @@ import { ErrorModalBox } from './style';
 import { isErrorModalOpenAtom, errorMessageAtom } from '@/recoil/status';
 
 export const ErrorModal = () => {
-  const [errorModalOpen, setErrorModalOpen] = useRecoilState(isErrorModalOpenAtom);
+  const [isErrorModalOpen, setErrorModalOpen] = useRecoilState(isErrorModalOpenAtom);
   const [errorMessage, setErrorMessage] = useRecoilState(errorMessageAtom);
 
   const handleErrorModalClose = () => {
@@ -17,7 +17,7 @@ export const ErrorModal = () => {
   };
 
   return (
-    <Modal open={errorModalOpen} onClose={handleErrorModalClose}>
+    <Modal open={isErrorModalOpen} onClose={handleErrorModalClose}>
       <ErrorModalBox>
         Error
         <br />

@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom/client';
 import { RecoilRoot } from 'recoil';
 
 import Routes from './routes';
+import { initPro } from './utils';
 
 import { reportWebVitals } from '@/utils/reportWebVitals';
 
@@ -12,6 +13,7 @@ const mainElement = document.createElement('div');
 mainElement.id = 'root';
 document.body.appendChild(mainElement);
 
+initPro();
 const root = ReactDOM.createRoot(mainElement);
 
 dotenv.config();

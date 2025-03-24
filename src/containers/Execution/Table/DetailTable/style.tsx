@@ -1,8 +1,8 @@
 import { Box, styled } from '@mui/material';
 
 export const DetailsTableBox = styled(Box)(() => ({
-  width: '95%',
-  height: '48%',
+  width: '100%',
+  height: '100%',
   display: 'flex',
   alignSelf: 'flex-end',
   marginTop: 'auto',

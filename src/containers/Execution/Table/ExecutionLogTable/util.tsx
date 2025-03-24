@@ -5,16 +5,15 @@ import clsx from 'clsx';
 import { useSetRecoilState } from 'recoil';
 
 import { formatTimeUntilSecond } from '@/utils';
-import { useExecutionApi } from '@common/api';
 import { StopAllButton, StopButton } from '@components';
-import { executionLogsAtom } from '@recoil/status';
+import { isStopModalOpenAtom, stopTargetAtom } from '@recoil/status';
 
 export const executionLogColumns: Array<GridColDef> = [
   {
     field: 'performer',
     headerName: 'Performer',
     flex: 1,
-    sortable: false,
+    sortable: true,
     headerAlign: 'center',
     align: 'center',
   },
@@ -22,7 +21,7 @@ export const executionLogColumns: Array<GridColDef> = [
     field: 'createdAt',
     headerName: 'Created at',
     flex: 1,
-    sortable: false,
+    sortable: true,
     headerAlign: 'center',
     align: 'center',
     valueGetter: (params) => formatTimeUntilSecond(params.value).slice(0, 16),
@@ -31,7 +30,7 @@ export const executionLogColumns: Array<GridColDef> = [
     field: 'status',
     headerName: 'Status',
     flex: 1,
-    sortable: false,
+    sortable: true,
     headerAlign: 'center',
     align: 'center',
     cellClassName: (params: GridCellParams) => {
@@ -53,51 +52,29 @@ export const executionLogColumns: Array<GridColDef> = [
     headerAlign: 'center',
     align: 'center',
     renderHeader: function CancelExecution() {
-      const executionApi = useExecutionApi();
-      const setExecutionLogsAtom = useSetRecoilState(executionLogsAtom);
-
-      const fetchExecution = async () => {
-        if (!executionApi) return;
-        const response = await executionApi.cancelExecution();
-        if (response) {
-          setExecutionLogsAtom((prev) =>
-            prev.map((row) => ({
-              ...row,
-              status: 'cancelled',
-            })),
-          );
-        }
-      };
-
-      return <StopAllButton onClick={fetchExecution}>Stop all</StopAllButton>;
+      const setIsStopModalOpen = useSetRecoilState(isStopModalOpenAtom);
+      const setStopTarget = useSetRecoilState(stopTargetAtom);
+      return (
+        <StopAllButton
+          onClick={() => {
+            setStopTarget('');
+            setIsStopModalOpen(true);
+          }}
+        >
+          Stop all
+        </StopAllButton>
+      );
     },
     renderCell: function CancelExecutionById(params) {
-      const executionApi = useExecutionApi();
-      const setExecutionLogsAtom = useSetRecoilState(executionLogsAtom);
-
-      const fetchExecutionById = async (params) => {
-        if (!executionApi) return;
-        const response = await executionApi.cancelExecutionById(params.row.id);
-        if (response) {
-          setExecutionLogsAtom((prev) =>
-            prev.map((row) =>
-              row.id === params.row.id
-                ? {
-                    ...row,
-                    status: 'cancelled',
-                  }
-                : row,
-            ),
-          );
-          console.log('ok');
-        }
-      };
+      const setIsStopModalOpen = useSetRecoilState(isStopModalOpenAtom);
+      const setStopTarget = useSetRecoilState(stopTargetAtom);
 
       return (
         <StopButton
           onClick={(event) => {
             event.stopPropagation();
-            fetchExecutionById(params);
+            setStopTarget(params.row.id);
+            setIsStopModalOpen(true);
           }}
         >
           Stop

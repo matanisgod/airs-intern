@@ -3,4 +3,4 @@ export * from './execution';
 export * from './expectedResult';
 export * from './caseLog';
 export * from './detail';
-export * from './error';
+export * from './modal';

@@ -30,8 +30,8 @@ export const CreateCaseSetDialog = () => {
 
   const { control, handleSubmit, setValue } = useForm<CaseSetForm>({
     defaultValues: {
-      caseYmlFile: undefined,
-      erYmlFile: undefined,
+      caseYamlFile: undefined,
+      expectedResultYamlFile: undefined,
       type: '',
       title: '',
     },
@@ -45,8 +45,8 @@ export const CreateCaseSetDialog = () => {
     if (!caseSetApi) return;
 
     const formData = new FormData();
-    formData.append('caseYmlFile', data.caseYmlFile);
-    formData.append('erYmlFile', data.erYmlFile);
+    formData.append('caseYamlFile', data.caseYamlFile);
+    formData.append('expectedResultYamlFile', data.expectedResultYamlFile);
     formData.append('type', data.type);
     formData.append('title', data.title);
 
@@ -57,8 +57,8 @@ export const CreateCaseSetDialog = () => {
     }
   };
 
-  const [caseYmlFile, setCaseYmlFile] = useState<string>('');
-  const [erYmlFile, setErYmlFile] = useState<string>('');
+  const [caseYamlFile, setCaseYmlFile] = useState<string>('');
+  const [expectedResultYamlFile, setErYmlFile] = useState<string>('');
 
   return (
     <React.Fragment>
@@ -91,8 +91,18 @@ export const CreateCaseSetDialog = () => {
                             id={name}
                             onChange={(e) => {
                               if (e.target.files) {
+                                const extension = e.target.files[0].name
+                                  .split('.')
+                                  .pop()
+                                  ?.toLowerCase();
+
+                                if (extension !== 'yml' && extension !== 'yaml') {
+                                  alert('Only .yml or .yaml files are allowed.');
+                                  return;
+                                }
+
                                 setValue(name, e.target.files[0]);
-                                if (name === 'caseYmlFile')
+                                if (name === 'caseYamlFile')
                                   setCaseYmlFile(e.target.files[0]?.name);
                                 else setErYmlFile(e.target.files[0]?.name);
                               }
@@ -101,12 +111,17 @@ export const CreateCaseSetDialog = () => {
                           <label htmlFor={name}>
                             <SelectButton component="span">Select YAML file</SelectButton>
                           </label>
-                          {name === 'caseYmlFile' && caseYmlFile && (
-                            <Typography>{caseYmlFile}</Typography>
+                          {name === 'caseYamlFile' && caseYamlFile && (
+                            <Typography sx={{ fontStyle: 'italic' }}>
+                              {caseYamlFile}
+                            </Typography>
                           )}
-                          {name === 'erYmlFile' && erYmlFile && (
-                            <Typography>{erYmlFile}</Typography>
-                          )}
+                          {name === 'expectedResultYamlFile' &&
+                            expectedResultYamlFile && (
+                              <Typography sx={{ fontStyle: 'italic' }}>
+                                {expectedResultYamlFile}
+                              </Typography>
+                            )}
                         </>
                       ) : (
                         <OutlinedInput {...field} type="text" autoComplete="off" />

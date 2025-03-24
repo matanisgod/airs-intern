@@ -61,6 +61,7 @@ export const TableHeaderBox = styled(Box)(() => ({
   paddingLeft: '10px',
   backgroundColor: '#232A3E',
   color: '#ffffff',
+  fontSize: '30px',
 }));
 
 export const TableDataBox = styled(Box)(() => ({
@@ -93,6 +94,12 @@ export const TableDataBox = styled(Box)(() => ({
   },
   '& .statusColor.done': {
     color: '#ffffff ',
+  },
+  '& .resultColor.true': {
+    color: '#55ff55',
+  },
+  '& .resultColor.false': {
+    color: '#ff5555 ',
   },
 }));
 

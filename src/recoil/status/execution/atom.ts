@@ -7,7 +7,12 @@ export const executionLogsAtom = atom<ExecutionLogs>({
   default: [],
 });
 
-export const isExecutionDialogOpenAtom = atom<boolean>({
-  key: 'isExecutionDialogOpenAtom',
+export const isExecutionLogDialogOpenAtom = atom<boolean>({
+  key: 'isExecutionLogDialogOpenAtom',
+  default: false,
+});
+
+export const isExecutionLogRowClickedAtom = atom<boolean>({
+  key: 'isExecutionLogRowClickedAtom',
   default: false,
 });

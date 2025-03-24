@@ -80,6 +80,16 @@ export const CreateDialogContent = styled(DialogContent)(() => ({
   '& .MuiMenuItem-root': {
     color: 'white',
   },
+  '&::-webkit-scrollbar': {
+    width: '8px',
+    border: 'none',
+  },
+
+  '&::-webkit-scrollbar-thumb': {
+    background: '#ffffff',
+    border: 'none',
+    borderRadius: '5px',
+  },
 }));
 
 export const CreateDialogCheckbox = styled(Checkbox)(() => ({

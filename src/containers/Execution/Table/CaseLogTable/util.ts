@@ -1,4 +1,5 @@
-import { GridColDef } from '@mui/x-data-grid';
+import { GridCellParams, GridColDef } from '@mui/x-data-grid';
+import clsx from 'clsx';
 
 import { formatTimeUntilSecond } from '@/utils';
 
@@ -6,14 +7,6 @@ export const caseLogColumns: Array<GridColDef> = [
   {
     field: 'name',
     headerName: 'Name',
-    flex: 1,
-    sortable: false,
-    headerAlign: 'center',
-    align: 'center',
-  },
-  {
-    field: 'result',
-    headerName: 'Result',
     flex: 1,
     sortable: false,
     headerAlign: 'center',
@@ -35,5 +28,22 @@ export const caseLogColumns: Array<GridColDef> = [
     headerAlign: 'center',
     align: 'center',
     valueGetter: (params) => formatTimeUntilSecond(params.value).slice(0, 16),
+  },
+  {
+    field: 'result',
+    headerName: 'Result',
+    flex: 0.45,
+    sortable: false,
+    headerAlign: 'center',
+    align: 'center',
+    cellClassName: (params: GridCellParams) => {
+      if (params.value == null) {
+        return '';
+      }
+      return clsx('resultColor', {
+        true: params.value === 'True',
+        false: params.value === 'False',
+      });
+    },
   },
 ];

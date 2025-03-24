@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { DialogActions, Box, OutlinedInput, Select, ListItemText } from '@mui/material';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
-import { useSetRecoilState, useRecoilValue, useRecoilState } from 'recoil';
+import { useSetRecoilState, useRecoilState, useRecoilValue } from 'recoil';
 
 import { ExecutionForm, executionFormField } from './util';
 
-import { useExecutionApi, useCaseSetApi } from '@common/api';
+import { useExecutionApi } from '@common/api';
 import {
   CreateDialogContentText,
   MenuProps,
@@ -21,13 +21,17 @@ import {
 } from '@components';
 import {
   caseSetsAtom,
-  isExecutionDialogOpenAtom,
+  isExecutionLogDialogOpenAtom,
   executionLogsAtom,
 } from '@recoil/status';
 
 export const CreateExecutionDialog = () => {
   const executionApi = useExecutionApi();
-  const caseSetApi = useCaseSetApi();
+
+  const caseSets = useRecoilValue(caseSetsAtom);
+  const [isOpen, setIsOpen] = useRecoilState(isExecutionLogDialogOpenAtom);
+
+  const setExecutionLogs = useSetRecoilState(executionLogsAtom);
 
   const { control, handleSubmit } = useForm<ExecutionForm>({
     //나중에 지우기
@@ -45,35 +49,27 @@ export const CreateExecutionDialog = () => {
       keycloakLoginPw: 'returnAIRSMEDICAL!23',
     },
   });
-  const caseSet = useRecoilValue(caseSetsAtom);
 
-  const [isOpen, setIsOpen] = useRecoilState(isExecutionDialogOpenAtom);
-
-  const setExecutionLogs = useSetRecoilState(executionLogsAtom);
-  const setCaseSets = useSetRecoilState(caseSetsAtom);
-
-  const testSetsList = caseSet.map((item) => item.title);
-
-  useEffect(() => {
-    if (!caseSetApi) return;
-
-    caseSetApi.getCaseSets().then((response) => {
-      if (response) {
-        setCaseSets(response);
-      }
-    });
-  }, [caseSetApi]);
+  const testSetsList = caseSets;
 
   const handleClose = () => {
     setIsOpen(false);
   };
 
+  const fetchExecutionLog = async () => {
+    if (!executionApi) return;
+
+    const response = await executionApi.getExecutionLogs();
+    if (response) {
+      setExecutionLogs(response);
+    }
+  };
   const onSubmit: SubmitHandler<ExecutionForm> = async (data) => {
     if (!executionApi) return;
     const response = await executionApi.createExecution(data);
 
     if (response) {
-      setExecutionLogs((executionLogs) => [...executionLogs, response]);
+      fetchExecutionLog();
       handleClose();
     }
   };
@@ -124,9 +120,11 @@ export const CreateExecutionDialog = () => {
                     }}
                   >
                     {testSetsList.map((name) => (
-                      <CreateDialogMenuItem key={name} value={name}>
-                        <CreateDialogCheckbox checked={field.value?.includes(name)} />
-                        <ListItemText primary={name} />
+                      <CreateDialogMenuItem key={name.id} value={name.title}>
+                        <CreateDialogCheckbox
+                          checked={field.value?.includes(name.title)}
+                        />
+                        <ListItemText primary={name.title} />
                       </CreateDialogMenuItem>
                     ))}
                   </Select>

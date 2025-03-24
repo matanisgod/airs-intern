@@ -16,8 +16,8 @@ export const CreateButton = styled(Button)(() => ({
   marginRight: '10px',
 }));
 export const StopAllButton = styled(Button)(() => ({
-  width: '100%',
-  height: '100%',
+  width: '80%',
+  height: '80%',
   color: 'white',
   backgroundColor: '#6d7785',
   textTransform: 'none',
@@ -27,8 +27,8 @@ export const StopAllButton = styled(Button)(() => ({
   },
 }));
 export const StopButton = styled(Button)(() => ({
-  width: '100%',
-  height: '100%',
+  width: '80%',
+  height: '80%',
   color: 'white',
   backgroundColor: '#444444',
   textTransform: 'none',
@@ -39,6 +39,8 @@ export const StopButton = styled(Button)(() => ({
 }));
 
 export const CancelButton = styled(Button)(() => ({
+  width: '65px',
+  height: '40px',
   color: 'black',
   backgroundColor: '#f2f2f2',
   textTransform: 'none',
@@ -60,3 +62,15 @@ export const SelectButton = styled(Button)<{ component?: React.ElementType }>(()
     background: '#888888',
   },
 }));
+
+export const YesButton = styled(Button)(() => ({
+  width: '65px',
+  height: '40px',
+  color: 'black',
+  backgroundColor: '#f2f2f2',
+  textTransform: 'none',
+  '&:hover': {
+    background: '#888888',
+  },
+}));
+export const NoButton = YesButton;

@@ -1,6 +1,6 @@
 import { styled, Box } from '@mui/material';
 
-export const ErrorModalBox = styled(Box)({
+export const StopModalBox = styled(Box)({
   position: 'absolute',
   top: '50%',
   left: '50%',
@@ -15,4 +15,9 @@ export const ErrorModalBox = styled(Box)({
   fontSize: '30px',
   justifyContent: 'center',
   alignItems: 'center',
+});
+
+export const ButtonBox = styled(Box)({
+  display: 'flex',
+  gap: '20px',
 });

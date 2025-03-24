@@ -11,7 +11,13 @@ import { CaseSetTableBox } from './style';
 import { caseSetColumns } from './util';
 
 import { useCaseApi, useCaseSetApi } from '@common/api';
-import { TableHeaderBox, TableDataBox, DataTable, CreateButton } from '@components';
+import {
+  TableHeaderBox,
+  TableDataBox,
+  DataTable,
+  CreateButton,
+  DatagridDefaultBox,
+} from '@components';
 import { CreateCaseSetDialog } from '@containers';
 import {
   caseSetsAtom,
@@ -66,6 +72,7 @@ export const CaseSetTable = () => {
   const onCreateCaseSetButtonClick = () => {
     setIsCaseSetDialogOpen(true);
   };
+  const DatagridOverlay = () => <DatagridDefaultBox>Loading...</DatagridDefaultBox>;
 
   return (
     <CaseSetTableBox>
@@ -84,6 +91,9 @@ export const CaseSetTable = () => {
           onRowClick={(params) => {
             getCasesByCaseSet(params.row.id);
             cleanCaseSetPage();
+          }}
+          slots={{
+            noRowsOverlay: DatagridOverlay,
           }}
           scrollbarSize={8}
         />

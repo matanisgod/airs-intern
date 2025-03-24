@@ -10,3 +10,11 @@ export const isErrorModalOpenAtom = atom<boolean>({
   key: 'isErrorModalOpenAtom',
   default: false,
 });
+export const isStopModalOpenAtom = atom<boolean>({
+  key: 'isStopModalOpenAtom',
+  default: false,
+});
+export const stopTargetAtom = atom<string>({
+  key: 'stopTargetAtom',
+  default: '',
+});

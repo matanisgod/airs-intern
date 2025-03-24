@@ -6,7 +6,6 @@ import { PageBox, SubTablesBox, JSONDataBox, ErrorFallback } from '@components';
 import {
   ExecutionLogTable,
   CaseLogTable,
-  DetailsTable,
   ActualResultJsonLoader,
   DetailsExpectedResultJsonLoader,
 } from '@containers';
@@ -18,7 +17,6 @@ export const ExecutionPage = () => {
         <ExecutionLogTable />
         <SubTablesBox>
           <CaseLogTable />
-          <DetailsTable />
         </SubTablesBox>
         <JSONDataBox>
           <ActualResultJsonLoader />
