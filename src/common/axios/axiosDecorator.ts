@@ -9,7 +9,8 @@ import { regexOfManySlashes } from '@/utils/regex';
 axios.defaults.timeout = 30000;
 
 const create = (customConfig: AxiosRequestConfig): AxiosInstance => {
-  const baseUrl = process.env.ATOM_SERVER_URI || 'http://192.168.40.203:8000';
+  const baseUrl = process.env.ATOM_SERVER_URI;
+  //  || 'http://192.168.40.203:8000';
   const { url = '' } = customConfig;
   const apiUrl = baseUrl + url;
 

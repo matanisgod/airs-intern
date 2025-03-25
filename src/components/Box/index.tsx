@@ -73,15 +73,21 @@ export const TableDataBox = styled(Box)(() => ({
   overflow: 'auto',
   '&::-webkit-scrollbar': {
     width: '8px',
+    height: '8px',
     border: 'none',
   },
 
   '&::-webkit-scrollbar-thumb': {
-    backgroundColor: '#ffffff',
+    background: '#ffffff',
     border: 'none',
     borderRadius: '5px',
   },
-
+  '&::-webkit-scrollbar-track': {
+    background: 'transparent',
+  },
+  '&::-webkit-scrollbar-corner': {
+    background: 'transparent',
+  },
   backgroundColor: '#222222',
   '& .statusColor.running': {
     color: '#55ff55',

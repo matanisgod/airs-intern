@@ -24,6 +24,14 @@ export const themeSelector = () => ({
     background: {
       default: '#12182B', // 배경 색
     },
+    header: {
+      main: '#1A2238',
+      contrastText: '#ffffff',
+    },
+    sidebar: {
+      main: '#0F172A',
+      contrastText: '#ffffff',
+    },
   },
 
   components: {
@@ -49,15 +57,20 @@ export const themeSelector = () => ({
         '.MuiAutocomplete-popper .MuiAutocomplete-listbox': {
           '&::-webkit-scrollbar': {
             width: '8px',
+            height: '8px',
+            border: 'none',
           },
+
           '&::-webkit-scrollbar-thumb': {
-            backgroundColor: '#4f4f4f',
-            backgroundClip: 'padding-box',
-            borderTop: '3px solid transparent',
-            borderBottom: '3px solid transparent',
+            background: '#ffffff',
+            border: 'none',
+            borderRadius: '5px',
           },
           '&::-webkit-scrollbar-track': {
-            backgroundColor: '#222222',
+            background: 'transparent',
+          },
+          '&::-webkit-scrollbar-corner': {
+            background: 'transparent',
           },
         },
         '.hide': {

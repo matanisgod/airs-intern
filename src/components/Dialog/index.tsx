@@ -37,6 +37,7 @@ export const MenuProps = {
       width: 250,
       '&::-webkit-scrollbar': {
         width: '8px',
+        height: '8px',
         border: 'none',
       },
 
@@ -44,6 +45,12 @@ export const MenuProps = {
         background: '#ffffff',
         border: 'none',
         borderRadius: '5px',
+      },
+      '&::-webkit-scrollbar-track': {
+        background: 'transparent',
+      },
+      '&::-webkit-scrollbar-corner': {
+        background: 'transparent',
       },
     },
   },
@@ -82,6 +89,7 @@ export const CreateDialogContent = styled(DialogContent)(() => ({
   },
   '&::-webkit-scrollbar': {
     width: '8px',
+    height: '8px',
     border: 'none',
   },
 
@@ -89,6 +97,12 @@ export const CreateDialogContent = styled(DialogContent)(() => ({
     background: '#ffffff',
     border: 'none',
     borderRadius: '5px',
+  },
+  '&::-webkit-scrollbar-track': {
+    background: 'transparent',
+  },
+  '&::-webkit-scrollbar-corner': {
+    background: 'transparent',
   },
 }));
 

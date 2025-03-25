@@ -12,7 +12,8 @@ export const ErrorModal = () => {
   const [errorMessage, setErrorMessage] = useRecoilState(errorMessageAtom);
 
   const handleErrorModalClose = () => {
-    setErrorMessage({ status: 0, statusText: '' });
+    console.log(errorMessage);
+    setErrorMessage({ status: undefined, statusText: '' });
     setErrorModalOpen(false);
   };
 
@@ -21,7 +22,9 @@ export const ErrorModal = () => {
       <ErrorModalBox>
         Error
         <br />
-        {errorMessage.status} {errorMessage.statusText}
+        {errorMessage.status === undefined
+          ? 'Timeout'
+          : `${errorMessage.status} ${errorMessage.statusText}`}
       </ErrorModalBox>
     </Modal>
   );

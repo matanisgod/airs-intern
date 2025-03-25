@@ -41,6 +41,7 @@ export const DataTable = styled(DataGridPro)(() => ({
   '& .MuiDataGrid-virtualScroller': {
     '&::-webkit-scrollbar': {
       width: '8px',
+      height: '8px',
       border: 'none',
     },
 
@@ -48,6 +49,12 @@ export const DataTable = styled(DataGridPro)(() => ({
       background: '#ffffff',
       border: 'none',
       borderRadius: '5px',
+    },
+    '&::-webkit-scrollbar-track': {
+      background: 'transparent',
+    },
+    '&::-webkit-scrollbar-corner': {
+      background: 'transparent',
     },
 
     '& .MuiDataGrid-virtualScrollerContent': {
