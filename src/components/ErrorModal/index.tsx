@@ -12,7 +12,6 @@ export const ErrorModal = () => {
   const [errorMessage, setErrorMessage] = useRecoilState(errorMessageAtom);
 
   const handleErrorModalClose = () => {
-    console.log(errorMessage);
     setErrorMessage({ status: undefined, statusText: '' });
     setErrorModalOpen(false);
   };
