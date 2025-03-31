@@ -1,14 +1,18 @@
 import React from 'react';
 
+import { ThemeProvider } from '@emotion/react';
+import { StyledEngineProvider, CssBaseline, createTheme } from '@mui/material';
 import dotenv from 'dotenv';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 
-import Routes from './routes';
-import { initPro } from './utils';
+import { RecoilHooks } from './recoil/hooks';
+import AppRoutes from './routes';
+import { themeSelector } from './theme';
+import { initPro, reportWebVitals } from './utils';
 
-import { reportWebVitals } from '@/utils/reportWebVitals';
-
+const darkTheme = createTheme(themeSelector());
 const mainElement = document.createElement('div');
 mainElement.id = 'root';
 document.body.appendChild(mainElement);
@@ -21,7 +25,16 @@ dotenv.config();
 root.render(
   <React.StrictMode>
     <RecoilRoot>
-      <Routes />
+      <RecoilHooks>
+        <StyledEngineProvider injectFirst>
+          <ThemeProvider theme={darkTheme}>
+            <CssBaseline />
+            <BrowserRouter>
+              <AppRoutes />
+            </BrowserRouter>
+          </ThemeProvider>
+        </StyledEngineProvider>
+      </RecoilHooks>
     </RecoilRoot>
   </React.StrictMode>,
 );

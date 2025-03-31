@@ -1,11 +1,17 @@
 import React from 'react';
 
 import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter, Outlet } from 'react-router-dom';
+
 import AppRoutes from './index';
 
 jest.mock('@containers', () => ({
-  Header: () => <div>Header</div>,
+  Header: () => (
+    <div>
+      Header
+      <Outlet />
+    </div>
+  ),
 }));
 
 jest.mock('@routes/pages/ExecutionPage', () => ({

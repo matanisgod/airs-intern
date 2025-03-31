@@ -1,9 +1,10 @@
 import React from 'react';
 
+import type { GridColDef } from '@mui/x-data-grid-pro';
 import { render, screen } from '@testing-library/react';
 import { RecoilRoot } from 'recoil';
+
 import { DataTable } from './index';
-import type { GridColDef } from '@mui/x-data-grid-pro';
 
 describe('DataTable', () => {
   it('render', () => {
