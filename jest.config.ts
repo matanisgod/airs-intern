@@ -96,7 +96,7 @@ const config: Config = {
   // notifyMode: "failure-change",
 
   // A preset that is used as a base for Jest's configuration
-  preset: 'ts-jest',
+  preset: 'ts-jest/presets/default-esm',
 
   // Run tests from one or more projects
   // projects: undefined,
@@ -105,7 +105,7 @@ const config: Config = {
   // reporters: undefined,
 
   // Automatically reset mock state before every test
-  // resetMocks: false,
+  resetMocks: true,
 
   // Reset the module registry before running each individual test
   // resetModules: false,
@@ -114,7 +114,7 @@ const config: Config = {
   // resolver: undefined,
 
   // Automatically restore mock state and implementation before every test
-  // restoreMocks: false,
+  restoreMocks: true,
 
   // The root directory that Jest should scan for tests and modules within
   // rootDir: undefined,
@@ -143,7 +143,7 @@ const config: Config = {
   testEnvironment: 'jsdom',
 
   // Options that will be passed to the testEnvironment
-  // testEnvironmentOptions: {},
+  testEnvironmentOptions: { customExportConditions: [''] },
 
   // Adds a location field to test results
   // testLocationInResults: false,
@@ -152,9 +152,7 @@ const config: Config = {
   testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)'],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-  // testPathIgnorePatterns: [
-  //   "\\\\node_modules\\\\"
-  // ],
+  testPathIgnorePatterns: ['\\\\node_modules\\\\', '/coverage/'],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
   // testRegex: [],
@@ -167,7 +165,7 @@ const config: Config = {
 
   // A map from regular expressions to paths to transformers
   transform: {
-    '^.+\\.tsx?$': ['ts-jest', {}],
+    '^.+\\.tsx?$': ['ts-jest', { useESM: true }],
     '\\.(ttf|woff|woff2)$': '<rootDir>/__mocks__/fileTransform.js',
   },
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
@@ -177,10 +175,10 @@ const config: Config = {
   // unmockedModulePathPatterns: undefined,
 
   // Indicates whether each individual test should be reported during the run
-  // verbose: undefined,
+  verbose: true,
 
   // An array of regexp patterns that are matched against all source file paths before re-running tests in watch mode
-  // watchPathIgnorePatterns: [],
+  watchPathIgnorePatterns: ['\\\\node_modules\\\\', '/coverage/'],
 
   // Whether to use watchman for file crawling
   // watchman: true,

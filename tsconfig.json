@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES2015",
+    "target": "ES2020",
     "lib": ["dom", "dom.iterable", "esnext"],
     "moduleResolution": "node",
     "outDir": "dist",
@@ -25,7 +25,7 @@
     "isolatedModules": true,
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
-    "module": "commonjs",
+    "module": "ESNext",
     "typeRoots": ["./node_modules/@types", "./src/assets/@types"],
     "baseUrl": ".",
     "paths": {
