@@ -1,4 +1,4 @@
-import type { CaseLogs, Details } from '@recoil/status';
+import type { CaseLogs, Details } from '@recoil';
 
 export type UseCaseLogApi = {
   getDistinctCaseLogsById: (

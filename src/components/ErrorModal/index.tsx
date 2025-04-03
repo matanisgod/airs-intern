@@ -5,7 +5,7 @@ import { useRecoilState } from 'recoil';
 
 import { ErrorModalBox } from './style';
 
-import { isErrorModalOpenAtom, errorMessageAtom } from '@/recoil/status';
+import { isErrorModalOpenAtom, errorMessageAtom } from '@recoil';
 
 export const ErrorModal = () => {
   const [isErrorModalOpen, setErrorModalOpen] = useRecoilState(isErrorModalOpenAtom);

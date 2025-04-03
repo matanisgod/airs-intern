@@ -4,7 +4,7 @@ import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 import axiosBetterStacktrace from 'axios-better-stacktrace';
 import _ from 'lodash';
 
-import { regexOfManySlashes } from '@/utils/regex';
+import { regexOfManySlashes } from '@utils';
 
 axios.defaults.timeout = 30000;
 

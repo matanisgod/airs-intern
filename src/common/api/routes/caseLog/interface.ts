@@ -1,5 +1,5 @@
 import { GetDistinctCaseLogsByIdReqBody, GetDetailsByIdReqBody } from '@common/api';
-import type { CaseLogs, Details } from '@recoil/status';
+import type { CaseLogs, Details } from '@recoil';
 
 export interface AxiosCaseLogReturn {
   getDistinctCaseLogsById: (

@@ -1,7 +1,7 @@
 interface Case {
   id: string;
   name: string;
-  data: object;
+  data: string;
 }
 
 export type Cases = Array<Case>;

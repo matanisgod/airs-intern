@@ -24,7 +24,7 @@ import {
   caseSetsAtom,
   isExecutionLogRowClickedAtom,
   detailIdAtom,
-} from '@recoil/status';
+} from '@recoil';
 
 export const ExecutionLogTable = () => {
   const caseLogApi = useCaseLogApi();

@@ -1,5 +1,5 @@
 import type { ExecutionForm } from '@containers';
-import type { ExecutionLogs, ExecutionLog } from '@recoil/status';
+import type { ExecutionLogs, ExecutionLog } from '@recoil';
 
 export interface AxiosExecutionReturn {
   getExecutionLogs: () => Promise<ExecutionLogsResBody>;

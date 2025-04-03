@@ -2,13 +2,13 @@ import { renderHook, act } from '@testing-library/react';
 
 import { useExecutionApi } from './index';
 
-import { logAxiosError, useErrorSetter } from '@/utils';
 import api from '@common/api';
 import type { ExecutionForm } from '@containers';
-import type { ExecutionLog, ExecutionLogs } from '@recoil/status';
+import type { ExecutionLog, ExecutionLogs } from '@recoil';
+import { logAxiosError, useErrorSetter } from '@utils';
 
 jest.mock('@common/api');
-jest.mock('@/utils', () => ({
+jest.mock('@utils', () => ({
   logAxiosError: jest.fn(),
   useErrorSetter: jest.fn(() => jest.fn()),
 }));

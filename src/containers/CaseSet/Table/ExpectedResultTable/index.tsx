@@ -6,7 +6,7 @@ import { ExpectedResultTableBox } from './style';
 import { expectedResultColumns } from './util';
 
 import { TableHeaderBox, TableDataBox, DataTable, DatagridDefaultBox } from '@components';
-import { expectedResultsAtom, caseExpectedResultJsonAtom } from '@recoil/status';
+import { expectedResultsAtom, caseExpectedResultJsonAtom } from '@recoil';
 
 export const ExpectedResultTable = () => {
   const expectedResults = useRecoilValue(expectedResultsAtom);

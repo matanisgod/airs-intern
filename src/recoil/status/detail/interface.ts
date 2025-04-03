@@ -1,10 +1,10 @@
 interface Detail {
   result: boolean;
   resultLog: string;
-  actualResult: object;
+  actualResult: string;
   expectedResult: detailExpectedResult;
 }
 interface detailExpectedResult {
-  data: object;
+  data: string;
 }
 export type Details = Array<Detail>;

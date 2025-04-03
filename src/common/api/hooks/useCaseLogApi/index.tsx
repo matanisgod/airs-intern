@@ -6,8 +6,8 @@ import type {
   GetDistinctCaseLogsByIdReqBody,
 } from './interface';
 
-import { useErrorSetter, logAxiosError } from '@/utils';
 import api from '@common/api';
+import { useErrorSetter, logAxiosError } from '@utils';
 
 export * from './interface';
 

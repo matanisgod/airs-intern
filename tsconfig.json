@@ -33,9 +33,11 @@
       "@containers": ["./src/containers/index.ts"],
       "@components": ["./src/components/index.ts"],
       "@common*": ["./src/common*"],
-      "@recoil*": ["./src/recoil*"],
+      "@recoil": ["./src/recoil/index.ts"],
       "@interface*": ["./src/interfaces*"],
-      "@package": ["./package.json"]
+      "@package": ["./package.json"],
+      "@utils": ["./src/utils/index.ts"],
+      "@theme": ["./src/theme/index.ts"]
     },
     "types": ["jest", "node"]
   },

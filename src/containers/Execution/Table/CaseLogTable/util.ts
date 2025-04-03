@@ -1,7 +1,7 @@
 import { GridCellParams, GridColDef } from '@mui/x-data-grid';
 import clsx from 'clsx';
 
-import { formatTimeUntilSecond } from '@/utils';
+import { formatTimeUntilSecond } from '@utils';
 
 export const caseLogColumns: Array<GridColDef> = [
   {

@@ -10,7 +10,7 @@ import {
 import { CaseLogTableBox } from './style';
 import { caseLogColumns } from './util';
 
-import { useCaseLogApi } from '@/common/api';
+import { useCaseLogApi } from '@common/api';
 import { TableHeaderBox, TableDataBox, DataTable, DatagridDefaultBox } from '@components';
 import { DetailsTable } from '@containers';
 import {
@@ -20,7 +20,7 @@ import {
   detailsAtom,
   detailsExpectedResultJsonAtom,
   isExecutionLogRowClickedAtom,
-} from '@recoil/status';
+} from '@recoil';
 
 export const CaseLogTable = () => {
   const caseLogApi = useCaseLogApi();

@@ -17,7 +17,7 @@ import {
   CreateDialogContent,
   SelectButton,
 } from '@components';
-import { caseSetsAtom, isCaseSetDialogOpenAtom } from '@recoil/status';
+import { caseSetsAtom, isCaseSetDialogOpenAtom } from '@recoil';
 
 export * from './util';
 

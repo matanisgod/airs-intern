@@ -1,7 +1,7 @@
 import { isAxiosError } from 'axios';
 import { useSetRecoilState } from 'recoil';
 
-import { errorMessageAtom, isErrorModalOpenAtom } from '@recoil/status';
+import { errorMessageAtom, isErrorModalOpenAtom } from '@recoil';
 
 export const useErrorSetter = () => {
   const setErrorMessage = useSetRecoilState(errorMessageAtom);

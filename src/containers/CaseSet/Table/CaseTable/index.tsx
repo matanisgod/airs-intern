@@ -12,7 +12,7 @@ import {
   caseJsonAtom,
   caseExpectedResultJsonAtom,
   expectedResultsAtom,
-} from '@recoil/status';
+} from '@recoil';
 
 export const CaseTable = () => {
   const expectedResultApi = useExpectedResultApi();

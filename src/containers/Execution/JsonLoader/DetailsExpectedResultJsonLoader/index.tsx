@@ -11,7 +11,7 @@ import {
   JSONDefaultBox,
 } from '@components';
 import { CustomReactJson } from '@containers';
-import { detailsExpectedResultJsonAtom } from '@recoil/status';
+import { detailsExpectedResultJsonAtom } from '@recoil';
 
 export const DetailsExpectedResultJsonLoader = () => {
   const detailsExpectedResultJson = useRecoilValue(detailsExpectedResultJsonAtom);

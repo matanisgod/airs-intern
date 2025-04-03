@@ -8,20 +8,20 @@ import { HeaderBox, PageButton } from './style';
 
 import { ErrorModal, StopModal } from '@components';
 import {
-  actualResultJsonAtom,
-  caseExpectedResultJsonAtom,
-  caseJsonAtom,
-  caseLogsAtom,
+  isErrorModalOpenAtom,
+  isStopModalOpenAtom,
   casesAtom,
   caseSetsAtom,
-  detailsAtom,
-  detailsExpectedResultJsonAtom,
-  executionLogsAtom,
   expectedResultsAtom,
-  isErrorModalOpenAtom,
+  caseJsonAtom,
+  caseExpectedResultJsonAtom,
+  executionLogsAtom,
+  caseLogsAtom,
+  detailsAtom,
+  actualResultJsonAtom,
+  detailsExpectedResultJsonAtom,
   isExecutionLogRowClickedAtom,
-  isStopModalOpenAtom,
-} from '@recoil/status';
+} from '@recoil';
 
 export const Header = () => {
   const nextPage = useNavigate();

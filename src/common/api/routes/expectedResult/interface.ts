@@ -1,4 +1,4 @@
-import type { ExpectedResults } from '@recoil/status';
+import type { ExpectedResults } from '@recoil';
 
 export interface AxiosExpectedResultReturn {
   getExpectedResultById: (params: string) => Promise<GetExpectedResultByIdResBody>;

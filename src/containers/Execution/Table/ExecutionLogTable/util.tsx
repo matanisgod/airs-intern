@@ -4,9 +4,9 @@ import { GridCellParams, GridColDef } from '@mui/x-data-grid';
 import clsx from 'clsx';
 import { useSetRecoilState } from 'recoil';
 
-import { formatTimeUntilSecond } from '@/utils';
 import { StopAllButton, StopButton } from '@components';
-import { isStopModalOpenAtom, stopTargetAtom } from '@recoil/status';
+import { isStopModalOpenAtom, stopTargetAtom } from '@recoil';
+import { formatTimeUntilSecond } from '@utils';
 
 export const executionLogColumns: Array<GridColDef> = [
   {

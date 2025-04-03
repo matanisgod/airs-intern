@@ -26,7 +26,7 @@ import {
   caseExpectedResultJsonAtom,
   expectedResultsAtom,
   isCaseSetDialogOpenAtom,
-} from '@recoil/status';
+} from '@recoil';
 
 export const CaseSetTable = () => {
   const caseApi = useCaseApi();

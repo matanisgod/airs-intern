@@ -7,7 +7,7 @@ import { ButtonBox, StopModalBox } from './style';
 
 import { useExecutionApi } from '@common/api';
 import { NoButton, YesButton } from '@components';
-import { executionLogsAtom, isStopModalOpenAtom, stopTargetAtom } from '@recoil/status';
+import { executionLogsAtom, isStopModalOpenAtom, stopTargetAtom } from '@recoil';
 
 export const StopModal = () => {
   const executionApi = useExecutionApi();

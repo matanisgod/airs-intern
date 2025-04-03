@@ -1,4 +1,4 @@
-import type { CaseSets, CaseSet } from '@recoil/status';
+import type { CaseSets, CaseSet } from '@recoil';
 
 export interface AxiosCaseSetReturn {
   importCaseSet: (body: FormData) => Promise<ImportCaseSetResBody>;

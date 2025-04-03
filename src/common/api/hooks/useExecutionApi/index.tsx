@@ -2,8 +2,8 @@ import { useMemo } from 'react';
 
 import type { UseExecutionApi, CreateExecutionReqBody } from './interface';
 
-import { useErrorSetter, logAxiosError } from '@/utils';
 import api from '@common/api';
+import { useErrorSetter, logAxiosError } from '@utils';
 
 export const useExecutionApi = (): UseExecutionApi => {
   const errorSetter = useErrorSetter();

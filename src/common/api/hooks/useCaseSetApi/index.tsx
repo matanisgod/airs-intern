@@ -2,8 +2,8 @@ import { useMemo } from 'react';
 
 import type { UseCaseSetApi, ImportCaseSetReqBody } from './interface';
 
-import { useErrorSetter, logAxiosError } from '@/utils';
 import api from '@common/api';
+import { useErrorSetter, logAxiosError } from '@utils';
 
 export const useCaseSetApi = (): UseCaseSetApi => {
   const errorSetter = useErrorSetter();

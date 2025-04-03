@@ -10,7 +10,7 @@ import {
   actualResultJsonAtom,
   detailsAtom,
   detailsExpectedResultJsonAtom,
-} from '@recoil/status';
+} from '@recoil';
 
 export const DetailsTable = () => {
   const details = useRecoilValue(detailsAtom);

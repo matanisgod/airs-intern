@@ -19,11 +19,7 @@ import {
   CreateDialogCheckbox,
   CreateDialogMenuItem,
 } from '@components';
-import {
-  caseSetsAtom,
-  isExecutionLogDialogOpenAtom,
-  executionLogsAtom,
-} from '@recoil/status';
+import { caseSetsAtom, isExecutionLogDialogOpenAtom, executionLogsAtom } from '@recoil';
 
 export const CreateExecutionDialog = () => {
   const executionApi = useExecutionApi();
