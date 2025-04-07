@@ -104,6 +104,7 @@ export const CreateDialogContent = styled(DialogContent)(() => ({
   '&::-webkit-scrollbar-corner': {
     background: 'transparent',
   },
+  marginTop: '8px',
 }));
 
 export const CreateDialogCheckbox = styled(Checkbox)(() => ({
@@ -121,3 +122,10 @@ export const CreateDialogMenuItem = styled(MenuItem)(() => ({
     background: '#777777',
   },
 }));
+
+export const StyledForm = styled('form')({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'start',
+  gap: '8px',
+});

@@ -7,17 +7,11 @@ import {
   useRecoilState,
 } from 'recoil';
 
-import { CaseSetTableBox } from './style';
+import { CaseSetTableBox, CreateCaseSetButton } from './style';
 import { caseSetColumns } from './util';
 
 import { useCaseApi, useCaseSetApi } from '@common/api';
-import {
-  TableHeaderBox,
-  TableDataBox,
-  DataTable,
-  CreateButton,
-  DatagridDefaultBox,
-} from '@components';
+import { TableHeaderBox, TableDataBox, DataTable } from '@components';
 import { CreateCaseSetDialog } from '@containers';
 import {
   caseSetsAtom,
@@ -25,7 +19,8 @@ import {
   caseJsonAtom,
   caseExpectedResultJsonAtom,
   expectedResultsAtom,
-  isCaseSetDialogOpenAtom,
+  dichotomyAtom,
+  idAtom,
 } from '@recoil';
 
 export const CaseSetTable = () => {
@@ -33,8 +28,9 @@ export const CaseSetTable = () => {
   const caseSetApi = useCaseSetApi();
 
   const [isCaseSetDialogOpen, setIsCaseSetDialogOpen] = useRecoilState(
-    isCaseSetDialogOpenAtom,
+    dichotomyAtom('isCaseSetDialogOpen'),
   );
+  const [caseSetId, setCaseSetId] = useRecoilState(idAtom('caseSetId'));
 
   const caseSets = useRecoilValue(caseSetsAtom);
 
@@ -44,6 +40,8 @@ export const CaseSetTable = () => {
   const resetExpectedResults = useResetRecoilState(expectedResultsAtom);
   const resetCaseJson = useResetRecoilState(caseJsonAtom);
   const resetCaseExpectedResultJson = useResetRecoilState(caseExpectedResultJsonAtom);
+  const resetCaseSetId = useResetRecoilState(idAtom('caseSetId'));
+  const resetCases = useResetRecoilState(casesAtom);
 
   const getCasesByCaseSet = async (params: string) => {
     if (!caseApi) return;
@@ -72,13 +70,14 @@ export const CaseSetTable = () => {
   const onCreateCaseSetButtonClick = () => {
     setIsCaseSetDialogOpen(true);
   };
-  const DatagridOverlay = () => <DatagridDefaultBox>Loading...</DatagridDefaultBox>;
 
   return (
     <CaseSetTableBox>
       <TableHeaderBox>
         Case set
-        <CreateButton onClick={onCreateCaseSetButtonClick}>Create case set</CreateButton>
+        <CreateCaseSetButton onClick={onCreateCaseSetButtonClick}>
+          Create case set
+        </CreateCaseSetButton>
       </TableHeaderBox>
       <TableDataBox>
         <DataTable
@@ -88,16 +87,25 @@ export const CaseSetTable = () => {
           disableColumnMenu
           columnHeaderHeight={48}
           rowHeight={48}
-          onRowClick={(params) => {
-            getCasesByCaseSet(params.row.id);
-            cleanCaseSetPage();
-          }}
-          slots={{
-            noRowsOverlay: DatagridOverlay,
+          onRowClick={async (params, event) => {
+            if (caseSetId === params.row.id && event.ctrlKey) {
+              cleanCaseSetPage();
+              resetCaseSetId();
+              resetCases();
+            } else if (caseSetId !== params.row.id && event.ctrlKey) {
+              return;
+            } else if (caseSetId === params.row.id && !event.ctrlKey) {
+              return;
+            } else {
+              await getCasesByCaseSet(params.row.id);
+              cleanCaseSetPage();
+              setCaseSetId(params.row.id);
+            }
           }}
           scrollbarSize={8}
         />
       </TableDataBox>
+      {/* Dialog */}
       {isCaseSetDialogOpen && <CreateCaseSetDialog />}
     </CaseSetTableBox>
   );

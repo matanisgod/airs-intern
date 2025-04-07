@@ -1,6 +1,11 @@
 import React from 'react';
 
-import { useRecoilValue, useSetRecoilState, useResetRecoilState } from 'recoil';
+import {
+  useRecoilValue,
+  useSetRecoilState,
+  useResetRecoilState,
+  useRecoilState,
+} from 'recoil';
 
 import { CaseTableBox } from './style';
 import { caseColumns } from './util';
@@ -12,10 +17,13 @@ import {
   caseJsonAtom,
   caseExpectedResultJsonAtom,
   expectedResultsAtom,
+  idAtom,
 } from '@recoil';
 
 export const CaseTable = () => {
   const expectedResultApi = useExpectedResultApi();
+
+  const [caseId, setCaseId] = useRecoilState(idAtom('caseId'));
 
   const cases = useRecoilValue(casesAtom);
 
@@ -23,6 +31,9 @@ export const CaseTable = () => {
   const setCaseJson = useSetRecoilState(caseJsonAtom);
 
   const resetCaseExpectedResultJson = useResetRecoilState(caseExpectedResultJsonAtom);
+  const resetCaseId = useResetRecoilState(idAtom('caseId'));
+  const resetExpectedResults = useResetRecoilState(expectedResultsAtom);
+  const resetCaseJson = useResetRecoilState(caseJsonAtom);
 
   const getExpectedResult = async (params: string) => {
     if (!expectedResultApi) return;
@@ -45,10 +56,22 @@ export const CaseTable = () => {
           disableColumnMenu
           columnHeaderHeight={48}
           rowHeight={48}
-          onRowClick={(params) => {
-            getExpectedResult(params.row.id);
-            setCaseJson(JSON.parse(params.row.data.replace(/\bNaN\b/g, 'null')));
-            resetCaseExpectedResultJson();
+          onRowClick={async (params, event) => {
+            if (caseId === params.row.id && event.ctrlKey) {
+              resetCaseExpectedResultJson();
+              resetCaseJson();
+              resetCaseId();
+              resetExpectedResults();
+            } else if (caseId !== params.row.id && event.ctrlKey) {
+              return;
+            } else if (caseId === params.row.id && !event.ctrlKey) {
+              return;
+            } else {
+              await getExpectedResult(params.row.id);
+              setCaseJson(JSON.parse(params.row.data.replace(/\bNaN\b/g, 'null')));
+              resetCaseExpectedResultJson();
+              setCaseId(params.row.id);
+            }
           }}
           slots={{
             noRowsOverlay: DatagridOverlay,

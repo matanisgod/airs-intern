@@ -9,8 +9,8 @@ import {
   TableDataBox,
   TableHeaderBox,
   JSONDefaultBox,
+  CustomReactJson,
 } from '@components';
-import { CustomReactJson } from '@containers';
 import { detailsExpectedResultJsonAtom } from '@recoil';
 
 export const DetailsExpectedResultJsonLoader = () => {

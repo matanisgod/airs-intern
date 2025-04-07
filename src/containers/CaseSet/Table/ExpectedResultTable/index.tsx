@@ -1,17 +1,29 @@
 import React from 'react';
 
-import { useRecoilValue, useSetRecoilState } from 'recoil';
+import {
+  useRecoilState,
+  useRecoilValue,
+  useResetRecoilState,
+  useSetRecoilState,
+} from 'recoil';
 
 import { ExpectedResultTableBox } from './style';
 import { expectedResultColumns } from './util';
 
 import { TableHeaderBox, TableDataBox, DataTable, DatagridDefaultBox } from '@components';
-import { expectedResultsAtom, caseExpectedResultJsonAtom } from '@recoil';
+import { expectedResultsAtom, caseExpectedResultJsonAtom, idAtom } from '@recoil';
 
 export const ExpectedResultTable = () => {
+  const [expectedResultId, setExpectedResultId] = useRecoilState(
+    idAtom('expectedResultId'),
+  );
+
   const expectedResults = useRecoilValue(expectedResultsAtom);
 
   const setcaseExpectedResultJson = useSetRecoilState(caseExpectedResultJsonAtom);
+
+  const resetCaseExpectedResultJson = useResetRecoilState(caseExpectedResultJsonAtom);
+  const resetExpectedResultId = useResetRecoilState(idAtom('expectedResultId'));
 
   const DatagridOverlay = () => <DatagridDefaultBox>Select case</DatagridDefaultBox>;
 
@@ -26,10 +38,20 @@ export const ExpectedResultTable = () => {
           disableColumnMenu
           columnHeaderHeight={48}
           rowHeight={48}
-          onRowClick={(params) => {
-            setcaseExpectedResultJson(
-              JSON.parse(params.row.data.replace(/\bNaN\b/g, 'null')),
-            );
+          onRowClick={(params, event) => {
+            if (expectedResultId === params.row.id && event.ctrlKey) {
+              resetCaseExpectedResultJson();
+              resetExpectedResultId();
+            } else if (expectedResultId !== params.row.id && event.ctrlKey) {
+              return;
+            } else if (expectedResultId === params.row.id && !event.ctrlKey) {
+              return;
+            } else {
+              setcaseExpectedResultJson(
+                JSON.parse(params.row.data.replace(/\bNaN\b/g, 'null')),
+              );
+              setExpectedResultId(params.row.id);
+            }
           }}
           slots={{
             noRowsOverlay: DatagridOverlay,

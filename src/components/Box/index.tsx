@@ -76,7 +76,6 @@ export const TableDataBox = styled(Box)(() => ({
     height: '8px',
     border: 'none',
   },
-
   '&::-webkit-scrollbar-thumb': {
     background: '#ffffff',
     border: 'none',
@@ -89,24 +88,6 @@ export const TableDataBox = styled(Box)(() => ({
     background: 'transparent',
   },
   backgroundColor: '#222222',
-  '& .statusColor.running': {
-    color: '#55ff55',
-  },
-  '& .statusColor.cancelled': {
-    color: '#ff5555',
-  },
-  '& .statusColor.error': {
-    color: '#ffaa55',
-  },
-  '& .statusColor.done': {
-    color: '#ffffff ',
-  },
-  '& .resultColor.true': {
-    color: '#55ff55',
-  },
-  '& .resultColor.false': {
-    color: '#ff5555 ',
-  },
 }));
 
 export const DatagridDefaultBox = styled(Box)(() => ({

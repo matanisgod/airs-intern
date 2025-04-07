@@ -9,8 +9,8 @@ import {
   TableHeaderBox,
   customTheme,
   JSONDefaultBox,
+  CustomReactJson,
 } from '@components';
-import { CustomReactJson } from '@containers';
 import { caseJsonAtom } from '@recoil';
 
 export const CaseJsonLoader = () => {

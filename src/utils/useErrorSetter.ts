@@ -1,11 +1,11 @@
 import { isAxiosError } from 'axios';
 import { useSetRecoilState } from 'recoil';
 
-import { errorMessageAtom, isErrorModalOpenAtom } from '@recoil';
+import { errorMessageAtom, dichotomyAtom } from '@recoil';
 
 export const useErrorSetter = () => {
   const setErrorMessage = useSetRecoilState(errorMessageAtom);
-  const setErrorModalOpen = useSetRecoilState(isErrorModalOpenAtom);
+  const setErrorModalOpen = useSetRecoilState(dichotomyAtom('isErrorModalOpen'));
   return (param: unknown) => {
     if (isAxiosError(param)) {
       setErrorMessage({
@@ -16,3 +16,5 @@ export const useErrorSetter = () => {
     }
   };
 };
+
+//TODO: default 만들고 param 받는 식으로 변경(?)

@@ -32,14 +32,19 @@ describe('CaseTable', () => {
 
   beforeEach(() => {
     jest.spyOn(recoil, 'useSetRecoilState').mockImplementation((atom) => {
-      if (atom.key === 'expectedResultsAtom') return mockSetExpectedResults;
-      if (atom.key === 'caseJsonAtom') return mockSetCaseJson;
+      if (atom.key === 'expectedResultsAtom') {
+        return mockSetExpectedResults;
+      }
+      if (atom.key === 'caseJsonAtom') {
+        return mockSetCaseJson;
+      }
       return jest.fn();
     });
 
     jest.spyOn(recoil, 'useResetRecoilState').mockImplementation((atom) => {
-      if (atom.key === 'caseExpectedResultJsonAtom')
+      if (atom.key === 'caseExpectedResultJsonAtom') {
         return mockResetCaseExpectedResultJson;
+      }
       return jest.fn();
     });
 

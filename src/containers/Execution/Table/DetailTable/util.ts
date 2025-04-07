@@ -1,4 +1,4 @@
-import { GridCellParams, GridColDef } from '@mui/x-data-grid';
+import { GridColDef } from '@mui/x-data-grid';
 import clsx from 'clsx';
 
 export const detailColumns: Array<GridColDef> = [
@@ -17,7 +17,7 @@ export const detailColumns: Array<GridColDef> = [
     sortable: false,
     headerAlign: 'center',
     align: 'center',
-    cellClassName: (params: GridCellParams) => {
+    cellClassName: (params) => {
       if (params.value == null) {
         return '';
       }

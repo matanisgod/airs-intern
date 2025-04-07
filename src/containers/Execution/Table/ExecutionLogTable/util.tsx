@@ -1,11 +1,12 @@
 import React from 'react';
 
-import { GridCellParams, GridColDef } from '@mui/x-data-grid';
+import { GridColDef } from '@mui/x-data-grid';
 import clsx from 'clsx';
 import { useSetRecoilState } from 'recoil';
 
-import { StopAllButton, StopButton } from '@components';
-import { isStopModalOpenAtom, stopTargetAtom } from '@recoil';
+import { StopAllButton, StopButton } from './style';
+
+import { dichotomyAtom, stopTargetAtom } from '@recoil';
 import { formatTimeUntilSecond } from '@utils';
 
 export const executionLogColumns: Array<GridColDef> = [
@@ -24,7 +25,7 @@ export const executionLogColumns: Array<GridColDef> = [
     sortable: true,
     headerAlign: 'center',
     align: 'center',
-    valueGetter: (params) => formatTimeUntilSecond(params.value).slice(0, 16),
+    valueGetter: (params) => formatTimeUntilSecond(params.value),
   },
   {
     field: 'status',
@@ -33,7 +34,7 @@ export const executionLogColumns: Array<GridColDef> = [
     sortable: true,
     headerAlign: 'center',
     align: 'center',
-    cellClassName: (params: GridCellParams) => {
+    cellClassName: (params) => {
       if (params.value == null) {
         return '';
       }
@@ -52,12 +53,12 @@ export const executionLogColumns: Array<GridColDef> = [
     headerAlign: 'center',
     align: 'center',
     renderHeader: function CancelExecution() {
-      const setIsStopModalOpen = useSetRecoilState(isStopModalOpenAtom);
+      const setIsStopModalOpen = useSetRecoilState(dichotomyAtom('isStopModalOpen'));
       const setStopTarget = useSetRecoilState(stopTargetAtom);
       return (
         <StopAllButton
           onClick={() => {
-            setStopTarget('');
+            setStopTarget('All');
             setIsStopModalOpen(true);
           }}
         >
@@ -66,7 +67,7 @@ export const executionLogColumns: Array<GridColDef> = [
       );
     },
     renderCell: function CancelExecutionById(params) {
-      const setIsStopModalOpen = useSetRecoilState(isStopModalOpenAtom);
+      const setIsStopModalOpen = useSetRecoilState(dichotomyAtom('isStopModalOpen'));
       const setStopTarget = useSetRecoilState(stopTargetAtom);
 
       return (

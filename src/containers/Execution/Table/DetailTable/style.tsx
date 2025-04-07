@@ -7,4 +7,10 @@ export const DetailsTableBox = styled(Box)(() => ({
   alignSelf: 'flex-end',
   marginTop: 'auto',
   flexDirection: 'column',
+  '& .resultColor.true': {
+    color: '#55ff55',
+  },
+  '& .resultColor.false': {
+    color: '#ff5555 ',
+  },
 }));

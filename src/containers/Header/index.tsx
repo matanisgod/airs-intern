@@ -6,10 +6,9 @@ import { useRecoilValue, useResetRecoilState } from 'recoil';
 
 import { HeaderBox, PageButton } from './style';
 
-import { ErrorModal, StopModal } from '@components';
+import { ErrorModal, StopModal } from '@containers';
 import {
-  isErrorModalOpenAtom,
-  isStopModalOpenAtom,
+  dichotomyAtom,
   casesAtom,
   caseSetsAtom,
   expectedResultsAtom,
@@ -20,15 +19,14 @@ import {
   detailsAtom,
   actualResultJsonAtom,
   detailsExpectedResultJsonAtom,
-  isExecutionLogRowClickedAtom,
 } from '@recoil';
 
 export const Header = () => {
-  const nextPage = useNavigate();
-  const currentPage = useLocation();
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const isErrorModalOpen = useRecoilValue(isErrorModalOpenAtom);
-  const isStopModalOpen = useRecoilValue(isStopModalOpenAtom);
+  const isErrorModalOpen = useRecoilValue(dichotomyAtom('isErrorModalOpen'));
+  const isStopModalOpen = useRecoilValue(dichotomyAtom('isStopModalOpen'));
 
   const resetCases = useResetRecoilState(casesAtom);
   const resetCaseSets = useResetRecoilState(caseSetsAtom);
@@ -42,7 +40,9 @@ export const Header = () => {
   const resetDetailsExpectedResultJson = useResetRecoilState(
     detailsExpectedResultJsonAtom,
   );
-  const resetIsExecutionLogRowClicked = useResetRecoilState(isExecutionLogRowClickedAtom);
+  const resetIsExecutionLogRowClicked = useResetRecoilState(
+    dichotomyAtom('isExecutionLogRowClicked'),
+  );
 
   const cleanExecutionPage = () => {
     resetExecutionLogs();
@@ -65,21 +65,21 @@ export const Header = () => {
     <React.Fragment>
       <HeaderBox>
         PQ Automation Test
-        {currentPage.pathname === '/execution' && (
+        {location.pathname === '/execution' && (
           <PageButton
             onClick={() => {
               cleanExecutionPage();
-              nextPage('/caseset');
+              navigate('/caseset');
             }}
           >
             Move to caseset
           </PageButton>
         )}
-        {currentPage.pathname === '/caseset' && (
+        {location.pathname === '/caseset' && (
           <PageButton
             onClick={() => {
               cleanCaseSetPage();
-              nextPage('/execution');
+              navigate('/execution');
             }}
           >
             Move to execution
@@ -87,6 +87,7 @@ export const Header = () => {
         )}
       </HeaderBox>
       <Outlet />
+      {/* Modals */}
       {isErrorModalOpen && <ErrorModal />}
       {isStopModalOpen && <StopModal />}
     </React.Fragment>

@@ -1,24 +1,36 @@
 import React from 'react';
 
-import { useRecoilValue, useSetRecoilState } from 'recoil';
+import {
+  useRecoilState,
+  useRecoilValue,
+  useResetRecoilState,
+  useSetRecoilState,
+} from 'recoil';
 
 import { DetailsTableBox } from './style';
 import { detailColumns } from './util';
 
-import { TableDataBox, DataTable, DatagridDefaultBox } from '@components';
+import { TableDataBox, DataTable } from '@components';
 import {
   actualResultJsonAtom,
   detailsAtom,
   detailsExpectedResultJsonAtom,
+  idAtom,
 } from '@recoil';
 
 export const DetailsTable = () => {
+  const [detailId, setDetailId] = useRecoilState(idAtom('detailId'));
+
   const details = useRecoilValue(detailsAtom);
 
   const setActualResultJson = useSetRecoilState(actualResultJsonAtom);
   const setDetailsExpectedResultJson = useSetRecoilState(detailsExpectedResultJsonAtom);
 
-  const DatagridOverlay = () => <DatagridDefaultBox>Select case log</DatagridDefaultBox>;
+  const resetDetailId = useResetRecoilState(idAtom('detailId'));
+  const resetActualResultJson = useResetRecoilState(actualResultJsonAtom);
+  const resetDetailsExpectedResultJson = useResetRecoilState(
+    detailsExpectedResultJsonAtom,
+  );
 
   return (
     <DetailsTableBox>
@@ -30,16 +42,24 @@ export const DetailsTable = () => {
           disableColumnMenu
           columnHeaderHeight={48}
           rowHeight={48}
-          onRowClick={(params) => {
-            setActualResultJson(
-              JSON.parse(params.row.actualResult.replace(/\bNaN\b/g, 'null')),
-            );
-            setDetailsExpectedResultJson(
-              JSON.parse(params.row.expectedResult.data.replace(/\bNaN\b/g, 'null')),
-            );
-          }}
-          slots={{
-            noRowsOverlay: DatagridOverlay,
+          onRowClick={(params, event) => {
+            if (detailId === params.row.id && event.ctrlKey) {
+              resetActualResultJson();
+              resetDetailsExpectedResultJson();
+              resetDetailId();
+            } else if (detailId !== params.row.id && event.ctrlKey) {
+              return;
+            } else if (detailId === params.row.id && !event.ctrlKey) {
+              return;
+            } else {
+              setActualResultJson(
+                JSON.parse(params.row.actualResult.replace(/\bNaN\b/g, 'null')),
+              );
+              setDetailsExpectedResultJson(
+                JSON.parse(params.row.expectedResult.data.replace(/\bNaN\b/g, 'null')),
+              );
+              setDetailId(params.row.id);
+            }
           }}
           scrollbarSize={0}
         />

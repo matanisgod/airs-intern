@@ -2,17 +2,11 @@ import React, { useEffect } from 'react';
 
 import { useSetRecoilState, useRecoilState, useResetRecoilState } from 'recoil';
 
-import { ExecutionLogTableBox } from './style';
+import { ExecutionLogTableBox, CreateExecutionButton } from './style';
 import { executionLogColumns } from './util';
 
 import { useCaseLogApi, useCaseSetApi, useExecutionApi } from '@common/api';
-import {
-  TableHeaderBox,
-  TableDataBox,
-  DataTable,
-  CreateButton,
-  DatagridDefaultBox,
-} from '@components';
+import { TableHeaderBox, TableDataBox, DataTable } from '@components';
 import { CreateExecutionDialog } from '@containers';
 import {
   executionLogsAtom,
@@ -20,10 +14,9 @@ import {
   detailsAtom,
   actualResultJsonAtom,
   detailsExpectedResultJsonAtom,
-  isExecutionLogDialogOpenAtom,
   caseSetsAtom,
-  isExecutionLogRowClickedAtom,
-  detailIdAtom,
+  dichotomyAtom,
+  idAtom,
 } from '@recoil';
 
 export const ExecutionLogTable = () => {
@@ -33,13 +26,15 @@ export const ExecutionLogTable = () => {
 
   const [executionLogs, setExecutionLogs] = useRecoilState(executionLogsAtom);
   const [isExecutionDialogOpen, setIsExecutionDialogOpen] = useRecoilState(
-    isExecutionLogDialogOpenAtom,
+    dichotomyAtom('isExecutionLogDialogOpen'),
   );
+  const [executionLogId, setExecutionLogId] = useRecoilState(idAtom('executionLogId'));
+
   const setCaseSets = useSetRecoilState(caseSetsAtom);
   const setCaseLogs = useSetRecoilState(caseLogsAtom);
-  const setIsExecutionLogRowClicked = useSetRecoilState(isExecutionLogRowClickedAtom);
 
-  const resetDetailId = useResetRecoilState(detailIdAtom);
+  const resetExecutionLogId = useResetRecoilState(idAtom('executionLogId'));
+  const resetCaseLogId = useResetRecoilState(idAtom('caseLogId'));
   const resetCaseLogs = useResetRecoilState(caseLogsAtom);
   const resetDetails = useResetRecoilState(detailsAtom);
   const resetActualResultJson = useResetRecoilState(actualResultJsonAtom);
@@ -47,9 +42,9 @@ export const ExecutionLogTable = () => {
     detailsExpectedResultJsonAtom,
   );
 
-  const getDistinctCaseLogs = async (body: string) => {
+  const getDistinctCaseLogs = async (executionId: string) => {
     if (!caseLogApi) return;
-    const response = await caseLogApi.getDistinctCaseLogsById({ executionId: body });
+    const response = await caseLogApi.getDistinctCaseLogsById({ executionId });
     if (response) {
       setCaseLogs(response);
     } else {
@@ -61,6 +56,7 @@ export const ExecutionLogTable = () => {
     resetDetails();
     resetActualResultJson();
     resetDetailsExpectedResultJson();
+    resetCaseLogId();
   };
 
   useEffect(() => {
@@ -86,15 +82,13 @@ export const ExecutionLogTable = () => {
     fetchCaseSets();
   };
 
-  const DatagridOverlay = () => <DatagridDefaultBox>Loading...</DatagridDefaultBox>;
-
   return (
     <ExecutionLogTableBox>
       <TableHeaderBox>
         Execution log
-        <CreateButton onClick={onCreateExecutionLogButtonClick}>
+        <CreateExecutionButton onClick={onCreateExecutionLogButtonClick}>
           Create Execution
-        </CreateButton>
+        </CreateExecutionButton>
       </TableHeaderBox>
       <TableDataBox>
         <DataTable
@@ -104,18 +98,25 @@ export const ExecutionLogTable = () => {
           disableColumnMenu
           columnHeaderHeight={48}
           rowHeight={48}
-          onRowClick={(params) => {
-            getDistinctCaseLogs(params.row.id);
-            clearExecutionPage();
-            setIsExecutionLogRowClicked(true);
-            resetDetailId();
-          }}
-          slots={{
-            noRowsOverlay: DatagridOverlay,
+          onRowClick={async (params, event) => {
+            if (executionLogId === params.row.id && event.ctrlKey) {
+              clearExecutionPage();
+              resetExecutionLogId();
+              resetCaseLogs();
+            } else if (executionLogId !== params.row.id && event.ctrlKey) {
+              return;
+            } else if (executionLogId === params.row.id && !event.ctrlKey) {
+              return;
+            } else {
+              await getDistinctCaseLogs(params.row.id);
+              clearExecutionPage();
+              setExecutionLogId(params.row.id);
+            }
           }}
           scrollbarSize={8}
         />
       </TableDataBox>
+      {/* Dialog */}
       {isExecutionDialogOpen && <CreateExecutionDialog />}
     </ExecutionLogTableBox>
   );

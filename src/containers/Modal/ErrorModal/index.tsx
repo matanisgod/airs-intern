@@ -3,12 +3,14 @@ import React from 'react';
 import { Modal } from '@mui/material';
 import { useRecoilState } from 'recoil';
 
-import { ErrorModalBox } from './style';
+import { ErrorModalBox, ErrorConfirmButton } from './style';
 
-import { isErrorModalOpenAtom, errorMessageAtom } from '@recoil';
+import { dichotomyAtom, errorMessageAtom } from '@recoil';
 
 export const ErrorModal = () => {
-  const [isErrorModalOpen, setErrorModalOpen] = useRecoilState(isErrorModalOpenAtom);
+  const [isErrorModalOpen, setErrorModalOpen] = useRecoilState(
+    dichotomyAtom('isErrorModalOpen'),
+  );
   const [errorMessage, setErrorMessage] = useRecoilState(errorMessageAtom);
 
   const handleErrorModalClose = () => {
@@ -17,13 +19,18 @@ export const ErrorModal = () => {
   };
 
   return (
-    <Modal open={isErrorModalOpen} onClose={handleErrorModalClose}>
+    <Modal open={isErrorModalOpen}>
       <ErrorModalBox>
-        Error
-        <br />
         {errorMessage.status === undefined
-          ? 'Timeout'
+          ? 'Unknown error'
           : `${errorMessage.status} ${errorMessage.statusText}`}
+        <ErrorConfirmButton
+          onClick={() => {
+            handleErrorModalClose();
+          }}
+        >
+          Close
+        </ErrorConfirmButton>
       </ErrorModalBox>
     </Modal>
   );

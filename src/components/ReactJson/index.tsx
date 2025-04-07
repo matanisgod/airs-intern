@@ -1,3 +1,15 @@
+import React from 'react';
+
+import ReactJson, { ReactJsonViewProps } from 'react-json-view';
+
+interface CustomReactJsonViewProps extends ReactJsonViewProps {
+  displayArrayKey?: boolean;
+}
+
+export const CustomReactJson = (props: CustomReactJsonViewProps) => {
+  return <ReactJson {...props} />;
+};
+
 export const customTheme = {
   base00: '#1e1e1e !important',
   base01: '#252930',

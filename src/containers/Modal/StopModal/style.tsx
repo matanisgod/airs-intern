@@ -1,12 +1,14 @@
 import { styled, Box } from '@mui/material';
 
-export const ErrorModalBox = styled(Box)({
+import { ConfirmButton } from '@components';
+
+export const StopModalBox = styled(Box)({
   position: 'absolute',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: '30%',
-  minwidth: '576px',
+  minWidth: '576px',
   height: '20%',
   minHeight: '216px',
   backgroundColor: '#222222',
@@ -18,3 +20,13 @@ export const ErrorModalBox = styled(Box)({
   justifyContent: 'center',
   alignItems: 'center',
 });
+
+export const ButtonBox = styled(Box)({
+  display: 'flex',
+  gap: '20px',
+});
+
+export const ErrorConfirmButton = styled(ConfirmButton)(() => ({
+  width: '65px',
+  height: '40px',
+}));

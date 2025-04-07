@@ -1,5 +1,6 @@
 import React from 'react';
 
+import _ from 'lodash';
 import {
   useRecoilValue,
   useSetRecoilState,
@@ -16,17 +17,18 @@ import { DetailsTable } from '@containers';
 import {
   actualResultJsonAtom,
   caseLogsAtom,
-  detailIdAtom,
+  idAtom,
   detailsAtom,
   detailsExpectedResultJsonAtom,
-  isExecutionLogRowClickedAtom,
 } from '@recoil';
 
 export const CaseLogTable = () => {
   const caseLogApi = useCaseLogApi();
 
+  const [caseLogId, setCaseLogId] = useRecoilState(idAtom('caseLogId'));
+
   const caseLogs = useRecoilValue(caseLogsAtom);
-  const isExecutionLogRowClicked = useRecoilValue(isExecutionLogRowClickedAtom);
+  const executionLogId = useRecoilValue(idAtom('executionLogId'));
 
   const setDetails = useSetRecoilState(detailsAtom);
 
@@ -34,6 +36,9 @@ export const CaseLogTable = () => {
   const resetDetailsExpectedResultJson = useResetRecoilState(
     detailsExpectedResultJsonAtom,
   );
+  const resetCaseLogId = useResetRecoilState(idAtom('caseLogId'));
+  const resetDetails = useResetRecoilState(detailsAtom);
+
   const getDetails = async (
     executionLogId: string,
     caseId: string,
@@ -50,17 +55,16 @@ export const CaseLogTable = () => {
       setDetails(response);
     }
   };
-  const cleanExecutionPage = () => {
+  const clearExecutionPage = () => {
     resetActualResultJson();
     resetDetailsExpectedResultJson();
   };
 
   const DatagridOverlay = () => (
     <DatagridDefaultBox>
-      {isExecutionLogRowClicked ? 'No case log' : 'Select execution log'}
+      {_.isEmpty(executionLogId) ? 'Select execution log' : 'No case log'}
     </DatagridDefaultBox>
   );
-  const [detailId, setDetailId] = useRecoilState(detailIdAtom);
 
   return (
     <CaseLogTableBox>
@@ -80,23 +84,29 @@ export const CaseLogTable = () => {
           disableColumnMenu
           columnHeaderHeight={48}
           rowHeight={48}
-          onRowClick={async (params) => {
-            if (detailId === params.row.id) {
-              setDetailId('');
+          onRowClick={async (params, event) => {
+            if (caseLogId === params.row.id && event.ctrlKey) {
+              clearExecutionPage();
+              resetCaseLogId();
+              resetDetails();
+            } else if (caseLogId !== params.row.id && event.ctrlKey) {
+              return;
+            } else if (caseLogId === params.row.id && !event.ctrlKey) {
+              return;
             } else {
-              cleanExecutionPage();
               await getDetails(
                 params.row.executionLogId,
                 params.row.caseId,
                 params.row.expectedResultId,
               );
-              setDetailId(params.row.id);
+              clearExecutionPage();
+              setCaseLogId(params.row.id);
             }
           }}
           slots={{
             noRowsOverlay: DatagridOverlay,
           }}
-          detailPanelExpandedRowIds={[detailId]}
+          detailPanelExpandedRowIds={[caseLogId]}
           getDetailPanelContent={() => <DetailsTable />}
           getDetailPanelHeight={() => 'auto'}
           scrollbarSize={8}

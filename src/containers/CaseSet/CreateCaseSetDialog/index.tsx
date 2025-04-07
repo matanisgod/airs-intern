@@ -4,6 +4,7 @@ import { DialogActions, Box, OutlinedInput, Typography } from '@mui/material';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import { useSetRecoilState, useRecoilState } from 'recoil';
 
+import { SelectButton, CaseSetDecisionButton } from './style';
 import { CaseSetForm, caseSetFormField } from './util';
 
 import { useCaseSetApi } from '@common/api';
@@ -11,20 +12,18 @@ import {
   CreateDialogContentText,
   CreateDialog,
   CreateDialogTitle,
-  CancelButton,
-  SubmitButton,
   CreateDialogFormControl,
   CreateDialogContent,
-  SelectButton,
+  StyledForm,
 } from '@components';
-import { caseSetsAtom, isCaseSetDialogOpenAtom } from '@recoil';
+import { caseSetsAtom, dichotomyAtom } from '@recoil';
 
 export * from './util';
 
 export const CreateCaseSetDialog = () => {
   const caseSetApi = useCaseSetApi();
 
-  const [isOpen, setIsOpen] = useRecoilState(isCaseSetDialogOpenAtom);
+  const [isOpen, setIsOpen] = useRecoilState(dichotomyAtom('isCaseSetDialogOpen'));
 
   const setCaseSets = useSetRecoilState(caseSetsAtom);
 
@@ -72,7 +71,7 @@ export const CreateCaseSetDialog = () => {
       >
         <CreateDialogTitle>Create case set</CreateDialogTitle>
         <CreateDialogContent>
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <StyledForm onSubmit={handleSubmit(onSubmit)}>
             {caseSetFormField.map(({ label, name, type }) => (
               <Box key={name}>
                 <CreateDialogContentText>{label}:</CreateDialogContentText>
@@ -102,14 +101,20 @@ export const CreateCaseSetDialog = () => {
                                 }
 
                                 setValue(name, e.target.files[0]);
-                                if (name === 'caseYamlFile')
+                                if (name === 'caseYamlFile') {
                                   setCaseYmlFile(e.target.files[0]?.name);
-                                else setErYmlFile(e.target.files[0]?.name);
+                                } else {
+                                  setErYmlFile(e.target.files[0]?.name);
+                                }
                               }
                             }}
                           />
                           <label htmlFor={name}>
-                            <SelectButton component="span">Select YAML file</SelectButton>
+                            <SelectButton
+                            // component="span"
+                            >
+                              Select YAML file
+                            </SelectButton>
                           </label>
                           {name === 'caseYamlFile' && caseYamlFile && (
                             <Typography sx={{ fontStyle: 'italic' }}>
@@ -137,10 +142,10 @@ export const CreateCaseSetDialog = () => {
               </Box>
             ))}
             <DialogActions>
-              <CancelButton onClick={handleClose}>Cancel</CancelButton>
-              <SubmitButton type="submit">Submit</SubmitButton>
+              <CaseSetDecisionButton onClick={handleClose}>Cancel</CaseSetDecisionButton>
+              <CaseSetDecisionButton type="submit">Submit</CaseSetDecisionButton>
             </DialogActions>
-          </form>
+          </StyledForm>
         </CreateDialogContent>
       </CreateDialog>
     </React.Fragment>

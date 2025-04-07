@@ -1,4 +1,4 @@
-import { GridCellParams, GridColDef } from '@mui/x-data-grid';
+import { GridColDef } from '@mui/x-data-grid';
 import clsx from 'clsx';
 
 import { formatTimeUntilSecond } from '@utils';
@@ -27,7 +27,7 @@ export const caseLogColumns: Array<GridColDef> = [
     sortable: false,
     headerAlign: 'center',
     align: 'center',
-    valueGetter: (params) => formatTimeUntilSecond(params.value).slice(0, 16),
+    valueGetter: (params) => formatTimeUntilSecond(params.value),
   },
   {
     field: 'result',
@@ -36,7 +36,7 @@ export const caseLogColumns: Array<GridColDef> = [
     sortable: false,
     headerAlign: 'center',
     align: 'center',
-    cellClassName: (params: GridCellParams) => {
+    cellClassName: (params) => {
       if (params.value == null) {
         return '';
       }

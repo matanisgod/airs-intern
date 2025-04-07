@@ -4,5 +4,3 @@ export * from './DataGrid';
 export * from './Box';
 export * from './Dialog';
 export * from './ReactJson';
-export * from './ErrorModal';
-export * from './StopModal';

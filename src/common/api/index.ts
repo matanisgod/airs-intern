@@ -17,13 +17,13 @@ import {
 export * from './hooks';
 export * from './routes';
 
-type ApiObject = {
+interface ApiObject {
   caseSet: AxiosCaseSetReturn;
   expectedResult: AxiosExpectedResultReturn;
   execution: AxiosExecutionReturn;
   case: AxiosCaseReturn;
   caseLog: AxiosCaseLogReturn;
-};
+}
 
 const api = (): ApiObject => {
   return {
