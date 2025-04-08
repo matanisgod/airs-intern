@@ -110,3 +110,22 @@ export const JSONDefaultBox = styled(Box)(() => ({
   border: '1px solid black',
   color: '#ffffff',
 }));
+
+export const ButtonBox = styled(Box)({
+  display: 'flex',
+  marginLeft: 'auto',
+  marginRight: '10px',
+  gap: '20px',
+});
+
+export const ModalBox = styled(Box)({
+  position: 'absolute',
+  backgroundColor: '#222222',
+  border: '1px solid white !important',
+  color: 'white',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  gap: '30px',
+});

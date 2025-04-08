@@ -3,6 +3,7 @@ import React from 'react';
 import { DialogActions, Box, OutlinedInput, Select, ListItemText } from '@mui/material';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import { useSetRecoilState, useRecoilState, useRecoilValue } from 'recoil';
+import validator from 'validator';
 
 import { ExecutionDecisionButton } from './style';
 import { ExecutionForm, executionFormField } from './util';
@@ -69,7 +70,7 @@ export const CreateExecutionDialog = () => {
       handleClose();
     }
   };
-
+  //TODO: validator 추가
   return (
     <CreateDialog
       open={isOpen}
@@ -87,7 +88,7 @@ export const CreateExecutionDialog = () => {
             name="testSets"
             control={control}
             defaultValue={[]}
-            rules={{ required: '필수 입력' }}
+            rules={{ required: 'Field required' }}
             render={({ field, fieldState }) => (
               <CreateDialogFormControl fullWidth>
                 <Select
@@ -136,7 +137,22 @@ export const CreateExecutionDialog = () => {
                 name={name}
                 control={control}
                 defaultValue={''}
-                rules={{ required: '필수 입력' }}
+                rules={{
+                  required: 'Field required',
+                  validate:
+                    name === 'gatePcIp'
+                      ? (value) => validator.isIP(String(value)) || 'Invalid IP address'
+                      : name === 'dcsApiPort' || name === 'dcsDicomPort'
+                        ? (value) =>
+                            validator.isInt(String(value), { min: 1, max: 65535 }) ||
+                            'Port must be 1~65535'
+                        : name === 'keycloakUrl'
+                          ? (value) =>
+                              validator.isURL(String(value), {
+                                require_protocol: true,
+                              }) || 'Invalid URL'
+                          : undefined,
+                }}
                 render={({ field, fieldState }) => (
                   <CreateDialogFormControl fullWidth>
                     <OutlinedInput {...field} type={type} autoComplete="off" />

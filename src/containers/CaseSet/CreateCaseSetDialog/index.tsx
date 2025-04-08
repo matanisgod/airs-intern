@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-import { DialogActions, Box, OutlinedInput, Typography } from '@mui/material';
+import { DialogActions, Box, OutlinedInput } from '@mui/material';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import { useSetRecoilState, useRecoilState } from 'recoil';
 
-import { SelectButton, CaseSetDecisionButton } from './style';
+import { UploadButton, CaseSetDecisionButton, UploadBox, UploadText } from './style';
 import { CaseSetForm, caseSetFormField } from './util';
 
 import { useCaseSetApi } from '@common/api';
@@ -110,23 +110,15 @@ export const CreateCaseSetDialog = () => {
                             }}
                           />
                           <label htmlFor={name}>
-                            <SelectButton
-                            // component="span"
-                            >
-                              Select YAML file
-                            </SelectButton>
+                            <UploadBox>
+                              <UploadText>
+                                {name === 'caseYamlFile' && caseYamlFile}
+                                {name === 'expectedResultYamlFile' &&
+                                  expectedResultYamlFile}
+                              </UploadText>
+                              <UploadButton component="span">📁</UploadButton>
+                            </UploadBox>
                           </label>
-                          {name === 'caseYamlFile' && caseYamlFile && (
-                            <Typography sx={{ fontStyle: 'italic' }}>
-                              {caseYamlFile}
-                            </Typography>
-                          )}
-                          {name === 'expectedResultYamlFile' &&
-                            expectedResultYamlFile && (
-                              <Typography sx={{ fontStyle: 'italic' }}>
-                                {expectedResultYamlFile}
-                              </Typography>
-                            )}
                         </>
                       ) : (
                         <OutlinedInput {...field} type="text" autoComplete="off" />

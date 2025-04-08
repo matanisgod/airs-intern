@@ -1,6 +1,6 @@
 import { styled, Box, Button } from '@mui/material';
 
-import { CreateButton } from '@components';
+import { ConfirmButton, CreateButton } from '@components';
 
 export const ExecutionLogTableBox = styled(Box)(() => ({
   width: '35%',
@@ -27,22 +27,23 @@ export const CreateExecutionButton = styled(CreateButton)(() => ({
   height: '50px',
   fontSize: '20px',
 }));
-export const StopAllButton = styled(Button)(() => ({
-  width: '80%',
-  height: '80%',
-  color: 'white',
-  backgroundColor: '#6d7785',
-  textTransform: 'none',
-  fontSize: '20px',
+
+export const ActionButton = styled(ConfirmButton)(() => ({
+  width: '50px',
+  minWidth: '50px',
+  height: '50px',
+  fontSize: '50px',
+  padding: '0px',
+  background: '#232A3E',
   '&:hover': {
-    background: '#888888',
+    background: '#232A3E',
   },
 }));
 export const StopButton = styled(Button)(() => ({
   width: '80%',
   height: '80%',
   color: 'white',
-  backgroundColor: '#444444',
+  background: '#444444',
   textTransform: 'none',
   fontSize: '14px',
   '&:hover': {

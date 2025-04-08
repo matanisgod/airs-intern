@@ -4,7 +4,7 @@ import { GridColDef } from '@mui/x-data-grid';
 import clsx from 'clsx';
 import { useSetRecoilState } from 'recoil';
 
-import { StopAllButton, StopButton } from './style';
+import { StopButton } from './style';
 
 import { dichotomyAtom, stopTargetAtom } from '@recoil';
 import { formatTimeUntilSecond } from '@utils';
@@ -48,24 +48,11 @@ export const executionLogColumns: Array<GridColDef> = [
   },
   {
     field: 'actions',
+    headerName: 'Action',
     flex: 0.4,
     sortable: false,
     headerAlign: 'center',
     align: 'center',
-    renderHeader: function CancelExecution() {
-      const setIsStopModalOpen = useSetRecoilState(dichotomyAtom('isStopModalOpen'));
-      const setStopTarget = useSetRecoilState(stopTargetAtom);
-      return (
-        <StopAllButton
-          onClick={() => {
-            setStopTarget('All');
-            setIsStopModalOpen(true);
-          }}
-        >
-          Stop all
-        </StopAllButton>
-      );
-    },
     renderCell: function CancelExecutionById(params) {
       const setIsStopModalOpen = useSetRecoilState(dichotomyAtom('isStopModalOpen'));
       const setStopTarget = useSetRecoilState(stopTargetAtom);

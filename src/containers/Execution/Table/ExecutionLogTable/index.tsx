@@ -2,11 +2,19 @@ import React, { useEffect } from 'react';
 
 import { useSetRecoilState, useRecoilState, useResetRecoilState } from 'recoil';
 
-import { ExecutionLogTableBox, CreateExecutionButton } from './style';
+import { ExecutionLogTableBox, CreateExecutionButton, ActionButton } from './style';
 import { executionLogColumns } from './util';
 
 import { useCaseLogApi, useCaseSetApi, useExecutionApi } from '@common/api';
-import { TableHeaderBox, TableDataBox, DataTable } from '@components';
+import {
+  TableHeaderBox,
+  TableDataBox,
+  DataTable,
+  DatagridDefaultBox,
+  ButtonBox,
+  RefreshButton,
+  CancelButton,
+} from '@components';
 import { CreateExecutionDialog } from '@containers';
 import {
   executionLogsAtom,
@@ -17,6 +25,7 @@ import {
   caseSetsAtom,
   dichotomyAtom,
   idAtom,
+  stopTargetAtom,
 } from '@recoil';
 
 export const ExecutionLogTable = () => {
@@ -32,6 +41,8 @@ export const ExecutionLogTable = () => {
 
   const setCaseSets = useSetRecoilState(caseSetsAtom);
   const setCaseLogs = useSetRecoilState(caseLogsAtom);
+  const setIsStopModalOpen = useSetRecoilState(dichotomyAtom('isStopModalOpen'));
+  const setStopTarget = useSetRecoilState(stopTargetAtom);
 
   const resetExecutionLogId = useResetRecoilState(idAtom('executionLogId'));
   const resetCaseLogId = useResetRecoilState(idAtom('caseLogId'));
@@ -58,7 +69,7 @@ export const ExecutionLogTable = () => {
     resetDetailsExpectedResultJson();
     resetCaseLogId();
   };
-
+  const DatagridOverlay = () => <DatagridDefaultBox>No rows</DatagridDefaultBox>;
   useEffect(() => {
     if (!executionApi) return;
     const fetchExecutionLog = async () => {
@@ -86,9 +97,29 @@ export const ExecutionLogTable = () => {
     <ExecutionLogTableBox>
       <TableHeaderBox>
         Execution log
-        <CreateExecutionButton onClick={onCreateExecutionLogButtonClick}>
-          Create Execution
-        </CreateExecutionButton>
+        <ButtonBox>
+          <ActionButton
+            onClick={() => {
+              setStopTarget('All');
+              setIsStopModalOpen(true);
+            }}
+          >
+            {CancelButton()}
+          </ActionButton>
+          <ActionButton
+            onClick={async () => {
+              const response = await executionApi?.getExecutionLogs();
+              if (response) {
+                setExecutionLogs(response);
+              }
+            }}
+          >
+            {RefreshButton()}
+          </ActionButton>
+          <CreateExecutionButton onClick={onCreateExecutionLogButtonClick}>
+            Create Execution
+          </CreateExecutionButton>
+        </ButtonBox>
       </TableHeaderBox>
       <TableDataBox>
         <DataTable
@@ -112,6 +143,9 @@ export const ExecutionLogTable = () => {
               clearExecutionPage();
               setExecutionLogId(params.row.id);
             }
+          }}
+          slots={{
+            noRowsOverlay: DatagridOverlay,
           }}
           scrollbarSize={8}
         />

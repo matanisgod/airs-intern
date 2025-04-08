@@ -7,11 +7,18 @@ import {
   useRecoilState,
 } from 'recoil';
 
-import { CaseSetTableBox, CreateCaseSetButton } from './style';
+import { ActionButton, CaseSetTableBox, CreateCaseSetButton } from './style';
 import { caseSetColumns } from './util';
 
 import { useCaseApi, useCaseSetApi } from '@common/api';
-import { TableHeaderBox, TableDataBox, DataTable } from '@components';
+import {
+  TableHeaderBox,
+  TableDataBox,
+  DataTable,
+  DatagridDefaultBox,
+  ButtonBox,
+  RefreshButton,
+} from '@components';
 import { CreateCaseSetDialog } from '@containers';
 import {
   caseSetsAtom,
@@ -55,6 +62,7 @@ export const CaseSetTable = () => {
     resetCaseJson();
     resetCaseExpectedResultJson();
   };
+  const DatagridOverlay = () => <DatagridDefaultBox>No rows</DatagridDefaultBox>;
 
   useEffect(() => {
     if (!caseSetApi) return;
@@ -75,9 +83,22 @@ export const CaseSetTable = () => {
     <CaseSetTableBox>
       <TableHeaderBox>
         Case set
-        <CreateCaseSetButton onClick={onCreateCaseSetButtonClick}>
-          Create case set
-        </CreateCaseSetButton>
+        <ButtonBox>
+          <ActionButton
+            onClick={async () => {
+              const response = await caseSetApi?.getCaseSets();
+              if (response) {
+                setCaseSets(response);
+              }
+            }}
+          >
+            {RefreshButton()}
+          </ActionButton>
+
+          <CreateCaseSetButton onClick={onCreateCaseSetButtonClick}>
+            Create case set
+          </CreateCaseSetButton>
+        </ButtonBox>
       </TableHeaderBox>
       <TableDataBox>
         <DataTable
@@ -101,6 +122,9 @@ export const CaseSetTable = () => {
               cleanCaseSetPage();
               setCaseSetId(params.row.id);
             }
+          }}
+          slots={{
+            noRowsOverlay: DatagridOverlay,
           }}
           scrollbarSize={8}
         />
