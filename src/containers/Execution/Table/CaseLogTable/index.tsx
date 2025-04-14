@@ -71,6 +71,7 @@ export const CaseLogTable = () => {
       <TableHeaderBox>Case log</TableHeaderBox>
       <TableDataBox>
         <DataTable
+          getRowId={(row) => row.caseId}
           initialState={{
             columns: {
               columnVisibilityModel: {
@@ -82,16 +83,14 @@ export const CaseLogTable = () => {
           columns={caseLogColumns}
           hideFooter
           disableColumnMenu
-          columnHeaderHeight={48}
-          rowHeight={48}
+          columnHeaderHeight={40}
+          rowHeight={40}
           onRowClick={async (params, event) => {
-            if (caseLogId === params.row.id && event.ctrlKey) {
+            if (caseLogId === params.row.caseId && event.ctrlKey) {
               clearExecutionPage();
               resetCaseLogId();
               resetDetails();
-            } else if (caseLogId !== params.row.id && event.ctrlKey) {
-              return;
-            } else if (caseLogId === params.row.id && !event.ctrlKey) {
+            } else if (caseLogId === params.row.caseId && !event.ctrlKey) {
               return;
             } else {
               await getDetails(
@@ -100,15 +99,17 @@ export const CaseLogTable = () => {
                 params.row.expectedResultId,
               );
               clearExecutionPage();
-              setCaseLogId(params.row.id);
+              setCaseLogId(params.row.caseId);
             }
           }}
           slots={{
             noRowsOverlay: DatagridOverlay,
           }}
+          disableMultipleRowSelection={true}
           detailPanelExpandedRowIds={[caseLogId]}
           getDetailPanelContent={() => <DetailsTable />}
           getDetailPanelHeight={() => 'auto'}
+          disableColumnReorder={true}
           scrollbarSize={8}
         />
       </TableDataBox>

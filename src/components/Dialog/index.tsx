@@ -13,26 +13,28 @@ export const CreateDialog = styled(Dialog)(() => ({
   '& .MuiDialog-paper': {
     width: '500px',
     maxWidth: '500px',
-    border: '1px solid white',
-    background: '#222222',
+    background: '#202027',
   },
 }));
 export const CreateDialogContentText = styled(DialogContentText)(() => ({
-  color: 'white',
+  color: '#D9D9D9',
 }));
 
 export const CreateDialogTitle = styled(DialogTitle)(() => ({
-  borderBottom: '1px solid white',
+  background: '#121212',
+  margin: '10px',
+  marginBottom: '5px',
+  color: '#D9D9D9',
+  fontSize: '30px',
+  fontWeight: 'bold',
 }));
 
-const ITEM_HEIGHT = 48;
+const ITEM_HEIGHT = 50;
 
 export const MenuProps = {
   PaperProps: {
     sx: {
-      backgroundColor: '#222222',
-      color: 'white',
-      border: '1px solid white',
+      color: '#D9D9D9',
       maxHeight: ITEM_HEIGHT * 10,
       width: 250,
       '&::-webkit-scrollbar': {
@@ -52,15 +54,15 @@ export const MenuProps = {
       '&::-webkit-scrollbar-corner': {
         background: 'transparent',
       },
+      background: '#222222',
     },
   },
   MenuListProps: {
     sx: {
-      padding: '0px !important',
-      margin: '0px !important',
+      padding: '0px',
+      margin: '0px',
       '& .MuiMenuItem-root': {
-        color: 'white !important',
-        border: '1px solid white',
+        color: '#D9D9D9',
       },
     },
   },
@@ -69,23 +71,24 @@ export const MenuProps = {
 export const CreateDialogFormControl = styled(FormControl)(() => ({
   '& .MuiOutlinedInput-root': {
     '& fieldset': {
-      borderColor: 'white',
+      border: 'none',
     },
     '&:hover fieldset': {
-      borderColor: 'white',
+      border: 'none',
     },
     '&.Mui-focused fieldset': {
-      borderColor: 'white',
+      border: 'none',
     },
   },
   '& .MuiOutlinedInput-input': {
-    color: 'white',
+    color: '#D9D9D9',
+    background: '#000000',
   },
 }));
 
 export const CreateDialogContent = styled(DialogContent)(() => ({
   '& .MuiMenuItem-root': {
-    color: 'white',
+    color: '#D9D9D9',
   },
   '&::-webkit-scrollbar': {
     width: '8px',
@@ -104,26 +107,37 @@ export const CreateDialogContent = styled(DialogContent)(() => ({
   '&::-webkit-scrollbar-corner': {
     background: 'transparent',
   },
-  marginTop: '8px',
+  margin: '10px',
+  marginTop: '5px',
+  background: '#121212',
+  padding: '0px',
 }));
 
 export const CreateDialogCheckbox = styled(Checkbox)(() => ({
   color: 'white',
   '&.Mui-checked': {
-    color: 'white',
+    color: '#0072CE',
   },
 }));
 
 export const CreateDialogMenuItem = styled(MenuItem)(() => ({
-  '&.Mui-selected': {
+  padding: '0px',
+  margin: '5px',
+  background: '#444444',
+  color: '#D9D9D9',
+  '&:hover': {
     background: '#666666',
   },
+  '&.Mui-selected': {
+    background: '#000000',
+  },
   '&.Mui-selected:hover': {
-    background: '#777777',
+    background: '#222222',
   },
 }));
 
 export const StyledForm = styled('form')({
+  padding: '20px',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'start',

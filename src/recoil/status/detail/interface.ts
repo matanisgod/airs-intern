@@ -3,6 +3,7 @@ export interface Detail {
   resultLog: string;
   actualResult: string;
   expectedResult: DetailExpectedResult;
+  checkType: string;
 }
 interface DetailExpectedResult {
   data: string;

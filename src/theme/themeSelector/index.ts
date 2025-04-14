@@ -22,7 +22,7 @@ declare module '@mui/material/styles' {
 export const themeSelector = () => ({
   palette: {
     background: {
-      default: '#12182B', // 배경 색
+      default: '#121212', // 배경 색
     },
     header: {
       main: '#1A2238',

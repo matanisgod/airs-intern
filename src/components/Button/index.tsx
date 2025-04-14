@@ -1,35 +1,19 @@
 import React from 'react';
 
+import CreateIcon from '@mui/icons-material/Create';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import StopCircleIcon from '@mui/icons-material/StopCircle';
 import { Button, styled } from '@mui/material';
 
-export const CreateButton = styled(Button)(() => ({
-  color: 'black',
-  background: '#f2f2f2',
-  textTransform: 'none',
-  '&:hover': {
-    background: '#888888',
-  },
-}));
-
 export const DecisionButton = styled(Button)(() => ({
-  color: 'black',
-  background: '#f2f2f2',
+  color: '#F2F2F2',
+  background: '#202027',
   textTransform: 'none',
   '&:hover': {
-    background: '#888888',
+    background: '#424249',
   },
 }));
 
-export const ConfirmButton = styled(Button)(() => ({
-  color: 'black',
-  background: '#f2f2f2',
-  textTransform: 'none',
-  '&:hover': {
-    background: '#888888',
-  },
-}));
 export const CancelButton = () => {
   return (
     <StopCircleIcon
@@ -37,9 +21,9 @@ export const CancelButton = () => {
         fontSize: '50px',
         color: 'white',
         padding: '0px',
-        background: '#232A3E',
+        background: '#121212',
         '&:hover': {
-          background: '#232A3E',
+          background: '#121212',
         },
       }}
     />
@@ -52,9 +36,25 @@ export const RefreshButton = () => {
         fontSize: '50px',
         color: 'white',
         padding: '0px',
-        background: '#232A3E',
+        background: '#121212',
         '&:hover': {
-          background: '#232A3E',
+          background: '#121212',
+        },
+      }}
+    />
+  );
+};
+
+export const CreateButton = () => {
+  return (
+    <CreateIcon
+      sx={{
+        fontSize: '50px',
+        color: 'white',
+        padding: '0px',
+        background: '#121212',
+        '&:hover': {
+          background: '#121212',
         },
       }}
     />

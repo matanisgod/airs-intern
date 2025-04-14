@@ -16,5 +16,3 @@ export const useErrorSetter = () => {
     }
   };
 };
-
-//TODO: default 만들고 param 받는 식으로 변경(?)

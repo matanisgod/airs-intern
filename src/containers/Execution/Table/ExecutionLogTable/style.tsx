@@ -1,12 +1,13 @@
 import { styled, Box, Button } from '@mui/material';
 
-import { ConfirmButton, CreateButton } from '@components';
+import { DecisionButton } from '@components';
 
 export const ExecutionLogTableBox = styled(Box)(() => ({
-  width: '35%',
-  height: '95%',
+  width: '40%',
+  height: '100%',
   display: 'flex',
   alignSelf: 'center',
+  padding: '10px',
   flexDirection: 'column',
   '& .statusColor.running': {
     color: '#55ff55',
@@ -22,13 +23,7 @@ export const ExecutionLogTableBox = styled(Box)(() => ({
   },
 }));
 
-export const CreateExecutionButton = styled(CreateButton)(() => ({
-  width: '200px',
-  height: '50px',
-  fontSize: '20px',
-}));
-
-export const ActionButton = styled(ConfirmButton)(() => ({
+export const ActionButton = styled(DecisionButton)(() => ({
   width: '50px',
   minWidth: '50px',
   height: '50px',

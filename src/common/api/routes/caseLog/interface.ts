@@ -1,13 +1,13 @@
-import { GetDistinctCaseLogsByIdReqBody, GetDetailsByIdReqBody } from '@common/api';
+import { GetGroupedCaseLogsByIdReqBody, GetDetailsByIdReqBody } from '@common/api';
 import type { CaseLogs, Details } from '@recoil';
 
 export interface AxiosCaseLogReturn {
-  getDistinctCaseLogsById: (
-    body: GetDistinctCaseLogsByIdReqBody,
-  ) => Promise<GetDistinctCaseLogsByIdResBody>;
+  getGroupedCaseLogsById: (
+    body: GetGroupedCaseLogsByIdReqBody,
+  ) => Promise<GetGroupedCaseLogsByIdResBody>;
   getDetailsById: (body: GetDetailsByIdReqBody) => Promise<GetDetailsByIdResBody>;
 }
-export interface GetDistinctCaseLogsByIdResBody {
+export interface GetGroupedCaseLogsByIdResBody {
   message: string;
   data: CaseLogs;
 }

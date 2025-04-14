@@ -1,11 +1,10 @@
 interface CaseLog {
-  name: string;
-  caseId: string;
+  caseName: string;
+  result: string;
   createdAt: string;
-  result: boolean;
-  resultLog: string;
-  executionLogId: string;
+  caseId: string;
   expectedResultId: string;
+  executionLogId: string;
 }
 
 export type CaseLogs = Array<CaseLog>;

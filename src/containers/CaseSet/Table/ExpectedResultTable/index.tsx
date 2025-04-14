@@ -36,14 +36,12 @@ export const ExpectedResultTable = () => {
           columns={expectedResultColumns}
           hideFooter
           disableColumnMenu
-          columnHeaderHeight={48}
-          rowHeight={48}
+          columnHeaderHeight={40}
+          rowHeight={40}
           onRowClick={(params, event) => {
             if (expectedResultId === params.row.id && event.ctrlKey) {
               resetCaseExpectedResultJson();
               resetExpectedResultId();
-            } else if (expectedResultId !== params.row.id && event.ctrlKey) {
-              return;
             } else if (expectedResultId === params.row.id && !event.ctrlKey) {
               return;
             } else {
@@ -56,6 +54,8 @@ export const ExpectedResultTable = () => {
           slots={{
             noRowsOverlay: DatagridOverlay,
           }}
+          disableMultipleRowSelection={true}
+          disableColumnReorder={true}
           scrollbarSize={8}
         />
       </TableDataBox>

@@ -70,7 +70,6 @@ export const CreateExecutionDialog = () => {
       handleClose();
     }
   };
-  //TODO: validator 추가
   return (
     <CreateDialog
       open={isOpen}

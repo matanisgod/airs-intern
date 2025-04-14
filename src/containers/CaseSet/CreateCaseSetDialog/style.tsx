@@ -5,15 +5,13 @@ import { DecisionButton } from '@components';
 export const UploadButton = styled(Button)<ButtonProps>(() => ({
   width: '56px',
   height: '56px',
-  color: 'white',
-  backgroundColor: '#222222',
+  background: '#000000',
   textTransform: 'none',
   fontSize: '25px',
   '&:hover': {
-    background: '#666666',
+    background: '#222222',
   },
   marginLeft: 'auto',
-  border: '1px solid white !important',
 }));
 export const CaseSetDecisionButton = styled(DecisionButton)(() => ({
   width: '65px',
@@ -24,9 +22,10 @@ export const UploadBox = styled(Box)(() => ({
   height: '56px',
   display: 'flex',
   alignItems: 'center',
-  border: '1px solid white',
+  background: '#000000',
 }));
 
 export const UploadText = styled(Typography)(() => ({
   marginLeft: '14px',
+  color: '#D9D9D9',
 }));

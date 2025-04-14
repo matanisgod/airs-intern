@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import { useSetRecoilState, useRecoilState, useResetRecoilState } from 'recoil';
 
-import { ExecutionLogTableBox, CreateExecutionButton, ActionButton } from './style';
+import { ExecutionLogTableBox, ActionButton } from './style';
 import { executionLogColumns } from './util';
 
 import { useCaseLogApi, useCaseSetApi, useExecutionApi } from '@common/api';
@@ -14,6 +14,7 @@ import {
   ButtonBox,
   RefreshButton,
   CancelButton,
+  CreateButton,
 } from '@components';
 import { CreateExecutionDialog } from '@containers';
 import {
@@ -53,9 +54,9 @@ export const ExecutionLogTable = () => {
     detailsExpectedResultJsonAtom,
   );
 
-  const getDistinctCaseLogs = async (executionId: string) => {
+  const getGroupedCaseLogs = async (executionId: string) => {
     if (!caseLogApi) return;
-    const response = await caseLogApi.getDistinctCaseLogsById({ executionId });
+    const response = await caseLogApi.getGroupedCaseLogsById({ executionId });
     if (response) {
       setCaseLogs(response);
     } else {
@@ -116,9 +117,9 @@ export const ExecutionLogTable = () => {
           >
             {RefreshButton()}
           </ActionButton>
-          <CreateExecutionButton onClick={onCreateExecutionLogButtonClick}>
-            Create Execution
-          </CreateExecutionButton>
+          <ActionButton onClick={onCreateExecutionLogButtonClick}>
+            {CreateButton()}
+          </ActionButton>
         </ButtonBox>
       </TableHeaderBox>
       <TableDataBox>
@@ -127,19 +128,17 @@ export const ExecutionLogTable = () => {
           columns={executionLogColumns}
           hideFooter
           disableColumnMenu
-          columnHeaderHeight={48}
-          rowHeight={48}
+          columnHeaderHeight={40}
+          rowHeight={40}
           onRowClick={async (params, event) => {
             if (executionLogId === params.row.id && event.ctrlKey) {
               clearExecutionPage();
               resetExecutionLogId();
               resetCaseLogs();
-            } else if (executionLogId !== params.row.id && event.ctrlKey) {
-              return;
             } else if (executionLogId === params.row.id && !event.ctrlKey) {
               return;
             } else {
-              await getDistinctCaseLogs(params.row.id);
+              await getGroupedCaseLogs(params.row.id);
               clearExecutionPage();
               setExecutionLogId(params.row.id);
             }
@@ -147,6 +146,8 @@ export const ExecutionLogTable = () => {
           slots={{
             noRowsOverlay: DatagridOverlay,
           }}
+          disableMultipleRowSelection={true}
+          disableColumnReorder={true}
           scrollbarSize={8}
         />
       </TableDataBox>

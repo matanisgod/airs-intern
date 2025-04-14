@@ -3,17 +3,28 @@ import clsx from 'clsx';
 
 export const detailColumns: Array<GridColDef> = [
   {
-    field: 'resultLog',
-    headerName: 'Result log',
-    flex: 1,
+    field: 'checkType',
+    headerName: 'Check type',
+    flex: 0.6,
     sortable: false,
     headerAlign: 'center',
     align: 'center',
   },
   {
+    field: 'resultLog',
+    headerName: 'Result log',
+    flex: 0.6,
+    sortable: false,
+    headerAlign: 'center',
+    align: 'center',
+    renderCell: (params) => {
+      return params.row.result === 'True' ? '-' : params.row.resultLog;
+    },
+  },
+  {
     field: 'result',
     headerName: 'Result',
-    flex: 0.15,
+    flex: 0.2,
     sortable: false,
     headerAlign: 'center',
     align: 'center',

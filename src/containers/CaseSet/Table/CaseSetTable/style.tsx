@@ -1,21 +1,17 @@
 import { styled, Box } from '@mui/material';
 
-import { ConfirmButton, CreateButton } from '@components';
+import { DecisionButton } from '@components';
 
 export const CaseSetTableBox = styled(Box)(() => ({
-  width: '35%',
-  height: '95%',
+  width: '40%',
+  height: '100%',
   display: 'flex',
   alignSelf: 'center',
   flexDirection: 'column',
+  padding: '10px',
 }));
-export const CreateCaseSetButton = styled(CreateButton)(() => ({
-  width: '200px',
-  height: '50px',
-  fontSize: '20px',
-  marginLeft: 'auto',
-}));
-export const ActionButton = styled(ConfirmButton)(() => ({
+
+export const ActionButton = styled(DecisionButton)(() => ({
   width: '50px',
   minWidth: '50px',
   height: '50px',

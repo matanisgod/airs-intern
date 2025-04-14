@@ -10,7 +10,7 @@ import {
 import { DetailsTableBox } from './style';
 import { detailColumns } from './util';
 
-import { TableDataBox, DataTable } from '@components';
+import { DataTable } from '@components';
 import {
   actualResultJsonAtom,
   detailsAtom,
@@ -34,36 +34,34 @@ export const DetailsTable = () => {
 
   return (
     <DetailsTableBox>
-      <TableDataBox>
-        <DataTable
-          rows={details}
-          columns={detailColumns}
-          hideFooter
-          disableColumnMenu
-          columnHeaderHeight={48}
-          rowHeight={48}
-          onRowClick={(params, event) => {
-            if (detailId === params.row.id && event.ctrlKey) {
-              resetActualResultJson();
-              resetDetailsExpectedResultJson();
-              resetDetailId();
-            } else if (detailId !== params.row.id && event.ctrlKey) {
-              return;
-            } else if (detailId === params.row.id && !event.ctrlKey) {
-              return;
-            } else {
-              setActualResultJson(
-                JSON.parse(params.row.actualResult.replace(/\bNaN\b/g, 'null')),
-              );
-              setDetailsExpectedResultJson(
-                JSON.parse(params.row.expectedResult.data.replace(/\bNaN\b/g, 'null')),
-              );
-              setDetailId(params.row.id);
-            }
-          }}
-          scrollbarSize={0}
-        />
-      </TableDataBox>
+      <DataTable
+        rows={details}
+        columns={detailColumns}
+        hideFooter
+        disableColumnMenu
+        columnHeaderHeight={40}
+        rowHeight={40}
+        onRowClick={(params, event) => {
+          if (detailId === params.row.id && event.ctrlKey) {
+            resetActualResultJson();
+            resetDetailsExpectedResultJson();
+            resetDetailId();
+          } else if (detailId === params.row.id && !event.ctrlKey) {
+            return;
+          } else {
+            setActualResultJson(
+              JSON.parse(params.row.actualResult.replace(/\bNaN\b/g, 'null')),
+            );
+            setDetailsExpectedResultJson(
+              JSON.parse(params.row.expectedResult.data.replace(/\bNaN\b/g, 'null')),
+            );
+            setDetailId(params.row.id);
+          }
+        }}
+        disableMultipleRowSelection={true}
+        disableColumnReorder={true}
+        scrollbarSize={0}
+      />
     </DetailsTableBox>
   );
 };

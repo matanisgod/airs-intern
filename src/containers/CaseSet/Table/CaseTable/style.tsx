@@ -1,9 +1,10 @@
 import { styled, Box } from '@mui/material';
 
 export const CaseTableBox = styled(Box)(() => ({
-  width: '95%',
-  height: '48%',
+  width: '100%',
+  height: '50%',
   display: 'flex',
   alignSelf: 'flex-end',
   flexDirection: 'column',
+  paddingBottom: '5px',
 }));

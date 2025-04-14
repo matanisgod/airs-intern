@@ -7,7 +7,7 @@ import {
   useRecoilState,
 } from 'recoil';
 
-import { ActionButton, CaseSetTableBox, CreateCaseSetButton } from './style';
+import { ActionButton, CaseSetTableBox } from './style';
 import { caseSetColumns } from './util';
 
 import { useCaseApi, useCaseSetApi } from '@common/api';
@@ -18,6 +18,7 @@ import {
   DatagridDefaultBox,
   ButtonBox,
   RefreshButton,
+  CreateButton,
 } from '@components';
 import { CreateCaseSetDialog } from '@containers';
 import {
@@ -75,7 +76,7 @@ export const CaseSetTable = () => {
     fetchCaseSets();
   }, [caseSetApi, setCaseSets]);
 
-  const onCreateCaseSetButtonClick = () => {
+  const onCreateButtonClick = () => {
     setIsCaseSetDialogOpen(true);
   };
 
@@ -94,10 +95,7 @@ export const CaseSetTable = () => {
           >
             {RefreshButton()}
           </ActionButton>
-
-          <CreateCaseSetButton onClick={onCreateCaseSetButtonClick}>
-            Create case set
-          </CreateCaseSetButton>
+          <ActionButton onClick={onCreateButtonClick}>{CreateButton()}</ActionButton>
         </ButtonBox>
       </TableHeaderBox>
       <TableDataBox>
@@ -106,15 +104,13 @@ export const CaseSetTable = () => {
           columns={caseSetColumns}
           hideFooter
           disableColumnMenu
-          columnHeaderHeight={48}
-          rowHeight={48}
+          columnHeaderHeight={40}
+          rowHeight={40}
           onRowClick={async (params, event) => {
             if (caseSetId === params.row.id && event.ctrlKey) {
               cleanCaseSetPage();
               resetCaseSetId();
               resetCases();
-            } else if (caseSetId !== params.row.id && event.ctrlKey) {
-              return;
             } else if (caseSetId === params.row.id && !event.ctrlKey) {
               return;
             } else {
@@ -126,6 +122,8 @@ export const CaseSetTable = () => {
           slots={{
             noRowsOverlay: DatagridOverlay,
           }}
+          disableMultipleRowSelection={true}
+          disableColumnReorder={true}
           scrollbarSize={8}
         />
       </TableDataBox>

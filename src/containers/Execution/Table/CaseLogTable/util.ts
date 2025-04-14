@@ -5,17 +5,9 @@ import { formatTimeUntilSecond } from '@utils';
 
 export const caseLogColumns: Array<GridColDef> = [
   {
-    field: 'name',
-    headerName: 'Name',
-    flex: 1,
-    sortable: false,
-    headerAlign: 'center',
-    align: 'center',
-  },
-  {
-    field: 'checkType',
-    headerName: 'Check type',
-    flex: 1,
+    field: 'caseName',
+    headerName: 'Case name',
+    flex: 0.6,
     sortable: false,
     headerAlign: 'center',
     align: 'center',
@@ -23,7 +15,7 @@ export const caseLogColumns: Array<GridColDef> = [
   {
     field: 'createdAt',
     headerName: 'Created at',
-    flex: 1,
+    flex: 0.6,
     sortable: false,
     headerAlign: 'center',
     align: 'center',
@@ -32,7 +24,7 @@ export const caseLogColumns: Array<GridColDef> = [
   {
     field: 'result',
     headerName: 'Result',
-    flex: 0.45,
+    flex: 0.2,
     sortable: false,
     headerAlign: 'center',
     align: 'center',
@@ -41,8 +33,8 @@ export const caseLogColumns: Array<GridColDef> = [
         return '';
       }
       return clsx('resultColor', {
-        true: params.value === 'True',
-        false: params.value === 'False',
+        true: params.value === 'pass',
+        false: params.value === 'fail',
       });
     },
   },

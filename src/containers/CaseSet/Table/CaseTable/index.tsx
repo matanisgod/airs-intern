@@ -54,16 +54,14 @@ export const CaseTable = () => {
           columns={caseColumns}
           hideFooter
           disableColumnMenu
-          columnHeaderHeight={48}
-          rowHeight={48}
+          columnHeaderHeight={40}
+          rowHeight={40}
           onRowClick={async (params, event) => {
             if (caseId === params.row.id && event.ctrlKey) {
               resetCaseExpectedResultJson();
               resetCaseJson();
               resetCaseId();
               resetExpectedResults();
-            } else if (caseId !== params.row.id && event.ctrlKey) {
-              return;
             } else if (caseId === params.row.id && !event.ctrlKey) {
               return;
             } else {
@@ -76,6 +74,8 @@ export const CaseTable = () => {
           slots={{
             noRowsOverlay: DatagridOverlay,
           }}
+          disableMultipleRowSelection={true}
+          disableColumnReorder={true}
           scrollbarSize={8}
         />
       </TableDataBox>

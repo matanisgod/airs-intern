@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import type {
   UseCaseLogApi,
   GetDetailsByIdReqBody,
-  GetDistinctCaseLogsByIdReqBody,
+  GetGroupedCaseLogsByIdReqBody,
 } from './interface';
 
 import api from '@common/api';
@@ -17,11 +17,11 @@ export const useCaseLogApi = (): UseCaseLogApi => {
   const instance = useMemo(() => {
     if (api) {
       return {
-        getDistinctCaseLogsById: async (body: GetDistinctCaseLogsByIdReqBody) => {
+        getGroupedCaseLogsById: async (body: GetGroupedCaseLogsByIdReqBody) => {
           try {
-            const response = await api().caseLog.getDistinctCaseLogsById(body);
-            const distinctCaseLogs = response.data;
-            return distinctCaseLogs;
+            const response = await api().caseLog.getGroupedCaseLogsById(body);
+            const groupedCaseLogs = response.data;
+            return groupedCaseLogs;
           } catch (e) {
             logAxiosError(e);
             errorSetter(e);

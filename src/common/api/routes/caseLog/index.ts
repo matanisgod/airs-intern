@@ -9,8 +9,8 @@ export const CaseLogApi = (): AxiosCaseLogReturn => {
   const instance = axiosDecorator.create({ url });
 
   return {
-    getDistinctCaseLogsById: async (body) => {
-      return instance.post('/distinct', body);
+    getGroupedCaseLogsById: async (body) => {
+      return instance.post('/grouped', body);
     },
     getDetailsById: async (body) => {
       return instance.post('/details', body);

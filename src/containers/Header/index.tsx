@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useRecoilValue, useResetRecoilState } from 'recoil';
 
-import { HeaderBox, PageButton } from './style';
+import { FirstPageButton, HeaderBox, LastPageButton, PageButton } from './style';
 
 import { ErrorModal, StopModal } from '@containers';
 import {
@@ -40,9 +40,6 @@ export const Header = () => {
   const resetDetailsExpectedResultJson = useResetRecoilState(
     detailsExpectedResultJsonAtom,
   );
-  const resetIsExecutionLogRowClicked = useResetRecoilState(
-    dichotomyAtom('isExecutionLogRowClicked'),
-  );
 
   const cleanExecutionPage = () => {
     resetExecutionLogs();
@@ -50,7 +47,6 @@ export const Header = () => {
     resetDetails();
     resetActualResultJson();
     resetDetailsExpectedResultJson();
-    resetIsExecutionLogRowClicked();
   };
 
   const cleanCaseSetPage = () => {
@@ -72,7 +68,7 @@ export const Header = () => {
               navigate('/caseset');
             }}
           >
-            Move to caseset
+            {LastPageButton()}
           </PageButton>
         )}
         {location.pathname === '/caseset' && (
@@ -82,7 +78,7 @@ export const Header = () => {
               navigate('/execution');
             }}
           >
-            Move to execution
+            {FirstPageButton()}
           </PageButton>
         )}
       </HeaderBox>

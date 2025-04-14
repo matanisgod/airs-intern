@@ -2,26 +2,30 @@ import { styled, Box } from '@mui/material';
 
 export const PageBox = styled(Box)(() => ({
   width: '100%',
-  minWidth: '1920px',
+  minWidth: '1600px',
   height: 'calc(100% - 108px)',
-  minHeight: '972px',
+  minHeight: '792px',
   display: 'flex',
   alignItems: 'flex-start',
   justifyContent: 'center',
   fontSize: '30px',
+  background: '#18181C',
 }));
 
 export const SubTablesBox = styled(Box)(() => ({
   width: '30%',
-  height: '95%',
+  height: '100%',
   display: 'flex',
   flexDirection: 'column',
   alignSelf: 'center',
+  padding: '10px',
+  paddingLeft: '0px',
+  paddingRight: '0px',
 }));
 
 export const JSONDataBox = styled(Box)(() => ({
   width: '30%',
-  height: '95%',
+  height: '100%',
   display: 'flex',
   flexDirection: 'column',
   alignSelf: 'center',
@@ -38,39 +42,47 @@ export const JSONDataBox = styled(Box)(() => ({
 }));
 
 export const JSONDataBoxTop = styled(Box)(() => ({
-  width: '95%',
-  height: '48%',
+  width: '100%',
+  height: '50%',
   display: 'flex',
   alignSelf: 'flex-end',
   flexDirection: 'column',
+  padding: '10px',
+  paddingBottom: '5px',
 }));
 
 export const JSONDataBoxBot = styled(Box)(() => ({
-  width: '95%',
-  height: '48%',
+  width: '100%',
+  height: '50%',
   display: 'flex',
   alignSelf: 'flex-end',
   marginTop: 'auto',
   flexDirection: 'column',
+  padding: '10px',
+  paddingTop: '5px',
 }));
 export const TableHeaderBox = styled(Box)(() => ({
   width: '100%',
-  height: '10%',
+  height: '65px',
   display: 'flex',
   alignItems: 'center',
-  paddingLeft: '10px',
-  backgroundColor: '#232A3E',
-  color: '#ffffff',
+  paddingLeft: '20px',
+  background: '#121212',
+  color: '#D9D9D9',
   fontSize: '30px',
+  fontWeight: 'bold',
 }));
 
 export const TableDataBox = styled(Box)(() => ({
   width: '100%',
-  height: '90%',
+  height: 'calc(100% - 65px)',
   display: 'flex',
   whiteSpace: 'pre-wrap',
   fontSize: '14px !important',
   overflow: 'auto',
+  paddingLeft: '10px',
+  paddingRight: '10px',
+  paddingBottom: '10px',
   '&::-webkit-scrollbar': {
     width: '8px',
     height: '8px',
@@ -87,7 +99,7 @@ export const TableDataBox = styled(Box)(() => ({
   '&::-webkit-scrollbar-corner': {
     background: 'transparent',
   },
-  backgroundColor: '#222222',
+  background: '#121212',
 }));
 
 export const DatagridDefaultBox = styled(Box)(() => ({
@@ -97,7 +109,7 @@ export const DatagridDefaultBox = styled(Box)(() => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  backgroundColor: '#222222',
+  background: '#1B1B1B',
 }));
 
 export const JSONDefaultBox = styled(Box)(() => ({
@@ -107,22 +119,36 @@ export const JSONDefaultBox = styled(Box)(() => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  border: '1px solid black',
+  border: '1px solid #1B1B1B',
   color: '#ffffff',
 }));
 
 export const ButtonBox = styled(Box)({
   display: 'flex',
   marginLeft: 'auto',
-  marginRight: '10px',
+  marginRight: '20px',
   gap: '20px',
 });
 
 export const ModalBox = styled(Box)({
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '30%',
+  minwidth: '480px',
+  height: '20%',
+  minHeight: '180px',
+  fontSize: '30px',
   position: 'absolute',
-  backgroundColor: '#222222',
-  border: '1px solid white !important',
-  color: 'white',
+  background: '#202027',
+  color: '#D9D9D9',
+});
+
+export const ModalContentBox = styled(Box)({
+  width: 'calc(100% - 20px)',
+  height: 'calc(100% - 20px)',
+  margin: '10px',
+  background: '#121212',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',

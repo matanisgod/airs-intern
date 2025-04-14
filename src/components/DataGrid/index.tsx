@@ -2,31 +2,35 @@ import { styled } from '@mui/material';
 import { DataGridPro } from '@mui/x-data-grid-pro';
 
 export const DataTable = styled(DataGridPro)(() => ({
-  border: '1px solid white',
+  border: '1px solid #121212',
   width: '100%',
-  color: 'white',
-  backgroundColor: '#222222',
+  color: '#D9D9D9',
+  background: '#1B1B1B',
   display: 'flex',
   fontSize: '14px !important',
   maxHeight: '100%',
+  '& .MuiDataGrid-withBorderColor': {
+    border: 'none',
+  },
 
   '& .MuiDataGrid-sortIcon': {
-    color: 'white',
+    color: '#D9D9D9',
   },
   '& .MuiDataGrid-columnHeaders': {
-    backgroundColor: '#4B5563',
+    background: '#3b3b3b',
     border: 'none',
+    color: '#ffffff',
   },
 
   '& .MuiDataGrid-cell': {
     padding: '0px',
-    border: '1px solid black',
+    border: '1px solid #121212',
   },
 
   '& .MuiDataGrid-columnHeader': {
-    fontSize: '20px',
+    fontSize: '14px',
     padding: '0px',
-    border: '1px solid black',
+    border: '1px solid #121212',
   },
   '& .MuiDataGrid-columnSeparator': {
     display: 'none !important',
@@ -61,11 +65,11 @@ export const DataTable = styled(DataGridPro)(() => ({
       '&  .MuiDataGrid-virtualScrollerRenderZone': {
         '& .MuiDataGrid-row': {
           '&:hover': {
-            background: '#666666',
+            background: '#3c3c3c',
           },
         },
         '& .MuiDataGrid-row.Mui-selected > .MuiDataGrid-cell': {
-          background: 'rgba(0, 143, 186, 0.3)',
+          background: '#5d5d5d',
         },
       },
     },
