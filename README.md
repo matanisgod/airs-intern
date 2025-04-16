@@ -2,10 +2,22 @@
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 
+![UI Screenshot](./src/assets/images/png/executionpage.png)
+![UI Screenshot](./src/assets/images/png/casesetpage.png)
+
 ## What is the Automated Testing Client?
 
 - The Automated Testing Client (Atom Client) integrates a database and a user interface to manage and execute test cases.
 - It streamlines the testing process by automatically sending multiple test cases (DICOM studies), verifying the results, and repeating the cycle.
+
+## Version Compatibility
+
+|    Name    | Version |
+| :--------: | :-----: |
+|  Node.js   | v23.5.0 |
+|   React    | v18.2.0 |
+|  Webpack   | v5.90.1 |
+| Typescript | v5.3.3  |
 
 ## Purpose
 

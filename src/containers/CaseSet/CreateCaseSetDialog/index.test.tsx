@@ -1,0 +1,144 @@
+import React, { PropsWithChildren } from 'react';
+
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { RecoilRoot, useRecoilState, useSetRecoilState } from 'recoil';
+
+import { CreateCaseSetDialog } from './index';
+
+import { useCaseSetApi } from '@common/api';
+import type { CaseSet } from '@recoil';
+
+jest.mock('recoil', () => ({
+  ...jest.requireActual('recoil'),
+  useRecoilState: jest.fn(),
+  useSetRecoilState: jest.fn(),
+}));
+jest.mock('@common/api', () => ({
+  useCaseSetApi: jest.fn(),
+}));
+
+jest.mock('@components', () => ({
+  CreateDialog: ({
+    children,
+  }: PropsWithChildren<{ open: boolean; onClose: () => void }>) => <div>{children}</div>,
+  CreateDialogTitle: ({ children }: PropsWithChildren<unknown>) => <div>{children}</div>,
+  CreateDialogContent: ({ children }: PropsWithChildren<unknown>) => (
+    <div>{children}</div>
+  ),
+  StyledForm: ({
+    children,
+    ...props
+  }: PropsWithChildren<React.FormHTMLAttributes<HTMLFormElement>>) => (
+    <form {...props}>{children}</form>
+  ),
+  CreateDialogContentText: ({ children }: PropsWithChildren<unknown>) => (
+    <p>{children}</p>
+  ),
+  CreateDialogFormControl: ({ children }: PropsWithChildren<unknown>) => (
+    <div>{children}</div>
+  ),
+}));
+
+jest.mock('./style', () => ({
+  UploadBox: ({ children }: PropsWithChildren<unknown>) => <div>{children}</div>,
+  UploadButton: ({
+    children,
+    ...props
+  }: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
+    <button {...props}>{children}</button>
+  ),
+  UploadText: ({ children }: PropsWithChildren<unknown>) => <span>{children}</span>,
+  CaseSetDecisionButton: ({
+    children,
+    ...props
+  }: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
+    <button {...props}>{children}</button>
+  ),
+}));
+
+describe('CreateCaseSetDialog', () => {
+  const mockSetCaseSets = jest.fn();
+  const mockSetIsOpen = jest.fn();
+
+  beforeEach(() => {
+    (useRecoilState as jest.Mock).mockReturnValue([true, mockSetIsOpen]);
+    (useSetRecoilState as jest.Mock).mockReturnValue(mockSetCaseSets);
+  });
+
+  it('render & upload file & submit', async () => {
+    const caseSet: CaseSet = {
+      id: 'id',
+      type: 'type',
+      title: 'title',
+      cases: [],
+    };
+
+    (useCaseSetApi as jest.Mock).mockReturnValue({
+      importCaseSet: jest.fn().mockResolvedValue(caseSet),
+    });
+
+    render(
+      <RecoilRoot>
+        <CreateCaseSetDialog />
+      </RecoilRoot>,
+    );
+
+    const file1 = new File(['a: b'], 'x.yml', { type: 'application/x-yaml' });
+    const file2 = new File(['c: d'], 'y.yaml', { type: 'application/x-yaml' });
+
+    expect(screen.getByText('Create case set')).toBeInTheDocument();
+
+    const inputs = screen.getAllByRole('textbox');
+    fireEvent.change(inputs[0], { target: { value: 'type' } });
+    fireEvent.change(inputs[1], { target: { value: 'title' } });
+
+    const caseFile = document.getElementById('caseYamlFile') as HTMLInputElement;
+    const expectedResultFile = document.getElementById(
+      'expectedResultYamlFile',
+    ) as HTMLInputElement;
+
+    fireEvent.change(caseFile, { target: { files: [file1] } });
+    fireEvent.change(expectedResultFile, { target: { files: [file2] } });
+    fireEvent.click(screen.getByText('Submit'));
+
+    await waitFor(() => {
+      expect(inputs[0]).toHaveValue('type');
+      expect(inputs[1]).toHaveValue('title');
+      expect(mockSetCaseSets).toHaveBeenCalled();
+      expect(mockSetIsOpen).toHaveBeenCalledWith(false);
+    });
+  });
+
+  it('validate file type', async () => {
+    const alert = jest.spyOn(window, 'alert').mockImplementation(() => {});
+
+    render(
+      <RecoilRoot>
+        <CreateCaseSetDialog />
+      </RecoilRoot>,
+    );
+
+    const file = new File(['invalid'], 'invalid.txt', { type: 'text/plain' });
+
+    const caseFile = document.getElementById('caseYamlFile') as HTMLInputElement;
+    fireEvent.change(caseFile, { target: { files: [file] } });
+
+    await waitFor(() => {
+      expect(alert).toHaveBeenCalledWith('Only .yml or .yaml files are allowed.');
+    });
+  });
+
+  it('close dialog', async () => {
+    render(
+      <RecoilRoot>
+        <CreateCaseSetDialog />
+      </RecoilRoot>,
+    );
+
+    fireEvent.click(screen.getByText('Cancel'));
+
+    await waitFor(() => {
+      expect(mockSetIsOpen).toHaveBeenCalledWith(false);
+    });
+  });
+});

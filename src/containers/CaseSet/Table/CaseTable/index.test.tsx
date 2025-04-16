@@ -7,7 +7,7 @@ import * as recoil from 'recoil';
 import { CaseTable } from './index';
 
 import { useExpectedResultApi } from '@common/api';
-import { casesAtom } from '@recoil';
+import { casesAtom, idAtom } from '@recoil';
 
 jest.mock('@common/api', () => ({
   useExpectedResultApi: jest.fn(),
@@ -21,6 +21,9 @@ describe('CaseTable', () => {
   const mockSetExpectedResults = jest.fn();
   const mockSetCaseJson = jest.fn();
   const mockResetCaseExpectedResultJson = jest.fn();
+  const mockResetCaseId = jest.fn();
+  const mockResetExpectedResults = jest.fn();
+  const mockResetCaseJson = jest.fn();
 
   const mockCase = {
     id: 'didi',
@@ -45,6 +48,9 @@ describe('CaseTable', () => {
       if (atom.key === 'caseExpectedResultJsonAtom') {
         return mockResetCaseExpectedResultJson;
       }
+      if (atom.key === 'caseJsonAtom') return mockResetCaseJson;
+      if (atom.key === 'expectedResultsAtom') return mockResetExpectedResults;
+      if (atom.key === 'idAtom/caseId') return mockResetCaseId;
       return jest.fn();
     });
 
@@ -52,10 +58,17 @@ describe('CaseTable', () => {
       getExpectedResultById: jest.fn().mockResolvedValue(mockExpectedResult),
     });
   });
-
-  const renderComponent = () =>
+  //TODO: 마무리하기
+  const renderComponent = (initialCaseId: string | null = null) =>
     render(
-      <RecoilRoot initializeState={({ set }) => set(casesAtom, mockCases)}>
+      <RecoilRoot
+        initializeState={({ set }) => {
+          set(casesAtom, mockCases);
+          if (initialCaseId !== null) {
+            set(idAtom('caseId'), initialCaseId);
+          }
+        }}
+      >
         <CaseTable />
       </RecoilRoot>,
     );

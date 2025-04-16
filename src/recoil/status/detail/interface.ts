@@ -1,5 +1,5 @@
 export interface Detail {
-  result: boolean;
+  result: string;
   resultLog: string;
   actualResult: string;
   expectedResult: DetailExpectedResult;

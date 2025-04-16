@@ -1,4 +1,4 @@
-interface CaseLog {
+export interface CaseLog {
   caseName: string;
   result: string;
   createdAt: string;
