@@ -12,12 +12,13 @@
 
 ## Version Compatibility
 
-|    Name    | Version |
-| :--------: | :-----: |
-|  Node.js   | v23.5.0 |
-|   React    | v18.2.0 |
-|  Webpack   | v5.90.1 |
-| Typescript | v5.3.3  |
+|    Name    | Version  |
+| :--------: | :------: |
+|  Node.js   | v23.5.0  |
+|   React    | v18.2.0  |
+|  Webpack   | v5.90.1  |
+| Typescript |  v5.3.3  |
+|    MUI     | v5.15.10 |
 
 ## Purpose
 

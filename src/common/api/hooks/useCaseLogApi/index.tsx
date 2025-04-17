@@ -6,7 +6,7 @@ import type {
   GetGroupedCaseLogsByIdReqBody,
 } from './interface';
 
-import api from '@common/api';
+import { api } from '@common/api';
 import { useErrorSetter, logAxiosError } from '@utils';
 
 export * from './interface';

@@ -25,7 +25,7 @@ interface ApiObject {
   caseLog: AxiosCaseLogReturn;
 }
 
-const api = (): ApiObject => {
+export const api = (): ApiObject => {
   return {
     caseSet: CaseSetApi(),
     expectedResult: ExpectedResultApi(),
@@ -34,5 +34,3 @@ const api = (): ApiObject => {
     caseLog: CaseLogApi(),
   };
 };
-
-export default api;

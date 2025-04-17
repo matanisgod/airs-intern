@@ -60,23 +60,23 @@ describe('CreateCaseSetDialog', () => {
   const mockSetCaseSets = jest.fn();
   const mockSetIsOpen = jest.fn();
 
+  const caseSet: CaseSet = {
+    id: 'id',
+    type: 'type',
+    title: 'title',
+    cases: [],
+  };
+
   beforeEach(() => {
     (useRecoilState as jest.Mock).mockReturnValue([true, mockSetIsOpen]);
     (useSetRecoilState as jest.Mock).mockReturnValue(mockSetCaseSets);
+    (useCaseSetApi as jest.Mock).mockReturnValue({
+      importCaseSet: jest.fn().mockResolvedValue(caseSet),
+      getCaseSets: jest.fn().mockResolvedValue([caseSet]),
+    });
   });
 
   it('render & upload file & submit', async () => {
-    const caseSet: CaseSet = {
-      id: 'id',
-      type: 'type',
-      title: 'title',
-      cases: [],
-    };
-
-    (useCaseSetApi as jest.Mock).mockReturnValue({
-      importCaseSet: jest.fn().mockResolvedValue(caseSet),
-    });
-
     render(
       <RecoilRoot>
         <CreateCaseSetDialog />
@@ -104,7 +104,7 @@ describe('CreateCaseSetDialog', () => {
     await waitFor(() => {
       expect(inputs[0]).toHaveValue('type');
       expect(inputs[1]).toHaveValue('title');
-      expect(mockSetCaseSets).toHaveBeenCalled();
+      expect(mockSetCaseSets).toHaveBeenCalledWith([caseSet]);
       expect(mockSetIsOpen).toHaveBeenCalledWith(false);
     });
   });

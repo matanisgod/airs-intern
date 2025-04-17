@@ -40,6 +40,15 @@ export const CreateCaseSetDialog = () => {
     setIsOpen(false);
   };
 
+  const fetchCaseSets = async () => {
+    if (!caseSetApi) return;
+
+    const response = await caseSetApi.getCaseSets();
+    if (response) {
+      setCaseSets(response);
+    }
+  };
+
   const onSubmit: SubmitHandler<CaseSetForm> = async (data) => {
     if (!caseSetApi) return;
 
@@ -51,7 +60,7 @@ export const CreateCaseSetDialog = () => {
 
     const response = await caseSetApi.importCaseSet(formData);
     if (response) {
-      setCaseSets((caseSets) => [...caseSets, response]);
+      fetchCaseSets();
       handleClose();
     }
   };
@@ -60,86 +69,84 @@ export const CreateCaseSetDialog = () => {
   const [expectedResultYamlFile, setErYmlFile] = useState<string>('');
 
   return (
-    <React.Fragment>
-      <CreateDialog
-        open={isOpen}
-        onClose={(_, reason) => {
-          if (reason === 'backdropClick') return;
-          handleClose();
-        }}
-        disableRestoreFocus
-      >
-        <CreateDialogTitle>Create case set</CreateDialogTitle>
-        <CreateDialogContent>
-          <StyledForm onSubmit={handleSubmit(onSubmit)}>
-            {caseSetFormField.map(({ label, name, type }) => (
-              <Box key={name}>
-                <CreateDialogContentText>{label}:</CreateDialogContentText>
-                <Controller
-                  name={name}
-                  control={control}
-                  rules={{ required: '필수 입력' }}
-                  render={({ field, fieldState }) => (
-                    <CreateDialogFormControl fullWidth>
-                      {type === 'file' ? (
-                        <>
-                          <input
-                            type="file"
-                            accept=".yml, .yaml"
-                            hidden
-                            id={name}
-                            onChange={(e) => {
-                              if (e.target.files) {
-                                const extension = e.target.files[0].name
-                                  .split('.')
-                                  .pop()
-                                  ?.toLowerCase();
+    <CreateDialog
+      open={isOpen}
+      onClose={(_, reason) => {
+        if (reason === 'backdropClick') return;
+        handleClose();
+      }}
+      disableRestoreFocus
+    >
+      <CreateDialogTitle>Create case set</CreateDialogTitle>
+      <CreateDialogContent>
+        <StyledForm onSubmit={handleSubmit(onSubmit)}>
+          {caseSetFormField.map(({ label, name, type }) => (
+            <Box key={name}>
+              <CreateDialogContentText>{label}:</CreateDialogContentText>
+              <Controller
+                name={name}
+                control={control}
+                rules={{ required: '필수 입력' }}
+                render={({ field, fieldState }) => (
+                  <CreateDialogFormControl fullWidth>
+                    {type === 'file' ? (
+                      <>
+                        <input
+                          type="file"
+                          accept=".yml, .yaml"
+                          hidden
+                          id={name}
+                          onChange={(e) => {
+                            if (e.target.files) {
+                              const extension = e.target.files[0].name
+                                .split('.')
+                                .pop()
+                                ?.toLowerCase();
 
-                                if (extension !== 'yml' && extension !== 'yaml') {
-                                  alert('Only .yml or .yaml files are allowed.');
-                                  return;
-                                }
-
-                                setValue(name, e.target.files[0]);
-                                if (name === 'caseYamlFile') {
-                                  setCaseYmlFile(e.target.files[0]?.name);
-                                } else {
-                                  setErYmlFile(e.target.files[0]?.name);
-                                }
+                              if (extension !== 'yml' && extension !== 'yaml') {
+                                alert('Only .yml or .yaml files are allowed.');
+                                return;
                               }
-                            }}
-                          />
-                          <label htmlFor={name}>
-                            <UploadBox>
-                              <UploadText>
-                                {name === 'caseYamlFile' && caseYamlFile}
-                                {name === 'expectedResultYamlFile' &&
-                                  expectedResultYamlFile}
-                              </UploadText>
-                              <UploadButton component="span">📁</UploadButton>
-                            </UploadBox>
-                          </label>
-                        </>
-                      ) : (
-                        <OutlinedInput {...field} type="text" autoComplete="off" />
-                      )}
-                      {fieldState.error && (
-                        <CreateDialogContentText>
-                          {fieldState.error.message}
-                        </CreateDialogContentText>
-                      )}
-                    </CreateDialogFormControl>
-                  )}
-                />
-              </Box>
-            ))}
-            <DialogActions>
-              <CaseSetDecisionButton onClick={handleClose}>Cancel</CaseSetDecisionButton>
-              <CaseSetDecisionButton type="submit">Submit</CaseSetDecisionButton>
-            </DialogActions>
-          </StyledForm>
-        </CreateDialogContent>
-      </CreateDialog>
-    </React.Fragment>
+
+                              setValue(name, e.target.files[0]);
+                              if (name === 'caseYamlFile') {
+                                setCaseYmlFile(e.target.files[0]?.name);
+                              } else {
+                                setErYmlFile(e.target.files[0]?.name);
+                              }
+                            }
+                          }}
+                        />
+                        <label htmlFor={name}>
+                          <UploadBox>
+                            <UploadText>
+                              {name === 'caseYamlFile' && caseYamlFile}
+                              {name === 'expectedResultYamlFile' &&
+                                expectedResultYamlFile}
+                            </UploadText>
+                            <UploadButton component="span">📁</UploadButton>
+                          </UploadBox>
+                        </label>
+                      </>
+                    ) : (
+                      <OutlinedInput {...field} type="text" autoComplete="off" />
+                    )}
+                    {fieldState.error && (
+                      <CreateDialogContentText>
+                        {fieldState.error.message}
+                      </CreateDialogContentText>
+                    )}
+                  </CreateDialogFormControl>
+                )}
+              />
+            </Box>
+          ))}
+          <DialogActions>
+            <CaseSetDecisionButton onClick={handleClose}>Cancel</CaseSetDecisionButton>
+            <CaseSetDecisionButton type="submit">Submit</CaseSetDecisionButton>
+          </DialogActions>
+        </StyledForm>
+      </CreateDialogContent>
+    </CreateDialog>
   );
 };

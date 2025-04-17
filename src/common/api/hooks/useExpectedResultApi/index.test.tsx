@@ -2,7 +2,7 @@ import { renderHook, act } from '@testing-library/react';
 
 import { useExpectedResultApi } from './index';
 
-import api from '@common/api';
+import { api } from '@common/api';
 import type { ExpectedResult, ExpectedResults } from '@recoil';
 import { logAxiosError, useErrorSetter } from '@utils';
 

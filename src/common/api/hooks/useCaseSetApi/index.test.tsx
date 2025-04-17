@@ -2,7 +2,7 @@ import { renderHook, act } from '@testing-library/react';
 
 import { useCaseSetApi } from './index';
 
-import api from '@common/api';
+import { api } from '@common/api';
 import type { CaseSets, CaseSet } from '@recoil';
 import { logAxiosError, useErrorSetter } from '@utils';
 

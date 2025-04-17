@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import type { UseCaseApi } from './interface';
 
-import api from '@common/api';
+import { api } from '@common/api';
 import { useErrorSetter, logAxiosError } from '@utils';
 
 export const useCaseApi = (): UseCaseApi => {

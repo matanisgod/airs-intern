@@ -2,7 +2,7 @@ import { renderHook, act } from '@testing-library/react';
 
 import { useExecutionApi } from './index';
 
-import api from '@common/api';
+import { api } from '@common/api';
 import type { ExecutionForm } from '@containers';
 import type { ExecutionLog, ExecutionLogs } from '@recoil';
 import { logAxiosError, useErrorSetter } from '@utils';

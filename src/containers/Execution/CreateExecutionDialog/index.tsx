@@ -22,6 +22,8 @@ import {
 } from '@components';
 import { caseSetsAtom, executionLogsAtom, dichotomyAtom } from '@recoil';
 
+export * from './util';
+
 export const CreateExecutionDialog = () => {
   const executionApi = useExecutionApi();
 
@@ -31,19 +33,18 @@ export const CreateExecutionDialog = () => {
   const setExecutionLogs = useSetRecoilState(executionLogsAtom);
 
   const { control, handleSubmit } = useForm<ExecutionForm>({
-    //나중에 지우기
     defaultValues: {
       testSets: [],
-      version: '1',
-      description: '1',
-      testPerformer: 'junha',
-      gatePcIp: '192.168.40.42',
-      dcsApiPort: 5000,
-      dcsDicomPort: 30001,
-      hospitalRealm: 'PQ42',
-      keycloakUrl: 'https://auth.apne2-dev.airsmed.io/auth/',
-      keycloakLoginId: 'csuser',
-      keycloakLoginPw: 'returnAIRSMEDICAL!23',
+      version: '',
+      description: '',
+      testPerformer: '',
+      gatePcIp: '',
+      dcsApiPort: undefined,
+      dcsDicomPort: undefined,
+      hospitalRealm: '',
+      keycloakUrl: '',
+      keycloakLoginId: '',
+      keycloakLoginPw: '',
     },
   });
 
@@ -176,5 +177,3 @@ export const CreateExecutionDialog = () => {
     </CreateDialog>
   );
 };
-
-export * from './util';

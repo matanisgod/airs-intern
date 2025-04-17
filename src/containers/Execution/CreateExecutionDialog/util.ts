@@ -4,8 +4,8 @@ export interface ExecutionForm {
   description: string;
   testPerformer: string;
   gatePcIp: string;
-  dcsApiPort: number;
-  dcsDicomPort: number;
+  dcsApiPort: number | undefined;
+  dcsDicomPort: number | undefined;
   hospitalRealm: string;
   keycloakUrl: string;
   keycloakLoginId: string;

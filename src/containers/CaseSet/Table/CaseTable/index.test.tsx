@@ -50,7 +50,7 @@ describe('CaseTable', () => {
       }
       if (atom.key === 'caseJsonAtom') return mockResetCaseJson;
       if (atom.key === 'expectedResultsAtom') return mockResetExpectedResults;
-      if (atom.key === 'idAtom/caseId') return mockResetCaseId;
+      if (atom === idAtom('caseId')) return mockResetCaseId;
       return jest.fn();
     });
 
@@ -58,7 +58,6 @@ describe('CaseTable', () => {
       getExpectedResultById: jest.fn().mockResolvedValue(mockExpectedResult),
     });
   });
-  //TODO: 마무리하기
   const renderComponent = (initialCaseId: string | null = null) =>
     render(
       <RecoilRoot
@@ -88,6 +87,32 @@ describe('CaseTable', () => {
       expect(mockSetExpectedResults).toHaveBeenCalledWith(mockExpectedResult);
       expect(mockSetCaseJson).toHaveBeenCalledWith({ name: 'lee' });
       expect(mockResetCaseExpectedResultJson).toHaveBeenCalled();
+    });
+  });
+
+  it('caseId === params.row.id && event.ctrlKey', async () => {
+    renderComponent('didi');
+
+    fireEvent.click(screen.getByText('lee'), { ctrlKey: true });
+
+    await waitFor(() => {
+      expect(mockResetCaseExpectedResultJson).toHaveBeenCalled();
+      expect(mockResetCaseJson).toHaveBeenCalled();
+      expect(mockResetCaseId).toHaveBeenCalled();
+      expect(mockResetExpectedResults).toHaveBeenCalled();
+    });
+  });
+
+  it('caseId === params.row.id && !event.ctrlKey', async () => {
+    renderComponent('didi');
+
+    fireEvent.click(screen.getByText('lee'), { ctrlKey: false });
+
+    await waitFor(() => {
+      expect(useExpectedResultApi()?.getExpectedResultById).not.toHaveBeenCalled();
+      expect(mockSetExpectedResults).not.toHaveBeenCalled();
+      expect(mockSetCaseJson).not.toHaveBeenCalled();
+      expect(mockResetCaseExpectedResultJson).not.toHaveBeenCalled();
     });
   });
 });
