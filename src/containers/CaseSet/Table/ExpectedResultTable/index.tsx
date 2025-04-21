@@ -14,16 +14,16 @@ import { TableHeaderBox, TableDataBox, DataTable, DatagridDefaultBox } from '@co
 import { expectedResultsAtom, caseExpectedResultJsonAtom, idAtom } from '@recoil';
 
 export const ExpectedResultTable = () => {
-  const [expectedResultId, setExpectedResultId] = useRecoilState(
+  const [expectedResultId, setExpectedResultsId] = useRecoilState(
     idAtom('expectedResultId'),
   );
 
   const expectedResults = useRecoilValue(expectedResultsAtom);
 
-  const setcaseExpectedResultJson = useSetRecoilState(caseExpectedResultJsonAtom);
+  const setCaseExpectedResultJson = useSetRecoilState(caseExpectedResultJsonAtom);
 
   const resetCaseExpectedResultJson = useResetRecoilState(caseExpectedResultJsonAtom);
-  const resetExpectedResultId = useResetRecoilState(idAtom('expectedResultId'));
+  const resetExpectedResultsId = useResetRecoilState(idAtom('expectedResultId'));
 
   const DatagridOverlay = () => <DatagridDefaultBox>Select case</DatagridDefaultBox>;
 
@@ -41,14 +41,14 @@ export const ExpectedResultTable = () => {
           onRowClick={(params, event) => {
             if (expectedResultId === params.row.id && event.ctrlKey) {
               resetCaseExpectedResultJson();
-              resetExpectedResultId();
+              resetExpectedResultsId();
             } else if (expectedResultId === params.row.id && !event.ctrlKey) {
               return;
             } else {
-              setcaseExpectedResultJson(
+              setCaseExpectedResultJson(
                 JSON.parse(params.row.data.replace(/\bNaN\b/g, 'null')),
               );
-              setExpectedResultId(params.row.id);
+              setExpectedResultsId(params.row.id);
             }
           }}
           slots={{

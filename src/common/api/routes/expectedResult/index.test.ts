@@ -12,10 +12,10 @@ describe('caseSet', () => {
     (axiosDecorator.create as jest.Mock).mockReturnValue(mockInstance);
   });
 
-  it('getExpectedResultById', async () => {
+  it('getExpectedResultsById', async () => {
     const api = ExpectedResultApi();
 
-    await api.getExpectedResultById('id');
+    await api.getExpectedResultsById('id');
 
     expect(axiosDecorator.create).toHaveBeenCalledWith({ url: '/expected_result' });
     expect(mockGet).toHaveBeenCalledWith('/case/id');

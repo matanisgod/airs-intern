@@ -7,7 +7,7 @@ import * as recoil from 'recoil';
 import { CaseTable } from './index';
 
 import { useExpectedResultApi } from '@common/api';
-import { casesAtom, idAtom } from '@recoil';
+import { Case, casesAtom, ExpectedResult, idAtom } from '@recoil';
 
 jest.mock('@common/api', () => ({
   useExpectedResultApi: jest.fn(),
@@ -25,14 +25,19 @@ describe('CaseTable', () => {
   const mockResetExpectedResults = jest.fn();
   const mockResetCaseJson = jest.fn();
 
-  const mockCase = {
+  const mockCase: Case = {
     id: 'didi',
     name: 'lee',
     data: '{"name": "lee"}',
   };
   const mockCases = [mockCase];
-  const mockExpectedResult = { id: 'idid', name: 'junha', version: '2.2.2', data: {} };
-
+  const mockExpectedResult: ExpectedResult = {
+    id: 'idid',
+    name: 'junha',
+    version: '2.2.2',
+    data: '',
+  };
+  const mockExpectedResults = [mockExpectedResult];
   beforeEach(() => {
     jest.spyOn(recoil, 'useSetRecoilState').mockImplementation((atom) => {
       if (atom.key === 'expectedResultsAtom') {
@@ -48,14 +53,27 @@ describe('CaseTable', () => {
       if (atom.key === 'caseExpectedResultJsonAtom') {
         return mockResetCaseExpectedResultJson;
       }
-      if (atom.key === 'caseJsonAtom') return mockResetCaseJson;
-      if (atom.key === 'expectedResultsAtom') return mockResetExpectedResults;
-      if (atom === idAtom('caseId')) return mockResetCaseId;
+      if (atom.key === 'caseJsonAtom') {
+        return mockResetCaseJson;
+      }
+      if (atom.key === 'expectedResultsAtom') {
+        return mockResetExpectedResults;
+      }
+      if (atom === idAtom('caseId')) {
+        return mockResetCaseId;
+      }
       return jest.fn();
     });
 
+    jest.spyOn(recoil, 'useRecoilValue').mockImplementation((atom) => {
+      if (atom.key === 'casesAtom') {
+        return mockCases;
+      }
+      return null;
+    });
+
     (useExpectedResultApi as jest.Mock).mockReturnValue({
-      getExpectedResultById: jest.fn().mockResolvedValue(mockExpectedResult),
+      getExpectedResultsById: jest.fn().mockResolvedValue(mockExpectedResults),
     });
   });
   const renderComponent = (initialCaseId: string | null = null) =>
@@ -83,8 +101,8 @@ describe('CaseTable', () => {
     fireEvent.click(screen.getByText('lee'));
 
     await waitFor(() => {
-      expect(useExpectedResultApi()?.getExpectedResultById).toHaveBeenCalledWith('didi');
-      expect(mockSetExpectedResults).toHaveBeenCalledWith(mockExpectedResult);
+      expect(useExpectedResultApi()?.getExpectedResultsById).toHaveBeenCalledWith('didi');
+      expect(mockSetExpectedResults).toHaveBeenCalledWith(mockExpectedResults);
       expect(mockSetCaseJson).toHaveBeenCalledWith({ name: 'lee' });
       expect(mockResetCaseExpectedResultJson).toHaveBeenCalled();
     });
@@ -109,7 +127,7 @@ describe('CaseTable', () => {
     fireEvent.click(screen.getByText('lee'), { ctrlKey: false });
 
     await waitFor(() => {
-      expect(useExpectedResultApi()?.getExpectedResultById).not.toHaveBeenCalled();
+      expect(useExpectedResultApi()?.getExpectedResultsById).not.toHaveBeenCalled();
       expect(mockSetExpectedResults).not.toHaveBeenCalled();
       expect(mockSetCaseJson).not.toHaveBeenCalled();
       expect(mockResetCaseExpectedResultJson).not.toHaveBeenCalled();

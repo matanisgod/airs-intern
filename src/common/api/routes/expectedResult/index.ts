@@ -9,7 +9,7 @@ export const ExpectedResultApi = (): AxiosExpectedResultReturn => {
   const instance = axiosDecorator.create({ url });
 
   return {
-    getExpectedResultById: async (params: string) => {
+    getExpectedResultsById: async (params: string) => {
       return instance.get(`/case/${params}`);
     },
   };

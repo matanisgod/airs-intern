@@ -35,6 +35,7 @@ export const DetailsTable = () => {
   return (
     <DetailsTableBox>
       <DataTable
+        getRowId={(row) => row.id}
         rows={details}
         columns={detailColumns}
         hideFooter

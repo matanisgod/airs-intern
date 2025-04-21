@@ -78,7 +78,7 @@ export const CreateExecutionDialog = () => {
         if (reason === 'backdropClick') return;
         handleClose();
       }}
-      disableRestoreFocus
+      disableRestoreFocus={true}
     >
       <CreateDialogTitle>Create execution</CreateDialogTitle>
       <CreateDialogContent>

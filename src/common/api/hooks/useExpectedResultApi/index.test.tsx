@@ -22,7 +22,7 @@ describe('useExpectedResultApi', () => {
     (useErrorSetter as jest.Mock).mockReturnValue(setErrorMock);
     (api as jest.Mock).mockReturnValue({
       expectedResult: {
-        getExpectedResultById: mockGetExpectedResultById,
+        getExpectedResultsById: mockGetExpectedResultById,
       },
     });
   });
@@ -36,26 +36,26 @@ describe('useExpectedResultApi', () => {
 
   const mockExpectedResults: ExpectedResults = [mockExpectedResult];
 
-  it('getExpectedResultById', async () => {
+  it('getExpectedResultsById', async () => {
     mockGetExpectedResultById.mockResolvedValue({ data: mockExpectedResults });
 
     const { result } = renderHook(() => useExpectedResultApi());
 
     const post = await act(
-      async () => await result.current?.getExpectedResultById('idid'),
+      async () => await result.current?.getExpectedResultsById('idid'),
     );
 
     expect(mockGetExpectedResultById).toHaveBeenCalledWith('idid');
     expect(post).toEqual(mockExpectedResults);
   });
 
-  it('getExpectedResultById error', async () => {
+  it('getExpectedResultsById error', async () => {
     mockGetExpectedResultById.mockRejectedValue(mockError);
 
     const { result } = renderHook(() => useExpectedResultApi());
 
     const post = await act(
-      async () => await result.current?.getExpectedResultById('ididid'),
+      async () => await result.current?.getExpectedResultsById('ididid'),
     );
 
     expect(post).toBeUndefined();

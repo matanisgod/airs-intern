@@ -5,14 +5,14 @@ import { RecoilRoot } from 'recoil';
 
 import { DetailsExpectedResultJsonLoader } from './index';
 
-import { actualResultJsonAtom } from '@recoil';
+import { detailsExpectedResultJsonAtom } from '@recoil';
 
 describe('DetailsExpectedResultJsonLoader', () => {
   const renderComponent = (initialValue: object) =>
     render(
       <RecoilRoot
         initializeState={({ set }) => {
-          set(actualResultJsonAtom, initialValue);
+          set(detailsExpectedResultJsonAtom, initialValue);
         }}
       >
         <DetailsExpectedResultJsonLoader />
@@ -25,11 +25,11 @@ describe('DetailsExpectedResultJsonLoader', () => {
     expect(screen.getByText('Select detail')).toBeInTheDocument();
   });
 
-  // it('render !isEmpty', () => {
-  //   const mockData = { a: 'b' };
+  it('render !isEmpty', () => {
+    const mockData = { a: 'b' };
 
-  //   renderComponent(mockData);
-  //   expect(screen.getByText('Expected result data')).toBeInTheDocument();
-  //   expect(screen.getByText('a')).toBeInTheDocument();
-  // });
+    renderComponent(mockData);
+    expect(screen.getByText('Expected result data')).toBeInTheDocument();
+    expect(screen.getByText('a')).toBeInTheDocument();
+  });
 });

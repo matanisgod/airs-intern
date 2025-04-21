@@ -35,9 +35,9 @@ export const CaseTable = () => {
   const resetExpectedResults = useResetRecoilState(expectedResultsAtom);
   const resetCaseJson = useResetRecoilState(caseJsonAtom);
 
-  const getExpectedResult = async (params: string) => {
+  const getExpectedResults = async (params: string) => {
     if (!expectedResultApi) return;
-    const response = await expectedResultApi.getExpectedResultById(params);
+    const response = await expectedResultApi.getExpectedResultsById(params);
     if (response) {
       setExpectedResults(response);
     }
@@ -65,7 +65,7 @@ export const CaseTable = () => {
             } else if (caseId === params.row.id && !event.ctrlKey) {
               return;
             } else {
-              await getExpectedResult(params.row.id);
+              await getExpectedResults(params.row.id);
               setCaseJson(JSON.parse(params.row.data.replace(/\bNaN\b/g, 'null')));
               resetCaseExpectedResultJson();
               setCaseId(params.row.id);

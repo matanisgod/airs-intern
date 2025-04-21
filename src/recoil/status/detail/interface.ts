@@ -4,6 +4,7 @@ export interface Detail {
   actualResult: string;
   expectedResult: DetailExpectedResult;
   checkType: string;
+  id: string;
 }
 interface DetailExpectedResult {
   data: string;

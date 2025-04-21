@@ -75,7 +75,7 @@ export const CreateCaseSetDialog = () => {
         if (reason === 'backdropClick') return;
         handleClose();
       }}
-      disableRestoreFocus
+      disableRestoreFocus={true}
     >
       <CreateDialogTitle>Create case set</CreateDialogTitle>
       <CreateDialogContent>

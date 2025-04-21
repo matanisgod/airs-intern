@@ -11,9 +11,9 @@ export const useExpectedResultApi = (): UseExpectedResultApi => {
   const instance = useMemo(() => {
     if (api) {
       return {
-        getExpectedResultById: async (params: string) => {
+        getExpectedResultsById: async (params: string) => {
           try {
-            const response = await api().expectedResult.getExpectedResultById(params);
+            const response = await api().expectedResult.getExpectedResultsById(params);
             const expectedResult = response.data;
             return expectedResult;
           } catch (e) {
