@@ -14,7 +14,7 @@ import { TableHeaderBox, TableDataBox, DataTable, DatagridDefaultBox } from '@co
 import { expectedResultsAtom, caseExpectedResultJsonAtom, idAtom } from '@recoil';
 
 export const ExpectedResultTable = () => {
-  const [expectedResultId, setExpectedResultsId] = useRecoilState(
+  const [expectedResultId, setExpectedResultId] = useRecoilState(
     idAtom('expectedResultId'),
   );
 
@@ -48,7 +48,7 @@ export const ExpectedResultTable = () => {
               setCaseExpectedResultJson(
                 JSON.parse(params.row.data.replace(/\bNaN\b/g, 'null')),
               );
-              setExpectedResultsId(params.row.id);
+              setExpectedResultId(params.row.id);
             }
           }}
           slots={{

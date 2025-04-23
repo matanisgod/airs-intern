@@ -12,15 +12,16 @@ import { executionLogsAtom, stopTargetAtom, dichotomyAtom } from '@recoil';
 export const StopModal = () => {
   const executionApi = useExecutionApi();
 
-  const [isLoading, setIsLoading] = useState(false);
-  const [isStopModalOpen, setIsStopModalOpen] = useRecoilState(
+  const [isLoading, setLoading] = useState(false);
+  const [isStopModalOpen, setStopModalOpen] = useRecoilState(
     dichotomyAtom('isStopModalOpen'),
   );
 
   const stopTarget = useRecoilValue(stopTargetAtom);
+
   const setExecutionLogs = useSetRecoilState(executionLogsAtom);
   const onClose = () => {
-    setIsStopModalOpen(false);
+    setStopModalOpen(false);
   };
   const fetchExecutionLogs = async () => {
     if (!executionApi) return;
@@ -45,18 +46,22 @@ export const StopModal = () => {
     }
   };
   const handleStop = async () => {
-    setIsLoading(true);
+    setLoading(true);
     if (stopTarget === 'All') {
       await updateExecution();
     } else {
       await updateExecutionById(stopTarget);
     }
     onClose();
-    setIsLoading(false);
+    setLoading(false);
   };
   const stopModalMessage = useMemo(() => {
-    if (isLoading) return 'Loading...';
-    if (stopTarget === 'All') return 'Do you really want to stop all?';
+    if (isLoading) {
+      return 'Loading...';
+    }
+    if (stopTarget === 'All') {
+      return 'Do you really want to stop all?';
+    }
     return 'Do you really want to stop?';
   }, [isLoading, stopTarget]);
 
