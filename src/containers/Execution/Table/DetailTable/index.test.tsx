@@ -63,13 +63,13 @@ describe('DetailsTable', () => {
     });
   });
 
-  const renderComponent = (initialDetailId: string | null = null) =>
+  const renderComponent = (initialValue: string = '') =>
     render(
       <RecoilRoot
         initializeState={({ set }) => {
           set(detailsAtom, mockDetails);
-          if (initialDetailId !== null) {
-            set(idAtom('detailId'), initialDetailId);
+          if (initialValue !== '') {
+            set(idAtom('detailId'), initialValue);
           }
         }}
       >

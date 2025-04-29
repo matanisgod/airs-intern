@@ -39,7 +39,7 @@ const config: Config = {
   coverageProvider: 'v8',
 
   // A list of reporter names that Jest uses when writing coverage reports
-  coverageReporters: ['json', 'text', 'lcov', 'clover'],
+  coverageReporters: ['lcov', 'text'],
 
   // An object that configures minimum threshold enforcement for coverage results
   // coverageThreshold: undefined,
@@ -74,7 +74,7 @@ const config: Config = {
   moduleDirectories: ['node_modules'],
 
   // An array of file extensions your modules use
-  moduleFileExtensions: ['js', 'mjs', 'cjs', 'jsx', 'ts', 'tsx', 'json', 'node'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'mjs', 'cjs', 'jsx', 'json', 'node'],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
@@ -88,8 +88,6 @@ const config: Config = {
     '^@routes(.*)$': '<rootDir>/src/routes$1',
     '^@utils(.*)$': '<rootDir>/src/utils$1',
     '\\.(css|scss|png|svg|webp|less)$': 'identity-obj-proxy',
-    '\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-      '<rootDir>/__mocks__/fileMock.js',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -102,7 +100,7 @@ const config: Config = {
   // notifyMode: "failure-change",
 
   // A preset that is used as a base for Jest's configuration
-  preset: 'ts-jest/presets/default-esm',
+  preset: 'ts-jest',
 
   // Run tests from one or more projects
   // projects: undefined,
@@ -149,13 +147,13 @@ const config: Config = {
   testEnvironment: 'jsdom',
 
   // Options that will be passed to the testEnvironment
-  testEnvironmentOptions: { customExportConditions: [''] },
+  // testEnvironmentOptions: { customExportConditions: [''] },
 
   // Adds a location field to test results
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)'],
+  testMatch: ['**/?(*.)+(spec|test).[tj]s?(x)'],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   testPathIgnorePatterns: ['\\\\node_modules\\\\', '/coverage/'],
@@ -172,7 +170,7 @@ const config: Config = {
   // A map from regular expressions to paths to transformers
   transform: {
     '^.+\\.tsx?$': ['ts-jest', { useESM: true }],
-    '\\.(ttf|woff|woff2)$': '<rootDir>/__mocks__/fileTransform.js',
+    '\\.(ttf|woff|woff2)$': '<rootDir>/__mocks__/fileTransformer.js',
   },
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   transformIgnorePatterns: ['\\\\node_modules\\\\', '\\.pnp\\.[^\\\\]+$'],

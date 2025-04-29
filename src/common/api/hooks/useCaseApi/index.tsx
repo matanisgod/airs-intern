@@ -25,7 +25,7 @@ export const useCaseApi = (): UseCaseApi => {
     } else {
       return null;
     }
-  }, [api]);
+  }, []);
 
   return instance;
 };

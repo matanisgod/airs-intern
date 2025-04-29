@@ -76,13 +76,13 @@ describe('CaseTable', () => {
       getExpectedResultsById: jest.fn().mockResolvedValue(mockExpectedResults),
     });
   });
-  const renderComponent = (initialCaseId: string | null = null) =>
+  const renderComponent = (initialValue: string = '') =>
     render(
       <RecoilRoot
         initializeState={({ set }) => {
           set(casesAtom, mockCases);
-          if (initialCaseId !== null) {
-            set(idAtom('caseId'), initialCaseId);
+          if (initialValue !== '') {
+            set(idAtom('caseId'), initialValue);
           }
         }}
       >

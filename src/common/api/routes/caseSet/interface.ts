@@ -4,11 +4,11 @@ export interface AxiosCaseSetReturn {
   importCaseSet: (body: FormData) => Promise<ImportCaseSetResBody>;
   getCaseSets: () => Promise<GetCaseSetsResBody>;
 }
-interface ImportCaseSetResBody {
+export interface ImportCaseSetResBody {
   message: string;
   data: CaseSet;
 }
-interface GetCaseSetsResBody {
+export interface GetCaseSetsResBody {
   message: string;
   data: CaseSets;
 }

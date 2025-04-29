@@ -103,13 +103,13 @@ describe('ExecutionLogTable', () => {
     });
   });
 
-  const renderComponent = (initialExecutionLogId: string | null = null) =>
+  const renderComponent = (initialValue: string = '') =>
     render(
       <RecoilRoot
         initializeState={({ set }) => {
           set(executionLogsAtom, mockExecutionLogs);
-          if (initialExecutionLogId) {
-            set(idAtom('executionLogId'), initialExecutionLogId);
+          if (initialValue !== '') {
+            set(idAtom('executionLogId'), initialValue);
           }
         }}
       >

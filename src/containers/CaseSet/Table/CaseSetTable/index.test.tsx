@@ -87,13 +87,13 @@ describe('CaseSetTable', () => {
     });
   });
 
-  const renderComponent = (initialCaseSetId: string | null = null) =>
+  const renderComponent = (initialValue: string = '') =>
     render(
       <RecoilRoot
         initializeState={({ set }) => {
           set(caseSetsAtom, mockCaseSets);
-          if (initialCaseSetId !== null) {
-            set(idAtom('caseSetId'), initialCaseSetId);
+          if (initialValue !== '') {
+            set(idAtom('caseSetId'), initialValue);
           }
         }}
       >

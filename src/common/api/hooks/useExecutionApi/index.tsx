@@ -55,7 +55,7 @@ export const useExecutionApi = (): UseExecutionApi => {
     } else {
       return null;
     }
-  }, [api]);
+  }, []);
 
   return instance;
 };

@@ -28,7 +28,7 @@ describe('useCaseLogApi', () => {
       },
     });
   });
-  //TODO: change this
+
   const mockCaseLog: CaseLog = {
     caseName: 'name',
     result: 'result1',
@@ -48,6 +48,7 @@ describe('useCaseLogApi', () => {
       data: 'expected',
     },
     checkType: 'check',
+    id: '',
   };
 
   const mockDetails: Details = [mockDetail];

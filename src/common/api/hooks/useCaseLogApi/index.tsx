@@ -41,7 +41,7 @@ export const useCaseLogApi = (): UseCaseLogApi => {
     } else {
       return null;
     }
-  }, [api]);
+  }, []);
 
   return instance;
 };

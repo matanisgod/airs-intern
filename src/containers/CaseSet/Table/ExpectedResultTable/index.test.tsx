@@ -52,13 +52,13 @@ describe('ExpectedResultTable', () => {
     });
   });
 
-  const renderComponent = (initialExpectedResultId: string | null = null) =>
+  const renderComponent = (initialValue: string = '') =>
     render(
       <RecoilRoot
         initializeState={({ set }) => {
           set(expectedResultsAtom, mockExpectedResults);
-          if (initialExpectedResultId !== null) {
-            set(idAtom('expectedResultId'), initialExpectedResultId);
+          if (initialValue !== '') {
+            set(idAtom('expectedResultId'), initialValue);
           }
         }}
       >
