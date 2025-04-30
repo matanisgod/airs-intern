@@ -7,7 +7,14 @@ import * as recoil from 'recoil';
 import { ExecutionLogTable } from './index';
 
 import { useCaseLogApi, useCaseSetApi, useExecutionApi } from '@common/api';
-import { CaseLog, CaseSet, ExecutionLog, executionLogsAtom, idAtom } from '@recoil';
+import {
+  CaseLog,
+  CaseSet,
+  dichotomyAtom,
+  ExecutionLog,
+  executionLogsAtom,
+  idAtom,
+} from '@recoil';
 
 jest.mock('@common/api', () => ({
   useCaseLogApi: jest.fn(),
@@ -17,7 +24,7 @@ jest.mock('@common/api', () => ({
 jest.mock('@utils', () => ({
   formatTimeUntilSecond: jest.fn(),
   logAxiosError: jest.fn(),
-  useErrorSetter: jest.fn(() => jest.fn()),
+  useErrorSetter: jest.fn(),
 }));
 
 describe('ExecutionLogTable', () => {
@@ -29,6 +36,9 @@ describe('ExecutionLogTable', () => {
   const mockResetDetails = jest.fn();
   const mockResetActualResultJson = jest.fn();
   const mockResetDetailsExpectedResultJson = jest.fn();
+  const mockSetStopTarget = jest.fn();
+  const mockSetStopModalOpen = jest.fn();
+  const mockSetExecutionDialogOpen = jest.fn();
 
   const mockExecutionLog: ExecutionLog = {
     performer: 'junha',
@@ -63,6 +73,21 @@ describe('ExecutionLogTable', () => {
       }
       if (atom.key === 'caseLogsAtom') {
         return mockSetCaseLogs;
+      }
+      if (atom.key === 'stopTargetAtom') {
+        return mockSetStopTarget;
+      }
+      if (atom.key === 'caseSetsAtom') {
+        return mockSetCaseSets;
+      }
+      if (atom.key === 'caseLogsAtom') {
+        return mockSetCaseLogs;
+      }
+      if (atom === dichotomyAtom('isStopModalOpen')) {
+        return mockSetStopModalOpen;
+      }
+      if (atom === dichotomyAtom('isExecutionLogDialogOpen')) {
+        return mockSetExecutionDialogOpen;
       }
       return jest.fn();
     });
@@ -166,6 +191,37 @@ describe('ExecutionLogTable', () => {
       expect(mockResetActualResultJson).not.toHaveBeenCalled();
       expect(mockResetDetailsExpectedResultJson).not.toHaveBeenCalled();
       expect(mockResetCaseLogId).not.toHaveBeenCalled();
+    });
+  });
+
+  it('CancelButton', async () => {
+    renderComponent();
+    const buttons = screen.getAllByRole('button');
+    fireEvent.click(buttons[0]);
+
+    await waitFor(() => {
+      expect(mockSetStopTarget).toHaveBeenCalledWith('All');
+      expect(mockSetStopModalOpen).toHaveBeenCalledWith(true);
+    });
+  });
+  it('RefreshButton', async () => {
+    renderComponent();
+
+    const buttons = screen.getAllByRole('button');
+    fireEvent.click(buttons[1]);
+
+    await waitFor(() => {
+      expect(useExecutionApi()?.getExecutionLogs).toHaveBeenCalled();
+    });
+  });
+  it('CreateButton', async () => {
+    renderComponent();
+
+    const buttons = screen.getAllByRole('button');
+    fireEvent.click(buttons[2]);
+
+    await waitFor(() => {
+      expect(useCaseSetApi()?.getCaseSets).toHaveBeenCalled();
     });
   });
 });

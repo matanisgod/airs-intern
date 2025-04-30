@@ -35,14 +35,14 @@ export const ExecutionLogTable = () => {
   const caseSetApi = useCaseSetApi();
 
   const [executionLogs, setExecutionLogs] = useRecoilState(executionLogsAtom);
-  const [isExecutionDialogOpen, setIsExecutionDialogOpen] = useRecoilState(
+  const [isExecutionDialogOpen, setExecutionDialogOpen] = useRecoilState(
     dichotomyAtom('isExecutionLogDialogOpen'),
   );
   const [executionLogId, setExecutionLogId] = useRecoilState(idAtom('executionLogId'));
 
   const setCaseSets = useSetRecoilState(caseSetsAtom);
   const setCaseLogs = useSetRecoilState(caseLogsAtom);
-  const setIsStopModalOpen = useSetRecoilState(dichotomyAtom('isStopModalOpen'));
+  const setStopModalOpen = useSetRecoilState(dichotomyAtom('isStopModalOpen'));
   const setStopTarget = useSetRecoilState(stopTargetAtom);
 
   const resetExecutionLogId = useResetRecoilState(idAtom('executionLogId'));
@@ -90,7 +90,7 @@ export const ExecutionLogTable = () => {
     }
   };
   const onCreateExecutionLogButtonClick = () => {
-    setIsExecutionDialogOpen(true);
+    setExecutionDialogOpen(true);
     fetchCaseSets();
   };
 
@@ -102,7 +102,7 @@ export const ExecutionLogTable = () => {
           <ActionButton
             onClick={() => {
               setStopTarget('All');
-              setIsStopModalOpen(true);
+              setStopModalOpen(true);
             }}
           >
             {CancelButton()}

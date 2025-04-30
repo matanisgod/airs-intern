@@ -20,12 +20,6 @@ jest.mock('@containers', () => ({
   StopModal: () => <div>StopModal</div>,
 }));
 
-jest.mock('./style', () => ({
-  ...jest.requireActual('./style'),
-  LastPageButton: () => 'LastPage',
-  FirstPageButton: () => 'FirstPage',
-}));
-
 describe('Header', () => {
   const mockNavigate = jest.fn();
   const mockResetCases = jest.fn();
@@ -95,9 +89,7 @@ describe('Header', () => {
       </RecoilRoot>,
     );
 
-    expect(screen.getByText('LastPage')).toBeInTheDocument();
-
-    fireEvent.click(screen.getByText('LastPage'));
+    fireEvent.click(screen.getAllByRole('button')[0]);
     expect(mockResetExecutionLogs).toHaveBeenCalled();
     expect(mockResetCaseLogs).toHaveBeenCalled();
     expect(mockResetDetails).toHaveBeenCalled();
@@ -115,9 +107,7 @@ describe('Header', () => {
       </RecoilRoot>,
     );
 
-    expect(screen.getByText('FirstPage')).toBeInTheDocument();
-
-    fireEvent.click(screen.getByText('FirstPage'));
+    fireEvent.click(screen.getAllByRole('button')[0]);
     expect(mockResetCases).toHaveBeenCalled();
     expect(mockResetCaseSets).toHaveBeenCalled();
     expect(mockResetExpectedResults).toHaveBeenCalled();

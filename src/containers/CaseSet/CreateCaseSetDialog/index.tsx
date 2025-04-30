@@ -23,7 +23,7 @@ export * from './util';
 export const CreateCaseSetDialog = () => {
   const caseSetApi = useCaseSetApi();
 
-  const [isOpen, setIsOpen] = useRecoilState(dichotomyAtom('isCaseSetDialogOpen'));
+  const [isOpen, setOpen] = useRecoilState(dichotomyAtom('isCaseSetDialogOpen'));
 
   const setCaseSets = useSetRecoilState(caseSetsAtom);
 
@@ -37,7 +37,7 @@ export const CreateCaseSetDialog = () => {
   });
 
   const handleClose = () => {
-    setIsOpen(false);
+    setOpen(false);
   };
 
   const fetchCaseSets = async () => {

@@ -3,10 +3,10 @@ import React, { useMemo, useState } from 'react';
 import { Modal } from '@mui/material';
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 
-import { ButtonBox } from './style';
+import { ButtonBox, StopDecisionButton } from './style';
 
 import { useExecutionApi } from '@common/api';
-import { DecisionButton, ModalContentBox, ModalBox } from '@components';
+import { ModalContentBox, ModalBox } from '@components';
 import { executionLogsAtom, stopTargetAtom, dichotomyAtom } from '@recoil';
 
 export const StopModal = () => {
@@ -71,8 +71,8 @@ export const StopModal = () => {
         <ModalContentBox>
           {stopModalMessage}
           <ButtonBox>
-            <DecisionButton onClick={handleStop}>Yes</DecisionButton>
-            <DecisionButton onClick={onClose}>No</DecisionButton>
+            <StopDecisionButton onClick={handleStop}>Yes</StopDecisionButton>
+            <StopDecisionButton onClick={onClose}>No</StopDecisionButton>
           </ButtonBox>
         </ModalContentBox>
       </ModalBox>

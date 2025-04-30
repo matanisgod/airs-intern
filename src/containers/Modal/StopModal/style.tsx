@@ -7,7 +7,7 @@ export const ButtonBox = styled(Box)({
   gap: '20px',
 });
 
-export const ErrorDecisionButton = styled(DecisionButton)(() => ({
+export const StopDecisionButton = styled(DecisionButton)(() => ({
   width: '65px',
   height: '40px',
 }));

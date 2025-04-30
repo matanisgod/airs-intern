@@ -14,7 +14,7 @@ jest.mock('@common/api', () => ({
 }));
 jest.mock('@utils', () => ({
   logAxiosError: jest.fn(),
-  useErrorSetter: jest.fn(() => jest.fn()),
+  useErrorSetter: jest.fn(),
 }));
 
 describe('CaseTable', () => {

@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React from 'react';
 
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { RecoilRoot, useRecoilState, useSetRecoilState } from 'recoil';
@@ -17,48 +17,9 @@ jest.mock('@common/api', () => ({
   useCaseSetApi: jest.fn(),
 }));
 
-jest.mock('@components', () => ({
-  CreateDialog: ({
-    children,
-  }: PropsWithChildren<{ open: boolean; onClose: () => void }>) => <div>{children}</div>,
-  CreateDialogTitle: ({ children }: PropsWithChildren<unknown>) => <div>{children}</div>,
-  CreateDialogContent: ({ children }: PropsWithChildren<unknown>) => (
-    <div>{children}</div>
-  ),
-  StyledForm: ({
-    children,
-    ...props
-  }: PropsWithChildren<React.FormHTMLAttributes<HTMLFormElement>>) => (
-    <form {...props}>{children}</form>
-  ),
-  CreateDialogContentText: ({ children }: PropsWithChildren<unknown>) => (
-    <p>{children}</p>
-  ),
-  CreateDialogFormControl: ({ children }: PropsWithChildren<unknown>) => (
-    <div>{children}</div>
-  ),
-}));
-
-jest.mock('./style', () => ({
-  UploadBox: ({ children }: PropsWithChildren<unknown>) => <div>{children}</div>,
-  UploadButton: ({
-    children,
-    ...props
-  }: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
-    <button {...props}>{children}</button>
-  ),
-  UploadText: ({ children }: PropsWithChildren<unknown>) => <span>{children}</span>,
-  CaseSetDecisionButton: ({
-    children,
-    ...props
-  }: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
-    <button {...props}>{children}</button>
-  ),
-}));
-
 describe('CreateCaseSetDialog', () => {
   const mockSetCaseSets = jest.fn();
-  const mockSetIsOpen = jest.fn();
+  const mockSetOpen = jest.fn();
 
   const caseSet: CaseSet = {
     id: 'id',
@@ -68,7 +29,7 @@ describe('CreateCaseSetDialog', () => {
   };
 
   beforeEach(() => {
-    (useRecoilState as jest.Mock).mockReturnValue([true, mockSetIsOpen]);
+    (useRecoilState as jest.Mock).mockReturnValue([true, mockSetOpen]);
     (useSetRecoilState as jest.Mock).mockReturnValue(mockSetCaseSets);
     (useCaseSetApi as jest.Mock).mockReturnValue({
       importCaseSet: jest.fn().mockResolvedValue(caseSet),
@@ -105,7 +66,7 @@ describe('CreateCaseSetDialog', () => {
       expect(inputs[0]).toHaveValue('type');
       expect(inputs[1]).toHaveValue('title');
       expect(mockSetCaseSets).toHaveBeenCalledWith([caseSet]);
-      expect(mockSetIsOpen).toHaveBeenCalledWith(false);
+      expect(mockSetOpen).toHaveBeenCalledWith(false);
     });
   });
 
@@ -138,7 +99,7 @@ describe('CreateCaseSetDialog', () => {
     fireEvent.click(screen.getByText('Cancel'));
 
     await waitFor(() => {
-      expect(mockSetIsOpen).toHaveBeenCalledWith(false);
+      expect(mockSetOpen).toHaveBeenCalledWith(false);
     });
   });
 });

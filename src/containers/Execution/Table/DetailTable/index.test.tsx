@@ -10,7 +10,7 @@ import { detailsAtom, idAtom, Detail } from '@recoil';
 
 jest.mock('@utils', () => ({
   logAxiosError: jest.fn(),
-  useErrorSetter: jest.fn(() => jest.fn()),
+  useErrorSetter: jest.fn(),
 }));
 
 describe('DetailsTable', () => {

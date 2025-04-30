@@ -35,7 +35,7 @@ export const CaseSetTable = () => {
   const caseApi = useCaseApi();
   const caseSetApi = useCaseSetApi();
 
-  const [isCaseSetDialogOpen, setIsCaseSetDialogOpen] = useRecoilState(
+  const [isCaseSetDialogOpen, setCaseSetDialogOpen] = useRecoilState(
     dichotomyAtom('isCaseSetDialogOpen'),
   );
   const [caseSetId, setCaseSetId] = useRecoilState(idAtom('caseSetId'));
@@ -77,7 +77,7 @@ export const CaseSetTable = () => {
   }, [caseSetApi, setCaseSets]);
 
   const onCreateButtonClick = () => {
-    setIsCaseSetDialogOpen(true);
+    setCaseSetDialogOpen(true);
   };
 
   return (

@@ -28,7 +28,7 @@ export const CreateExecutionDialog = () => {
   const executionApi = useExecutionApi();
 
   const caseSets = useRecoilValue(caseSetsAtom);
-  const [isOpen, setIsOpen] = useRecoilState(dichotomyAtom('isExecutionLogDialogOpen'));
+  const [isOpen, setOpen] = useRecoilState(dichotomyAtom('isExecutionLogDialogOpen'));
 
   const setExecutionLogs = useSetRecoilState(executionLogsAtom);
 
@@ -51,7 +51,7 @@ export const CreateExecutionDialog = () => {
   const testSetsList = caseSets;
 
   const handleClose = () => {
-    setIsOpen(false);
+    setOpen(false);
   };
 
   const fetchExecutionLog = async () => {

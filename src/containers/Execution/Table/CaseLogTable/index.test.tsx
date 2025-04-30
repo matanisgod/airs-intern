@@ -16,7 +16,7 @@ jest.mock('@utils', () => ({
   formatTimeUntilSecond: jest.fn(),
 
   logAxiosError: jest.fn(),
-  useErrorSetter: jest.fn(() => jest.fn()),
+  useErrorSetter: jest.fn(),
 }));
 
 describe('CaseLogTable', () => {

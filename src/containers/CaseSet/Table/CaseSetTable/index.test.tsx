@@ -15,7 +15,7 @@ jest.mock('@common/api', () => ({
 }));
 jest.mock('@utils', () => ({
   logAxiosError: jest.fn(),
-  useErrorSetter: jest.fn(() => jest.fn()),
+  useErrorSetter: jest.fn(),
 }));
 
 describe('CaseSetTable', () => {
@@ -145,6 +145,26 @@ describe('CaseSetTable', () => {
       expect(mockResetExpectedResults).not.toHaveBeenCalled();
       expect(mockResetCaseJson).not.toHaveBeenCalled();
       expect(mockResetCaseExpectedResultJson).not.toHaveBeenCalled();
+    });
+  });
+  it('RefreshButton', async () => {
+    renderComponent();
+
+    const buttons = screen.getAllByRole('button');
+    fireEvent.click(buttons[0]);
+
+    await waitFor(() => {
+      expect(useCaseSetApi()?.getCaseSets).toHaveBeenCalled();
+    });
+  });
+  it('CreateButton', async () => {
+    renderComponent();
+
+    const buttons = screen.getAllByRole('button');
+    fireEvent.click(buttons[1]);
+
+    await waitFor(() => {
+      expect(screen.getByText('Type')).toBeInTheDocument();
     });
   });
 });

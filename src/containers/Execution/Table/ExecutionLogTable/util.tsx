@@ -54,7 +54,7 @@ export const executionLogColumns: Array<GridColDef> = [
     headerAlign: 'center',
     align: 'center',
     renderCell: function CancelExecutionById(params) {
-      const setIsStopModalOpen = useSetRecoilState(dichotomyAtom('isStopModalOpen'));
+      const setStopModalOpen = useSetRecoilState(dichotomyAtom('isStopModalOpen'));
       const setStopTarget = useSetRecoilState(stopTargetAtom);
 
       return (
@@ -62,7 +62,7 @@ export const executionLogColumns: Array<GridColDef> = [
           onClick={(event) => {
             event.stopPropagation();
             setStopTarget(params.row.id);
-            setIsStopModalOpen(true);
+            setStopModalOpen(true);
           }}
         >
           Stop
