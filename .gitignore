@@ -28,3 +28,10 @@ yarn-error.log*
 webpack/build
 
 .history
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
