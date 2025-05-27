@@ -156,7 +156,12 @@ const config: Config = {
   testMatch: ['**/?(*.)+(spec|test).[tj]s?(x)'],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-  testPathIgnorePatterns: ['\\\\node_modules\\\\', '/coverage/'],
+  testPathIgnorePatterns: [
+    '\\\\node_modules\\\\',
+    '/coverage/',
+    '/tests/',
+    '/test-results/',
+  ],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
   // testRegex: [],

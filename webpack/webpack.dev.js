@@ -27,7 +27,7 @@ module.exports = smp.wrap(
       },
       compress: true,
       hot: true,
-      port: 9000,
+      port: 8000,
       historyApiFallback: true,
       client: {
         progress: true,
