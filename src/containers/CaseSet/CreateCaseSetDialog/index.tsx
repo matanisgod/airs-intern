@@ -86,7 +86,7 @@ export const CreateCaseSetDialog = () => {
               <Controller
                 name={name}
                 control={control}
-                rules={{ required: '필수 입력' }}
+                rules={{ required: 'Field required' }}
                 render={({ field, fieldState }) => (
                   <CreateDialogFormControl fullWidth>
                     {type === 'file' ? (
