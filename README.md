@@ -38,8 +38,7 @@
 2. Create a `.env` file in your root directory and add the required environment variables:
 
    ```env
-   ATOM_SERVER_URI=http://192.168.40.203:8000
-   MUI_DATA_GRID_LICENSE_KEY=77bd5d4e9c42f4a8b4b8c6e0fd645ebbTz05NTU3MSxFPTE3NTQ0NjkwMjIwMDAsUz1wcm8sTE09c3Vic2NyaXB0aW9uLFBWPWluaXRpYWwsS1Y9Mg==
+
    ```
 
 3. Run this App.
